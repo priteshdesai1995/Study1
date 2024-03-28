@@ -1,0 +1,292 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1540" height="3563" viewBox="0 0 1540 3563">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="378" height="400" fill="none"/>
+    </clipPath>
+    <filter id="Rectangle_20573" x="1271" y="1864" width="90" height="90" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-color="#8347eb" flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_20574" x="1271" y="2148" width="90" height="90" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-2"/>
+      <feFlood flood-color="#8347eb" flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Openness_To_Experience_wireframe" data-name="Openness To Experience wireframe" transform="translate(-330 -543)">
+    <g id="Hero_Image_or_Banner_header" data-name="Hero Image or Banner &amp; header" transform="translate(330 543)">
+      <path id="Background_Color" data-name="Background Color" d="M0,0H1540V421.337H0Z" fill="#333354" opacity="0.1"/>
+      <g id="Listing_Dots" data-name="Listing Dots" transform="translate(735.565 389)">
+        <circle id="_1" data-name="1" cx="3" cy="3" r="3" transform="translate(0.435 3)" fill="rgba(94,127,177,0.25)"/>
+        <circle id="_2" data-name="2" cx="3" cy="3" r="3" transform="translate(21.435 3)" fill="#5e7fb1"/>
+        <g id="Activ_Dot_Frame" data-name="Activ Dot Frame" transform="translate(18.435)" fill="none" stroke="#5e7fb1" stroke-width="1">
+          <circle cx="6" cy="6" r="6" stroke="none"/>
+          <circle cx="6" cy="6" r="5.5" fill="none"/>
+        </g>
+        <circle id="_3" data-name="3" cx="3" cy="3" r="3" transform="translate(42.435 3)" fill="rgba(94,127,177,0.25)"/>
+        <circle id="_4" data-name="4" cx="3" cy="3" r="3" transform="translate(63.435 3)" fill="rgba(94,127,177,0.25)"/>
+      </g>
+      <g id="Right_Arrow" data-name="Right Arrow" transform="translate(1473 195)">
+        <path id="Arrow_Frame" data-name="Arrow Frame" d="M17,1A16,16,0,1,1,1,17,16,16,0,0,1,17,1Z" transform="translate(-1 -1)" fill="rgba(94,127,177,0.25)"/>
+        <path id="Arrow" d="M2.116,0,0,2.159l6.5,6.5,6.5-6.5L10.884,0,6.5,4.426Z" transform="translate(13 23) rotate(-90)" fill="#fff"/>
+      </g>
+      <g id="Left_Arrow" data-name="Left Arrow" transform="translate(33 194)">
+        <circle id="Arrow_Frame-2" data-name="Arrow Frame" cx="17" cy="17" r="17" fill="rgba(94,127,177,0.25)"/>
+        <path id="Arrow-2" data-name="Arrow" d="M2.116,0,0,2.159l6.5,6.5,6.5-6.5L10.884,0,6.5,4.426Z" transform="translate(20.659 11) rotate(90)" fill="#fff"/>
+      </g>
+      <text id="Hero_Image_or_Banner" data-name="Hero Image or Banner" transform="translate(770 196)" fill="#01002a" font-size="42" font-family="SofiaPro-Regular, Sofia Pro" opacity="0.5"><tspan x="-213" y="0">Hero Image or Banner</tspan></text>
+      <text id="It_s_very_easy_to_create_stylish_and_beautiful_prototypes_for_your_future_projects_both_graphical_and_dynamic." data-name="It&apos;s very easy to create stylish and beautiful prototypes for your future projects, both graphical and dynamic." transform="translate(461 228)" fill="#01002a" font-size="22" font-family="SofiaPro-Light, Sofia Pro" font-weight="300" opacity="0.5"><tspan x="0" y="22">It&apos;s very easy to create stylish and beautiful prototypes for your </tspan><tspan x="88" y="56">future projects, both graphical and dynamic.</tspan></text>
+      <g id="Button" transform="translate(1265 23)" opacity="0.5">
+        <rect id="Backgound" width="90" height="34" rx="3" fill="#333354"/>
+        <text id="Button-2" data-name="Button" transform="translate(45 21)" fill="#fff" font-size="12" font-family="SofiaPro-Regular, Sofia Pro"><tspan x="-17" y="0">Button</tspan></text>
+      </g>
+      <g id="Menu" transform="translate(552.09 32)" opacity="0.5">
+        <text id="Menu_One" data-name="Menu One" transform="translate(-0.09 14)" fill="#01002a" font-size="14" font-family="SofiaPro-Regular, Sofia Pro"><tspan x="0" y="0">Menu One</tspan></text>
+        <text id="Menu_Two" data-name="Menu Two" transform="translate(113.91 14)" fill="#01002a" font-size="14" font-family="SofiaPro-Regular, Sofia Pro"><tspan x="0" y="0">Menu Two</tspan></text>
+        <text id="Menu_Three" data-name="Menu Three" transform="translate(227.91 14)" fill="#01002a" font-size="14" font-family="SofiaPro-Regular, Sofia Pro"><tspan x="0" y="0">Menu Three</tspan></text>
+        <text id="Menu_Four" data-name="Menu Four" transform="translate(352.91 14)" fill="#01002a" font-size="14" font-family="SofiaPro-Regular, Sofia Pro"><tspan x="0" y="0">Menu Four</tspan></text>
+        <g id="Arrow-3" data-name="Arrow" transform="translate(427.2 7.172)">
+          <path id="Path_1" data-name="Path 1" d="M730.6,684.172l-1.4,1.428,4.3,4.3,4.3-4.3-1.4-1.428-2.9,2.928Z" transform="translate(-729.2 -684.172)" fill="#01002a"/>
+        </g>
+      </g>
+      <g id="Logo" transform="translate(184 26)" opacity="0.5">
+        <text id="Humaine_AI" data-name="Humaine AI" transform="translate(0 23)" fill="#01002a" font-size="24" font-family="SofiaPro-Regular, Sofia Pro"><tspan x="0" y="0">Humaine AI</tspan></text>
+      </g>
+    </g>
+    <g id="Products" transform="translate(330 937)">
+      <text id="Products-2" data-name="Products" transform="translate(270 121)" fill="#01002a" font-size="42" font-family="SofiaPro-SemiBold, Sofia Pro" font-weight="600" opacity="0.5"><tspan x="-85" y="0">Products</tspan></text>
+      <g id="Product_One" data-name="Product One" transform="translate(184 153)">
+        <path id="Slider_Image" data-name="Slider Image" d="M1653.4-360H1396.6a6.614,6.614,0,0,1-6.6-6.618V-643.382a6.614,6.614,0,0,1,6.6-6.618H1653.4a6.614,6.614,0,0,1,6.6,6.618v276.765A6.614,6.614,0,0,1,1653.4-360Zm-155.6-192.722a5.8,5.8,0,0,0-5.784,5.8v38.959a5.8,5.8,0,0,0,5.784,5.8H1552.2a5.8,5.8,0,0,0,5.782-5.8v-38.959a5.8,5.8,0,0,0-5.782-5.8Zm54.253,46.558h-5.277l-9.708-9.153,7.274-6.043,9.639,7.787v5.476A1.888,1.888,0,0,1,1552.058-506.163Zm-10.541,0h-43.849a1.889,1.889,0,0,1-1.929-1.933v-8.512l17.488-16.218,28.289,26.662Zm-7.167-11.721L1513.227-537.8l-17.488,16.259v-25.515a1.889,1.889,0,0,1,1.929-1.935h54.391a1.889,1.889,0,0,1,1.928,1.935v28.9l-9.639-7.9-10,8.173Zm.359-26.962a7.687,7.687,0,0,0-7.573,7.6,7.6,7.6,0,0,0,7.573,7.6,7.688,7.688,0,0,0,7.573-7.6A7.688,7.688,0,0,0,1534.709-544.846Zm0,11.468a4.006,4.006,0,0,1-3.994-4.008,4,4,0,0,1,3.994-4.006,4,4,0,0,1,3.993,4.006A4.005,4.005,0,0,1,1534.709-533.379Z" transform="translate(-1390 650)" fill="#8347eb" opacity="0.1"/>
+        <text id="Product_Two" data-name="Product Two" transform="translate(20 274)" fill="#01002a" font-size="18" font-family="SofiaPro-Regular, Sofia Pro" opacity="0.5"><tspan x="0" y="0">Product Two</tspan></text>
+        <text id="_26" data-name="$ 26" transform="translate(205 256)" fill="#01002a" font-size="18" font-family="SofiaPro-SemiBold, Sofia Pro" font-weight="600" opacity="0.5"><tspan x="10" y="18">$ 26</tspan></text>
+      </g>
+      <g id="Product_Two-2" data-name="Product Two" transform="translate(484.455 153)">
+        <path id="Slider_Image-2" data-name="Slider Image" d="M1653.4-360H1396.6a6.614,6.614,0,0,1-6.6-6.618V-643.382a6.614,6.614,0,0,1,6.6-6.618H1653.4a6.614,6.614,0,0,1,6.6,6.618v276.765A6.614,6.614,0,0,1,1653.4-360Zm-155.6-192.722a5.8,5.8,0,0,0-5.784,5.8v38.959a5.8,5.8,0,0,0,5.784,5.8H1552.2a5.8,5.8,0,0,0,5.782-5.8v-38.959a5.8,5.8,0,0,0-5.782-5.8Zm54.253,46.558h-5.277l-9.708-9.153,7.274-6.043,9.639,7.787v5.476A1.888,1.888,0,0,1,1552.058-506.163Zm-10.541,0h-43.849a1.889,1.889,0,0,1-1.929-1.933v-8.512l17.488-16.218,28.289,26.662Zm-7.167-11.721L1513.227-537.8l-17.488,16.259v-25.515a1.889,1.889,0,0,1,1.929-1.935h54.391a1.889,1.889,0,0,1,1.928,1.935v28.9l-9.639-7.9-10,8.173Zm.359-26.962a7.687,7.687,0,0,0-7.573,7.6,7.6,7.6,0,0,0,7.573,7.6,7.688,7.688,0,0,0,7.573-7.6A7.688,7.688,0,0,0,1534.709-544.846Zm0,11.468a4.006,4.006,0,0,1-3.994-4.008,4,4,0,0,1,3.994-4.006,4,4,0,0,1,3.993,4.006A4.005,4.005,0,0,1,1534.709-533.379Z" transform="translate(-1390.455 650)" fill="#8347eb" opacity="0.1"/>
+        <text id="Product_Two-3" data-name="Product Two" transform="translate(19.545 274)" fill="#01002a" font-size="18" font-family="SofiaPro-Regular, Sofia Pro" opacity="0.5"><tspan x="0" y="0">Product Two</tspan></text>
+        <text id="_26-2" data-name="$ 26" transform="translate(204.545 256)" fill="#01002a" font-size="18" font-family="SofiaPro-SemiBold, Sofia Pro" font-weight="600" opacity="0.5"><tspan x="10" y="18">$ 26</tspan></text>
+      </g>
+      <g id="Right_Arrow-2" data-name="Right Arrow" transform="translate(732 282)">
+        <path id="Arrow_Frame-3" data-name="Arrow Frame" d="M17,1A16,16,0,1,1,1,17,16,16,0,0,1,17,1Z" transform="translate(-1 -1)" fill="#8347eb" opacity="0.2"/>
+        <path id="Arrow-4" data-name="Arrow" d="M2.116,0,0,2.159l6.5,6.5,6.5-6.5L10.884,0,6.5,4.426Z" transform="translate(13 23) rotate(-90)" fill="#fff"/>
+      </g>
+      <g id="Left_Arrow-2" data-name="Left Arrow" transform="translate(174 281)">
+        <circle id="Arrow_Frame-4" data-name="Arrow Frame" cx="17" cy="17" r="17" fill="#8347eb" opacity="0.2"/>
+        <path id="Arrow-5" data-name="Arrow" d="M2.116,0,0,2.159l6.5,6.5,6.5-6.5L10.884,0,6.5,4.426Z" transform="translate(20.659 11) rotate(90)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Footer" transform="translate(330 3866)">
+      <path id="Background_Color-2" data-name="Background Color" d="M0,0H1540V240H0Z" fill="#e5e5e9"/>
+      <text id="_2021_2022_Humaine_AI" data-name="© 2021—2022, Humaine AI" transform="translate(183 160)" fill="#01002a" font-size="12" font-family="SofiaPro-Light, Sofia Pro" font-weight="300" opacity="0.5"><tspan x="0" y="12">© 2021—2022, Humaine AI</tspan></text>
+      <g id="Logo-2" data-name="Logo" transform="translate(83 9)">
+        <text id="Footer-2" data-name="Footer" transform="translate(100 49)" fill="#01002a" font-size="24" font-family="SofiaPro-Medium, Sofia Pro" font-weight="500" opacity="0.5"><tspan x="0" y="0">Footer</tspan></text>
+      </g>
+      <text id="Donec_euismod_imperdiet_tellus_quis_bibendum._Nullam_in_est_et_orci_placerat_interdum" data-name="Donec euismod imperdiet tellus quis bibendum. Nullam in est et orci placerat interdum" transform="translate(183 89)" fill="#01002a" font-size="14" font-family="SofiaPro-Light, Sofia Pro" font-weight="300" opacity="0.5"><tspan x="0" y="14">Donec euismod imperdiet tellus quis bibendum. </tspan><tspan x="0" y="38">Nullam in est et orci placerat interdum</tspan></text>
+      <g id="Social_Media_Icons" data-name="Social Media Icons" transform="translate(33 -86)" opacity="0.5">
+        <path id="Twitter" d="M25.992,12.483a9.151,9.151,0,0,1-2.642.724,4.607,4.607,0,0,0,2.022-2.545,9.207,9.207,0,0,1-2.921,1.117,4.6,4.6,0,0,0-7.837,4.195,13.059,13.059,0,0,1-9.48-4.805,4.605,4.605,0,0,0,1.423,6.141,4.586,4.586,0,0,1-2.083-.576c0,.019,0,.039,0,.058a4.6,4.6,0,0,0,3.69,4.51,4.624,4.624,0,0,1-1.212.161,4.557,4.557,0,0,1-.866-.083,4.6,4.6,0,0,0,4.3,3.194,9.28,9.28,0,0,1-6.809,1.9A13.08,13.08,0,0,0,23.71,15.458q0-.3-.013-.6A9.315,9.315,0,0,0,25.992,12.483Z" transform="translate(1046.426 230.298)" fill="#01002a"/>
+        <path id="Facebook" d="M28.2,13.215H24.718V10.933a.929.929,0,0,1,.968-1.057h2.455V6.109L24.76,6.1c-3.753,0-4.607,2.81-4.607,4.608v2.511H17.982V17.1h2.171V28.08h4.566V17.1H27.8Z" transform="translate(1086.648 232.904)" fill="#01002a"/>
+        <path id="Instagram" d="M1426.644-627.429a6.642,6.642,0,0,1-4.733-1.775,6.548,6.548,0,0,1-1.911-4.869V-643.4a6.234,6.234,0,0,1,6.6-6.6h9.375a6.48,6.48,0,0,1,4.778,1.865,6.523,6.523,0,0,1,1.821,4.733v9.374a6.514,6.514,0,0,1-1.866,4.824,6.72,6.72,0,0,1-4.778,1.775Zm-3.322-19.295a4.535,4.535,0,0,0-1.229,3.322v9.329a4.572,4.572,0,0,0,1.229,3.367,4.7,4.7,0,0,0,3.322,1.183h9.284a4.7,4.7,0,0,0,3.322-1.183,4.447,4.447,0,0,0,1.319-3.322V-643.4a4.694,4.694,0,0,0-1.229-3.276,4.536,4.536,0,0,0-3.322-1.229h-9.374A4.627,4.627,0,0,0,1423.322-646.723Zm2.139,7.964a5.836,5.836,0,0,1,5.824-5.825,5.865,5.865,0,0,1,5.825,5.825,5.836,5.836,0,0,1-5.825,5.825A5.807,5.807,0,0,1,1425.461-638.76Zm2.093,0a3.749,3.749,0,0,0,3.732,3.732,3.749,3.749,0,0,0,3.732-3.732,3.748,3.748,0,0,0-3.732-3.732A3.748,3.748,0,0,0,1427.554-638.76Zm8.464-5.961a1.319,1.319,0,0,1,1.32-1.32,1.32,1.32,0,0,1,1.319,1.32,1.32,1.32,0,0,1-1.319,1.32A1.32,1.32,0,0,1,1436.018-644.721Z" transform="translate(-272.571 889)" fill="#01002a"/>
+      </g>
+      <g id="Navigation" transform="translate(411 52)">
+        <text id="Navigation-2" data-name="Navigation" transform="translate(173 3)" fill="#01002a" font-size="16" font-family="SofiaPro-Medium, Sofia Pro" font-weight="500" opacity="0.5"><tspan x="0" y="0">Navigation</tspan></text>
+        <text id="Menu_One_Menu_Two_Menu_Three_Menu_Four" data-name="Menu One
+Menu Two
+Menu Three
+Menu Four" transform="translate(173 37)" fill="#01002a" font-size="12" font-family="SofiaPro-Light, Sofia Pro" font-weight="300" opacity="0.5"><tspan x="0" y="12">Menu One</tspan><tspan x="0" y="42">Menu Two</tspan><tspan x="0" y="72">Menu Three</tspan><tspan x="0" y="102">Menu Four</tspan></text>
+      </g>
+      <g id="Contacts" transform="translate(610 52)">
+        <text id="Contacts-2" data-name="Contacts" transform="translate(173 3)" fill="#01002a" font-size="16" font-family="SofiaPro-Medium, Sofia Pro" font-weight="500" opacity="0.5"><tspan x="0" y="0">Contacts</tspan></text>
+        <text id="info_collector.com" data-name="info@collector.com" transform="translate(173 98)" fill="#01002a" font-size="14" font-family="SofiaPro-Light, Sofia Pro" font-weight="300" opacity="0.5"><tspan x="0" y="14">info@collector.com</tspan></text>
+        <text id="_1_234_567-89-90" data-name="+1 (234) 567-89-90" transform="translate(173 67)" fill="#01002a" font-size="18" font-family="SofiaPro-Regular, Sofia Pro" opacity="0.5"><tspan x="0" y="18">+1 (234) 567-89-90</tspan></text>
+        <text id="Country_city_street_name_44" data-name="Country, city, street name 44" transform="translate(173 37)" fill="#01002a" font-size="14" font-family="SofiaPro-Light, Sofia Pro" font-weight="300" opacity="0.5"><tspan x="0" y="14">Country, city, street name 44</tspan></text>
+      </g>
+      <g id="Newsletter" transform="translate(910 52)">
+        <text id="Newsletter-2" data-name="Newsletter" transform="translate(173 3)" fill="#01002a" font-size="16" font-family="SofiaPro-Medium, Sofia Pro" font-weight="500" opacity="0.5"><tspan x="0" y="0">Newsletter</tspan></text>
+        <g id="Input_Form" data-name="Input Form" transform="translate(-839 14)">
+          <rect id="Input" width="180" height="34" rx="3" transform="translate(1012 23)" fill="#fff"/>
+          <g id="Button-3" data-name="Button" transform="translate(42)" opacity="0.5">
+            <rect id="Backgound-2" data-name="Backgound" width="80" height="34" rx="3" transform="translate(1160 23)" fill="#01002a"/>
+            <text id="Button_" data-name="Button " transform="translate(1200 44)" fill="#fff" font-size="12" font-family="SofiaPro-Regular, Sofia Pro"><tspan x="-19" y="0">Button </tspan></text>
+          </g>
+          <text id="Input_One" data-name="Input One" transform="translate(1029 44)" fill="#01002a" font-size="12" font-family="SofiaPro-Regular, Sofia Pro" opacity="0.5"><tspan x="0" y="0">Input One</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g id="News_events" data-name="News events" transform="translate(0 -10)">
+      <path id="Second_Item" data-name="Second Item" d="M1984.256-360H1425.745a5.748,5.748,0,0,1-5.745-5.738V-644.262a5.748,5.748,0,0,1,5.745-5.738h558.511a5.748,5.748,0,0,1,5.745,5.738v278.525A5.748,5.748,0,0,1,1984.256-360ZM1531.314-540.656a5.04,5.04,0,0,0-5.038,5.032v33.779a5.04,5.04,0,0,0,5.038,5.031h47.373a5.04,5.04,0,0,0,5.036-5.031v-33.779a5.04,5.04,0,0,0-5.036-5.032Zm47.253,40.367h-4.6l-8.455-7.936,6.335-5.24,8.4,6.752v4.748A1.641,1.641,0,0,1,1578.567-500.288Zm-9.181,0h-38.191a1.641,1.641,0,0,1-1.68-1.676v-7.38l15.231-14.062,24.639,23.117Zm-6.243-10.163-18.4-17.268-15.231,14.1v-22.122a1.642,1.642,0,0,1,1.68-1.677h47.373a1.641,1.641,0,0,1,1.679,1.677v25.059l-8.4-6.853-8.707,7.086Zm.313-23.377a6.68,6.68,0,0,0-6.6,6.588,6.6,6.6,0,0,0,6.6,6.589,6.681,6.681,0,0,0,6.6-6.589A6.68,6.68,0,0,0,1563.456-533.828Zm0,9.943a3.481,3.481,0,0,1-3.479-3.475,3.48,3.48,0,0,1,3.479-3.473,3.48,3.48,0,0,1,3.478,3.473A3.48,3.48,0,0,1,1563.456-523.885Z" transform="translate(-303 1750)" fill="#8347eb" opacity="0.1"/>
+      <g id="News_events-2" data-name="News events" transform="translate(579 798)">
+        <text id="News_Events-3" data-name="NewsEvents" transform="translate(823 406)" fill="#01002a" font-size="42" font-family="SofiaPro-SemiBold, Sofia Pro" font-weight="600" opacity="0.5"><tspan x="0" y="0">News</tspan><tspan x="0" y="52">Events</tspan></text>
+        <g id="Read_More" data-name="Read More" transform="translate(823 509.265)" opacity="0.5">
+          <text id="Read_More-2" data-name="Read More" transform="translate(49 16.735)" fill="#01002a" font-size="18" font-family="Montserrat"><tspan x="-48" y="0">Read More</tspan></text>
+          <path id="Line_Arrow_Right" data-name="Line Arrow Right" d="M2.116,0,0,2.159l6.5,6.5,6.5-6.5L10.884,0,6.5,4.426Z" transform="translate(113.339 17) rotate(-90)" fill="#01002a"/>
+        </g>
+      </g>
+    </g>
+    <g id="Collection_images" data-name="Collection images" transform="translate(604 -483.773)">
+      <path id="Background_Color-3" data-name="Background Color" d="M0,0H1540V679H0Z" transform="translate(-274 1913.773)" fill="#ff5e5e" opacity="0.05"/>
+      <g id="Group_49710" data-name="Group 49710" transform="translate(0 23.773)">
+        <g id="Banner_1" data-name="Banner 1" transform="translate(-787 1788)">
+          <path id="Slider_Image-3" data-name="Slider Image" d="M1982.128-195H1427.872c-4.341,0-7.872-4.34-7.872-9.674V-640.326c0-5.334,3.531-9.674,7.872-9.674h554.255c4.341,0,7.872,4.34,7.872,9.674v435.652C1990-199.34,1986.469-195,1982.128-195Z" transform="translate(-720 864)" fill="#ff5e5e" opacity="0.1"/>
+          <text id="Collection_Image" data-name="Collection
+Image" transform="translate(823 363)" fill="#01002a" font-size="42" font-family="SofiaPro-SemiBold, Sofia Pro" font-weight="600" opacity="0.5"><tspan x="65" y="43">Collection</tspan><tspan x="100" y="95">Image</tspan></text>
+          <g id="Read_More-3" data-name="Read More" transform="translate(925 509.265)" opacity="0.5">
+            <text id="Read_More-4" data-name="Read More" transform="translate(49 16.735)" fill="#01002a" font-size="18" font-family="Montserrat"><tspan x="-48" y="0">Read More</tspan></text>
+            <path id="Line_Arrow_Right-2" data-name="Line Arrow Right" d="M2.116,0,0,2.159l6.5,6.5,6.5-6.5L10.884,0,6.5,4.426Z" transform="translate(113.339 17) rotate(-90)" fill="#01002a"/>
+          </g>
+        </g>
+        <path id="Second_Item-2" data-name="Second Item" d="M1684.256-195H1425.745a5.744,5.744,0,0,1-5.745-5.73V-644.27a5.744,5.744,0,0,1,5.745-5.73h258.511a5.744,5.744,0,0,1,5.745,5.73v443.541A5.744,5.744,0,0,1,1684.256-195ZM1531.314-495.773a5.037,5.037,0,0,0-5.038,5.025v33.732a5.037,5.037,0,0,0,5.038,5.024h47.373a5.036,5.036,0,0,0,5.036-5.024v-33.732a5.036,5.036,0,0,0-5.036-5.025Zm47.253,40.311h-4.6l-8.455-7.925,6.335-5.233,8.4,6.742v4.742A1.64,1.64,0,0,1,1578.567-455.461Zm-9.181,0h-38.191a1.64,1.64,0,0,1-1.68-1.674v-7.37l15.231-14.042,24.639,23.085Zm-6.243-10.148-18.4-17.244-15.231,14.077v-22.092a1.641,1.641,0,0,1,1.68-1.675h47.373a1.64,1.64,0,0,1,1.679,1.675v25.024l-8.4-6.843-8.707,7.076Zm.313-23.345a6.676,6.676,0,0,0-6.6,6.579,6.6,6.6,0,0,0,6.6,6.58,6.676,6.676,0,0,0,6.6-6.58A6.676,6.676,0,0,0,1563.456-488.955Zm0,9.929a3.478,3.478,0,0,1-3.479-3.47,3.478,3.478,0,0,1,3.479-3.468,3.477,3.477,0,0,1,3.478,3.468A3.478,3.478,0,0,1,1563.456-479.025Z" transform="translate(-907 2652)" fill="#ff5e5e" opacity="0.1"/>
+        <path id="Second_Item-3" data-name="Second Item" d="M1684.256-195H1425.745a5.748,5.748,0,0,1-5.745-5.738V-644.262a5.748,5.748,0,0,1,5.745-5.738h258.511a5.748,5.748,0,0,1,5.745,5.738v443.525A5.748,5.748,0,0,1,1684.256-195ZM1531.314-495.656a5.04,5.04,0,0,0-5.038,5.032v33.779a5.04,5.04,0,0,0,5.038,5.031h47.373a5.04,5.04,0,0,0,5.036-5.031v-33.779a5.04,5.04,0,0,0-5.036-5.032Zm47.253,40.367h-4.6l-8.455-7.936,6.335-5.24,8.4,6.752v4.748A1.641,1.641,0,0,1,1578.567-455.288Zm-9.181,0h-38.191a1.641,1.641,0,0,1-1.68-1.676v-7.38l15.231-14.062,24.639,23.117Zm-6.243-10.163-18.4-17.268-15.231,14.1v-22.122a1.642,1.642,0,0,1,1.68-1.677h47.373a1.641,1.641,0,0,1,1.679,1.677v25.059l-8.4-6.853-8.707,7.086Zm.313-23.377a6.68,6.68,0,0,0-6.6,6.588,6.6,6.6,0,0,0,6.6,6.589,6.681,6.681,0,0,0,6.6-6.589A6.68,6.68,0,0,0,1563.456-488.828Zm0,9.943a3.481,3.481,0,0,1-3.479-3.475,3.48,3.48,0,0,1,3.479-3.473,3.48,3.48,0,0,1,3.478,3.473A3.48,3.48,0,0,1,1563.456-478.885Z" transform="translate(-607 2652)" fill="#ff5e5e" opacity="0.1"/>
+        <text id="Image" transform="translate(948 2389)" fill="#01002a" font-size="42" font-family="SofiaPro-SemiBold, Sofia Pro" font-weight="600" opacity="0.5"><tspan x="-61" y="0">Image</tspan></text>
+        <text id="Image-2" data-name="Image" transform="translate(648 2389)" fill="#01002a" font-size="42" font-family="SofiaPro-SemiBold, Sofia Pro" font-weight="600" opacity="0.5"><tspan x="-61" y="0">Image</tspan></text>
+      </g>
+    </g>
+    <g id="Blog" transform="translate(0 -1547)">
+      <g id="First_Post" data-name="First Post" transform="translate(413 3466)">
+        <g id="Text_Background" data-name="Text Background" transform="translate(100 317)" fill="#ffb100" stroke="#eadffe" stroke-width="1" opacity="0.1">
+          <rect width="370" height="400" rx="10" stroke="none"/>
+          <rect x="0.5" y="0.5" width="369" height="399" rx="9.5" fill="none"/>
+        </g>
+        <text id="_26_October_2021" data-name="26 October 2021" transform="translate(132 347)" fill="#01002a" font-size="14" font-family="SofiaPro-Light, Sofia Pro" font-weight="300" opacity="0.5"><tspan x="0" y="14">26 October 2021</tspan></text>
+        <text id="Donec_sem_sem_ornare_non_lacus_nec_suscipit_auctor_elit._Cras_viverra_mi_justo_luctus_cursus_elit_porta_sit_amet." data-name="Donec sem sem, ornare non lacus nec, suscipit auctor elit. Cras viverra mi justo, luctus cursus elit porta sit amet." transform="translate(132 506)" fill="#01002a" font-size="18" font-family="SofiaPro-Light, Sofia Pro" font-weight="300" opacity="0.5"><tspan x="0" y="18">Donec sem sem, ornare non lacus </tspan><tspan x="0" y="48">nec, suscipit auctor elit. Cras </tspan><tspan x="0" y="78">viverra mi justo, luctus cursus elit </tspan><tspan x="0" y="108">porta sit amet.</tspan></text>
+        <text id="Integer_eget_gravida_arvitae_fringilla_viverra" data-name="Integer eget gravida 
+arvitae fringilla viverra" transform="translate(132 415)" fill="#01002a" font-size="28" font-family="SofiaPro-Regular, Sofia Pro" opacity="0.5"><tspan x="0" y="0">Integer eget gravida </tspan><tspan x="0" y="42">arvitae fringilla viverra</tspan></text>
+        <g id="Read_More-5" data-name="Read More" transform="translate(-454 249)" opacity="0.5">
+          <text id="Read_More-6" data-name="Read More" transform="translate(686 430)" fill="#01002a" font-size="18" font-family="SofiaPro-Regular, Sofia Pro"><tspan x="-91" y="0">Read More</tspan></text>
+          <path id="Line_Arrow_Right-3" data-name="Line Arrow Right" d="M731.316,684.172l-2.116,2.159,6.5,6.5,6.5-6.5-2.116-2.159L735.7,688.6Z" transform="translate(17.167 1159.2) rotate(-90)" fill="#01002a"/>
+        </g>
+      </g>
+      <g id="Second_Post" data-name="Second Post" transform="translate(813 3466)">
+        <g id="Text_Background-2" data-name="Text Background" transform="translate(100 317)" fill="#ffb100" stroke="#eadffe" stroke-width="1" opacity="0.1">
+          <rect width="370" height="400" rx="10" stroke="none"/>
+          <rect x="0.5" y="0.5" width="369" height="399" rx="9.5" fill="none"/>
+        </g>
+        <text id="_26_October_2021-2" data-name="26 October 2021" transform="translate(132 347)" fill="#01002a" font-size="14" font-family="SofiaPro-Light, Sofia Pro" font-weight="300" opacity="0.5"><tspan x="0" y="14">26 October 2021</tspan></text>
+        <text id="Donec_euismod_imperdiet_tellus_quis_bibendum._Nullam_in_est_et_orci_placerat_interdum_vel_consectetur_eros._" data-name="Donec euismod imperdiet tellus quis bibendum. Nullam in est et orci placerat interdum vel consectetur eros. " transform="translate(132 506)" fill="#01002a" font-size="18" font-family="SofiaPro-Light, Sofia Pro" font-weight="300" opacity="0.5"><tspan x="0" y="18">Donec euismod imperdiet tellus </tspan><tspan x="0" y="48">quis bibendum. Nullam in est et </tspan><tspan x="0" y="78">orci placerat interdum vel </tspan><tspan x="0" y="108">consectetur eros. </tspan></text>
+        <text id="Integer_eget_gravida_arvitae_fringilla_viverra-2" data-name="Integer eget gravida 
+arvitae fringilla viverra" transform="translate(132 415)" fill="#01002a" font-size="28" font-family="SofiaPro-Regular, Sofia Pro" opacity="0.5"><tspan x="0" y="0">Integer eget gravida </tspan><tspan x="0" y="42">arvitae fringilla viverra</tspan></text>
+        <g id="Read_More-7" data-name="Read More" transform="translate(-454 249)" opacity="0.5">
+          <text id="Read_More-8" data-name="Read More" transform="translate(686 430)" fill="#01002a" font-size="18" font-family="SofiaPro-Regular, Sofia Pro"><tspan x="-91" y="0">Read More</tspan></text>
+          <path id="Line_Arrow_Right-4" data-name="Line Arrow Right" d="M731.316,684.172l-2.116,2.159,6.5,6.5,6.5-6.5-2.116-2.159L735.7,688.6Z" transform="translate(17.167 1159.2) rotate(-90)" fill="#01002a"/>
+        </g>
+      </g>
+      <text id="Blog-2" data-name="Blog" transform="translate(513 3750)" fill="#01002a" font-size="42" font-family="SofiaPro-SemiBold, Sofia Pro" font-weight="600" opacity="0.5"><tspan x="0" y="0">Blog</tspan></text>
+    </g>
+    <g id="Social_Feed" data-name="Social Feed" transform="translate(0 -1547)">
+      <g id="Scroll_Group_4" data-name="Scroll Group 4" transform="translate(1313 3783)" clip-path="url(#clip-path)" style="mix-blend-mode: normal;isolation: isolate">
+        <g id="First_Post-2" data-name="First Post" transform="translate(-100 -317)">
+          <g id="Text_Background-3" data-name="Text Background" transform="translate(100 317)" fill="#ffb100" stroke="rgba(94,127,177,0.2)" stroke-width="1" opacity="0.2">
+            <rect width="374" height="268" rx="10" stroke="none"/>
+            <rect x="0.5" y="0.5" width="373" height="267" rx="9.5" fill="none"/>
+          </g>
+          <text id="Donec_euismod_imperdiet_tellus_quis_bibendum._Nullam_in_est_et_orci_placerat_interdum." data-name="Donec euismod imperdiet tellus quis bibendum. Nullam in est et orci placerat interdum." transform="translate(132 387)" fill="#01002a" font-size="18" font-family="SofiaPro-Regular, Sofia Pro" opacity="0.5"><tspan x="0" y="18">Donec euismod imperdiet tellus quis </tspan><tspan x="0" y="44">bibendum. Nullam in est et orci </tspan><tspan x="0" y="70">placerat interdum.</tspan></text>
+          <line id="Line" x2="314" transform="translate(130.5 491)" fill="none" stroke="#5e7fb1" stroke-width="1" opacity="0.2"/>
+          <text id="_26_October_2021-3" data-name="26 October 2021" transform="translate(132 347)" fill="#01002a" font-size="14" font-family="SofiaPro-Light, Sofia Pro" font-weight="300" opacity="0.5"><tspan x="0" y="14">26 October 2021</tspan></text>
+          <g transform="matrix(1, 0, 0, 1, -883, -1376)" filter="url(#Rectangle_20573)">
+            <rect id="Rectangle_20573-2" data-name="Rectangle 20573" width="30" height="30" rx="3" transform="translate(1301 1884)" fill="#ffb100" opacity="0.3"/>
+          </g>
+          <path id="Facebook-2" data-name="Facebook" d="M28.2,13.215H24.718V10.933a.929.929,0,0,1,.968-1.057h2.455V6.109L24.76,6.1c-3.753,0-4.607,2.81-4.607,4.608v2.511H17.982V17.1h2.171V28.08h4.566V17.1H27.8Z" transform="translate(410.648 505.912)" fill="#fff"/>
+          <g id="Author" transform="translate(-9 -213)">
+            <path id="Big_Profile" data-name="Big Profile" d="M1445-600a24.961,24.961,0,0,1-12.851-3.552A13.368,13.368,0,0,1,1445-613.34a13.369,13.369,0,0,1,12.853,9.786A24.961,24.961,0,0,1,1445-600Zm15.717-5.557v0a16.74,16.74,0,0,0-9.187-9.786,11.668,11.668,0,0,0,5.135-9.659A11.676,11.676,0,0,0,1445-636.666,11.677,11.677,0,0,0,1433.337-625a11.666,11.666,0,0,0,5.135,9.659,16.747,16.747,0,0,0-9.187,9.785A24.9,24.9,0,0,1,1420-625a25.028,25.028,0,0,1,25-25,25.028,25.028,0,0,1,25,25,24.912,24.912,0,0,1-9.282,19.442ZM1445-616.688a8.337,8.337,0,0,1-8.328-8.328,8.337,8.337,0,0,1,8.328-8.327,8.336,8.336,0,0,1,8.327,8.327A8.337,8.337,0,0,1,1445-616.688Z" transform="translate(-1280 1371)" fill="#ffb100" opacity="0.3"/>
+            <text id="Author_Name" data-name="Author Name" transform="translate(210 741)" fill="#01002a" font-size="16" font-family="Montserrat" opacity="0.5"><tspan x="0" y="0">Author Name</tspan></text>
+            <text id="Position" transform="translate(210 750)" fill="#01002a" font-size="12" font-family="Montserrat" font-weight="300" opacity="0.5"><tspan x="0" y="12">Position</tspan></text>
+          </g>
+        </g>
+        <g id="First_Post-3" data-name="First Post" transform="translate(-100 -33)">
+          <g id="Text_Background-4" data-name="Text Background" transform="translate(100 317)" fill="#ffb100" stroke="rgba(94,127,177,0.2)" stroke-width="1" opacity="0.2">
+            <rect width="374" height="268" rx="10" stroke="none"/>
+            <rect x="0.5" y="0.5" width="373" height="267" rx="9.5" fill="none"/>
+          </g>
+          <text id="Donec_euismod_imperdiet_tellus_quis_bibendum._Nullam_in_est_et_orci_placerat_interdum.-2" data-name="Donec euismod imperdiet tellus quis bibendum. Nullam in est et orci placerat interdum." transform="translate(132 387)" fill="#01002a" font-size="18" font-family="SofiaPro-Regular, Sofia Pro" opacity="0.5"><tspan x="0" y="18">Donec euismod imperdiet tellus quis </tspan><tspan x="0" y="44">bibendum. Nullam in est et orci </tspan><tspan x="0" y="70">placerat interdum.</tspan></text>
+          <line id="Line-2" data-name="Line" x2="314" transform="translate(130.5 491)" fill="none" stroke="#5e7fb1" stroke-width="1" opacity="0.2"/>
+          <text id="_26_October_2021-4" data-name="26 October 2021" transform="translate(132 347)" fill="#01002a" font-size="14" font-family="SofiaPro-Light, Sofia Pro" font-weight="300" opacity="0.5"><tspan x="0" y="14">26 October 2021</tspan></text>
+          <g id="Author-2" data-name="Author" transform="translate(-9 -213)">
+            <path id="Big_Profile-2" data-name="Big Profile" d="M1445-600a24.961,24.961,0,0,1-12.851-3.552A13.368,13.368,0,0,1,1445-613.34a13.369,13.369,0,0,1,12.853,9.786A24.961,24.961,0,0,1,1445-600Zm15.717-5.557v0a16.74,16.74,0,0,0-9.187-9.786,11.668,11.668,0,0,0,5.135-9.659A11.676,11.676,0,0,0,1445-636.666,11.677,11.677,0,0,0,1433.337-625a11.666,11.666,0,0,0,5.135,9.659,16.747,16.747,0,0,0-9.187,9.785A24.9,24.9,0,0,1,1420-625a25.028,25.028,0,0,1,25-25,25.028,25.028,0,0,1,25,25,24.912,24.912,0,0,1-9.282,19.442ZM1445-616.688a8.337,8.337,0,0,1-8.328-8.328,8.337,8.337,0,0,1,8.328-8.327,8.336,8.336,0,0,1,8.327,8.327A8.337,8.337,0,0,1,1445-616.688Z" transform="translate(-1280 1371)" fill="#ffb100" opacity="0.3"/>
+            <text id="Author_Name-2" data-name="Author Name" transform="translate(210 741)" fill="#01002a" font-size="16" font-family="Montserrat" opacity="0.5"><tspan x="0" y="0">Author Name</tspan></text>
+            <text id="Position-2" data-name="Position" transform="translate(210 750)" fill="#01002a" font-size="12" font-family="Montserrat" font-weight="300" opacity="0.5"><tspan x="0" y="12">Position</tspan></text>
+          </g>
+          <g transform="matrix(1, 0, 0, 1, -883, -1660)" filter="url(#Rectangle_20574)">
+            <rect id="Rectangle_20574-2" data-name="Rectangle 20574" width="30" height="30" rx="3" transform="translate(1301 2168)" fill="#ffb100" opacity="0.3"/>
+          </g>
+          <path id="Facebook-3" data-name="Facebook" d="M28.2,13.215H24.718V10.933a.929.929,0,0,1,.968-1.057h2.455V6.109L24.76,6.1c-3.753,0-4.607,2.81-4.607,4.608v2.511H17.982V17.1h2.171V28.08h4.566V17.1H27.8Z" transform="translate(410.648 505.912)" fill="#fff"/>
+        </g>
+      </g>
+      <text id="Social_Feed-2" data-name="Social Feed" transform="translate(1313 3750)" fill="#01002a" font-size="42" font-family="SofiaPro-SemiBold, Sofia Pro" font-weight="600" opacity="0.5"><tspan x="0" y="0">Social Feed</tspan></text>
+    </g>
+    <g id="Campaign" transform="translate(330 2686)">
+      <path id="Image-3" data-name="Image" d="M-1650-3700H-3190v-570h1540Zm-1092.108-329a7.9,7.9,0,0,0-7.892,7.893v52.985a7.9,7.9,0,0,0,7.892,7.892h74.218a7.9,7.9,0,0,0,7.89-7.892v-52.985a7.9,7.9,0,0,0-7.89-7.893Zm74.029,63.319h-7.2l-13.246-12.448,9.923-8.219,13.154,10.59v7.448A2.573,2.573,0,0,1-2668.079-3965.681Zm-14.383,0H-2742.3a2.573,2.573,0,0,1-2.631-2.63v-11.576l23.862-22.057,38.6,36.261Zm-9.78-15.942h0l-28.821-27.085-23.862,22.113v-34.7a2.574,2.574,0,0,1,2.631-2.632h74.217a2.574,2.574,0,0,1,2.631,2.632v39.306l-13.154-10.748Zm.49-36.669a10.473,10.473,0,0,0-10.335,10.335,10.347,10.347,0,0,0,10.335,10.336,10.473,10.473,0,0,0,10.334-10.336A10.473,10.473,0,0,0-2691.752-4018.292Zm0,15.6a5.457,5.457,0,0,1-5.45-5.45,5.455,5.455,0,0,1,5.45-5.448,5.454,5.454,0,0,1,5.448,5.448A5.456,5.456,0,0,1-2691.752-4002.694Z" transform="translate(3189.999 4270)" fill="#00deca" opacity="0.2"/>
+      <text id="Campaign-2" data-name="Campaign" transform="translate(985.5 237)" fill="#01002a" font-size="42" font-family="SofiaPro-SemiBold, Sofia Pro" font-weight="600" opacity="0.5"><tspan x="-101" y="0">Campaign</tspan></text>
+      <text id="It_s_very_easy_to_create_stylish_and_beautiful_prototypes_for_your" data-name="It&apos;s very easy to create stylish and beautiful prototypes for your" transform="translate(795 279)" fill="#01002a" font-size="22" font-family="SofiaPro-Light, Sofia Pro" font-weight="300" opacity="0.5"><tspan x="25" y="22">It&apos;s very easy to create stylish and </tspan><tspan x="49" y="56">beautiful prototypes for your</tspan></text>
+      <g id="Button-4" data-name="Button" transform="translate(-239 359)" opacity="0.5">
+        <g id="Group_49709" data-name="Group 49709">
+          <rect id="Backgound-3" data-name="Backgound" width="130" height="34" rx="3" transform="translate(1160 23)" fill="#01002a"/>
+          <text id="Shop_Now" data-name="Shop Now" transform="translate(1225 44)" fill="#fff" font-size="12" font-family="Montserrat"><tspan x="-30" y="0">Shop Now</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g id="FAQ_Section" data-name="FAQ Section" transform="translate(182 1426)">
+      <text id="FAQ" transform="translate(331 1923)" fill="#01002a" font-size="42" font-family="SofiaPro-SemiBold, Sofia Pro" font-weight="600" opacity="0.5"><tspan x="0" y="0">FAQ</tspan></text>
+      <g id="Group_49369" data-name="Group 49369" transform="translate(331 1956)">
+        <rect id="Rectangle_20150" data-name="Rectangle 20150" width="1174" height="51" rx="7" fill="#d300fd" opacity="0.1"/>
+        <text id="Lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_" data-name="Lorem ipsum dolor sit amet, consectetur adipiscing elit?" transform="translate(20 33)" fill="#020c19" font-size="20" font-family="SofiaPro-Medium, Sofia Pro" font-weight="500" opacity="0.5"><tspan x="0" y="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</tspan></text>
+        <g id="Group_49697" data-name="Group 49697" transform="translate(1492 4)">
+          <rect id="Rectangle_20338" data-name="Rectangle 20338" width="31" height="31" rx="3" transform="translate(-359 6)" fill="#d300fd" opacity="0.2"/>
+          <g id="Group_49698" data-name="Group 49698" transform="translate(-350.469 14.5)">
+            <path id="Path_53093" data-name="Path 53093" d="M2826.26,707.264h8.508" transform="translate(-2823.514 -700.264)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <path id="Path_53094" data-name="Path 53094" d="M0,0H8.508" transform="translate(7 2.746) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          </g>
+        </g>
+      </g>
+      <g id="Group_49700" data-name="Group 49700" transform="translate(331 2098)">
+        <g id="Rectangle_20150-2" data-name="Rectangle 20150" fill="#fff" stroke="#d300fd" stroke-width="1" opacity="0.1">
+          <rect width="1174" height="150" rx="7" stroke="none"/>
+          <rect x="0.5" y="0.5" width="1173" height="149" rx="6.5" fill="none"/>
+        </g>
+        <text id="Nullam_vestibulum_urna_ac_odio_dignissim_tempor_" data-name="Nullam vestibulum urna ac odio dignissim tempor?" transform="translate(20 33)" fill="#020c19" font-size="20" font-family="SofiaPro-Medium, Sofia Pro" font-weight="500" opacity="0.5"><tspan x="0" y="0">Nullam vestibulum urna ac odio dignissim tempor?</tspan></text>
+        <text id="Donec_sem_sem_ornare_non_lacus_nec_suscipit_auctor_elit._Cras_viverra_mi_justo_luctus_cursus_elit_porta_sit_amet._Donec_euismod_imperdiet_tellus_quis_bibendum._Nullam_in_est_et_orci_placerat_interdum_vel_consectetur_eros._Proin_at_fringilla_urna_quis_e" data-name="Donec sem sem, ornare non lacus nec, suscipit auctor elit. Cras viverra mi justo, luctus cursus elit porta sit amet. Donec euismod imperdiet tellus quis bibendum. Nullam in est et orci placerat interdum vel consectetur eros. Proin at fringilla urna, quis e" transform="translate(20 49.843)" fill="#020c19" font-size="16" font-family="SofiaPro-Light, Sofia Pro" font-weight="300" opacity="0.5"><tspan x="0" y="16">Donec sem sem, ornare non lacus nec, suscipit auctor elit. Cras viverra mi justo, luctus cursus elit porta sit amet. Donec euismod imperdiet tellus quis </tspan><tspan x="0" y="46">bibendum. Nullam in est et orci placerat interdum vel consectetur eros. Proin at fringilla urna, quis efficitur magna. Nunc non scelerisque nisl. Proin enim dui, </tspan><tspan x="0" y="76">vestibulum egestas nulla ac, fringilla facilisis ligula. Quisque eu ipsum at augue imperdiet convallis sit amet ut mi. </tspan></text>
+        <g id="Group_49704" data-name="Group 49704" transform="translate(1127 4)">
+          <rect id="Rectangle_20338-2" data-name="Rectangle 20338" width="31" height="31" rx="3" transform="translate(6 6)" fill="#d300fd" opacity="0.2"/>
+          <g id="Group_49698-2" data-name="Group 49698" transform="translate(14.531 14.5)">
+            <path id="Path_53093-2" data-name="Path 53093" d="M2826.26,707.264h8.508" transform="translate(-2823.514 -700.264)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          </g>
+        </g>
+      </g>
+      <g id="Group_49703" data-name="Group 49703" transform="translate(331 2027)">
+        <rect id="Rectangle_20150-3" data-name="Rectangle 20150" width="1174" height="51" rx="7" fill="#d300fd" opacity="0.1"/>
+        <text id="Integer_eget_ex_et_ex_vehicula_ornare_" data-name="Integer eget ex et ex vehicula ornare?" transform="translate(20 33)" fill="#020c19" font-size="20" font-family="SofiaPro-Medium, Sofia Pro" font-weight="500" opacity="0.5"><tspan x="0" y="0">Integer eget ex et ex vehicula ornare?</tspan></text>
+        <g id="Group_49697-2" data-name="Group 49697" transform="translate(1492 4)">
+          <rect id="Rectangle_20338-3" data-name="Rectangle 20338" width="31" height="31" rx="3" transform="translate(-359 6)" fill="#d300fd" opacity="0.2"/>
+          <g id="Group_49698-3" data-name="Group 49698" transform="translate(-350.469 14.5)">
+            <path id="Path_53093-3" data-name="Path 53093" d="M2826.26,707.264h8.508" transform="translate(-2823.514 -700.264)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <path id="Path_53094-2" data-name="Path 53094" d="M0,0H8.508" transform="translate(7 2.746) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          </g>
+        </g>
+      </g>
+      <g id="Group_49705" data-name="Group 49705" transform="translate(331 2268)">
+        <rect id="Rectangle_20150-4" data-name="Rectangle 20150" width="1174" height="51" rx="7" fill="#d300fd" opacity="0.1"/>
+        <text id="Donec_gravida_arcu_vitae_sapien_fringilla_viverra_" data-name="Donec gravida arcu vitae sapien fringilla viverra?" transform="translate(20 33)" fill="#020c19" font-size="20" font-family="SofiaPro-Medium, Sofia Pro" font-weight="500" opacity="0.5"><tspan x="0" y="0">Donec gravida arcu vitae sapien fringilla viverra?</tspan></text>
+        <g id="Group_49697-3" data-name="Group 49697" transform="translate(1127 4)">
+          <rect id="Rectangle_20338-4" data-name="Rectangle 20338" width="31" height="31" rx="3" transform="translate(6 6)" fill="#d300fd" opacity="0.2"/>
+          <g id="Group_49698-4" data-name="Group 49698" transform="translate(14.531 14.5)">
+            <path id="Path_53093-4" data-name="Path 53093" d="M2826.26,707.264h8.508" transform="translate(-2823.514 -700.264)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <path id="Path_53094-3" data-name="Path 53094" d="M0,0H8.508" transform="translate(7 2.746) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          </g>
+        </g>
+      </g>
+      <g id="Group_49706" data-name="Group 49706" transform="translate(331 2339)">
+        <rect id="Rectangle_20150-5" data-name="Rectangle 20150" width="1174" height="51" rx="7" fill="#d300fd" opacity="0.1"/>
+        <text id="Vivamus_tristique_dui_non_nibh_mattis_varius_" data-name="Vivamus tristique dui non nibh mattis varius?" transform="translate(20 33)" fill="#020c19" font-size="20" font-family="SofiaPro-Medium, Sofia Pro" font-weight="500" opacity="0.5"><tspan x="0" y="0">Vivamus tristique dui non nibh mattis varius?</tspan></text>
+        <g id="Group_49697-4" data-name="Group 49697" transform="translate(1127 4)">
+          <rect id="Rectangle_20338-5" data-name="Rectangle 20338" width="31" height="31" rx="3" transform="translate(6 6)" fill="#d300fd" opacity="0.2"/>
+          <g id="Group_49698-5" data-name="Group 49698" transform="translate(14.531 14.5)">
+            <path id="Path_53093-5" data-name="Path 53093" d="M2826.26,707.264h8.508" transform="translate(-2823.514 -700.264)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <path id="Path_53094-4" data-name="Path 53094" d="M0,0H8.508" transform="translate(7 2.746) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

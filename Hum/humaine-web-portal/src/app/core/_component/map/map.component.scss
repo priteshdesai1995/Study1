@@ -1,0 +1,541 @@
+#map-container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+.point-container {
+    height: 50px;
+    width: 50px;
+}
+.hide {
+    display: none;
+}
+
+.myDIV:hover + .hide {
+    display: block;
+    color: red;
+}
+.point-text {
+    text-align: center;
+    background: #ffffff;
+    padding: 0 8px;
+    font-size: 14px;
+    pointer-events: none; 
+}
+.main-content {
+    .out {
+        display: block;
+        border-radius: 50%;
+        height: 37px;
+        width: 37px;
+        position: relative;
+        margin: 16px 10 10 5px;
+        border-radius: 25px;
+        display: flex;
+        justify-content: space-between;
+        padding: 1px 10px 0px 5px;
+        white-space: nowrap;
+        .inner-a {
+            position: absolute;
+            margin: 6px 0 0 5px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: space-between;
+            padding: 1px 10px 0px 5px;
+            white-space: nowrap;
+        }
+    }
+    .values {
+        display: none;
+    }
+}
+.main-content:hover {
+    .out {
+        display: none;
+    }
+    .values {
+        display: block;
+    }
+}
+.outer-circle {
+    background: #ffffff;
+    border-radius: 50%;
+    height: 37px;
+    width: 37px;
+    border: 1.5px solid #e3e3e3;
+    position: relative;
+    cursor: pointer;
+}
+
+#amount-n-arrow {
+    height: 100%;
+    width: 100%;
+    &:hover{
+    
+        .arrow-div{
+    
+            // min-width: 140px;
+    
+            opacity: 1;
+            visibility: visible;
+            bottom: 100%;
+        
+            .arrow-icon {
+                margin-left: 13px;
+            }
+        
+            .insight-text{
+                display: block;
+            }
+        }
+    }
+}
+
+.progress-bar-top{
+    padding-top: 10px;
+}
+
+.journey{
+    height: 200px;
+    .filter{
+      margin-top: -28px;
+    }
+
+    .d-inline.ng-star-inserted {
+        margin-left: 13px;
+    }
+}
+
+
+.inner-purple-circle {
+    background: #aa79ff;
+    border-radius: 50%;
+    height: 13px;
+    width: 13px;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: -2px;
+    margin-top: 2px;
+}
+
+.inner-green-circle {
+    background: #00deca;
+    border-radius: 50%;
+    height: 13px;
+    width: 13px;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: -2px;
+    margin-top: 2px;
+}
+.inner-bend {
+    position: absolute;
+    background: #ffffff;
+    border: 1.5px solid #e3e3e3;
+    margin: 6px 0 0 5px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 10px 0px 5px;
+    white-space: nowrap;
+    z-index: 5;
+}
+
+.arrow-div {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 11;
+    display: flex;
+    cursor: pointer;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s linear;
+    padding: 0 0 8px;
+    .arrow-icon {
+        margin-left: 28px;
+        height: 8px;
+        margin-top: 4px;
+        width: 8px;
+        transform: rotate(90deg);
+        position: absolute;
+        margin: 0 !important;
+        bottom: 1px;
+        left: 50%;
+        transform: translateX(-50%) rotate(90deg);
+    }
+    .insight-text {
+        margin: 0;
+        line-height: normal;
+        white-space: nowrap;
+        color: #000;
+        background-color:#fff;
+        padding: 3px 15px;
+        border: 1.5px solid #d1d1d1;
+        border-radius: 25px;
+    }
+}
+
+.inner-text {
+    font-size: 12px;
+    color: black;
+}
+.smallMap {
+    transform: scale(0.7);
+    margin-left: -99px;
+    width: 500px;
+}
+.outer-svg {
+    width: 100%;
+    height: 100%;
+    margin: -53px auto;
+    position: relative;
+}
+.bigMap {
+    transform: scale(1);
+    height: 350px;
+    width: 500px;
+}
+.img-scroll {
+    overflow: hidden;
+}
+.desktop {
+    display: block;
+}
+.mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+        padding-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+        padding-top: 10px;
+    }
+    .smallMap {
+        transform: scale(1.2) !important;
+        margin-left: -110px;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1365px) and (-webkit-min-device-pixel-ratio: 2) {
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+        padding-top: 10px;
+    }
+    .smallMap {
+        transform: scale(1.2) !important;
+        margin-left: -110px;
+    }
+}
+
+@media only screen and (min-width: 1367px) {
+    .smallMap {
+        transform: scale(1.2);
+        margin-left: 6px;
+        width: 500px;
+        // height: 350px;
+        // margin-top: -90px;
+    }
+    .outer-svg {
+        height: calc(100vh - 400px);
+        margin: 0 auto;
+        position: relative;
+        margin-top: 0;
+    }
+    .bigMap {
+        transform: scale(1.5);
+        height: 100vh;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .progress-bar-top {
+        // margin-top: 38px;
+    }
+    .point-text {
+        text-align: center;
+        background: #ffffff;
+        padding: 0 8px;
+        font-size: 14px;
+    }
+}
+.smallMapDiv {
+    margin-top: 6vh;
+    margin-left: 2vw;
+    height: 100%;
+}
+
+// pop up css 
+
+.popup-heading-container {
+    p {
+        margin-top: -7px;
+        font-size: 14px;
+    }
+}
+
+.products-container {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.7rem;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+
+    .popular-item{
+        margin-top: 3.5rem;
+        margin-left: -16.8rem;
+
+        .col{
+            // margin-bottom: 10px;
+            padding: 0px 55px 0px 21px;
+        }
+        p {
+            color: black;
+            font-size: 12px;
+        }
+        img{
+        border-radius: 10px;
+        width: 55px;
+        height: 55px;
+        }
+
+        #profile_leftPanel {
+            float: left;
+            display: inline-block;
+        }
+
+        #profile_rightPanel_center {
+            display: inline-block;
+            margin-right: auto;
+            font-weight: bold;
+            margin-left: -3px;
+            .card-value{        
+              font-weight: lighter;
+              font-size: 12px;
+              height: 20px;
+              width: 70px;
+              min-width: 100%;
+              border-radius: 15px;
+              margin-bottom: 0;
+              color: #41beb2;
+              border: 1px solid #90f0e7;
+              background-color: #d8faf7;
+              text-align: center;
+            }
+        }
+
+        #recentStatus {
+            width: 400px;
+            font-size: 15px;
+            display: inline;
+            margin-left: -24px;
+        }
+
+        .popular-name{
+            width: 100%;
+            text-align: left;
+            font-size: 12px;
+            margin-left: 8px;
+            white-space: nowrap; 
+            width: 100px; 
+            overflow: hidden;
+            font-size: 12px;
+            margin-left: 5px;
+            text-overflow: ellipsis;
+        }
+      }
+
+    .switchTitle{
+        font-size: 16px;
+        display: flex;
+
+        .month{
+            .btn {
+              padding: 6px 35px 4px 28px;
+              background: #754BEB;
+            }
+            .btn:focus {
+              outline: none;
+              box-shadow: none;
+            }
+            #state-popular-item-text {
+              color: white;
+              font-size: 14px;
+            }
+          }
+          .least{
+            .btn {
+              padding: 6px 28px 4px 35px;
+              background: #754beb4f;
+              margin-left: -27px;
+            }
+            .btn:focus {
+              outline: none;
+              box-shadow: none;
+            }
+            #state-unpopular-item-text {
+              color: black;
+              font-size: 14px;
+            }
+          }
+          button {
+            border-radius: 20px;
+          }
+    }
+}
+
+.other-details-container {
+    padding: 1rem 0rem 1rem 0rem;
+    display: flex;
+    margin-top: 1.5rem;
+    
+    .sales-data-container {
+        .second-row{
+            background-color: white;
+        }
+
+        .total-customers-container {
+            margin: 0px 7px 7px 0px;
+        }
+
+        .sales-container {
+            margin: 0px 0px 7px 7px;
+        }
+
+        .total-purchases-container {
+            margin: 7px 7px 0px 0px;
+        }
+
+        .sales-revenue-container {
+            margin: 7px 0px 0px 7px;
+        }
+        .section-lable {
+            color: #636A73;
+            font-size: 14px;
+        }
+
+        .middle-section {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .bottom-section {
+            margin-top: 22px;
+            margin-bottom: 40px;
+        }
+        
+    }
+
+    .total-customers-container , .sales-container, .total-purchases-container, .sales-revenue-container{
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.7rem;
+        padding: 1.25rem;
+        background-color: white;
+        min-width: 200px;
+        min-height: 130px;
+    }
+    
+
+    .success-journey-container {
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.7rem;
+        padding: 1.25rem;
+        margin: 0px 0px 0px 14px;
+        min-width: 15rem;
+        max-width: 15rem;    
+    }
+}
+
+
+// journey scc
+
+.journey{
+    // height: 280px;
+    label {
+        margin-left: 8px;
+    }
+    h5{
+      font-size: 19px;
+      margin-left: 5px;
+      color: #636a73a3;
+    }
+    .filter{
+      justify-content: center;
+    }
+
+    .progress-bar-top{
+        padding-top: 50px;
+    }
+    height: 200px;
+    .filter{
+      margin-top: -28px;
+    }
+
+    .d-inline.ng-star-inserted {
+        margin-left: 13px;
+    }
+}
+
+// css for close button of popup
+.ant-modal-content {
+    .ant-modal-close {
+        border: none !important;
+        outline: none !important;
+        top: 5px !important;
+        right: 5px !important;
+        color:  rgba(0,0,0,.45);
+    }
+}
+
+.no-product-found-text {
+    p {
+        font-size: 18px;
+        color: #636a73a3;
+        font-weight: bold;
+    }
+
+    margin-top: 45px;
+    margin-bottom: -20px;
+    margin-left: -100px;
+}
+.override-pull-left {
+    &:not(.override-pull-right) {
+        .outer-circle {
+            #amount-n-arrow {
+                .inner-bend {
+                    flex-direction: row-reverse;
+                    padding: 1px 5px 0px 10px;
+                    right: 5px;
+                    .inner-purple-circle {
+                        margin-left: 5px;
+                        margin-right: 0;
+                    }
+                }
+                &:hover {
+                    .arrow-div {
+                        .arrow-icon {
+                            margin-right: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

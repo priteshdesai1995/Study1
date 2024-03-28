@@ -1,0 +1,132 @@
+<div class="header-sec">
+    <div class="left-panel">
+        <nz-breadcrumb [nzAutoGenerate]="true" style="margin: 5px 0">
+        </nz-breadcrumb>
+    </div>
+</div>
+
+<div class="wrapper ">
+    <div class="row setting">
+        <div class="card row col-12 col-lg-12 col-xl-12">
+            <div class="card-body">
+                <h4>API Key</h4>
+                <label>Key</label>
+                <div class="row">
+                    <div class="input-container col-12 col-lg-9 col-md-12 col-xl-9">
+                        <input title="copied" class="form-control" [disabled]="true" [(ngModel)]="api_key" type="text"
+                            placeholder="API KEY" #apiKey name="apiKey">
+                    </div>
+                    <div class="btn col-12 col-lg-3 col-md-12 col-xl-3 d-flex">
+                        <button class="success-color d-inline m-1" (click)="copyInputMessage(api_key)" text="Copy"><img
+                                style="height: 13px;margin-right: 5px;"
+                                src="/assets/Integrations/copy.svg">Copy</button>
+                        <button class="btn-color d-inline m-1" [loading]="isAPILoading" (click)="confirmRegenerate()"
+                            appLoader text="Re-Generate"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-two ">
+    <!-- merchandise-card green-card -->
+    <h4>How It Works</h4>
+    <nz-collapse [nzExpandIconPosition]="'right'" [nzBordered]="false" nzAccordion>
+        <ng-container *ngFor="let panel of panels">
+            <ng-template #headerTitle>
+                <img class="panel-img" [src]="panel.img">
+                {{panel.name}}
+            </ng-template>
+            <nz-collapse-panel [nzHeader]="headerTitle" [nzActive]="panel.active">
+                <div class="step completed">
+                    <div class="v-stepper">
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <h5>Step 1</h5>
+                        <p>From your shopify admin click on Apps. Click on customize your store</p>
+                        <div class="step-img d-flex">
+                            <div class="img-container" style="height: 100px;">
+                                <a href="/assets/Integrations/Mask_Group_01_Step1.png" target="_blank" class="image">
+                                    <img class="screenshot" src="/assets/Integrations/Mask_Group_01_Step1.png">
+                                    <div class="overlay">
+                                        <div class="zoom"><img src="../../../assets/Integrations/zoom-in.svg"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="img-container" style="height: 100px;">
+                                <a href="/assets/Integrations/Mask_Group_02_Step1.png" target="_blank" class="image">
+                                    <img class="screenshot" src="/assets/Integrations/Mask_Group_02_Step1.png">
+                                    <div class="overlay">
+                                        <div class="zoom"><img src="../../../assets/Integrations/zoom-in.svg"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step active">
+                    <div class="v-stepper">
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <h5>Step 2</h5>
+                        <p>The app store opens up on a new page.You can also access the app store directly by visiting https://apps.shopify.com/. If you visit the app store using the URL, be sure to click “log in” in the top right hand corner and enter the login details to store where you want to add an app.
+                            Type our app name in search box at the top. Now click on add app button on app detail page. You are redirect back to your shopify admin to authorize the use of app in your store. From there, Click “Install app”. After you install an app,it appears in the apps section of your shopify admin
+                            Click on app name and Add access key and the field URL, then click on submit button.
+                        </p>
+                        <div class="step-img">
+                            <div class="img-container" style="height: 100px;">
+                                <a href="/assets/Integrations/Mask_Group_01_Step2.png" target="_blank" class="image">
+                                    <img class="screenshot" src="/assets/Integrations/Mask_Group_01_Step2.png">
+                                    <div class="overlay">
+                                        <div class="zoom"><img src="../../../assets/Integrations/zoom-in.svg"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="img-container" style="height: 100px;">
+                                <a href="/assets/Integrations/Mask_Group_02_Step2.png" target="_blank" class="image">
+                                    <img class="screenshot" src="/assets/Integrations/Mask_Group_02_Step2.png">
+                                    <div class="overlay">
+                                        <div class="zoom"><img src="../../../assets/Integrations/zoom-in.svg"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="img-container" style="height: 100px;">
+                                <a href="/assets/Integrations/Mask_Group_03_Step2.png" target="_blank" class="image">
+                                    <img class="screenshot" src="/assets/Integrations/Mask_Group_03_Step2.png">
+                                    <div class="overlay">
+                                        <div class="zoom"><img src="../../../assets/Integrations/zoom-in.svg"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="img-container" style="height: 100px;">
+                                <a href="/assets/Integrations/Mask_Group_04_Step2.png" target="_blank" class="image">
+                                    <img class="screenshot" src="/assets/Integrations/Mask_Group_04_Step2.png">
+                                    <div class="overlay">
+                                        <div class="zoom"><img src="../../../assets/Integrations/zoom-in.svg"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nz-collapse-panel>
+        </ng-container>
+    </nz-collapse>
+</div>
+
+<nz-modal [nzStyle]="{ top: '200px', width: '320px' }" [nzFooter]="null" [(nzVisible)]="isVisible" [nzClosable]="false">
+    <ng-container *nzModalContent>
+        <p> Are you sure to Re-Generate your Api-Key ?</p>
+        <div class="form-group confirm-btn">
+            <button class="red-color btn-pad" appLoader (click)="cancelConfirm()" style="width: 100px;height:35px;"
+                [text]="'Cancel'"></button>
+            <button class="btn-color btn-pad" appLoader (click)="regenerate()" [disabled]="isAPILoading"
+                [loading]="isAPILoading" style="width: 100px;height:35px;" [text]="'Ok'"></button>
+        </div>
+    </ng-container>
+</nz-modal>

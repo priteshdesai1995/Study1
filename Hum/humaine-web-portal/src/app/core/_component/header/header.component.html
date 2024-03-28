@@ -1,0 +1,7 @@
+<section class="header" *ngIf="!authService.isAuthenticated()">
+    <div class="row">
+        <div class="icon">
+            <img class="header-icon" [routerLink]="['']" src="/assets/img/header-logo.png">
+        </div>
+    </div>
+</section>

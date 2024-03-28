@@ -1,0 +1,26 @@
+<div class="card-body d-flex flex-column">
+    <h6 class="card-title" >
+        <img [src]="image">{{title}}
+        <img [src]="'/assets/svg/Question.svg'" class="question-mark" nz-tooltip [nzTooltipTitle]="personalCardKeys[title]['value']"/>
+    </h6>
+    <div class="card-text">
+        <ng-container *ngIf="!showBullets && !mustContainsBullets; else bulletsList">
+            <ng-container *ngFor="let item of data.data;let itemEleInd = index">
+                <p *ngIf="data.showMore || (!data.showMore && itemEleInd+1 <= noOfVisibleItems)" [innerHTML]="item"></p>
+            </ng-container>
+        </ng-container>
+        <ng-template #bulletsList>
+            <ul>
+                <ng-container *ngFor="let item of data.data;let itemEleInd = index">
+                <li *ngIf="data.showMore || (!data.showMore && itemEleInd+1 <= noOfVisibleItems)">
+                    <p  [innerHTML]="item">
+                    </p>
+                </li>
+                </ng-container>
+            </ul>
+        </ng-template>
+    </div>
+    <div class="show-more" *ngIf="data.data.length > noOfVisibleItems" (click)="showMore(data)">
+        <span class="float-right"> {{ !data.showMore ? 'Show more' : 'Show less'}}</span>
+    </div>
+</div>

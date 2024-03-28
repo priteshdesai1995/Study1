@@ -1,0 +1,479 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Humaine Data Collection API",
+    "description": "This set of APIs is used for user evnt data collection across E-comm websites",
+    "contact": {
+      "email": "prithviraj@humaineai.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.1"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "event",
+      "description": "User Events Capture"
+    },
+    {
+      "name": "timeout",
+      "description": "Session Timeout for specific e-comm-site"
+    }
+  ],
+  "paths": {
+    "/userEvent": {
+      "post": {
+        "tags": [
+          "event"
+        ],
+        "summary": "Capture User Event data",
+        "operationId": "getUserEvent",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/Event"
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 200,
+                  "status": "SUCCESS",
+                  "responseData": {
+                    "code": "SUCC001",
+                    "msg": "User Event Data saved successfully"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Service not found"
+          },
+          "500": {
+            "description": "Business error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 500,
+                  "status": "ERROR",
+                  "errorList": [
+                    {
+                      "code": "ERR001",
+                      "msg": "Business error occurred"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sessionTimeout/{accountID}": {
+      "get": {
+        "tags": [
+          "timeout"
+        ],
+        "summary": "Capture Session Timeout data for Account ID",
+        "operationId": "getSessionTimeout",
+        "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": true,
+              "schema": {
+                "type": "string",
+              "default": "Bearer <access_token>"
+              }
+          },
+          {
+            "name": "accountID",
+            "in": "path",
+            "description": "Account id of e-comm site",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 200,
+                  "status": "SUCCESS",
+                  "responseData": {
+                    "timeout": 3600
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Service not found"
+          },
+          "500": {
+            "description": "Business error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 500,
+                  "status": "ERROR",
+                  "errorList": [
+                    {
+                      "code": "ERR001",
+                      "msg": "Business error occurred"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/userEvent/pageLoad": {
+      "post": {
+          "tags": [
+              "event"
+          ],
+          "summary": "page Load data captured from from E-comm site",
+          "description": "page Load data captured from from E-comm site",
+          "operationId": "savePageLoadEventUsingPOST",
+          "parameters": [
+                {
+                  "name": "Authorization",
+                  "in": "header",
+                  "required": true,
+                  "schema": {
+                    "type": "string",
+                  "default": "Bearer <access_token>"
+                  }
+              },
+              {
+                  "name": "version",
+                  "in": "header",
+                  "required": true,
+                  "schema": {
+                    "type": "string",
+                  "default": "v1",
+                  "enum": [
+                      "v1"
+                  ]
+                  }
+              }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/PageLoadEventRequest"
+          },
+          "responses": {
+              "200": {
+                  "description": "OK",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/ApiResponse"
+                      }
+                    }
+                  }
+              },
+              "201": {
+                  "description": "Created"
+              },
+              "401": {
+                  "description": "Unauthorized"
+              },
+              "403": {
+                  "description": "Forbidden"
+              },
+              "404": {
+                  "description": "Not Found"
+              }
+          },
+          "deprecated": false
+      }
+  }
+  },
+  "components": {
+    "schemas": {
+      "PageLoadEventRequest": {
+        "type": "object",
+        "properties": {
+            "accountID": {
+                "type": "integer",
+                "format": "int64"
+            },
+            "pageLoadTime": {
+                "type": "integer",
+                "format": "int64"
+            },
+            "pageSource": {
+                "type": "string"
+            },
+            "pageURL": {
+                "type": "string"
+            },
+            "performanceData": {
+                "type": "object"
+            },
+            "sessionID": {
+                "type": "string"
+            },
+            "userID": {
+                "type": "string"
+            }
+        },
+        "title": "PageLoadEventRequest"
+      },
+      "Event": {
+        "required": [
+          "accountID",
+          "eventID",
+          "sessionID",
+          "userID"
+        ],
+        "type": "object",
+        "properties": {
+          "accountID": {
+            "type": "number",
+            "description": "Account id of e-comm site"
+          },
+          "userID": {
+            "type": "string",
+            "description": "User id of the user performing the event"
+          },
+          "sessionID": {
+            "type": "string",
+            "description": "Session id of the user's active session"
+          },
+          "deviceID": {
+            "type": "string",
+            "description": "Device id of the user's device"
+          },
+          "deviceType": {
+            "type": "string",
+            "description": "Type of device user is using"
+          },
+          "eventID": {
+            "type": "string",
+            "description": "Type of user event baing captured",
+            "enum": [
+              "START",
+              "NAV",
+              "PRODVIEW",
+              "ADDCART",
+              "REMCART",
+              "ADDLIST",
+              "REMLIST",
+              "BUY",
+              "REVIEW",
+              "RATE",
+              "END",
+              "DISCOVER",
+              "NEWSLETTER_SUBSCRIBE",
+              "SEARCH",
+              "MENU",
+              "BACK_NAV",
+              "SAVE_FOR_LATER",
+              "PROD_RETURN",
+              "VISIT_BLOG_POST",
+              "VISIT_SOCIAL_MEDIA",
+              "DELETE"
+            ]
+          },
+          "productID": {
+            "type": "string",
+            "description": "Product id of product being viewed, bought, rated, etc"
+          },
+          "city": {
+            "type": "string",
+            "description": "Location city of user"
+          },
+          "country": {
+            "type": "string",
+            "description": "Location country of user"
+          },
+          "state": {
+            "type": "string",
+            "description": "Location state of user"
+          },
+          "pageURL": {
+            "type": "string",
+            "description": "URL being navigated to (in vase of PAGENAV event)"
+          },
+          "pageLoadTime": {
+            "type": "integer",
+            "description": "Page load time for user (in case of START event)"
+          },
+          "latitude": {
+            "type": "number",
+            "description": "Latitude of Location"
+          },
+          "longitude": {
+            "type": "number",
+            "description": "Longitude of Location"
+          },
+          "menuId": {
+            "type": "string",
+            "description": "Id of Menu Item"
+          },
+          "menuName": {
+            "type": "string",
+            "description": "Name Menu Item"
+          },
+          "menuURL": {
+            "type": "string",
+            "description": "URL of Menu Item"
+          },
+          "postId": {
+            "type": "string",
+            "description": "Id of BlogPost"
+          },
+          "postTitle": {
+            "type": "string",
+            "description": "Title of BlogPost"
+          },
+          "productMetaData": {
+            "type": "object",
+            "description": "Metadata of Product"
+          },
+          "productQuantity": {
+            "type": "number",
+            "description": "Quantity of product"
+          },
+          "saleAmount": {
+            "type": "number",
+            "description": "Sale Amount of product"
+          },
+          "socialMediaPlateForm": {
+            "type": "string",
+            "description": "Name of Social Media Platform"
+          },
+          "socialMediaURL": {
+            "type": "string",
+            "description": "Social Media URL"
+          }
+        }
+      },
+      "Message": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Message code"
+          },
+          "msg": {
+            "type": "string",
+            "description": "Detailed Success or Error message"
+          }
+        }
+      },
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "description": "Success or Error code",
+            "format": "int32"
+          },
+          "status": {
+            "type": "string",
+            "description": "Success or Error",
+            "enum": [
+              "SUCCESS",
+              "ERROR"
+            ]
+          },
+          "responseData": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/SessionTimeout"
+              },
+              {
+                "$ref": "#/components/schemas/Message"
+              }
+            ]
+          },
+          "errorList": {
+            "type": "array",
+            "description": "List of Error message",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          }
+        }
+      },
+      "SessionTimeout": {
+        "type": "object",
+        "properties": {
+          "timeout": {
+            "type": "integer",
+            "description": "Session timeout time in seconds",
+            "format": "int32"
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "PageLoadEventRequest": {
+        "description": "User Event Object that needs to be captured from from E-comm site for Page Load Event",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PageLoadEventRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "Event": {
+        "description": "User Event Object that needs to be captured from from E-comm site",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Event"
+            }
+          }
+        },
+        "required": true
+      }
+    },
+    "securitySchemes": {
+      "name": {
+        "type":"apiKey",
+        "name":"API-KEY",
+        "in":"header"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<section class="section">
+    <div class="title-block" *ngIf="titleFlag">
+        <h2> {{title}}</h2>
+        <p>{{subTitle}}
+        </p>
+    </div>
+    <div [ngClass]="titleFlag? 'steps' : 'step2'">
+        <ng-wizard [config]="config">
+            <ng-wizard-step [description]="'Sign Up'" [canEnter]="isValidTypeBoolean"
+                [canExit]="isValidFunctionReturnsBoolean.bind(this)">
+                <app-sign-up></app-sign-up>
+            </ng-wizard-step>
+
+            <ng-wizard-step [description]="'Your Business'">
+                <app-business></app-business>
+            </ng-wizard-step>
+
+            <ng-wizard-step [description]="'Personalized Plans'">
+                <app-personalised-plans></app-personalised-plans>
+            </ng-wizard-step>
+        </ng-wizard>
+    </div>
+</section>

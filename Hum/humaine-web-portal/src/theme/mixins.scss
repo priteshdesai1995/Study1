@@ -1,0 +1,224 @@
+// custom fons facemizxin
+@mixin font-face($font-family, $url) {
+    @font-face {
+        font-family: "#{$font-family}";
+        src: url("#{$url}.eot");
+        src: url("#{$url}.eot?#iefix") format("embedded-opentype"),
+        url("#{$url}.woff") format("woff"),
+        url("#{$url}.ttf") format("truetype"),
+        url("#{$url}.svg") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+//custom font resposnive muin
+$font-base-min: 14px;
+$font-base-max: 6;
+$breakmin: 320px;
+$breakmax: 768px;
+$customSize: 7px;
+@mixin font-responsive($fmin,
+$fdiff,
+$breakmin,
+$breakdiff) {
+    font-size: calc( #{$fmin} + #{$fdiff} * ((100vw - #{$breakmin}) / #{$breakdiff}));
+    @media (max-width: $breakmin) {
+        font-size: $fmin;
+    }
+    @media (min-width: round($breakmin + $breakmax)) {
+        font-size: round($fmin + $fdiff);
+    }
+    @media (max-width: $breakmax) {
+        font-size: calc(#{$fmin} + #{$customSize});
+    }
+}
+
+// custom font source mmixins
+@mixin font($colour: false,
+$weight: false,
+$lh: false,
+$spacing: false) {
+    // @if $size { font-size: $size; }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $spacing {
+        letter-spacing: $spacing;
+    }
+}
+
+// custom input placeholder mixins
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+// A map of breakpoints.
+$breakpoints: ( xs: 576px,
+sm: 768px,
+md: 992px,
+lg: 1024px,
+xl: 1200px,
+xxl: 1400px,
+xxxl: 1600px,
+);
+// Respond above.
+@mixin respond-above($breakpoint) {
+    // If the breakpoint exists in the map.
+    @if map-has-key($breakpoints,
+    $breakpoint) {
+        // Get the breakpoint value.
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+        // Write the media query.
+        @media (min-width: $breakpoint-value) {
+            @content;
+        }
+        // If the breakpoint doesn't exist in the map.
+    }
+    @else {
+        // Log a warning.
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+@mixin respond-below($breakpoint) {
+    // If the breakpoint exists in the map.
+    @if map-has-key($breakpoints,
+    $breakpoint) {
+        // Get the breakpoint value.
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+        // Write the media query.
+        @media (max-width: ($breakpoint-value - 1)) {
+            @content;
+        }
+        // If the breakpoint doesn't exist in the map.
+    }
+    @else {
+        // Log a warning.
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+@mixin respond-between($lower,
+$upper) {
+    // If both the lower and upper breakpoints exist in the map.
+    @if map-has-key($breakpoints,
+    $lower) and map-has-key($breakpoints,
+    $upper) {
+        // Get the lower and upper breakpoints.
+        $lower-breakpoint: map-get($breakpoints, $lower);
+        $upper-breakpoint: map-get($breakpoints, $upper);
+        // Write the media query.
+        @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+            @content;
+        }
+        // If one or both of the breakpoints don't exist.
+    }
+    @else {
+        // If lower breakpoint is invalid.
+        @if (map-has-key($breakpoints,
+        $lower)==false) {
+            // Log a warning.
+            @warn 'Your lower breakpoint was invalid: #{$lower}.';
+        }
+        // If upper breakpoint is invalid.
+        @if (map-has-key($breakpoints,
+        $upper)==false) {
+            // Log a warning.
+            @warn 'Your upper breakpoint was invalid: #{$upper}.';
+        }
+    }
+}
+
+/// vernodr prefixes
+@mixin css3-prefix($prop,
+$value) {
+    -webkit-#{$prop}: #{$value};
+    -moz-#{$prop}: #{$value};
+    -ms-#{$prop}: #{$value};
+    -o-#{$prop}: #{$value};
+    #{$prop}: #{$value};
+}
+
+//  vertical cneter
+@mixin vertical-center {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+//keyframe miins
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+//absolute positoning
+@mixin abs-position($top,
+$right,
+$bottom,
+$left) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+//arrow minis
+@mixin arrow($direction: down,
+$size: 5px,
+$color: #555) {
+    width: 0;
+    height: 0;
+    @if ($direction==left) {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+    }
+    @else if ($direction==right) {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+    }
+    @else if ($direction==down) {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+    }
+    @else {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+    }
+}
+

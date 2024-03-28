@@ -1,0 +1,23 @@
+package com.base.api.utils;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class MetaResponse {
+
+	private boolean status;
+	private Integer statusCode;
+	private String message;
+	private boolean messageCode;
+	private int count;
+
+	public MetaResponse(boolean status) {
+		this.status = status;
+	}
+}

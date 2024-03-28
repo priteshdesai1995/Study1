@@ -1,0 +1,311 @@
+.left-panel{
+    margin-top: 16px !important;
+}
+.ng-select .ng-clear-wrapper {
+    display: none;
+}
+.section-one{
+    margin-top: 20px;
+    .col{
+        padding: 0;
+    }
+}
+h5{
+    font-size: 18px;
+}
+.journey{
+    padding-top: 15px;
+    margin-left: -16px;
+    .float-none{
+        padding-left: 50px;
+    }
+    .graph{
+        margin-top: 15px;
+    }
+    .title{
+        font-size: 17px;
+        color: #636A73;
+        padding-top: 9px; 
+    }
+    h5{
+        font-size: 18px;
+        font-family: 'SofiaProMedium', sans-serif;
+    }
+}
+.graph-position-top {
+    margin-top: -10px;
+}
+
+.graph{
+    height: 70px;
+    align-items: center;
+    .left-panel{
+        width:30%;
+        display: inline-block;
+        .small{
+            font-size: 18px;
+            color: black;
+        }
+    }
+    .right-panel{
+        width:60%;
+        display: inline-block;
+
+    }
+}
+
+.radio-toolbar{
+    width: inherit;
+    height: 15rem;
+    max-height: 15rem;
+    min-height: 15rem;
+    .single-radio{
+        width: inherit;
+        height: 40px;
+
+    }
+}
+.radio-toolbar input[type="radio"] {
+    font-family: "SofiaProRegular", sans-serif !important;
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+
+  .radio-toolbar label {
+   font-family: "SofiaProRegular", sans-serif !important;
+   color: black;
+   width: 100%;
+   font-size: 12px;
+   cursor: pointer;
+   padding: 5px;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color:#eafdfb;
+    border-color: #eafdfb;
+    width: 100%;
+    font-size: 12px;
+    border-radius: 7px;
+    color: #7beee4;
+    padding: 5px;
+    font-family: "SofiaProRegular", sans-serif !important;
+}
+
+.radio-toolbar input[type="radio"]:focus + label {
+    color: #7beee4;
+    font-family: "SofiaProRegular", sans-serif !important;
+}
+
+.radio-toolbar input[type="radio"][disabled] + label {
+    // color: black;
+    // background: white;
+    color: #9a9ea3;
+    cursor: auto;
+}
+.radio-toolbar input[type="radio"][disabled] + label:hover {
+    background: #f9f9fa;
+}
+.radio-toolbar label:hover {
+    background-color: #eafdfb;
+}
+.btn-light{
+    background: #e7e7eb;
+    border: 0px;
+    font-size: 13px;
+}
+.disable-journey-step, .disable-journey-step > label {
+    color: #9a9ea3;
+    background: #f9f9fa;
+}
+.view-only {
+    .disable-journey-step, .disable-journey-step > label {
+        color: #9a9ea3;
+        background: #f9f9fa;
+    }
+}
+.elementsHeader{
+    width: 20%;
+    .element-label{
+        background: #ffff;
+    }
+}
+
+.group-val{
+    width: 30%;
+    display: inline-grid;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    position: relative;
+    .col-6{
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+}
+.small-dark{
+    margin-right: 20px;
+}
+
+.card-title{
+    height: 35px !important;
+    margin-left: 15px;
+}
+.card-height{
+    height: 77px;
+}
+.multiple{
+    margin-left: -6px;
+}
+    
+.btn-journey-analysis{
+    height: 36px;
+    margin-top: 23px;
+    margin-left: 7px;
+}
+.btn-test-journey{
+    height: 34px;
+    margin-top: 30px;
+    margin-left: 27px;
+}
+@media only screen and (max-width: 767px ) {
+    .btn-journey{
+        width: 148px;
+        bottom: 35px;
+        margin-left: -42px;
+    }
+    .btn-test-journey{
+        height: 30px;
+        margin-top: 32px;
+    }
+    .btn-journey-analysis{
+        margin-left: 43px;
+        height: 30px;
+        margin-top: 32px;
+    }
+    .section-one{
+        margin-top: 15px;
+    }
+    .journey{
+        .title{
+            display: inline-block;
+            padding-left: 8px;
+        }
+        padding-top: 15px;
+        h4{
+            font-size: 25px;
+            font-family: "SofiaProBold", sans-serif !important;
+        }
+    }
+    .journey{
+        .card{
+            margin-bottom: 10px;
+        }
+    }
+    .group-val{
+        width: 100%;
+        display: inline-grid;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        position: relative;
+        .col-6{
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+        }
+    }  
+     
+    
+    .section-one{
+        padding: 0;
+    }
+    .header-sec{
+        display: inline-block;
+    }
+    .elementsHeader{
+        width: 100%;
+        background: #f8f8f8;
+    }
+    .col{
+        padding: 0;
+    }
+    .element{
+        padding: 5px;
+        max-height: 227px !important;
+    }
+    .elementsHeader{
+        padding: 0;
+        border: 1px solid #e6e6e6;
+        border-radius: 10px;
+        margin-bottom: 5px;
+        margin: 14px;
+    }
+    .element-white{
+        padding: 5px !important;
+    }    
+    .element-label{
+        padding: 8px;
+    }
+    .journey{
+        .title{
+            display: inline-block;
+            padding-left: 8px;
+        }
+        padding-top: 15px;
+        h4{
+            font-size: 25px;
+        }
+    }
+    .card-title{
+        display: none;
+    }
+}
+   
+@media only screen and (min-width:768px)and(max-width: 1024px) {
+    .header-sec{
+        display: inline-block;
+    }
+    .journey{
+        .float-none{
+            height: 30px;
+        }
+    }
+    .silver-card{
+        .card-title{
+            display: none;
+        }
+    }
+    .section-one{
+        margin-top: 20px;
+    }
+    .card-title{
+        height: 4px !important;
+    }
+    .elementsHeader{
+        width: 50%;
+        border: 1px solid #e6e6e6;
+        border-radius: 10px;
+        margin-bottom: 5px;
+        background: #f8f8f8;
+    }
+    .element{
+        height: 17rem;
+    }
+    .header-sec .right-panel {
+        padding: 10px;
+    }
+    
+}
+
+   
+@media only screen and (min-width: 1200px) and (max-width:1400px) {
+    .section-one{
+        margin-top: 5px;
+    }
+    .element{
+        height: 20rem;
+    }
+    .multiple{
+        margin-left: -6px;
+    } 
+}

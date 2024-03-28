@@ -1,0 +1,157 @@
+@import "../../../../theme/variables.scss";
+@import "../../../../theme/mixins.scss";
+@import "../../../../theme/responsive.scss";
+.wrapper{
+        width: 100%;
+        background-position: 131%  4px;
+        background-image: url('../../../../assets/icon/Path\ 2.svg');
+        background-repeat: no-repeat;
+    .section,.section-two{
+        width: 700px;
+        display: flex;
+        flex-flow: column;
+        margin: 0 auto;  
+        padding-top: 30px;
+        .card{
+            .newPage{
+                display: flex;
+            }
+            h6{
+                width: 50%;
+            }
+        }
+        .form{
+            .form-group{
+                padding-left: 15px;
+            }
+            padding-bottom: 10px;
+            .check-container{
+                display: flex;
+                position: relative;
+                /* padding-left: 40px; */
+                cursor: pointer;
+                margin: 12px 5px;
+                margin-left: -10px;
+                font-size: 22px;
+                -webkit-user-select: none;
+                user-select: none;
+                width: 34%;
+                p{
+                    margin-top: 5px;
+                }
+            }
+            h6{
+                font-size: 14px;
+            }
+            p{
+                font-size: 14px;
+                padding-top: 6px;
+            }
+        }
+        .btn-color{
+            width: 200px;
+        }
+        .btn-block {
+            display: block;
+            padding-top: 5px;
+            width: 100%;
+        }
+        .card{
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #f7f7f7;
+        }
+        .add-Btn{
+            padding: 10px 0px 10px 0px;
+            color: #35D57B;
+            font-weight: bold;
+            span{
+                padding-left: 5px;
+                font-size: 14px;
+            }
+            .plus-btn{
+                background-color: #35D57B;
+                color: white;
+                border: 1px solid;
+                border-radius: 5px;
+                font-size: 24px;
+                width: 33px;
+            }
+        }
+        .inner-sec{
+            justify-content: center;
+            text-align: center;
+        }
+    }
+    .section-two{
+        .save-btn{
+            width: 70px;
+        }
+    }
+    .small-btn{
+        width: 70px !important;
+    }
+    .section-three{
+            width: 496px;
+            display: flex;
+            flex-flow: column;
+            margin: 23px auto;  
+            padding-top: 10%;
+            padding: 5%;
+            justify-content: center;
+            p{
+                text-align: center;
+            }
+            .verified{
+                width: 100%;
+            }
+            .inner-sec{
+                padding-top: 2%;
+            }
+    }
+}
+
+@include lg {
+    .wrapper{
+        background: none;
+        .section-one,.section-two{
+            width: 450px;
+        }
+    }
+}
+
+
+@include sm{
+    .wrapper{
+        background: none;
+        .form{
+            width: 200px;
+        }
+    }
+}
+
+@include md {
+    .wrapper{
+        background: none;
+        .section-one,.section-two{
+            width: 300px;
+            .form{
+                .check-container{
+                    width: 100%;
+                }
+            }
+        }
+        .section-three{
+            width: 310px;
+        }
+    }
+    .ng-wizard-theme-circles .step-content {
+        padding: 41px 0;
+    }
+}
+.page-detail-width{
+    padding-left: 42px; 
+    width: 100%
+}

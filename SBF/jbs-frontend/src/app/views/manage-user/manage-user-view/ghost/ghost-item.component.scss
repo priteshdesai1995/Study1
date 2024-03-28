@@ -1,0 +1,7 @@
+@import '../../../../utils/animations//ghost-animation.scss';
+.ghost-line {
+  background-color: rgba(235, 235, 235, 0.514);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  @include animate-ghost-line;
+}

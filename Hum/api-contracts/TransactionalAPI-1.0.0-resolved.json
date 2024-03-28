@@ -1,0 +1,5286 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Humaine Transactional API",
+    "description": "This set of APIs is used for user tranaactions onHumane Portal",
+    "contact": {
+      "email": "prithviraj@humaineai.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "SignUp",
+      "description": "User Signup and Registration"
+    }
+  ],
+  "paths": {
+    "/my-usergroups": {
+      "get": {
+        "tags": [
+          "My User Group"
+        ],
+        "summary": "Get My User Group list",
+        "description": "Get My User Group list",
+        "operationId": "getMyUserGroupListUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CollapsedMyUserGroup"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/my-usergroups/groups/persona/{bigFiveId}": {
+      "get": {
+        "tags": [
+          "My User Group"
+        ],
+        "summary": "Get User Groups Persona Details By bigFiveId",
+        "description": "Get User Groups Persona Details By bigFiveId",
+        "operationId": "getUserGroupPersonaDetailsByBigFiveIdUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "bigFiveId",
+            "in": "path",
+            "description": "bigFiveId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Persona"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/my-usergroups/persona/{groupId}": {
+      "get": {
+        "tags": [
+          "My User Group"
+        ],
+        "summary": "Get User Group Persona Details",
+        "description": "Get User Group Persona Details",
+        "operationId": "getUserGroupPersonaDetailsUsingGET_1",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "groupId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Persona"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/my-usergroups/{groupId}": {
+      "delete": {
+        "tags": [
+          "My User Group"
+        ],
+        "summary": "Delete Specific My User Group",
+        "description": "Delete Specific My User Group",
+        "operationId": "deleteMyUserGroupUsingDELETE",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "groupId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/signup": {
+      "post": {
+        "tags": [
+          "SignUp"
+        ],
+        "summary": "User Sign UP for Humaine Portal",
+        "operationId": "userSignup",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/SignupData"
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 200,
+                  "status": "SUCCESS",
+                  "responseData": {
+                    "username": "user001",
+                    "accountID": 1,
+                    "status": "email_unconfirmed"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Service not found"
+          },
+          "500": {
+            "description": "Business error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 500,
+                  "status": "ERROR",
+                  "errorList": [
+                    {
+                      "code": "ERR001",
+                      "msg": "Business error occurred"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/signup/email": {
+      "post": {
+        "tags": [
+          "SignUp"
+        ],
+        "summary": "User Email confirmation",
+        "operationId": "userEmailConfirm",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/EmailConfirmData"
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 200,
+                  "status": "SUCCESS",
+                  "responseData": {
+                    "code": "SUCC002",
+                    "msg": "Email confirmed successfully"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Service not found"
+          },
+          "500": {
+            "description": "Business error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 500,
+                  "status": "ERROR",
+                  "errorList": [
+                    {
+                      "code": "ERR001",
+                      "msg": "Business error occurred"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/registration": {
+      "post": {
+        "tags": [
+          "register"
+        ],
+        "summary": "User Business Details Registration",
+        "operationId": "userRegistration",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/RegistrationData"
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 200,
+                  "status": "SUCCESS",
+                  "responseData": {
+                    "code": "SUCC001",
+                    "msg": "Business details saved successfully"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Service not found"
+          },
+          "500": {
+            "description": "Business error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 500,
+                  "status": "ERROR",
+                  "errorList": [
+                    {
+                      "code": "ERR001",
+                      "msg": "Business error occurred"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "register"
+        ],
+        "summary": "User Business Details Update",
+        "operationId": "UpdateUserAccountDetails",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/RegistrationData"
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 200,
+                  "status": "SUCCESS",
+                  "responseData": {
+                    "code": "SUCC001",
+                    "msg": "Business details updated successfully"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Service not found"
+          },
+          "500": {
+            "description": "Business error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 500,
+                  "status": "ERROR",
+                  "errorList": [
+                    {
+                      "code": "ERR001",
+                      "msg": "Business error occurred"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "register"
+        ],
+        "summary": "User Business Details Update",
+        "operationId": "getUserAccountDetails",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistrationDataResponse"
+                },
+                "example": {
+                  "statusCode": 200,
+                  "status": "SUCCESS",
+                  "responseData": {
+                    "status": false,
+                    "fullName": null,
+                    "address": null,
+                    "phoneNumber": null,
+                    "city": null,
+                    "state": null,
+                    "country": null,
+                    "industry": [],
+                    "other": null,
+                    "businessURL": null,
+                    "eShopHostedOn": null,
+                    "cosumersFrom": null,
+                    "noOfEmployees": null,
+                    "highProductPrice": null,
+                    "noOfProducts": null,
+                    "curAnalyticsTool": null,
+                    "isUserDataTrack": false,
+                    "trackingProviders": [],
+                    "trackerDataType": null,
+                    "expectationComments": null,
+                    "homePageUrl": null,
+                    "trackingEvents": null,
+                    "detailedPage": []
+                  },
+                  "errorList": []
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Service not found"
+          },
+          "500": {
+            "description": "Business error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 500,
+                  "status": "ERROR",
+                  "errorList": [
+                    {
+                      "code": "ERR001",
+                      "msg": "Business error occurred"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/trackernotification": {
+      "get": {
+        "tags": [
+          "SignUp"
+        ],
+        "summary": "Send Generated Tracker to Business on Mail",
+        "operationId": "sendTracker",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 200,
+                  "status": "SUCCESS",
+                  "responseData": {
+                    "code": "SUCC001",
+                    "msg": "Tracker Sheet Successfuly sended to registered business"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "404": {
+            "description": "Service not found"
+          },
+          "500": {
+            "description": "Business error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "statusCode": 500,
+                  "status": "ERROR",
+                  "errorList": [
+                    {
+                      "code": "ERR001",
+                      "msg": "Business error occurred"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/demographic": {
+      "get": {
+        "tags": [
+          "User Group"
+        ],
+        "summary": "Get user group demographic's master data",
+        "description": "Get user group demographic's master data",
+        "operationId": "getDemographicAttributesUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DemoGraphicAttributes"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/cognitive/{bigFive}": {
+      "get": {
+        "tags": [
+          "User Group"
+        ],
+        "summary": "Get user group cognitive profile master data",
+        "description": "Get user group cognitive profile master data",
+        "operationId": "getCognitiveAttributesUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "bigFive",
+            "in": "path",
+            "description": "bigFive",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CognitiveAttributes"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/usergroup": {
+      "post": {
+        "tags": [
+          "User Group"
+        ],
+        "summary": "Manual User Group Create",
+        "description": "Manual User Group Create",
+        "operationId": "createUserGroupUsingPOST",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/UserGroupRequest"
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/usergroup/{groupId}": {
+      "post": {
+        "tags": [
+          "User Group"
+        ],
+        "summary": "Update Manual User Group Name",
+        "description": "Update Manual User Group Name",
+        "operationId": "updateGroupNameUsingPOST",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/UserGroupUpdateRequest"
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "groupId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "User Group"
+        ],
+        "summary": "Delete Specific Manual User Group",
+        "description": "Delete Specific Manual User Group",
+        "operationId": "deleteUserGroupUsingDELETE",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "groupId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/usergroups": {
+      "get": {
+        "tags": [
+          "User Group"
+        ],
+        "summary": "Get Manual User Group list",
+        "description": "Get Manual User Group list",
+        "operationId": "getUserGroupListUsingGET_1",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserGroupResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/usergroups/persona/{groupId}": {
+      "get": {
+        "tags": [
+          "User Group"
+        ],
+        "summary": "Get User Group Persona Details",
+        "description": "Get User Group Persona Details",
+        "operationId": "getUserGroupPersonaDetailsUsingGET_2",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "groupId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Persona"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/usergroups/{groupId}": {
+      "get": {
+        "tags": [
+          "User Group"
+        ],
+        "summary": "Get Specific Manual User Group",
+        "description": "Get Specific Manual User Group",
+        "operationId": "getUserGroupUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "groupId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserGroupDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/ai-usergroups": {
+      "get": {
+        "tags": [
+          "AI Generated Group"
+        ],
+        "summary": "Get AI User Group list",
+        "description": "Get AI User Group list",
+        "operationId": "getUserGroupListUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OLAPUserGroup"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/ai-usergroups/persona/{groupId}": {
+      "get": {
+        "tags": [
+          "AI Generated Group"
+        ],
+        "summary": "Get User Group Persona Details",
+        "description": "Get User Group Persona Details",
+        "operationId": "getUserGroupPersonaDetailsUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "groupId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Persona"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/ai-usergroups/save": {
+      "post": {
+        "tags": [
+          "AI Generated Group"
+        ],
+        "summary": "Save AI User Group",
+        "description": "Save AI User Group",
+        "operationId": "saveAIGenerateGroupUsingPOST",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/SaveAIUserGroupRequest"
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/ai-usergroups/saved": {
+      "get": {
+        "tags": [
+          "AI Generated Group"
+        ],
+        "summary": "Get Saved AI User Group list",
+        "description": "Get Saved AI User Group list",
+        "operationId": "getSavedUserGroupListUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AIUserGroup"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/ai-usergroups/saved/persona/{groupId}": {
+      "get": {
+        "tags": [
+          "AI Generated Group"
+        ],
+        "summary": "Get User Group Persona Details",
+        "description": "Get User Group Persona Details",
+        "operationId": "getSavedUserGroupPersonaDetailsUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "groupId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Persona"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/ai-usergroups/saved/{groupId}": {
+      "delete": {
+        "tags": [
+          "AI Generated Group"
+        ],
+        "summary": "Delete Saved AI User Group",
+        "description": "Delete Saved AI User Group",
+        "operationId": "deleteSavedAIUserGroupUsingDELETE",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "groupId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/ai-usergroups/{groupId}": {
+      "delete": {
+        "tags": [
+          "AI Generated Group"
+        ],
+        "summary": "Delete AI User Group",
+        "description": "Delete AI User Group",
+        "operationId": "deleteAIUserGroupUsingDELETE",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "groupId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/test-journey": {
+      "get": {
+        "tags": [
+          "Test Journey"
+        ],
+        "summary": "Get Test Journey List",
+        "description": "Get Test Journey List",
+        "operationId": "getJourneyListUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/JournyResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Test Journey"
+        ],
+        "summary": "Test New Journey",
+        "description": "Test New Journey",
+        "operationId": "createNewTestJourneyUsingPOST",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/test-journey/elements": {
+      "get": {
+        "tags": [
+          "Test Journey"
+        ],
+        "summary": "Get Journey Elements",
+        "description": "Get Journey Elements List",
+        "operationId": "getElementsListUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/JourneyElementMaster"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/test-journey/groups": {
+      "get": {
+        "tags": [
+          "Test Journey"
+        ],
+        "summary": "Get User Group List",
+        "description": "Get User Group List",
+        "operationId": "getGroupsUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ShortGroupDetails"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/test-journey/{journeyId}": {
+      "get": {
+        "tags": [
+          "Test Journey"
+        ],
+        "summary": "Get Journey Details By Id",
+        "description": "Get Journey Details By Id",
+        "operationId": "getJourneyDetailsUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "journeyId",
+            "in": "path",
+            "description": "journeyId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JournyResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Test Journey"
+        ],
+        "summary": "Update Test New Journey",
+        "description": "Update Test New Journey",
+        "operationId": "updateTestJourneyUsingPUT",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "journeyId",
+            "in": "path",
+            "description": "journeyId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Test Journey"
+        ],
+        "summary": "Delete Test New Journey",
+        "description": "Delete Test New Journey",
+        "operationId": "deleteTestJourneyUsingDELETE",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "journeyId",
+            "in": "path",
+            "description": "journeyId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/dashboard": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "summary": "Get Dashboard Data",
+        "description": "Get Dashboard Data",
+        "operationId": "getDemographicAttributes",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardData"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/dashboard/journey": {
+      "post": {
+        "tags": [
+          "Dashboard"
+        ],
+        "summary": "Journy Success Statistics",
+        "description": "Journy Success Statistics",
+        "operationId": "getJourneySuccessDataUsingPOST",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/DashboardJourneySuccessCount"
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardJourneySuccessResponse"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/ux-insights": {
+      "get": {
+        "tags": [
+          "UX Insights"
+        ],
+        "summary": "Get Statastics Data",
+        "description": "Get Statastics Data",
+        "operationId": "getStatasticsDataUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UXInsightsStatasticsCountResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/ux-insights/products/data": {
+      "get": {
+        "tags": [
+          "UX Insights"
+        ],
+        "summary": "Get Products Daily Statastics Data",
+        "description": "Get Products Daily Statastics Data",
+        "operationId": "getProductsDataUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DailyProductsDataResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/live/dashboard/active/countries": {
+      "get": {
+        "tags": [
+          "Live Dashboard"
+        ],
+        "summary": "Get Top Countries Active Data",
+        "description": "Get Top Countries Active Data",
+        "operationId": "getDashboardDataUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LiveDashboardPageResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/live/dashboard/active/device": {
+      "get": {
+        "tags": [
+          "Live Dashboard"
+        ],
+        "summary": "Get Active Devices Used Data",
+        "description": "Get Active Devices Used Data",
+        "operationId": "getActiveDevicedUsedUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ActiveDeviceUsedResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/live/dashboard/apdex-score": {
+      "get": {
+        "tags": [
+          "Live Dashboard"
+        ],
+        "summary": "Get Apdex Data",
+        "description": "Get Apdex Data",
+        "operationId": "getSessionDurationDataUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "duration",
+            "in": "query",
+            "description": "duration",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "TWENTY_FOUR_HOURS",
+                "FORTY_EIGHT_HOURS",
+                "ONE_WEEK"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionDurationChartResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/live/dashboard/bounce-rate": {
+      "get": {
+        "tags": [
+          "Live Dashboard"
+        ],
+        "summary": "Get Bounce Rate Data",
+        "description": "Get Bounce Rate Data",
+        "operationId": "getBounceRateUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "number",
+                    "format": "double"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/live/dashboard/page-loadtime": {
+      "get": {
+        "tags": [
+          "Live Dashboard"
+        ],
+        "summary": "Get Apdex Data",
+        "description": "Get Apdex Data",
+        "operationId": "getPageLoadTimeDataUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "duration",
+            "in": "query",
+            "description": "duration",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "TWENTY_FOUR_HOURS",
+                "FORTY_EIGHT_HOURS"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionDurationChartResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/live/dashboard/session/duration": {
+      "get": {
+        "tags": [
+          "Live Dashboard"
+        ],
+        "summary": "Get Session Duration Data",
+        "description": "Get Session Duration Data",
+        "operationId": "getApdexScoreUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "duration",
+            "in": "query",
+            "description": "duration",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "TWENTY_FOUR_HOURS",
+                "FORTY_EIGHT_HOURS"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionDurationChartResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/live/dashboard/statastics": {
+      "get": {
+        "tags": [
+          "Live Dashboard"
+        ],
+        "summary": "Get Active Devices Used Data",
+        "description": "Get Active Devices Used Data",
+        "operationId": "getChartDataUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LiveDashboardChartData"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/live/dashboard/users/hourly": {
+      "get": {
+        "tags": [
+          "Live Dashboard"
+        ],
+        "summary": "Get Dashboard Data",
+        "description": "Get Dashboard Data",
+        "operationId": "getLastTwentyFourHoursUsersUsingGET",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+            "default": "Bearer <access_token>"
+            }
+        },
+          {
+            "name": "version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "v1",
+              "enum": [
+                "v1"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActiveUserChangesResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ActiveUserChangesResponse": {
+        "type": "object",
+        "properties": {
+            "date": {
+                "type": "string"
+            },
+            "hourWiseActiveUsers": {
+                "type": "object",
+                "additionalProperties": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "title": "ActiveUserChangesResponse"
+    },
+      "ConversionChartResultResponse": {
+        "type": "object",
+        "properties": {
+            "data": {
+                "type": "object",
+                "additionalProperties": {
+                    "type": "number",
+                    "format": "double"
+                }
+            },
+            "lastHourComparison": {
+                "type": "number",
+                "format": "double"
+            },
+            "percentageCount": {
+                "type": "number",
+                "format": "double"
+            },
+            "totalCount": {
+                "type": "integer",
+                "format": "int64"
+            }
+        },
+        "title": "ConversionChartResultResponse"
+      },
+      "LiveDashboardChartData": {
+        "type": "object",
+        "properties": {
+            "activeUsers": {
+                "$ref": "#/components/schemas/ConversionChartResultResponse"
+            },
+            "overallConversionRate": {
+              "$ref": "#/components/schemas/ConversionChartResultResponse"
+            },
+            "totalConversions": {
+              "$ref": "#/components/schemas/ConversionChartResultResponse"
+            },
+            "totalSessions": {
+                "$ref": "#/components/schemas/LivePageChartData"
+            }
+        },
+        "title": "LiveDashboardChartData"
+    },
+    "LivePageChartData": {
+      "type": "object",
+      "properties": {
+          "count": {
+              "type": "integer",
+              "format": "int64"
+          },
+          "hourWiseData": {
+              "type": "object",
+              "additionalProperties": {
+                  "type": "integer",
+                  "format": "int64"
+              }
+          },
+          "lastHourComparison": {
+              "type": "integer",
+              "format": "int64"
+          }
+      },
+      "title": "LivePageChartData"
+    },
+      "SessionDurationChartResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ChartData"
+              }
+            }
+          },
+          "fourtyEightHoursDate": {
+            "type": "string"
+          },
+          "timeUnit": {
+            "type": "string",
+            "enum": [
+              "MILLISECONDS",
+              "SECONDS",
+              "MINUTES"
+            ]
+          },
+          "twentyFourHoursDate": {
+            "type": "string"
+          }
+        },
+        "title": "SessionDurationChartResponse"
+      },
+      "ChartData": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "fullDate": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "title": "ChartData"
+      },
+      "ActiveDeviceUsedResponse": {
+        "type": "object",
+        "properties": {
+          "browser": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "title": "ActiveDeviceUsedResponse"
+      },
+      "LiveDashboardPageResponse": {
+        "type": "object",
+        "properties": {
+          "activeStates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TopActiveStatesData"
+            }
+          }
+        },
+        "title": "LiveDashboardPageResponse"
+      },
+      "TopActiveStatesData": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string"
+          },
+          "totalSoldAmount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "title": "TopActiveStatesData"
+      },
+      "UXInsightsStatasticsCountResponse": {
+        "type": "object",
+        "properties": {
+          "dailyAvgSale": {
+            "type": "number",
+            "format": "double"
+          },
+          "dailyAvgSessions": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "dailyPurchaseProduct": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "totalUsers": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "title": "UXInsightsStatasticsCountResponse"
+      },
+      "EventDistributionResponse": {
+        "type": "object",
+        "properties": {
+          "blogPostEventPercentage": {
+            "type": "number",
+            "format": "float"
+          },
+          "buyPercentage": {
+            "type": "number",
+            "format": "float"
+          },
+          "otherPercentage": {
+            "type": "number",
+            "format": "float"
+          },
+          "productViewPercentage": {
+            "type": "number",
+            "format": "float"
+          },
+          "reviewPercentage": {
+            "type": "number",
+            "format": "float"
+          },
+          "wishListPercentage": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "title": "EventDistributionResponse"
+      },
+      "DailyProductsDataResponse": {
+        "type": "object",
+        "properties": {
+          "eventCounts": {
+            "$ref": "#/components/schemas/EventDistributionResponse"
+          },
+          "mostPurchasedProducts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MostPurchasedProducts"
+            }
+          },
+          "mostViewCategory": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MostViewCategory"
+            }
+          },
+          "mostViewProducts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MostViewProducts"
+            }
+          }
+        },
+        "title": "DailyProductsDataResponse"
+      },
+      "StateWiseSoldData": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string"
+          },
+          "totalSoldAmount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "title": "StateWiseSoldData"
+      },
+      "PopularProduct": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "totalSoldAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalSoldQuantities": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "title": "PopularProduct"
+      },
+      "MonthlyProductData": {
+        "type": "object",
+        "properties": {
+          "saleRevenue": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalCustomers": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "totalPurchases": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalSoldQuantities": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "title": "MonthlyProductData"
+      },
+      "MostPurchasedProducts": {
+        "type": "object",
+        "properties": {
+          "clickCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productName": {
+            "type": "string"
+          },
+          "productPageURL": {
+            "type": "string"
+          },
+          "purchasedCount": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "title": "MostPurchasedProducts"
+      },
+      "MostViewCategory": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "categoryViewCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "clickCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pageUrl": {
+            "type": "string"
+          }
+        },
+        "title": "MostViewCategory"
+      },
+      "MostViewProducts": {
+        "type": "object",
+        "properties": {
+          "clickCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productName": {
+            "type": "string"
+          },
+          "productPageURL": {
+            "type": "string"
+          },
+          "purchaseCount": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "title": "MostViewProducts"
+      },
+      "DashboardData": {
+        "type": "object",
+        "properties": {
+          "monthlyProductData": {
+            "$ref": "#/components/schemas/MonthlyProductData"
+          },
+          "popularProducts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PopularProduct"
+            }
+          },
+          "stateData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StateWiseSoldData"
+            }
+          }
+        },
+        "title": "DashboardData"
+      },
+      "DashboardJourneySuccessCount": {
+        "type": "object",
+        "properties": {
+          "period": {
+            "type": "string",
+            "enum": [
+              "MONTHLY",
+              "TODAY"
+            ]
+          }
+        },
+        "title": "DashboardJourneySuccessCount"
+      },
+      "DashboardJourneySuccessResponse": {
+        "type": "object",
+        "properties": {
+          "monthlyPercentage": {
+            "type": "number",
+            "format": "float"
+          },
+          "todayPercentage": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "title": "DashboardJourneySuccessResponse"
+      },
+      "ShortGroupDetails": {
+        "type": "object",
+        "properties": {
+          "groupId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "title": "ShortGroupDetails"
+      },
+      "ErrorField": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "title": "ErrorField"
+      },
+      "TransactionInfo": {
+        "type": "object",
+        "properties": {
+          "errorList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ErrorField"
+            }
+          },
+          "responseData": {
+            "type": "object"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "SUCCESS",
+              "FAIL"
+            ]
+          },
+          "statusCode": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "title": "TransactionInfo"
+      },
+      "CreateTestJourneyRequest": {
+        "type": "object",
+        "properties": {
+          "decison": {
+            "type": "string"
+          },
+          "firstInterest": {
+            "type": "string"
+          },
+          "groupId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "purchaseAddCart": {
+            "type": "string"
+          },
+          "purchaseBuy": {
+            "type": "string"
+          },
+          "purchaseOwnership": {
+            "type": "string"
+          }
+        },
+        "title": "CreateTestJourneyRequest"
+      },
+      "JournyResponse": {
+        "type": "object",
+        "properties": {
+          "bigFive": {
+            "type": "string"
+          },
+          "groupName": {
+            "type": "string"
+          },
+          "journey": {
+            "$ref": "#/components/schemas/TestJourney"
+          }
+        },
+        "title": "JournyResponse"
+      },
+      "JourneyElementMaster": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JourneyElementValue"
+            }
+          }
+        },
+        "title": "JourneyElementMaster"
+      },
+      "JourneyElementValue": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "title": "JourneyElementValue"
+      },
+      "TestJourney": {
+        "type": "object",
+        "properties": {
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "decison": {
+            "type": "string"
+          },
+          "firstInterest": {
+            "type": "string"
+          },
+          "groupId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "journeySteps": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "purchaseAddCart": {
+            "type": "string"
+          },
+          "purchaseBuy": {
+            "type": "string"
+          },
+          "purchaseOwnership": {
+            "type": "string"
+          }
+        },
+        "title": "TestJourney"
+      },
+      "SignupData": {
+        "required": [
+          "username",
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "Username of E-comm site owner"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email of E-comm site owner"
+          },
+          "password": {
+            "type": "string",
+            "description": "Encrypted password used for signing up"
+          }
+        }
+      },
+      "SignupResponse": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "Username of E-comm site owner"
+          },
+          "accountId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Account ID if the created account after signup"
+          },
+          "status": {
+            "type": "string",
+            "description": "Account status"
+          }
+        }
+      },
+      "EmailConfirmData": {
+        "required": [
+          "email",
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "Business Owner email"
+          },
+          "code": {
+            "type": "integer",
+            "description": "Code to confirm email"
+          }
+        }
+      },
+      "RegistrationDataResponse": {
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string",
+            "description": "Business Owner Full Name"
+          },
+          "address": {
+            "type": "string",
+            "description": "Business Address"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "Business Owner Phone Number"
+          },
+          "city": {
+            "type": "string",
+            "description": "Business Owner City"
+          },
+          "state": {
+            "type": "string",
+            "description": "Business Owner State"
+          },
+          "country": {
+            "type": "string",
+            "description": "Business Owner Country"
+          },
+          "industry": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "Baby Products",
+              "Fashion, Clothing and Accessories"
+            ]
+          },
+          "other": {
+            "type": "string",
+            "description": "Business Owner other comments"
+          },
+          "businessURL": {
+            "type": "string",
+            "description": "Business Owner Site URL"
+          },
+          "eShopHostedOn": {
+            "type": "string",
+            "description": "Business Owner EShop Hosted Platform"
+          },
+          "cosumersFrom": {
+            "type": "string",
+            "description": "Business Owner's Consumers from"
+          },
+          "noOfEmployees": {
+            "type": "string",
+            "description": "Business Owner's No of Employees"
+          },
+          "highProductPrice": {
+            "type": "string",
+            "description": "Business Owner's Highest Product Price"
+          },
+          "noOfProducts": {
+            "type": "string",
+            "description": "Business Owner's Total number of products"
+          },
+          "curAnalyticsToll": {
+            "type": "string",
+            "description": "Business Owner's current analytics tools in their solution"
+          },
+          "isUserDataTrack": {
+            "type": "boolean",
+            "description": "Business Owner track user data or not in exising solution"
+          },
+          "trackingProviders": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "cookie",
+              "Tracker 1"
+            ]
+          },
+          "trackerDataType": {
+            "type": "string",
+            "description": "Which kind of data business owner tracking"
+          },
+          "expectationComments": {
+            "type": "string",
+            "description": "Business Owner's expectation comments with Humaine AI"
+          },
+          "homePageUrl": {
+            "type": "string",
+            "description": "Business Owner's website home page URL"
+          },
+          "trackingEvents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "User Login/ Site View",
+              "View Product"
+            ]
+          },
+          "detailedPage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PageMasterData"
+            }
+          },
+          "menuCounts": {
+            "type": "object",
+            "example": {
+              "TEST_NEW_JOURNEY": 10
+            }
+          }
+        }
+      },
+      "RegistrationData": {
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string",
+            "description": "Business Owner Full Name"
+          },
+          "address": {
+            "type": "string",
+            "description": "Business Address"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "Business Owner Phone Number"
+          },
+          "city": {
+            "type": "string",
+            "description": "Business Owner City"
+          },
+          "state": {
+            "type": "string",
+            "description": "Business Owner State"
+          },
+          "country": {
+            "type": "string",
+            "description": "Business Owner Country"
+          },
+          "industry": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "Baby Products",
+              "Fashion, Clothing and Accessories"
+            ]
+          },
+          "other": {
+            "type": "string",
+            "description": "Business Owner other comments"
+          },
+          "businessURL": {
+            "type": "string",
+            "description": "Business Owner Site URL"
+          },
+          "eShopHostedOn": {
+            "type": "string",
+            "description": "Business Owner EShop Hosted Platform"
+          },
+          "cosumersFrom": {
+            "type": "string",
+            "description": "Business Owner's Consumers from"
+          },
+          "noOfEmployees": {
+            "type": "string",
+            "description": "Business Owner's No of Employees"
+          },
+          "highProductPrice": {
+            "type": "string",
+            "description": "Business Owner's Highest Product Price"
+          },
+          "noOfProducts": {
+            "type": "string",
+            "description": "Business Owner's Total number of products"
+          },
+          "curAnalyticsToll": {
+            "type": "string",
+            "description": "Business Owner's current analytics tools in their solution"
+          },
+          "isUserDataTrack": {
+            "type": "boolean",
+            "description": "Business Owner track user data or not in exising solution"
+          },
+          "trackingProviders": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "cookie",
+              "Tracker 1"
+            ]
+          },
+          "trackerDataType": {
+            "type": "string",
+            "description": "Which kind of data business owner tracking"
+          },
+          "expectationComments": {
+            "type": "string",
+            "description": "Business Owner's expectation comments with Humaine AI"
+          },
+          "homePageUrl": {
+            "type": "string",
+            "description": "Business Owner's website home page URL"
+          },
+          "trackingEvents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "User Login/ Site View",
+              "View Product"
+            ]
+          },
+          "detailedPage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PageMasterData"
+            }
+          }
+        }
+      },
+      "GetRegistrationData": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "boolean",
+            "description": "Account Details are available or not"
+          },
+          "fullName": {
+            "type": "string",
+            "description": "Business Owner Full Name"
+          },
+          "address": {
+            "type": "string",
+            "description": "Business Address"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "Business Owner Phone Number"
+          },
+          "city": {
+            "type": "string",
+            "description": "Business Owner City"
+          },
+          "state": {
+            "type": "string",
+            "description": "Business Owner State"
+          },
+          "country": {
+            "type": "string",
+            "description": "Business Owner Country"
+          },
+          "industry": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "Baby Products",
+              "Fashion, Clothing and Accessories"
+            ]
+          },
+          "other": {
+            "type": "string",
+            "description": "Business Owner other comments"
+          },
+          "businessURL": {
+            "type": "string",
+            "description": "Business Owner Site URL"
+          },
+          "eShopHostedOn": {
+            "type": "string",
+            "description": "Business Owner EShop Hosted Platform"
+          },
+          "cosumersFrom": {
+            "type": "string",
+            "description": "Business Owner's Consumers from"
+          },
+          "noOfEmployees": {
+            "type": "string",
+            "description": "Business Owner's No of Employees"
+          },
+          "highProductPrice": {
+            "type": "string",
+            "description": "Business Owner's Highest Product Price"
+          },
+          "noOfProducts": {
+            "type": "string",
+            "description": "Business Owner's Total number of products"
+          },
+          "curAnalyticsToll": {
+            "type": "string",
+            "description": "Business Owner's current analytics tools in their solution"
+          },
+          "isUserDataTrack": {
+            "type": "boolean",
+            "description": "Business Owner track user data or not in exising solution"
+          },
+          "trackingProviders": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "cookie",
+              "Tracker 1"
+            ]
+          },
+          "trackerDataType": {
+            "type": "string",
+            "description": "Which kind of data business owner tracking"
+          },
+          "expectationComments": {
+            "type": "string",
+            "description": "Business Owner's expectation comments with Humaine AI"
+          },
+          "homePageUrl": {
+            "type": "string",
+            "description": "Business Owner's website home page URL"
+          },
+          "trackingEvents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "User Login/ Site View",
+              "View Product"
+            ]
+          },
+          "detailedPage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PageMasterData"
+            }
+          }
+        }
+      },
+      "Message": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Message code"
+          },
+          "msg": {
+            "type": "string",
+            "description": "Detailed Success or Error message"
+          }
+        }
+      },
+      "PageMasterData": {
+        "type": "object",
+        "properties": {
+          "pageURL": {
+            "type": "string",
+            "description": "Page URL of business portal"
+          },
+          "pageName": {
+            "type": "string",
+            "description": "page name"
+          }
+        }
+      },
+      "DemoGraphicAttributes": {
+        "type": "object",
+        "properties": {
+          "ageGroup": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgeGroup"
+            }
+          },
+          "bigFive": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BigFive"
+            }
+          },
+          "education": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Education"
+            }
+          },
+          "ethnicity": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ethnicity"
+            }
+          },
+          "familySize": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FamilySize"
+            }
+          },
+          "gender": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Gender"
+            }
+          }
+        },
+        "title": "DemoGraphicAttributes"
+      },
+      "Gender": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "isOther": {
+            "type": "boolean"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "title": "Gender"
+      },
+      "Education": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "title": "Education"
+      },
+      "Ethnicity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "title": "Ethnicity"
+      },
+      "FamilySize": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "title": "FamilySize"
+      },
+      "AIUserGroup": {
+        "type": "object",
+        "properties": {
+          "bigFive": {
+            "type": "string"
+          },
+          "femalePercent": {
+            "type": "number",
+            "format": "float"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "malePercent": {
+            "type": "number",
+            "format": "float"
+          },
+          "maxAge": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "maxEducation": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "maxFamilySize": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "minAge": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "minEducation": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "minFamilySize": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "motivationToBuy": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "noOfUser": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "otherPercent": {
+            "type": "number",
+            "format": "float"
+          },
+          "persuasiveStratergies": {
+            "type": "string"
+          },
+          "successMatch": {
+            "type": "number",
+            "format": "float"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "userGroupId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "values": {
+            "type": "string"
+          }
+        },
+        "title": "AIUserGroup"
+      },
+      "AgeGroup": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "title": "AgeGroup"
+      },
+      "BigFive": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "title": "BigFive"
+      },
+      "Buying": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "title": "Buying"
+      },
+      "Persuasive": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "title": "Persuasive"
+      },
+      "CognitiveAttributes": {
+        "type": "object",
+        "properties": {
+          "motivationToBuy": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Buying"
+            }
+          },
+          "motivationToBuyEmpty": {
+            "$ref": "#/components/schemas/Buying"
+          },
+          "persuasiveStrategies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Persuasive"
+            }
+          },
+          "persuasiveStrategiesEmpty": {
+            "$ref": "#/components/schemas/Persuasive"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Values"
+            }
+          },
+          "valuesEmpty": {
+            "$ref": "#/components/schemas/Values"
+          }
+        },
+        "title": "CognitiveAttributes"
+      },
+      "Values": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "title": "Values"
+      },
+      "UserGroupRequest": {
+        "type": "object",
+        "properties": {
+          "ageGroup": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "bigFive": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "education": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ethnicity": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "familySize": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "gender": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "isExternalFactor": {
+            "type": "boolean"
+          },
+          "motivationToBuy": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "persuasiveStratergies": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "state": {
+            "type": "string"
+          },
+          "values": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "title": "UserGroupRequest"
+      },
+      "UserGroupResponse": {
+        "type": "object",
+        "properties": {
+          "ageGroup": {
+            "type": "string"
+          },
+          "bigFive": {
+            "type": "string"
+          },
+          "education": {
+            "type": "string"
+          },
+          "ethnicity": {
+            "type": "string"
+          },
+          "familySize": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "groupId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "isExternalFactor": {
+            "type": "boolean"
+          },
+          "motivationToBuy": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "persuasiveStratergies": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "successMatch": {
+            "type": "number",
+            "format": "float"
+          },
+          "values": {
+            "type": "string"
+          }
+        },
+        "title": "UserGroupResponse"
+      },
+      "UserGroupUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "title": "UserGroupUpdateRequest"
+      },
+      "UserGroupDetails": {
+        "type": "object",
+        "properties": {
+          "ageGroup": {
+            "$ref": "#/components/schemas/AgeGroup"
+          },
+          "bigFive": {
+            "$ref": "#/components/schemas/BigFive"
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "education": {
+            "$ref": "#/components/schemas/Education"
+          },
+          "ethnicity": {
+            "$ref": "#/components/schemas/Ethnicity"
+          },
+          "familySize": {
+            "$ref": "#/components/schemas/FamilySize"
+          },
+          "gender": {
+            "$ref": "#/components/schemas/Gender"
+          },
+          "groupId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "isExternalFactor": {
+            "type": "boolean"
+          },
+          "modifiedOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "motivationToBuy": {
+            "$ref": "#/components/schemas/Buying"
+          },
+          "name": {
+            "type": "string"
+          },
+          "persuasiveStratergies": {
+            "$ref": "#/components/schemas/Persuasive"
+          },
+          "state": {
+            "type": "string"
+          },
+          "successMatch": {
+            "type": "string"
+          },
+          "values": {
+            "$ref": "#/components/schemas/Values"
+          }
+        },
+        "title": "UserGroupDetails"
+      },
+      "SaveAIUserGroupRequest": {
+        "type": "object",
+        "properties": {
+          "groupIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        },
+        "title": "SaveAIUserGroupRequest"
+      },
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Success or Error code"
+          },
+          "status": {
+            "type": "string",
+            "description": "Success or Error",
+            "enum": [
+              "SUCCESS",
+              "ERROR"
+            ]
+          },
+          "responseData": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/SignupResponse"
+              },
+              {
+                "$ref": "#/components/schemas/Message"
+              },
+              {
+                "$ref": "#/components/schemas/GetRegistrationData"
+              }
+            ]
+          },
+          "errorList": {
+            "type": "array",
+            "description": "List of Error message",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          }
+        }
+      },
+      "OLAPUserGroup": {
+        "type": "object",
+        "properties": {
+          "bigFive": {
+            "type": "string"
+          },
+          "femalePercent": {
+            "type": "number",
+            "format": "float"
+          },
+          "flag": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "groupId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "malePercent": {
+            "type": "number",
+            "format": "float"
+          },
+          "maxAge": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "maxEducation": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "maxFamilySize": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "minAge": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "minEducation": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "minFamilySize": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "motivationToBuy": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "noOfUser": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "otherPercent": {
+            "type": "number",
+            "format": "float"
+          },
+          "persuasiveStratergies": {
+            "type": "string"
+          },
+          "successMatch": {
+            "type": "number",
+            "format": "float"
+          },
+          "values": {
+            "type": "string"
+          }
+        },
+        "title": "OLAPUserGroup"
+      },
+      "CollapsedMyUserGroup": {
+        "type": "object",
+        "properties": {
+          "bigFive": {
+            "type": "string"
+          },
+          "bigFiveId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OLAPUserGroup"
+            }
+          },
+          "persuasiveStratergies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "successMatch": {
+            "type": "number",
+            "format": "float"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "title": "CollapsedMyUserGroup"
+      },
+      "ListMyuserGroupApiResponse": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Success or Error code"
+          },
+          "status": {
+            "type": "string",
+            "description": "Success or Error",
+            "enum": [
+              "SUCCESS",
+              "ERROR"
+            ]
+          },
+          "responseData": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/SignupResponse"
+              },
+              {
+                "$ref": "#/components/schemas/Message"
+              },
+              {
+                "$ref": "#/components/schemas/GetRegistrationData"
+              }
+            ]
+          },
+          "errorList": {
+            "type": "array",
+            "description": "List of Error message",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          }
+        }
+      },
+      "createUserGroupResponse": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Success or Error code",
+            "example": 201
+          },
+          "status": {
+            "type": "string",
+            "description": "Success or Error",
+            "enum": [
+              "SUCCESS",
+              "ERROR"
+            ]
+          },
+          "responseData": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "example": "SUCC001"
+              },
+              "msg": {
+                "type": "string",
+                "example": "User group created."
+              }
+            }
+          },
+          "errorList": {
+            "type": "array",
+            "description": "List of Error message",
+            "items": {
+              "type": "string"
+            },
+            "example": []
+          }
+        }
+      },
+      "getUserGroupList": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "format": "int32",
+            "description": "get user group list records",
+            "example": 200
+          },
+          "status": {
+            "type": "string",
+            "description": "Success or Error",
+            "enum": [
+              "SUCCESS",
+              "ERROR"
+            ]
+          },
+          "responseData": {
+            "type": "object",
+            "properties": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUserGroupListResponse"
+              }
+            }
+          },
+          "errorList": {
+            "type": "array",
+            "description": "List of Error Message",
+            "items": {
+              "type": "string"
+            },
+            "example": []
+          }
+        }
+      },
+      "GetUserGroupListResponse": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "groupId": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "example": 1
+                },
+                "value": {
+                  "type": "string",
+                  "example": "Male"
+                },
+                "isOther": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            },
+            "ageGroup": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "example": 1
+                },
+                "value": {
+                  "type": "string",
+                  "example": "Under 17"
+                }
+              }
+            },
+            "state": {
+              "type": "string"
+            },
+            "ethnicity": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "example": 1
+                },
+                "value": {
+                  "type": "string",
+                  "example": "USA"
+                }
+              }
+            },
+            "familySize": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "example": 1
+                },
+                "value": {
+                  "type": "string",
+                  "example": "0 sib"
+                }
+              }
+            },
+            "isExternalFactor": {
+              "type": "boolean"
+            },
+            "bigFive": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "example": 1
+                },
+                "value": {
+                  "type": "string",
+                  "example": "Openness To Experiance"
+                }
+              }
+            },
+            "values": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "example": 1
+                },
+                "value": {
+                  "type": "string",
+                  "example": "Power"
+                }
+              }
+            },
+            "persuasiveStratergies": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "example": 1
+                },
+                "value": {
+                  "type": "string",
+                  "example": "Authority"
+                }
+              }
+            },
+            "motivationToBuy": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "example": 1
+                },
+                "value": {
+                  "type": "string",
+                  "example": "Compulsive"
+                }
+              }
+            },
+            "education": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "example": 1
+                },
+                "value": {
+                  "type": "string",
+                  "example": "High School"
+                }
+              }
+            },
+            "successMatch": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string",
+              "example": "1.png"
+            },
+            "createdOn": {
+              "type": "string",
+              "example": "2021-07-14T19:11:03.71155+05:30"
+            },
+            "modifiedOn": {
+              "type": "string",
+              "example": "2021-07-14T19:11:03.71155+05:30"
+            }
+          }
+        }
+      },
+      "GetUserGroupResponse": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "format": "int32",
+            "description": "get user group list records",
+            "example": 200
+          },
+          "status": {
+            "type": "string",
+            "description": "Success or Error",
+            "enum": [
+              "SUCCESS",
+              "ERROR"
+            ]
+          },
+          "responseData": {
+            "type": "object",
+            "properties": {
+              "groupId": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "gender": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "value": {
+                    "type": "string",
+                    "example": "Male"
+                  },
+                  "isOther": {
+                    "type": "boolean",
+                    "example": false
+                  }
+                }
+              },
+              "ageGroup": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "value": {
+                    "type": "string",
+                    "example": "Under 17"
+                  }
+                }
+              },
+              "state": {
+                "type": "string"
+              },
+              "ethnicity": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "value": {
+                    "type": "string",
+                    "example": "USA"
+                  }
+                }
+              },
+              "familySize": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "value": {
+                    "type": "string",
+                    "example": "0 sib"
+                  }
+                }
+              },
+              "isExternalFactor": {
+                "type": "boolean"
+              },
+              "bigFive": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "value": {
+                    "type": "string",
+                    "example": "Openness To Experiance"
+                  }
+                }
+              },
+              "values": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "value": {
+                    "type": "string",
+                    "example": "Power"
+                  }
+                }
+              },
+              "persuasiveStratergies": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "value": {
+                    "type": "string",
+                    "example": "Authority"
+                  }
+                }
+              },
+              "motivationToBuy": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "value": {
+                    "type": "string",
+                    "example": "Compulsive"
+                  }
+                }
+              },
+              "education": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "value": {
+                    "type": "string",
+                    "example": "High School"
+                  }
+                }
+              },
+              "successMatch": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string",
+                "example": "1.png"
+              },
+              "createdOn": {
+                "type": "string",
+                "example": "2021-07-14T19:11:03.71155+05:30"
+              },
+              "modifiedOn": {
+                "type": "string",
+                "example": "2021-07-14T19:11:03.71155+05:30"
+              }
+            }
+          },
+          "errorList": {
+            "type": "array",
+            "description": "List of Error Message",
+            "items": {
+              "type": "string"
+            },
+            "example": []
+          }
+        }
+      },
+      "demographicResponse": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "description": "Success or Error code",
+            "example": 200
+          },
+          "status": {
+            "type": "string",
+            "description": "Success or Error",
+            "enum": [
+              "SUCCESS",
+              "ERROR"
+            ]
+          },
+          "responseData": {
+            "type": "object",
+            "properties": {
+              "gender": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "example": 1
+                    },
+                    "value": {
+                      "type": "string",
+                      "example": "male"
+                    },
+                    "isOther": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              },
+              "ageGroup": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "example": 1
+                    },
+                    "value": {
+                      "type": "string",
+                      "example": "Under 17"
+                    }
+                  }
+                }
+              },
+              "ethnicity": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "example": 1
+                    },
+                    "value": {
+                      "type": "string",
+                      "example": "USA"
+                    }
+                  }
+                }
+              },
+              "familySize": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "example": 1
+                    },
+                    "value": {
+                      "type": "string",
+                      "example": "0 Sib"
+                    }
+                  }
+                }
+              },
+              "bigFive": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "example": 1
+                    },
+                    "value": {
+                      "type": "string",
+                      "example": "Aggresive"
+                    }
+                  }
+                }
+              },
+              "education": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "example": 1
+                    },
+                    "value": {
+                      "type": "string",
+                      "example": "High school"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "errorList": {
+            "type": "array",
+            "description": "List of Error message",
+            "items": {
+              "type": "string"
+            },
+            "example": []
+          }
+        }
+      },
+      "cognitiveResponse": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "description": "Success or Error code",
+            "example": 200
+          },
+          "status": {
+            "type": "string",
+            "description": "Success or Error",
+            "enum": [
+              "SUCCESS",
+              "ERROR"
+            ]
+          },
+          "responseData": {
+            "type": "object",
+            "properties": {
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "example": 1
+                    },
+                    "value": {
+                      "type": "string",
+                      "example": "Under 17"
+                    }
+                  }
+                }
+              },
+              "persuasiveStrategies": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "value": {
+                      "type": "string",
+                      "example": "authority"
+                    }
+                  }
+                }
+              },
+              "motivationToBuy": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "value": {
+                      "type": "string",
+                      "example": "impulsive"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "errorList": {
+            "type": "array",
+            "description": "List of Error message",
+            "items": {
+              "type": "string"
+            },
+            "example": []
+          }
+        }
+      },
+      "UserGroupDeleteResponse": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "SUCCESS",
+              "FAIL"
+            ]
+          },
+          "responseData": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "example": "SUCC001"
+              },
+              "msg": {
+                "type": "string",
+                "example": "user Group deleted successfully"
+              }
+            }
+          }
+        }
+      },
+      "CreateUserGroupData": {
+        "required": [
+          "name",
+          "gender",
+          "ageGroup",
+          "state",
+          "ethnicity",
+          "familySize",
+          "isExternalFactor",
+          "bigFive",
+          "values",
+          "persuasiveStratergies",
+          "motivationToBuy",
+          "education"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "User Groupname"
+          },
+          "gender": {
+            "type": "integer",
+            "description": "gender"
+          },
+          "ageGroup": {
+            "type": "integer",
+            "description": "userGroup age"
+          },
+          "state": {
+            "type": "string",
+            "description": "state"
+          },
+          "ethnicity": {
+            "type": "integer",
+            "description": "country name"
+          },
+          "familySize": {
+            "type": "integer",
+            "description": "family size of user group"
+          },
+          "isExternalFactor": {
+            "type": "boolean",
+            "description": "factor-in external values"
+          },
+          "bigFive": {
+            "type": "integer",
+            "description": "bigfive value"
+          },
+          "values": {
+            "type": "integer",
+            "description": "bigfive values"
+          },
+          "persuasiveStratergies": {
+            "type": "integer",
+            "description": "bigfive persuasive statergies"
+          },
+          "motivationToBuy": {
+            "type": "integer",
+            "description": "motivation to buy"
+          },
+          "education": {
+            "type": "integer",
+            "description": "education of User groups"
+          }
+        }
+      },
+      "GroupDetail": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "title": "GroupDetail"
+      },
+      "Persona": {
+        "type": "object",
+        "properties": {
+          "ageGroup": {
+            "type": "string"
+          },
+          "bigFive": {
+            "type": "string"
+          },
+          "details": {
+            "$ref": "#/components/schemas/PersonaDetails"
+          },
+          "education": {
+            "type": "string"
+          },
+          "familySize": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "group": {
+            "$ref": "#/components/schemas/GroupDetail"
+          },
+          "state": {
+            "type": "string"
+          },
+          "userCount": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "title": "Persona"
+      },
+      "PersonaDetails": {
+        "type": "object",
+        "properties": {
+          "frustrations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "goals": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "motivationToBuy": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "personality": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "persuasiveStrategies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "title": "PersonaDetails"
+      }
+    },
+    "requestBodies": {
+      "SaveAIUserGroupRequest": {
+        "description": "Data required for Save AI User Group",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SaveAIUserGroupRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "UserGroupUpdateRequest": {
+        "description": "Data required for Update Manual User Group Name",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UserGroupUpdateRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "UserGroupRequest": {
+        "description": "Data required for Manual User Group Create",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UserGroupRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "DashboardJourneySuccessCount": {
+        "description": "Data required get journey success statastics for home page",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DashboardJourneySuccessCount"
+            }
+          }
+        },
+        "required": true
+      },
+      "SignupData": {
+        "description": "Data required for user sign up",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SignupData"
+            }
+          }
+        },
+        "required": true
+      },
+      "CreateTestJourneyRequest": {
+        "description": "Data required for create test journey",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CreateTestJourneyRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "EmailConfirmData": {
+        "description": "Data required for email confirmation",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/EmailConfirmData"
+            }
+          }
+        },
+        "required": true
+      },
+      "RegistrationData": {
+        "description": "Data required for business details registration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RegistrationData"
+            }
+          }
+        },
+        "required": true
+      },
+      "PageMasterData": {
+        "description": "Data required for business portal's different page urls",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PageMasterData"
+            }
+          }
+        },
+        "required": true
+      },
+      "CreateUserGroupData": {
+        "description": "Data required for create user group",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CreateUserGroupData"
+            }
+          }
+        },
+        "required": true
+      }
+    }
+  }
+}

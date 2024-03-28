@@ -1,0 +1,11 @@
+<form  [formGroup]="form" class="form">
+    <div class="form-group form-row col-md-12"> 
+        <ng-container *ngFor="let input of formInput;  index as i">
+            <div class="col-sm-6"> 
+                <input type="number" #formRow [maxLength]="1" class="form-control" placeholder="" formControlName="{{input}}" (change)="onChange()"
+                 (keypress)="onKeyPress($event)" (keyup)="keyUpEvent($event, i)" 
+                   [ngClass]="errorMsg  && isFormSubmitted? 'errorBorder' : 'greyBorder'">
+            </div>
+        </ng-container>
+    </div>
+</form>

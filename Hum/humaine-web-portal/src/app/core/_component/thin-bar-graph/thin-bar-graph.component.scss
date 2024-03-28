@@ -1,0 +1,16 @@
+.graph{
+    height: 280px;
+    width: 100%;
+    margin-top: 10px !important;
+    // width: 156px !important;
+    // height: 78px !important;
+}
+@media only screen and (min-width: 1024px) {
+    .graph{
+        // width: 156px ;
+        // height: 78px ;
+        height: 80px !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+    }
+}

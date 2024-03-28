@@ -1,0 +1,257 @@
+<nz-spin [nzSpinning]="isPageLoading">
+    <div class="wrapper">
+        <div class="header-sec">
+            <div class="left-panel">
+                <nz-breadcrumb style="margin:16px 0">
+                    <nz-page-header style="display:inline-block" nzBackIcon>
+                    </nz-page-header>
+                    <div style="display:inline-block" class="small-title">
+                        {{breadCrumb}}
+                    </div>
+                    <br>
+                    <span style="padding-left:30px;">{{breadCrumb}}</span>
+                </nz-breadcrumb>
+            </div>
+        </div>
+        <div class="section">
+            <div class="main-body">
+                <div class="row" [ngStyle]="{ 'margin-right': isMerchendiseIntellVisible ? '0px' : '10px' }">
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <!-- <div class="card" [ngStyle]="{ 'min-height': allowDemoGraphicData ? 'auto' : '100%'}"> -->
+                            <div class="grey-card d-flex flex-column">
+                                <div class="mt-1">
+                                    <div class="parent">
+                                        <div class="circle">
+                                            <p>{{personaData?.bigFive}}</p>
+                                            <h5><b>{{personaData?.userCount}}</b></h5>
+                                            <p>Users</p>
+                                        </div>
+                                    </div>
+                                    <div class="title" align="center">
+                                        <h5 class="d-inline" *ngIf="!isEditing">
+                                            {{personaData?.group?.name}}
+
+                                        </h5>
+                                        <ng-container *ngIf="withMultipleGroups && false">
+                                            <ng-container *ngFor="let item of personaData.groupsDetails.group">
+                                                <h5 class="d-inline"> {{item?.name}}
+                                                </h5>
+                                                <h5 class="d-inline" *ngIf="item?.rank"> #{{item?.rank}}</h5><br>
+                                            </ng-container>
+
+                                        </ng-container>
+
+                                        <input *ngIf="isEditing" type="text" class="form-control editable"
+                                            [(ngModel)]="personaData.group.name">
+                                        <h5 class="d-inline" *ngIf="personaData?.group?.rank">
+                                            #{{personaData?.group?.rank}}
+                                        </h5>
+                                        <a (click)="editTextChange()" *ngIf="allowEditGroupName && !isEditing"
+                                            class="purple-text edit">
+                                            Edit </a>
+                                        <div class="pt-2 edit-option">
+                                            <button *ngIf="isEditing" (click)="editGroupName()"
+                                                class="btn-color edit-btn" appLoader text="Save"
+                                                [loading]="isEditLoader"></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="detail-persona-card">
+                                        <div class="card card-body">
+                                            <div class="row">
+                                                <div id="group-section" class="individual-persona">
+                                                    <div class="col"
+                                                        *ngIf="getData(personaData?.group, personaData?.groupsDetails?.group) && getData(personaData?.group, personaData?.groupsDetails?.group).rank">
+                                                        <ng-container [ngTemplateOutlet]="renderHtmlData"
+                                                            [ngTemplateOutletContext]="{data: getData(personaData?.group, personaData?.groupsDetails?.group),prefix: '#', key:'rank'}">
+                                                        </ng-container>
+                                                        <p id="group-section-persona-value" hidden>{{personaData?.group}}</p>
+                                                        <p id="group-section-persona-lable"> GROUP</p>
+                                                    </div>
+                                                </div>
+
+                                                <div id="age-section" class="individual-persona">
+                                                    <div >
+                                                        <div class="col"
+                                                            *ngIf="getData(personaData?.ageGroup, personaData?.groupsDetails?.ageGroup)">
+                                                            <div class="col">
+                                                                <!--<div class="col" *ngIf="allowDemoGraphicData">-->
+                                                                <ng-container [ngTemplateOutlet]="renderHtmlData"
+                                                                    [ngTemplateOutletContext]="{data: getData(personaData?.ageGroup, personaData?.groupsDetails?.ageGroup)}">
+                                                                </ng-container>
+                                                                <ng-container></ng-container>
+                                                                <p id="age-section-persona-value" hidden>{{personaData?.ageGroup}}</p>
+                                                                <p id="age-section-persona-lable"> AGE</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div id="state-section" class="individual-persona">
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <!--<div class="row" *ngIf="allowDemoGraphicData">-->
+                                                            <div class="col" *ngIf="personaData?.state">
+                                                                <h6 id="state-value" nz-tooltip [nzTooltipTitle]="personaData?.state"> {{personaData?.state || '-'}} </h6>
+                                                                <p id="state-section-persona-value" hidden>{{personaData?.state}}</p>                                                                  
+                                                                <p id="state-section-persona-lable" > STATE</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div id="family-size-section" class="individual-persona">
+                                                    <div class="form-group"
+                                                        *ngIf="getData(personaData?.familySize, personaData?.groupsDetails?.familySize)">
+                                                        <div class="col">
+                                                            <ng-container [ngTemplateOutlet]="renderHtmlData"
+                                                                [ngTemplateOutletContext]="{data: getData(personaData?.familySize, personaData?.groupsDetails?.familySize)}">
+                                                            </ng-container>
+                                                            <p id="family-size-section-persona-value" hidden>{{personaData?.familySize}}</p>
+                                                            <p id="family-size-section-persona-lable"> FAMILY SIZE</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div id="gender-section" class="individual-persona">
+                                                    <div class="form-group" 
+                                                        *ngIf="personaData?.gender">
+                                                        <!--<div class="form-group" style="padding: 20px;" *ngIf="allowDemoGraphicData">-->
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <h6> {{personaData?.gender || '-'}}</h6>
+                                                                <p id="gender-section-persona-value" hidden>{{personaData?.gender}}</p>
+                                                                <p id="gender-section-persona-lable"> GENDER</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div id="card-out-box">
+                                            <div id="education-section" class="individual-persona">
+                                                <div class="form-group"
+                                                    *ngIf="personaData?.education">
+                                                    <div class="col">
+                                                        <h6> {{personaData?.education || '-'}}</h6>
+                                                        <p id="education-section-persona-value" hidden>{{personaData?.education}}</p>
+                                                        <p id="education-section-persona-lable"> EDUCATION</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="big-fiv-section" class="individual-persona">
+                                                <ng-container *ngIf="!allowDemoGraphicData">
+                                                    
+                                                        <div class="col">
+                                                            <h6> {{personaData?.bigFive || '-'}}</h6>
+                                                            <p id="big-fiv-section-persona-value" hidden>{{personaData?.bigFive}}</p>
+                                                            <p id="big-fiv-section-persona-lable"> BIG FIVE PRS</p>
+                                                        </div>
+                                                    
+                                                </ng-container>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="color-cards" [ngClass]="{ 'col-lg-6': isMerchendiseIntellVisible, 'col-lg-9': !isMerchendiseIntellVisible }">
+                        <h5>{{personaData?.bigFive}}</h5>
+                        <div class="divholder">
+                            <div class="massonary">
+                                <div class="card-columns col-20">
+                                    <div class="card purple-card ">
+                                        
+                                        <div class="form-group" *ngIf="!withMultipleGroups && true">
+
+                                        <persona-card [mustContainsBullets]="false" [data]="cardData?.personality"
+                                            [title]="cardTitles.personality"
+                                            [image]="'/assets/icon/driving-instructor.svg'"></persona-card>
+                                    </div>
+                                    </div>
+
+
+                                    <div class="card light-grey-card" *ngIf="!withMultipleGroups && !isEditing">
+                                        <persona-card [mustContainsBullets]="true" [data]="cardData?.values"
+                                            [title]="cardTitles.values" [image]="'/assets/icon/interest-2.svg'">
+                                        </persona-card>
+                                    </div>
+
+                                    <div class="card cyan-card"  *ngIf="!withMultipleGroups && !isEditing">
+                                        <persona-card [mustContainsBullets]="true" [data]="cardData?.goals"
+                                            [title]="cardTitles.golas" [image]="'/assets/icon/flag.svg'"></persona-card>
+                                    </div>
+
+                                    <div class="card cyan-card"  *ngIf="!withMultipleGroups && true">
+                                        <persona-card [mustContainsBullets]="true"
+                                            [data]="cardData?.persuasiveStrategies" [title]="cardTitles.persuasive"
+                                            [image]="'/assets/icon/drivers-license.svg'">
+                                        </persona-card>
+                                    </div>
+
+                                    <div class="card light-grey-card" *ngIf="!withMultipleGroups && !isEditing">
+                                        <persona-card [mustContainsBullets]="true" [data]="cardData?.motivationToBuy"
+                                            [title]="cardTitles.motivationToBuy"
+                                            [image]="'/assets/icon/happy-face.svg'">
+                                        </persona-card>
+
+                                    </div> 
+
+                                    <div class="card purple-card"  *ngIf="!withMultipleGroups && !isEditing">
+                                        <persona-card [mustContainsBullets]="true" [data]="cardData?.frustrations"
+                                            [title]="cardTitles.frustation" [image]="'/assets/icon/thumbs-up.svg'">
+                                        </persona-card>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Merchandise Intelligence division  -->
+                     <div class="col-lg-3 merchant" *ngIf="isMerchendiseIntellVisible">
+                        <h5> Merchandise Intelligence</h5>
+                        <div class="card merchandise-card-row">
+                            <div class="green-card d-flex flex-column">
+                                <div class="intelligence-product-container">
+                                    <div  *ngIf="showMerkindelIntelligence" >
+                                        <div  class="col ng-star-inserted single-product" *ngFor="let item of popularProducts">
+                                            <div id="profile_leftPanel image-container">
+                                                <div>
+                                                    <img height="50" [src]="item.productImage">
+                                                </div>
+                                            </div>
+                                            <div class="product-details-div">
+                                                <div class="product-name-container">
+                                                    <div class="product-name" nz-tooltip [nzTooltipTitle]="item.productName">{{item.productName}}</div>
+                                                </div>
+                                                <div class="total-sold-quantities-container">
+                                                    <p class="card-value">{{item.totalSoldQuantities | numberFormat}} sold</p>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</nz-spin>
+<ng-template #renderHtmlData let-data="data" let-key="key" let-prefix="prefix">
+    <ng-container *ngIf="isArray(data); else singleData">
+        <ng-container *ngFor="let item of data; let i = index;">
+            <h6> {{prefix || ''}}{{getDataFromKey(item, key) || ( prefix ? '' : '-' )}}</h6>
+        </ng-container>
+    </ng-container>
+    <ng-template #singleData>
+        <h6> {{getDataFromKey(data, key) || '-'}}</h6>
+    </ng-template>
+</ng-template>

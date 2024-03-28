@@ -1,0 +1,16 @@
+<nz-spin [nzSpinning]="isPageLoading">
+<div class="d-flex justify-content-between">
+    <h5>Current APDEX Score
+        <img [src]="'/assets/svg/Question.svg'" class="question-mark" nz-tooltip [nzTooltipTitle]="'User satisfaction based on the response time to their request.'"/>
+    </h5>
+    <div class="tabs1">
+        <span *ngFor="let oneApdex of apDexSelection"> 
+            <input class="radio" [(ngModel)]="duration" (change)="onApDeskChange()" [value]="oneApdex.value" [id]="oneApdex.id" name="group1" type="radio" [checked]="oneApdex.value === duration">
+            <label class="tab1" [id]="oneApdex.labelID" [for]="oneApdex.id">{{oneApdex.key}}</label>
+        </span>                                  
+    </div>
+</div>
+<canvas #myCanvas id="canvas" class="graph" baseChart [chartType]="chartType" [datasets]="chartData"
+    [labels]="chartLabels" [colors]="chartColors"  [options]="chartOptions" [plugins]="lineChartPlugins">
+</canvas>
+</nz-spin>

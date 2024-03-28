@@ -1,0 +1,152 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <form (ngSubmit)="onCmsSave()" novalidate #cmsFrm="ngForm">
+          <div class="card-body">
+            <p class="col-sm-12 text-right requiredLabel">
+              <span [innerHTML]="'FORM_NOTE' | translate"></span>
+            </p>
+            <div class="form-group" *ngFor="let lan of languages">
+              <label for="page_title">{{ 'CONTENT_PAGE_TITLE' | translate }} ({{ lan.name }}) <span class="asterisk_input"></span></label>
+              <input
+                [(ngModel)]="model.page_title[lan.locale]"
+                [style.direction]="lan.text_direction"
+                type="text"
+                name="page_title_{{ lan.locale }}"
+                id="page_title_{{ lan.locale }}"
+                class="form-control"
+                placeholder="{{ 'CONTENT_PAGE_TITLE' | translate }}"
+                required
+                #title="ngModel"
+              />
+              <div class="form-control-feedback text-danger" *ngIf="title.errors && cmsFrm.submitted">
+                <p *ngIf="title.errors.required">
+                  {{ 'PLEASE_ENTER_CONTENT_PAGE_TITLE' | translate }}
+                </p>
+              </div>
+            </div>
+            <div class="form-group" *ngFor="let lan of languages">
+              <label for="description">{{ 'DESCRIPTION' | translate }} ({{ lan.name }}) <span class="asterisk_input"></span></label>
+              <!-- <input formControlName="description" type="description" id="description" class="form-control" placeholder="Enter Description"> -->
+              <ck-editor
+                [(ngModel)]="model.description[lan.locale]"
+                name="description_{{ lan.locale }}"
+                skin="moono-lisa"
+                required
+                #description="ngModel"
+                [config]="config"
+                (change)="getCKData(lan.locale, lan.text_direction)"
+                language="{{ lan.locale }}"
+              ></ck-editor>
+              <div class="form-control-feedback text-danger" *ngIf="ck_error[lan.locale] == true && cmsFrm.submitted">
+                <p>Please enter cms description</p>
+              </div>
+            </div>
+            <div class="form-group" *ngFor="let lan of languages">
+              <label for="meta_keywords">{{ 'META_TITLE' | translate }} ({{ lan.name }}) <span class="asterisk_input"></span></label>
+              <input
+                [(ngModel)]="model.meta_keywords[lan.locale]"
+                [style.direction]="lan.text_direction"
+                name="meta_keywords_{{ lan.locale }}"
+                type="text"
+                id="meta_keywords_{{ lan.locale }}"
+                class="form-control"
+                placeholder="{{ 'META_TITLE' | translate }}"
+                required
+                #meta_title="ngModel"
+              />
+              <div class="form-control-feedback text-danger" *ngIf="meta_title.errors && cmsFrm.submitted">
+                <p *ngIf="meta_title.errors.required">
+                  {{ 'PLEASE_ENTER_META_TITLE' | translate }}
+                </p>
+              </div>
+            </div>
+            <div class="form-group" *ngFor="let lan of languages">
+              <label for="meta_description"
+                >{{ 'META_DESCRIPTION' | translate }} ({{ lan.name }}) <span class="asterisk_input"></span
+              ></label>
+              <input
+                [(ngModel)]="model.meta_description[lan.locale]"
+                [style.direction]="lan.text_direction"
+                name="meta_description_{{ lan.locale }}"
+                type="text"
+                id="meta_description_{{ lan.locale }}"
+                class="form-control"
+                placeholder="{{ 'META_DESCRIPTION' | translate }}"
+                required
+                #meta_description="ngModel"
+              />
+              <div class="form-control-feedback text-danger" *ngIf="meta_description.errors && cmsFrm.submitted">
+                <p *ngIf="meta_description.errors.required">
+                  {{ 'PLEASE_ENTER_META_DESCRIPTION' | translate }}
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-form-label" for="status"> {{ 'STATUS' | translate }} <span class="asterisk_input"></span></label>
+              <div class="d-block">
+                <div class="form-check-inline">
+                  <label class="form-check-label"
+                    >{{ 'STATUS_LIST.ACTIVE' | translate }}
+                    <input
+                      [(ngModel)]="cmsStatus"
+                      name="status"
+                      class="form-check-input"
+                      type="radio"
+                      id="active"
+                      value="Active"
+                      required
+                      #status="ngModel"
+                    />
+                    <span class="radio-span"></span>
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label"
+                    >{{ 'STATUS_LIST.INACTIVE' | translate }}
+                    <input
+                      class="form-check-input"
+                      name="status"
+                      [(ngModel)]="cmsStatus"
+                      type="radio"
+                      id="inactive"
+                      value="Inactive"
+                      required
+                      #status="ngModel"
+                    />
+                    <span class="radio-span"></span>
+                  </label>
+                </div>
+              </div>
+              <!-- <div class="col-form-label">
+                <div class="form-check form-check-inline mr-1" id="inline-radios">
+                  <input [(ngModel)]="model.status" name="status" class="form-check-input" type="radio" id="active"
+                    value="Active" required #status="ngModel">
+                  <label class="form-check-label" for="active">Active</label>
+                </div>
+                <div class="form-check form-check-inline mr-1">
+                  <input class="form-check-input" name="status" [(ngModel)]="model.status" type="radio" id="inactive"
+                    value="Inactive" required #status="ngModel">
+                  <label class="form-check-label" for="inactive">Inactive</label>
+                </div>
+              </div> -->
+              <div class="form-control-feedback text-danger" *ngIf="status.errors && cmsFrm.submitted">
+                <p *ngIf="status.errors.required">Please select status</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <!-- [disabled]="cmsFrm.invalid || buttonDisable" -->
+            <button type="submit" class="btn btn-primary"><i class="fa fa-check-circle-o fa-lg"></i> {{ 'SAVE' | translate }}</button>&nbsp;
+            <a class="btn btn-warning" [routerLink]="['/cms/list']">
+              <i class="fa fa-times"></i>
+              {{ 'CANCEL' | translate }}</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-loader></app-loader>

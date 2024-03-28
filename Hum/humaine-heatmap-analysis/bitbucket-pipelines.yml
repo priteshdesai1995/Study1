@@ -1,0 +1,43 @@
+image: node:14-alpine
+
+pipelines:
+  branches:
+    develop:
+      - step:
+          name: Security Scan
+          script:
+            # Run a security scan for sensitive data.
+            # See more security tools at https://bitbucket.org/product/features/pipelines/integrations?&category=security
+            - pipe: atlassian/git-secrets-scan:0.4.3
+      - step:
+          name: Build and Test
+          script:
+          # TODO: include tests, more advanced security scans etc.
+            - npm install
+            - ls -la
+          artifacts:
+            - "*/**"
+
+      - step:
+          name: Build and push docker image
+          image: docker
+          script:
+            # build the image
+            - ls -la
+            - docker build -t hum-dev-heatmap-job -t hum-dev-be-svc-heatmap -f cicd/Dockerfile .
+
+            # use the pipe to push the image to AWS ECR
+            - pipe: atlassian/aws-ecr-push-image:1.4.1
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                IMAGE_NAME: hum-dev-heatmap-job
+                TAGS: latest $BITBUCKET_COMMIT
+            - pipe: atlassian/aws-ecr-push-image:1.4.1
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: us-east-2
+                IMAGE_NAME: hum-dev-be-svc-heatmap
+                TAGS: latest $BITBUCKET_COMMIT

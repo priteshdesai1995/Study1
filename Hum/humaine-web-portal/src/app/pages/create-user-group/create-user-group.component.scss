@@ -1,0 +1,135 @@
+@import "../../../theme/variables.scss";
+@import "../../../theme/mixins.scss";
+@import "../../../theme/responsive.scss";
+
+.col-pad{
+  padding-bottom:10px;
+}
+.ant-advanced-search-form {
+    padding: 24px;
+    background: #fbfbfb;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+  }
+
+  .search-result-list {
+    margin-top: 16px;
+    border: 1px dashed #e9e9e9;
+    border-radius: 6px;
+    background-color: #fafafa;
+    min-height: 200px;
+    text-align: center;
+    padding-top: 80px;
+  }
+
+  [nz-form-label] {
+    overflow: visible;
+  }
+
+  button {
+    margin-left: 8px;
+  }
+
+  .collapse {
+    margin-left: 8px;
+    font-size: 14px;
+  }
+
+  .search-area {
+    text-align: right;
+  }
+
+    .container input:checked ~ .checkmark {
+        background-color: #35D57B;
+    }
+    .container .checkmark:after {
+        left: 8px;
+        top: 1px;
+        width: 8px;
+        height: 15px;
+    }
+    .container {
+        font-size: 12px;
+    }
+    .checkmark {
+        height: 24px;
+        width: 24px;
+    }
+    .track-top{
+        display: flex;
+        width: 252px;
+    }
+    .track-bottom{
+        p{
+          font-size: 14px;
+          margin-bottom: 5px;
+        }
+        .provider{
+            display: flex;
+        } 
+}
+
+.form-row > .col, .form-row > [class*=col-] {
+    padding-right: 5px;
+    padding-left: 5px;
+    flex-basis: auto;
+    width: 50%;
+    margin: 13px 0;
+}
+
+a {
+  color: black;
+  background-color: transparent;
+  transition: color .3s;
+  -webkit-text-decoration-skip: objects;
+}
+
+
+@media only screen and (max-width: 767px ) {
+.section-one{
+  h5{
+    font-size: 16px;
+  }
+}
+.form-row > .col, .form-row > [class*=col-] {
+    padding-right: 5px;
+    padding-left: 5px;
+    flex-basis: auto;
+    width: 100%;
+    margin: 13px 0;
+  }
+  .track-bottom{
+  .provider{
+      display: block;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) 
+ and  (max-width: 1024px) {
+
+}
+
+@media only screen 
+and (min-device-width: 1024px) 
+and (max-device-width: 1365px) 
+and (-webkit-min-device-pixel-ratio: 2)
+{
+  .track-bottom{
+    .provider{
+        display: block;
+      }
+    }
+    .factor{
+      height: 145px;
+    }
+}
+
+@media only screen and (min-width: 1366px) 
+and (max-device-width: 1400px) {
+  .section-one{
+    h5{
+      font-size: 18px;
+    }
+  }
+}

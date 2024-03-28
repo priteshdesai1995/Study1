@@ -1,0 +1,35 @@
+.outer-tooltip{
+    color: black;font-size: 12px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px
+}
+
+.bubble {
+    fill: transparent !important;  
+}
+.outer-bubble{
+    overflow: auto; height:400px
+}
+
+#tooltip {
+    position: fixed;
+    z-index: 10000;
+    background-color: #ffffff;
+}
+.chart-container{
+    // display: flex;
+    height: 100%;
+    flex-flow: column;
+}
+
+
+@media only screen and (max-width: 767px ) {
+    .chart-container{
+       height: 350px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .chart-container{
+        height: 350px;
+     }
+}
+

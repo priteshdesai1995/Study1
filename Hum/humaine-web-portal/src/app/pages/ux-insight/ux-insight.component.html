@@ -1,0 +1,158 @@
+<nz-spin [nzSpinning]="isPageLoading">
+    <div class="header-sec">
+        <div class="left-panel">
+            <nz-breadcrumb [nzAutoGenerate]="true" style="margin: 5px 0">
+            </nz-breadcrumb>
+        </div>
+    </div>
+    <div class="row insights">
+        <div class="col-6 col-md-3 col-xl-3">
+            <div class="card  card-body">
+                <div class="card-block">
+                    <div class="float-left">
+                        <img src="/assets/img/salary.svg">
+                    </div>
+                    <div class="float-right">
+                        <i class="more" nz-icon nzType="more" nzTheme="outline"></i>
+                    </div>
+                    <div class="float-none">Total Customers</div>
+                    <div class="graph">
+                        <div class="float-left">
+                            <h4>{{UXInsightData.totalUsers | numberFormat}}</h4>
+                        </div>
+                        <!-- <div class="float-right">
+                            <img class="more" src="/assets/icon/More Button.svg">
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 col-xl-3">
+            <div class="card card-body">
+                <div class="card-block">
+                    <div class="float-left">
+                        <img src="/assets/img/savings-2.svg">
+                    </div>
+                    <div class="float-right">
+                        <p>Avg. 24h</p>
+                    </div>
+                    <div class="float-none">User Sessions</div>
+                    <div class="graph">
+                        <div class="float-left">
+                            <h4>{{UXInsightData.dailyAvgSessions | numberFormat}}</h4>
+                        </div>
+                        <!-- <div class="float-right">
+                            <img class="more" src="/assets/icon/More Button.svg">
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-6 col-md-3 col-xl-3">
+            <div class="card card-body ">
+                <div class="card-block">
+                    <div class="float-left">
+                        <img src="/assets/img/growth-2.svg">
+                    </div>
+                    <div class="float-right">
+                        <p>Avg. 24h</p>
+                    </div>
+                    <div class="float-none">Product Purchases</div>
+                    <div class="graph">
+                        <div class="float-left">
+                            <h4>{{UXInsightData.dailyPurchaseProduct | numberFormat}}</h4>
+                        </div>
+                        <!-- <div class="float-right">
+                            <img class="more" src="/assets/icon/More Button.svg">
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 col-xl-3">
+            <div class="card  card-body ">
+                <div class="card-block">
+                    <div class="float-left">
+                        <img src="/assets/img/coin-2.svg">
+                    </div>
+                    <div class="float-right">
+                        <p>Avg. 24h</p>
+                    </div>
+                    <div class="float-none">Sales Revenue</div>
+                    <div class="graph">
+                        <div class="float-left">
+                            <h4>${{UXInsightData.dailyAvgSale | numberFormat}}</h4>
+                        </div>
+                        <!-- <div class="float-right">
+                            <img class="more" src="/assets/icon/More Button.svg">
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-two">
+        <div class="row">
+            <div class="col-12 col-xl-6 list">
+                <!-- <div class="black-card">
+                    <div class="black-card-body">
+                        <h4>Most Purchased 5 Products (Since Last 24 Hours)</h4>
+                        <list-table [templateRefs]="{'1': linkColoumTemplate}" [data]="UXInsightProduct.mostPurchasedProducts" #purchaseProduct [isSortBy]="false"
+                            [isAction]="false" [config]="purchasProduct"></list-table>
+                    </div>
+                </div> -->
+                <div class="section-two" style="padding-top:20px;">
+                    <list-table [templateRefs]="{'1': linkColoumTemplate}"
+                        [data]="UXInsightProduct.mostPurchasedProducts" #purchaseProduct [isSortBy]="false"
+                        [isAction]="false" [config]="purchasProduct" [isInsight]="true" [isURLImage]="true"
+                        [imageBoxWidth]="'50px'"></list-table>
+                </div>
+            </div>
+            <div class="col-12 col-xl-6 bar-graph">
+                <div class="black-card ">
+                    <div class="black-card-body">
+                        <h4> Event Behaviour</h4>
+                        <!-- <div class="bar-card"> -->
+                            <bar-graph *ngIf="UXInsightProduct.eventCounts" [data]="UXInsightProduct.eventCounts"></bar-graph>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #linkColoumTemplate let-data="fieldData">
+            <a>{{data}}</a>
+        </ng-template>
+        <div class="row">
+            <div class="col-12 col-xl-6 list">
+                <div class="black-card">
+                    <div class="black-card-body">
+                        <!-- <h4> Most Viewed 5 Products (Since Last 24 Hours)</h4> -->
+                        <list-table [templateRefs]="{'1': linkColoumTemplate}"
+                            [data]="UXInsightProduct.mostViewProducts" #productview [isSortBy]="false"
+                            [isAction]="false" [config]="productViewed" [isURLImage]="true" [isInsight]="true"
+                            [imageBoxWidth]="'50px'"></list-table>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xl-6 cat-list">
+                <div class="black-card">
+                    <div class="black-card-body">
+                        <!-- <h4> Most Viewed 5 Category (Since Last 24 Hours)</h4> -->
+                        <list-table [data]="UXInsightProduct.mostViewCategory" #purchaseCat [isSortBy]="false"
+                            [isAction]="false" [config]="viewedCategory" [isURLImage]="true" [isInsight]="true"
+                            [imageBoxWidth]="'50px'"></list-table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xl-6 bar-graph-mobile">
+        <div class="black-card-body">
+            <h4> Event Behaviour</h4>
+            <bar-graph [data]="UXInsightProduct.eventCounts"></bar-graph>
+        </div>
+    </div>
+</nz-spin>

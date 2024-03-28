@@ -1,0 +1,326 @@
+<div class="wrapper">
+  <div class="header-sec ">
+    <div class="left-panel">
+      <nz-breadcrumb [nzAutoGenerate]="true" style="margin: 5px 0">
+      </nz-breadcrumb>
+    </div>
+    <div class="right-panel">
+      <div class="white-sort">
+        <img src="/assets/icon/bubble-chart-line.svg" />View As :
+        <nz-select (ngModelChange)="viewChange($event)" [(ngModel)]="selectedView">
+          <nz-option *ngFor="let option of viewList" [nzValue]="option.value" [nzLabel]="option.name"></nz-option>
+        </nz-select>
+      </div>
+    </div>
+    <!-- <div class="header-sec">
+      <div class="left-panel">
+        <nz-breadcrumb [nzAutoGenerate]="true" style="margin: 5px 0">
+        </nz-breadcrumb>
+      </div>
+      <div class="right-panel">
+        <div class="btn-pad">
+
+        </div>
+      </div>
+    </div> -->
+  </div>
+  <div class="list" *ngIf="selectedView === ViewUserOption.LIST">
+    <div class="section-one">
+      <div class="row">
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="card card-body">
+            <div class="card-block">
+              <h5>Wild Card</h5>
+              <div class="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua</p>
+                <img class="more" src="../../../assets/icon/More Button.svg">
+              </div>
+              <!-- <div class="graph">
+                  <div class="left-panel">
+                    <h4>176K</h4>
+                    <span class="green-label">26%<img src="../../..//assets/img/up-arrow.svg" /></span>
+                  </div>
+                  <div class="right-panel graph-position-top">
+                    <app-graph [type]="chartTypes.INCREASE"></app-graph>
+                  </div>
+                </div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="card card-body">
+            <div class="card-block">
+              <h5>Behaviour Link</h5>
+              <div class="purple-text">
+                <a target="_blank" href="https://www.shutterstock.com/discover/10-free-stock-images">
+                  https://www.shutterstock.com/discover/10-free-stock-images/images</a>
+                <img class="more" src="../../../assets/icon/More Button.svg">
+
+              </div>
+              <!-- <div class="graph">
+                  <div class="left-panel">
+                    <h4>41.7K</h4>
+                    <span class="green-label">28%<img src="../../..//assets/img/up-arrow.svg" /></span>
+                  </div>
+                  <div class="right-panel graph-position-top">
+                    <app-graph [type]="chartTypes.INCREASE"></app-graph>
+                  </div>
+                </div> -->
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="card card-body">
+            <div class="card-block">
+              <div class="heading">
+                <h5 class="float-left"> {{titles.averageSpend}}</h5>
+                <p class="float-right avg">Avg. 24h</p>
+              </div>
+              <div class="graph">
+                <div class="left-panel">
+                  <div class="count">
+                    <h4>${{getTileChart?.averageSpend?.totalCount | numberFormat}}
+                      <ng-container *ngIf="getTileChart?.averageSpend?.totalCount">
+                      </ng-container>
+                    </h4>
+                  </div>
+                  <span [class]="getIncDecLabelClass(getTileChart?.averageSpend?.lastHourComparison)">
+                    {{getAbsouluteValue(getTileChart?.averageSpend?.lastHourComparison)}}%
+                    <img [src]="getIncDecImage(getTileChart?.averageSpend?.lastHourComparison)" />
+                  </span>
+                </div>
+                <div class="right-panel graph-position-top">
+                  <app-graph [lineChartData]="statiticsChartData.averageSpend.data"
+                    [lineChartLabels]="statiticsChartData.averageSpend.labels"
+                    [type]="getChartNature(getTileChart?.averageSpend?.lastHourComparison)">
+                  </app-graph>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="card card-body">
+            <div class="card-block">
+              <div class="heading">
+                <h5 class="float-left">{{titles.overallConversionRate}}</h5>
+                <p class="float-right avg">Avg. 24h</p>
+              </div>
+              <div class="graph">
+                <div class="left-panel">
+                  <h4>{{getTileChart?.overallConversionRate?.percentageCount | numberFormat}}
+                    <ng-container *ngIf="getTileChart?.overallConversionRate?.percentageCount">
+                    </ng-container>
+                  </h4>
+                  <span [class]="getIncDecLabelClass(getTileChart?.overallConversionRate?.lastHourComparison)">
+                    {{getAbsouluteValue(getTileChart?.overallConversionRate?.lastHourComparison)}}%
+                    <img [src]="getIncDecImage(getTileChart?.overallConversionRate?.lastHourComparison)" />
+                  </span>
+                </div>
+                <div class="right-panel graph-position-top">
+                  <app-graph [lineChartData]="statiticsChartData.overallConversionRate.data"
+                    [lineChartLabels]="statiticsChartData.overallConversionRate.labels"
+                    [type]="getChartNature(getTileChart?.overallConversionRate?.lastHourComparison)">
+                  </app-graph>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-two" style="padding-top:20px;">
+      <list-table #list [inItDataFormatter]="initDataFormatter" [expandViewPersonaPath]="'groups/viewPersona/'"
+        [allowExpand]="true" [config]="dataTableConfig">
+      </list-table>
+    </div>
+  </div>
+  <div [hidden]="selectedView != ViewUserOption.BUBBLE">
+    <div class="section-one bubble-section">
+      <div class="row panel">
+        <div class="bubble-right col-12 col-md-12 col-lg-9 col-xl-9">
+          <bubble-view style="flex-grow: 1;" [data]="userListBubble"></bubble-view>
+          <!-- <bubble-chart [data]="userListBubble"></bubble-chart> -->
+          <div class="row bubble-bottom">
+            <div class="col-12  col-md-6 col-lg-8 col-xl-8">
+              <div class="card">
+                <nz-carousel [nzDotPosition]="dotPosition" [nzDots]="true" [nzAutoPlay]="true" [nzAutoPlaySpeed]="5000">
+
+                  <div nz-carousel-content class="card-block ">
+                    <div class="float-left ">
+                      <h4> The Wild Ones!</h4>
+                      <div style="width: 250px;">
+                        <p>Your biggest user group are made of people who love trying new things. They want to be
+                          intrigued to try new things!</p>
+                        <div style="width:300px;">
+                          <span style="border-right: 2px solid #e1dcdc;padding-right: 12px;">
+                            Age Group:25
+                          </span>
+                          <span style="padding-left: 12px;"> Location : TE</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="float-right">
+                      <img class="more" src="../../../assets/icon/More Button.svg">
+                    </div>
+
+                  </div>
+
+                  <div nz-carousel-content class="card-block ">
+                    <div class="float-left ">
+                      <h4> The Wild Ones!</h4>
+                      <div style="width: 250px;">
+                        <p>Your biggest user group are made of people who love trying new things. They want to be
+                          intrigued to try new things!</p>
+                        <div style="width:300px;">
+                          <span style="border-right: 2px solid #e1dcdc;padding-right: 12px;">
+                            Age Group:25
+                          </span>
+                          <span style="padding-left: 12px;"> Location : TE</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="float-right">
+                      <img class="more" src="../../../assets/icon/More Button.svg">
+                    </div>
+
+                  </div>
+                  <div nz-carousel-content class="card-block ">
+                    <div class="float-left ">
+                      <h4> The Wild Ones!</h4>
+                      <div style="width: 250px;">
+                        <p>Your biggest user group are made of people who love trying new things. They want to be
+                          intrigued to try new things!</p>
+                        <div style="width:300px;">
+                          <span style="border-right: 2px solid #e1dcdc;padding-right: 12px;">
+                            Age Group:25
+                          </span>
+                          <span style="padding-left: 12px;"> Location : TE</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="float-right">
+                      <img class="more" src="../../../assets/icon/More Button.svg">
+
+                    </div>
+
+                  </div>
+                </nz-carousel>
+              </div>
+
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-4 monthly">
+              <div class="card">
+                <div class="card-block">
+                  <h4>Dive in to User Groups</h4>
+                  <p>The Know How</p>
+                  <div class="mt-2">
+                    <p>You can expand the user groups by clicking on each bubble to see a wider range of your user
+                      groups. Try clicking on one!</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 bubble-left col-lg-3 col-xl-3">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-12 outer-graph">
+              <div class="card ">
+                <div class="card-block">
+                  <div class="heading">
+                    <h4 class="float-left">{{titles.overallConversionRate}}
+                    </h4>
+                    <p class="float-right avg">Avg. 24h</p>
+                  </div>
+                  <div class="graph">
+                    <div class="left-panel">
+                      <h3>{{getTileChart?.overallConversionRate?.percentageCount | numberFormat}}
+                        <ng-container *ngIf="getTileChart?.overallConversionRate?.percentageCount">
+                        </ng-container>
+                      </h3>
+                      <span [class]="getIncDecLabelClass(getTileChart?.overallConversionRate?.lastHourComparison)">
+                        {{getAbsouluteValue(getTileChart?.overallConversionRate?.lastHourComparison)}}%
+                        <img [src]="getIncDecImage(getTileChart?.overallConversionRate?.lastHourComparison)" />
+                      </span>
+                    </div>
+                    <div class="right-panel graph-position-top">
+                      <app-graph [lineChartData]="statiticsChartData.overallConversionRate.data"
+                        [lineChartLabels]="statiticsChartData.overallConversionRate.labels"
+                        [type]="getChartNature(getTileChart?.overallConversionRate?.lastHourComparison)">
+                      </app-graph>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 outer-graph col-lg-12">
+              <div class="card">
+                <div class="card-block">
+                  <div class="heading">
+                    <h4 class="float-left">{{titles.averageSpend}}
+                    </h4>
+                    <p class="float-right avg">Avg. 24h</p>
+                  </div>
+                  <div class="graph">
+                    <div class="left-panel">
+                      <h3>${{getTileChart?.averageSpend?.totalCount | numberFormat}}
+                        <ng-container *ngIf="getTileChart?.averageSpend?.totalCount">
+                        </ng-container>
+                      </h3>
+                      <span [class]="getIncDecLabelClass(getTileChart?.averageSpend?.lastHourComparison)">
+                        {{getAbsouluteValue(getTileChart?.averageSpend?.lastHourComparison)}}%
+                        <img [src]="getIncDecImage(getTileChart?.averageSpend?.lastHourComparison)" />
+                      </span>
+                    </div>
+                    <div class="right-panel graph-position-top">
+                      <app-graph [lineChartData]="statiticsChartData.averageSpend.data"
+                        [lineChartLabels]="statiticsChartData.averageSpend.labels"
+                        [type]="getChartNature(getTileChart?.averageSpend?.lastHourComparison)">
+                      </app-graph>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card behaviour pt-2 pl-2 pr-2">
+            <nz-carousel [nzDotPosition]="'bottom'" [nzDots]="true" [nzAutoPlay]="true" [nzAutoPlaySpeed]="5000">
+
+              <div nz-carousel-content class="card-block ">
+                <h4>The Behaviour</h4>
+                <p>Jump to the My Journey Analysis to see how these users are interacting with your website.</p>
+                <img style="width: 100%;height: 45%;" src="../../../assets/img/bubble-box-image.svg">
+                <div class="right-panel">
+                  <img class="behaviour-more" src="../../../assets/icon/More Button.svg">
+                </div>
+              </div>
+              <div nz-carousel-content class="card-block ">
+                <h4>The Behaviour</h4>
+                <p>Jump to the My Journey Analysis to see how these users are interacting with your website.</p>
+                <img style="width: 100%;height: 45%" src="../../../assets/img/bubble-box-image.svg">
+                <div class="right-panel">
+                  <img class="behaviour-more" src="../../../assets/icon/More Button.svg">
+                </div>
+              </div>
+              <div nz-carousel-content class="card-block ">
+                <h4>The Behaviour</h4>
+                <p>Jump to the My Journey Analysis to see how these users are interacting with your website.</p>
+                <img style="width: 100%;height: 45%;" src="../../../assets/img/bubble-box-image.svg">
+                <div class="right-panel">
+                  <img class="behaviour-more" src="../../../assets/icon/More Button.svg">
+                </div>
+              </div>
+            </nz-carousel>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

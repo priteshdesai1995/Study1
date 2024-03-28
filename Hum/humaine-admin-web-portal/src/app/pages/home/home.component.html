@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <div class="header-sec">
+        <div class="left-panel">
+            <nz-breadcrumb [nzAutoGenerate]="true" style="margin: 5px 0">
+            </nz-breadcrumb>
+        </div>
+    </div>
+
+    <div class="section-one">
+        <nz-spin [nzSpinning]="isPageLoading">
+            <div class="row " >
+                <div class="col-md-4">
+                    <div class="card card-body title">
+                        <div class="card-block">
+                            <div class="heading">
+                                <h5 class="float-left">Number of registered customers</h5>
+                            </div>
+                            <div style="margin-top: 34px">
+                                {{registeredCustomers}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nz-spin>
+</div>

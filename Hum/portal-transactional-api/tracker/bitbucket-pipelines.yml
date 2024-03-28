@@ -1,0 +1,44 @@
+image: atlassian/default-image:2
+
+# Workflow Configuration
+pipelines:
+
+  branches:
+    develop:
+      - step:
+          name: Deploy to S3
+          deployment: dev2
+          clone:
+            enabled: true
+          script:
+            # sync files with S3
+            - pipe: atlassian/aws-s3-deploy:0.4.4
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: us-east-2
+                S3_BUCKET: hum-dev-cst-files
+                # LOCAL_PATH: $ARTIFACT_PATH
+                LOCAL_PATH: "public/"
+                DELETE_FLAG: "true"
+            # triggering a distribution invalidation to refresh the CDN caches
+            - pipe: atlassian/aws-cloudfront-invalidate:0.1.1
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: us-east-2
+                DISTRIBUTION_ID: EQOYJP0YLXF4G
+      - step:
+          name: Invoke email notification job
+          script:
+            # Invoke and save response code into the variable
+            - |
+              RESPONSE_CODE=$(curl --head \
+                                   --silent \
+                                   --output /dev/null \
+                                   --write-out "%{http_code}" \
+                                   --header "version: v1" \
+                                   https://pta.dev.nonprod.bodegaswimwear.com/humaine/portal/api/trackernotification)
+            # check if response code is 200, if not exit with error
+            - echo $RESPONSE_CODE
+            - if [ "$RESPONSE_CODE" != "200" ]; then exit 1; fi

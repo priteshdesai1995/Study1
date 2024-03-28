@@ -1,0 +1,18 @@
+<nz-spin [nzSpinning]="isPageLoading">
+<div class="d-flex justify-content-between">
+    <h5 >Page Load Time
+        <img [src]="'/assets/svg/Question.svg'" class="question-mark" nz-tooltip [nzTooltipTitle]="'How long it takes for a page to load.'"/>
+    </h5>
+    <div class="tabs1">
+        <span *ngFor="let onePage of pageLoadSelection">
+            <input class="radio" [(ngModel)]="duration" (change)="onTabChange($event)" [value]="onePage.value" [id]="onePage.id"
+                name="group2" type="radio" [checked]="onePage.checked">
+            <label class="tab1" [id]="onePage.labelID" [for]="onePage.id">{{onePage.key}}</label>
+        </span>
+    </div>
+
+</div>
+<canvas #myCanvas id="canvas" class="graph" baseChart [chartType]="chartType" [datasets]="chartData"
+    [labels]="chartLabels" [colors]="chartColors" [options]="chartOptions" [plugins]="lineChartPlugins">
+</canvas>
+</nz-spin>

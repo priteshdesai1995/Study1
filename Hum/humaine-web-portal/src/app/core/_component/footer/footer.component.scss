@@ -1,0 +1,31 @@
+@import "src/theme/variables.scss";
+@import "src/theme/mixins.scss";
+@import "src/theme/responsive.scss";
+
+.footer{
+    background-color: #f2f1f1;
+    border-top: 1px solid #ecebeb;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 45px;
+    p{
+        font-family: "SofiaProRegular",sans-serif;
+        font-size: 14px;
+        // padding-left: 27.5%;
+        width: -webkit-fill-available;
+        text-align: center;
+        
+    }
+}
+
+@include md {
+   .footer{
+    p{
+        padding-left: 0;
+        text-align: center; 
+    }
+   }
+}

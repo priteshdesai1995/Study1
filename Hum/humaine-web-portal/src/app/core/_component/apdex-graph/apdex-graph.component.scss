@@ -1,0 +1,54 @@
+
+.tab,.tab1,.tab2{
+    cursor: pointer;
+    padding:5px 12px;
+    display:inline-block;
+    color:black;
+  }
+  .question-mark{
+    margin-top: -6px;
+    width: 15px;
+    }
+
+  h5{
+    font-size: 14px;
+    font-family: "SofiaProBold", sans-serif !important;
+    color: black;
+  }
+
+  .panel{
+    display:none;
+    animation: fadein .8s;
+  }
+  
+  @keyframes fadein {
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+  }
+  .panel-title{
+    font-size:1.5em;
+    font-weight:bold
+  }
+  .radio{
+    display:none;
+  }
+  #one:checked  #one-panel,
+  #two:checked  #two-panel{
+    display:block
+  }
+  #one:checked +  #one-tab,
+  #two:checked +  #two-tab,
+  #one1:checked + #one-tab1,
+  #two1:checked +  #two-tab1,
+  #one2:checked +  #one-tab2,
+  #three2:checked +  #three-tab2,
+  #two2:checked +  #two-tab2{
+    background:#fffffff6;
+    color:#807f94;
+    border-bottom: 2px solid #9e55fa;
+  }
+  

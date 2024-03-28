@@ -1,0 +1,317 @@
+.heatmap-card{
+    padding: 10px;
+    .date{
+        font-size: 10px;
+        color: gray;margin-right: 20px;
+    }
+}
+
+.filters{
+    margin-top: 5px;
+}
+
+.radio-toolbar{
+       /* max-height: 15rem; */
+       display: flex;
+       /* min-height: 15rem; */
+       background: #FFFFFF;
+    .single-radio{
+        width: 70px;
+        display: flex;
+        height: 40px;
+        justify-content: center;
+        border: 1px solid #DCE0E3;
+    }
+}
+.radio-toolbar{
+    /* max-height: 15rem; */
+    display: flex;
+    /* min-height: 15rem; */
+    background: #FFFFFF;
+    .single-radio{
+        width: 70px;
+        display: flex;
+        height: 40px;
+        justify-content: center;
+        border: 1px solid #DCE0E3;
+    }
+}
+.radio-toolbar input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+
+  .radio-toolbar label {
+   width: 100%;
+   height: 100%;
+   background: #FFFFFF;
+   cursor: pointer;
+   justify-content: center;
+   display: flex;
+   padding: 6px 0px 6px 0px;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color:#754BEB;
+    width: 100%;
+    height: 100%;
+    color: #754BEB;
+}
+
+.radio-toolbar input[type="radio"]:focus + label {
+    color: #754BEB;
+    background-color:#754BEB;
+
+    font-family: "SofiaProRegular", sans-serif !important;
+}
+
+.radio-toolbar input[type="radio"][disabled] + label {
+    color: #9a9ea3;
+    cursor: auto;
+}
+.radio-toolbar input[type="radio"][disabled] + label:hover {
+   background-color:#754BEB;
+    
+}
+.radio-toolbar label:hover {
+    background-color: #754BEB;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: white !important;
+    opacity: 1;
+    font-size: 12px;
+}
+.interaction-radio-toolbar{
+    display: flex;
+    background: #FFFFFF;
+    .interaction-radio{
+        width: 70px;
+        display: flex;
+        height: 40px;
+        justify-content: center;
+        border: 1px solid #DCE0E3;
+    }
+}
+.interaction-radio-toolbar{
+    display: flex;
+    background: #FFFFFF;
+    .interaction-radio{
+        border-radius: 3px;
+        width: 100px;
+        display: flex;
+        height: 40px;
+        margin: 0px 10px 0px 0px;
+        justify-content: center;
+        border: 1px solid #DCE0E3;
+    }
+}
+.interaction-radio-toolbar input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.interaction-radio-toolbar label {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+    padding: 8px 0px 6px 0px;
+    font-family: "SofiaProRegular", sans-serif !important;
+    font-size: 14px;
+}
+
+.interaction-radio-toolbar input[type="radio"]:checked + label {
+    background-color:#00DECA;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.interaction-radio-toolbar input[type="radio"]:focus + label {
+    color: white;
+    background-color:#00DECA;
+    font-family: "SofiaProRegular", sans-serif !important;
+}
+
+.interaction-radio-toolbar input[type="radio"][disabled] + label {
+    color: #9a9ea3;
+    cursor: auto;
+}
+.interaction-radio-toolbar input[type="radio"][disabled] + label:hover {
+    background-color:white;
+ 
+}
+.interaction-radio-toolbar label:hover {
+    background-color: #00DECA;
+    color: white;
+
+}
+
+
+.interation-rate {
+    margin-top: 2px;
+    height: 35px;
+    background: transparent linear-gradient(90deg, #2EE1F0 0%, #7033FF 51%, #CE15FB 100%) 0% 0% no-repeat padding-box;
+}
+
+.text{
+    height: 24px;
+    margin-top: 3px;
+    .low{
+        color: #2EE1F0;
+        float: left;
+    }
+    .high{
+        color: #CE15FB;
+        float: right;
+    }
+}
+
+.carousel-inner .slide-image {
+    width: 80%;
+    height: 100%;
+    opacity: 0.7;
+    // width: 500px;
+    // height: 600px;
+    transform-origin:0% 0%;
+}
+
+#demo{
+    margin-top: 20px;
+}
+
+.carousel-control-prev-icon{
+    background-image: url(../../../assets/img/arrow-down-s-line.png) !important;
+    height: 30px;
+}
+
+.carousel-control-next-icon{
+    background-image: url(../../../assets/img/arrow-down-s-line-1.png) !important;
+    height: 30px;
+
+}
+
+.carousel-inner {
+    height: 800px;
+    position: relative;
+    width: 100%;
+    overflow: scroll;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 70px !important;
+}
+
+.zoomin img {
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    transition: all 2s ease; 
+}
+
+
+@media only screen and (max-width: 767px ) {
+    .carousel-inner {
+        height: 500px;
+        position: relative;
+        width: 100%;
+        overflow: scroll;
+    }
+    .single-filter{
+        margin-top: 5px;
+    }
+    .filters{
+        margin: 0;
+        padding: 0;
+    }
+    .radio-toolbar{
+        /* max-height: 15rem; */
+        display: flex;
+        /* min-height: 15rem; */
+        background: #FFFFFF;
+        .single-radio{
+            width: 100%;
+        
+        }
+    }
+    .interaction-radio-toolbar{
+        display: flex;
+        background: #FFFFFF;
+        .interaction-radio{
+            border-radius: 3px;
+            width: 100%;
+            display: flex;
+            height: 40px;
+            margin: 0px 5px 0px 0px;
+            justify-content: center;
+            border: 1px solid #DCE0E3;
+        }
+    }
+    .text{
+        margin-top: 0;
+    }
+}
+
+@media only screen and (min-device-width: 768px) 
+ and  (max-width: 1024px) {
+    .carousel-inner {
+        height: 500px;
+        position: relative;
+        width: 100%;
+        overflow: scroll;
+    }
+    .carousel-inner {
+        height: 480px;
+        position: relative;
+        width: 100%;
+        overflow: scroll;
+    }
+    .single-filter{
+        margin-top: 5px;
+    }
+    .text{
+        margin-top: 0;
+    }
+    .filters{
+        margin: 0;
+        padding: 0;
+    }
+    .radio-toolbar{
+        /* max-height: 15rem; */
+        display: flex;
+        /* min-height: 15rem; */
+        background: #FFFFFF;
+        .single-radio{
+            width: 100%;
+        
+        }
+    }
+    .interaction-radio-toolbar{
+        display: flex;
+        background: #FFFFFF;
+        .interaction-radio{
+            border-radius: 3px;
+            width: 100%;
+            display: flex;
+            height: 40px;
+            margin: 0px 5px 0px 0px;
+            justify-content: center;
+            border: 1px solid #DCE0E3;
+        }
+    }
+}
+
+@media only screen 
+and (min-device-width: 1024px) and (max-device-width:1400px)
+ {
+    .carousel-inner {
+        height: calc(100vh - 220px);
+        position: relative;
+        width: 100%;
+        overflow: scroll;
+    }
+}

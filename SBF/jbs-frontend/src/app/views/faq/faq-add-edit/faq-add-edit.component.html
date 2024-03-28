@@ -1,0 +1,105 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <form (ngSubmit)="onFaqSave()" novalidate #faqFrm="ngForm">
+          <div class="card-body">
+            <p class="col-sm-12 text-right requiredLabel">
+              <span>Fields marked with <span class="asterisk_input"></span> are mandatory.</span>
+            </p>
+            <div class="form-group">
+              <label for="page_title">FAQ Topic <span class="asterisk_input"></span></label>
+              <select class="form-control" [(ngModel)]="model.faq_topic" name="faq_topic_id" #faq_topic_id="ngModel" required>
+                <option value="" selected>-- Select FAQ Topic --</option>
+                <option *ngFor="let topic of topicListData" value="{{ topic.id }}">
+                  {{ topic.topic_name }}
+                </option>
+              </select>
+              <div class="form-control-feedback text-danger" *ngIf="faq_topic_id.errors && faqFrm.submitted">
+                <p *ngIf="faq_topic_id.errors.required">Please select faq topic</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="meta_keywords">Question <span class="asterisk_input"></span></label>
+              <input
+                [(ngModel)]="model.question"
+                type="text"
+                name="question"
+                id="question"
+                class="form-control"
+                placeholder="Enter Question"
+                required
+                #quest="ngModel"
+              />
+              <div class="form-control-feedback text-danger" *ngIf="quest.errors && faqFrm.submitted">
+                <p *ngIf="quest.errors.required">Please enter question</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="meta_description">Answer <span class="asterisk_input"></span></label>
+              <textarea
+                class="form-control"
+                [(ngModel)]="model.answer"
+                name="answer"
+                placeholder="Enter Answer"
+                rows="4"
+                required
+                #answer="ngModel"
+              ></textarea>
+
+              <div class="form-control-feedback text-danger" *ngIf="answer.errors && faqFrm.submitted">
+                <p *ngIf="answer.errors.required">Please enter answer</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-form-label" for="status">Status <span class="asterisk_input"></span></label>
+              <div class="d-block">
+                <div class="form-check-inline">
+                  <label class="form-check-label"
+                    >Active
+                    <input
+                      [(ngModel)]="model.status"
+                      name="status"
+                      class="form-check-input"
+                      type="radio"
+                      id="active"
+                      value="Active"
+                      required
+                      #status="ngModel"
+                    />
+                    <span class="radio-span"></span>
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label"
+                    >Inactive
+                    <input
+                      class="form-check-input"
+                      name="status"
+                      [(ngModel)]="model.status"
+                      type="radio"
+                      id="inactive"
+                      value="Inactive"
+                      required
+                      #status="ngModel"
+                    />
+                    <span class="radio-span"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-control-feedback text-danger" *ngIf="status.errors && faqFrm.submitted">
+                <p *ngIf="status.errors.required">Please select status</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-check-circle-o fa-lg"></i> Save</button>&nbsp;
+            <a class="btn btn-warning" [routerLink]="['/faq/list']"><i class="fa fa-times"></i> Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-loader></app-loader>

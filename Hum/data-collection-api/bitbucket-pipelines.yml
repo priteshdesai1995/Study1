@@ -1,0 +1,50 @@
+image: maven:3-openjdk-11
+
+pipelines:
+  branches:
+    develop:
+      - step:
+          name: Security Scan
+          script:
+            # Run a security scan for sensitive data.
+            # See more security tools at https://bitbucket.org/product/features/pipelines/integrations?&category=security
+            - pipe: atlassian/git-secrets-scan:0.4.3
+      - step:
+          name: Build and Test
+          script:
+          # TODO: include tests, more advanced security scans etc.
+          # - mvn -B verify --file pom.xml
+            - mvn package -DskipTests
+            - find *
+          artifacts:
+            - target/data-collection-api.jar
+      - step:
+          name: Build and push docker image
+          image: docker
+          script:
+            # build the image
+            - find *
+            - docker build -t hum-dev-be-svc-dca -f ./cicd/Dockerfile .
+
+            # use the pipe to push the image to AWS ECR
+            - pipe: atlassian/aws-ecr-push-image:1.4.1
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: us-east-2
+                IMAGE_NAME: hum-dev-be-svc-dca
+                TAGS: latest $BITBUCKET_COMMIT
+      - step:
+          name: Deploy to ECS - dev2
+          deployment: dev2
+          script:
+            - pipe: atlassian/aws-ecs-deploy:1.5.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: us-east-2
+                CLUSTER_NAME: hum-dev-be
+                SERVICE_NAME: hum-dev-be-svc-dca
+                FORCE_NEW_DEPLOYMENT: 'true'
+                WAIT: 'false'
+                DEBUG: 'true'              

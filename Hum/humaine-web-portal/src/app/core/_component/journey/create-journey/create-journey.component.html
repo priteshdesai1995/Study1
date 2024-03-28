@@ -1,0 +1,192 @@
+<nz-spin [nzSpinning]="isPageLoading">
+    <div class="wrapper">
+        <div class="header-sec pl-3">
+            <div class="left-panel">
+                <nz-breadcrumb [nzAutoGenerate]="true" class="d-inline">
+                    <nz-page-header *ngIf="isView || isEdit" style="display:inline-block" nzBackIcon>
+                    </nz-page-header>
+                </nz-breadcrumb>
+                <div class="d-inline" style="font-size: 20px;" *ngIf="IsJourneyAnalysis">
+                    <img style="transform: scaleX(-1);" src="/assets/img/arrow-left.svg">{{saveTestJourney.groupName}}
+                </div>
+            </div>
+            <div *ngIf="isListNavigationButtonVisible && !IsAiJourney" class="right-panel">
+                <button type="button" (click)="viewSavedList()" class="btn btn-light"> View Saved Journey</button>
+            </div>
+        </div>
+        <form #f="ngForm">
+            <div class="section-one">
+                <div class="col">
+                    <div class="card card-body silver-card">
+                        <div style="width: 100%;">
+                            <div class="title d-flex">
+                                <h5>{{groupTitle}}</h5>
+                            </div>
+                            <div class="group-val row" *ngIf="!IsJourneyAnalysis && !IsAiJourney">
+                                <div class="col-6">
+                                    <label>Created User Group</label>
+                                    <ng-select [readonly]="isView" [required]="true" #grp="ngModel"
+                                        [(ngModel)]="saveTestJourney.groupId" name="userGroup"
+                                        [items]="testJourneyUserList" bindLabel="name" bindValue="groupId">
+                                    </ng-select>
+                                </div>
+                            </div>
+                            <div class="group-val" *ngIf="IsJourneyAnalysis || IsAiJourney">
+                                <div class="col-6">
+                                    <label>{{IsAiJourney? 'AI Generated User Groups' :''}}</label>
+                                    <input type="text" [disabled]="true" class="form-control"
+                                        [value]="saveTestJourney.groupName">
+                                </div>
+                            </div>
+                            <div class="group-val btn-journey">
+                                <div class="col-6" *ngIf="(IsTestJourney || IsJourneyAnalysis) && !isCreate" style="display: inline-flex;
+                            position: absolute;
+                            ">
+                                    <button type="button" class="small-btn btn-color" [ngClass]="{
+                                    'btn-journey-analysis': IsJourneyAnalysis,
+                                    'btn-test-journey': IsTestJourney
+                                }" (click)="navigateToViewPersona(saveTestJourney)">View Persona
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row multiple">
+                            <div class="elementsHeader" *ngFor="let oneElement of elements;let i=index;">
+                                <div class="element-label">
+                                    <input type="hidden" [id]="oneElement.id+'-ele'" [name]="oneElement.id"
+                                        [required]="!oneElement.isSkip"
+                                        [(ngModel)]="saveTestJourney[stepsKeys[oneElement.id]]"
+                                        #journeyElement="ngModel">
+                                    <div class="element-white" [class.disable-journey-step]="oneElement.isSkip">
+                                        <label>{{oneElement.name}}</label>
+                                    </div>
+                                    <div *ngIf="oneElement.id !== 1" class="small-grey">
+                                        <span (click)="skipChange(oneElement)">
+                                            {{oneElement.isSkip == true ? "Skipped" : isView ? "" : "Skip"}}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="pt-3">
+                                    <div class="card-title select">
+                                        <h5 *ngIf="i==0">Select<ng-container *ngIf="!isCreate">ed
+                                            </ng-container> Elements
+                                        </h5>
+                                    </div>
+                                    <div class="element radio-toolbar" [class.disable-journey-step]="oneElement.isSkip" [id]="'elelist-'+oneElement.id">
+                                        <ng-container 
+                                            *ngFor="let valueItem of oneElement.values; let itemEleInd = index;">
+                                            <!-- oneElement.id == 1 || oneElement.showMore || (!oneElement.showMore && itemEleInd+1 <= noOfVisibleItems) -->
+                                            <ng-container 
+                                                *ngIf="true">
+                                                <div class="single-radio">
+                                                    <input #chk type="radio"
+                                                        [attr.disabled]="(oneElement.isSkip || isView) ? '' : null"
+                                                        [(ngModel)]="saveTestJourney[stepsKeys[oneElement.id]]"
+                                                        [id]="oneElement.name+valueItem.id" [name]="oneElement.id"
+                                                        [value]="valueItem.value">
+                                                    <label
+                                                        [for]="oneElement.name+valueItem.id">{{valueItem.value}}</label>
+                                                </div>
+                                            </ng-container>
+                                        </ng-container>
+                                    </div>
+                                    <!-- <div class="small-dark" (click)="seeDetail(oneElement)"
+                                        *ngIf="oneElement.id !== 1 && oneElement.values.length > noOfVisibleItems">
+                                        {{ !oneElement.showMore ? 'See details' : 'See less'}}
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 d-inline" *ngIf="!isView && !IsAiJourney">
+                            <button *ngIf="isCreate" type="button" (click)="applyJourney()"
+                                class="small-btn btn-color mr-2">Apply
+                            </button>
+                        </div>
+                        <div class="journey">
+                            <h5 class="card-journey pl-3">Journey Success</h5>
+                            <div class="card-group ml-0.5" *ngIf="IsJourney">
+                                <div class="col-12 col-md-4 col-xl-4">
+                                    <div class="card card-body card-inverse ">
+                                        <div class="card-block card-height">
+                                            <div class="float-left">
+                                                <img src="/assets/icon/value-chain.svg">
+                                            </div>
+                                            <div class="float-none">Journey Step</div>
+                                            <div class="graph">
+                                                <div class="float-left">
+                                                    <h4 *ngIf="saveTestJourney.journeySteps">
+                                                        {{saveTestJourney.journeySteps}}/{{saveTestJourney.totalJourneySteps}}
+                                                    </h4>
+                                                    <h4 *ngIf="!saveTestJourney.journeySteps">
+                                                        {{selectedSteps}}/{{totalSteps}}
+                                                    </h4>
+                                                </div>
+                                                <div class="float-right graph-position-top">
+                                                    <app-graph [type]="chartTypes.INCREASE"></app-graph>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4 col-xl-4">
+                                    <div class="card card-body card-inverse">
+                                        <div class="card-block card-height">
+                                            <div class="float-left">
+                                                <img src="/assets/icon/time-2.svg">
+                                            </div>
+                                            <div class="float-none">Journey Time</div>
+                                            <div class="graph">
+                                                <div class="float-left">
+                                                    <h4>
+                                                        {{saveTestJourney.journeyTime || 0.0}}
+                                                        <span class="small" *ngIf="saveTestJourney.journeyTime">
+                                                            mins</span>
+                                                        <span class="small" *ngIf="!saveTestJourney.journeyTime">
+                                                            min</span>
+                                                    </h4>
+                                                </div>
+                                                <div class="float-right graph-position-top">
+                                                    <app-graph [type]="chartTypes.INCREASE"></app-graph>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4 col-xl-4">
+                                    <div class="card card-body card-inverse ">
+                                        <div class="card-block card-height">
+                                            <div class="float-left">
+                                                <img height="31px" width="31px" src="/assets/icon/Success.svg">
+                                            </div>
+                                            <div class="float-none">Success with User Group</div>
+                                            <div class="graph">
+                                                <div class="float-left">
+                                                    <h4>
+                                                        {{saveTestJourney.successRate || 0}}%</h4>
+                                                </div>
+                                                <div class="float-right graph-position-top">
+                                                    <app-graph [type]="chartTypes.INCREASE"></app-graph>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 " *ngIf="!IsJourneyAnalysis" style="display:inline-block;">
+                                <button *ngIf="isCreate || IsAiJourney" type="submit" appLoader [text]="'Save'"
+                                    [loading]="isLoading" (click)="apply(f)" class="small-btn btn-color ml-3 mr-2">
+                                </button>
+                                <button *ngIf="isEdit" type="submit" appLoader (click)="updateJourney(f)" text="Save"
+                                    [loading]="isJourneySbmit" type="button" class="small-btn m-1 btn-color mr-2">
+                                </button>
+                                <button *ngIf="(isView && !IsAiJourney) || isCreate " (click)="navigateToEditPage()"
+                                    type="button" class="edit success-color mr-2 ml-3 small-btn">
+                                    Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</nz-spin>

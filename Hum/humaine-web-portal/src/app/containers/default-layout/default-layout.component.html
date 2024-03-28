@@ -1,0 +1,88 @@
+<nz-layout [class.overlay]="overlay === true" class="layout">
+    <nz-sider style="height:100vh;" [(nzCollapsed)]="isCollapsed"
+        [ngClass]="!isCollapsed ? 'slider-one' : 'slider-two'">
+        <div class="logo d-flex">
+            <div>
+                <img src="/assets/img/logo.png" *ngIf="!isCollapsed" alt="Logo">
+            </div>
+        </div>
+        <div class="menu">
+            <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+                <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: menus }"></ng-container>
+                <ng-template #menuTpl let-menus ; i=index>
+                    <ng-container *ngFor="let menu of menus; let iMenu= index">
+                        <li [nzSelected]="isRouteActive(menu.link)" nz-menu-item nz-tooltip nzTooltipPlacement="left"
+                            *ngIf="!menu.sub_menus" class="menulist">
+                            <a [routerLink]="menu.link" nz-tooltip nzPlacement="left" *ngIf="!menu.sub_menus"
+                                routerLinkActive="active">
+                                <img [src]='menu.icon'>
+                                <span style="margin-left:25px;">{{menu.menu_name}}</span>
+                            </a>
+                        </li>
+                        <li nz-submenu *ngIf="menu.sub_menus" [nzOpen]="isRouteActive(menu.link, false)">
+                            <span class="subMenuTitle" title>
+                                <img [src]='menu.icon'>
+                                <span style="margin-left:25px;">{{ menu.menu_name }}</span>
+                            </span>
+                            <ul *ngFor="let submenu of menu.sub_menus" class="subMenu-List">
+                                <li *ngIf="!submenu.active">
+                                    <span style="color:#6c757d;padding-left: 48px; height: 40px; margin-top: 4px;margin-bottom: 4px; overflow: hidden;
+                                        line-height: 40px; text-overflow: ellipsis;" *ngIf="submenu.sub_menu_name"
+                                        title>{{ submenu.sub_menu_name }}</span>
+                                </li>
+                                <ng-container *ngIf="submenu.onClickRouting; else linkBasedRouting">
+                                    <li [nzSelected]="isRouteActive(submenu.link, false)" *ngIf="submenu.active"
+                                        nz-menu-item nzIcon="submenu.icon">
+                                        <a nz-tooltip nzPlacement="right" *ngIf="!menu.menu_item_lists"
+                                            routerLinkActive="active"
+                                            (click)="onRouteClick(submenu.clickData, submenu.link)">
+                                            <span title>
+                                                <span *ngIf="submenu.sub_menu_name">{{ submenu.sub_menu_name }}</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ng-container>
+                                <ng-template #linkBasedRouting>
+                                    <li [nzSelected]="isRouteActive(submenu.link, false)" *ngIf="submenu.active"
+                                        nz-menu-item nzIcon="submenu.icon">
+                                        <a [routerLink]="submenu.link" nz-tooltip nzPlacement="right"
+                                            *ngIf="!menu.menu_item_lists" routerLinkActive="active">
+                                            <span title>
+                                                <span *ngIf="submenu.sub_menu_name">{{ submenu.sub_menu_name }} <span
+                                                        *ngIf="submenu.dynamicVal">for
+                                                        {{accountDetails.fullName}}</span></span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ng-template>
+                            </ul>
+                        </li>
+                    </ng-container>
+                </ng-template>
+            </ul>
+        </div>
+        <div class="footer" *ngIf="!isCollapsed">
+            <div class="float-left" *ngIf="!isCollapsed">
+                <span>{{accountDetails.fullName}}</span>
+                <p>Account Details</p>
+            </div>
+            <div class="float-right">
+                <a (click)="logout()" title="Logout"><img src="/assets/icon/logout.svg"></a>
+            </div>
+        </div>
+    </nz-sider>
+    <nz-layout [ngClass]="{'white-background': isWhiteBackground}" style="transition: all 0.2s;" class="right-layout">
+        <nz-header class="mobile-header">
+            <div style="float: left;" class="mob-logo d-flex">
+                <div>
+                    <img src="/assets/img/logo.png" alt="Logo">
+                </div>
+            </div>
+            <img style="float: right;color: white;" (click)="isCollapsed = !isCollapsed" class="trigger"
+                src="../../../assets/svg/menu.svg">
+        </nz-header>
+        <nz-content>
+            <router-outlet></router-outlet>
+        </nz-content>
+    </nz-layout>
+</nz-layout>

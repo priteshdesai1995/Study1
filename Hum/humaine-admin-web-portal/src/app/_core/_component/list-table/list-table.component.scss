@@ -1,0 +1,139 @@
+@import "../../../../theme/variables.scss";
+@import "../../../../theme/mixins.scss";
+@import "../../../../theme/responsive.scss";
+.card{
+    .card-body{
+        padding: 2px;
+        .title{
+            padding-left: 20px;
+            padding-top: 10px;
+            h5{
+                font-size: 18px;
+            }
+        }
+    }
+    .btn-block{
+        margin-right: 10px;
+    }
+}
+.ant-table-tbody{
+   overflow:auto;
+   height: 100px;
+}
+
+nz-table{
+    .hhh{
+        overflow:hidden;
+    }
+}
+a{
+    color: black;
+}
+nz-select{
+    width: 170px;
+}
+.table-header {
+    cursor: pointer;
+}
+.table-checkbox-cell-checked {
+    border-left: #754BEB solid 2px;
+}
+
+.table-cell-highlight {
+    color: #754BEB;
+}
+
+.no-filter{
+    margin-top: -33px;
+}
+
+.ant-table-content{ overflow: auto; }
+
+.avatarIcon{
+    height:30px;
+    width: 30px;
+    margin: 0px 0px 0px 0px;
+}
+
+
+
+@include sm{
+  .data-table{
+      overflow: auto;
+  }
+  .div.ant-table-header.nz-table-hide-scrollbar > div.ant-table-body {
+    overflow-y: auto !important;overflow-x: auto !important;
+}
+}
+@include md {
+    .data-table{
+        overflow: auto;
+        
+    }
+}
+.auto-cursor{
+    cursor: auto;
+}
+
+
+@media only screen and (max-width: 767px ) {
+   
+    .card .btn-block{
+        margin-left: 10px;
+    }
+    .no-filter{
+        margin-top: 0px;
+    }
+    .header{
+        flex-flow: wrap;
+        justify-content: space-between;
+        .small-btn{
+            width: 43%;
+            margin-bottom: 5px;
+        }
+    }
+    .grey-sort{
+        margin-bottom: 5px;
+        nz-select{
+            width: 230px;
+        }
+    }
+    .no-data{
+        position: absolute;
+    }
+    .all-data{
+        position: relative;
+    }
+    
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .no-filter{
+        margin-top: 0px;
+    }
+    .header{
+        flex-flow: wrap;
+        justify-content: space-between;
+    }
+    .custom-btn{
+        margin-left: 10px !important;
+    }
+}
+
+.merchandise-card::after{
+    content: url(../../../../assets/img/coming-soon-clock.svg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+}
+.green-card{
+    opacity: 0.5;
+    filter: blur(3px); 
+    -webkit-filter: blur(1px);
+    background: #ecf6f1;
+}
+

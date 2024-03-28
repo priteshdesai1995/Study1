@@ -1,0 +1,325 @@
+
+.small-title{
+    font-size: 12px;
+}
+.grey-card{
+    font-family: "SofiaProRegular",sans-serif !important;
+    h6{
+        font-size: 14px;
+    }
+    .col{
+        padding: 10px;
+        p{
+            color: #87879a;
+            font-weight: 100;
+        } 
+    }  
+    .title{
+        padding: 7px 0px 29px 0px;
+        width: 100%;
+    } 
+   
+}
+.motivation-slider{
+    display: flex;
+    align-items: center;
+}
+.main-body{
+    background-color: #ffff;
+    font-size: 12px;
+    color: black;
+    p{
+        font-size: 12px;
+    }
+}
+
+.slider,.slider1{
+    display: inline-block;
+}
+
+.parent{
+    display: table; 
+    margin: 20px auto;
+    height: 200px;
+    width: 200px;
+}
+
+.green-circle {
+    height: 50px;
+    width: 50px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin: 10px;
+    background: #4aaa76;
+    // box-shadow: 1px -1px 25px -1px #75d4a1;
+    h5{
+        color: #4aaa76;
+    }
+    
+}
+
+.merchant{
+    h5{
+        font-size: 18px;
+    }
+}
+
+.green-text{
+    color: #4aaa76;
+    padding: 15px 0px 15px 0px;
+}
+
+.sliders{
+    label{
+        font-size: 12px;
+        color: black;
+    }
+}
+
+.card-body{
+    .card-title{
+        img{
+            padding-right: 0.7rem;
+        }
+    }
+}
+
+ul{
+    list-style: none;
+}
+
+.edit{
+    display:inline-block;
+    float: right;
+    text-decoration: underline;
+  
+}
+
+
+    
+// .merchandise-card::after{
+//     content: url(../../../../assets/img/coming-soon-clock.svg);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100%;
+//     opacity: 1;
+//     position: absolute;
+//     width: 100%;
+// }
+.editable{
+    display:inline-block;
+    width: 70%;
+    text-align: center;
+}
+
+.edit-option{
+    .edit-btn{
+        height: 30px;
+        width: 100px;
+    }
+}
+
+
+
+.color-cards{
+    padding: 0;
+}
+.divholder {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+  }
+  .fullheight {
+    width: 20%;
+    background: #ddd;
+    height: 100vh;
+  }
+  .massonary{
+    width: calc(100% - 0%);
+  }
+  .card-columns {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+  }
+  @media only screen and (max-width: 767px) {
+    .card-columns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+  }
+ @media only screen and (min-width: 768px )and (max-width: 1023px) {
+  .card-columns {
+          -webkit-column-count: 1;
+          -moz-column-count: 1;
+          column-count: 1;
+    }
+ }
+
+@media only screen and (min-width: 1367px) {
+    .color-card{
+        display: flex;
+        flex-flow: column wrap;
+        margin-left: -8px;
+        height: 100vw;
+        width: 800px;
+        .card{
+            width: 48%;
+            margin-bottom: 10px;
+            min-width: 150px;
+        }
+    }
+}
+
+// CSS styling for detail persona view 
+
+#group-section {
+    padding: 0px 25px 0px 25px;
+    .col {
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+
+#age-section {
+    padding: 0px 25px 0px 25px;
+    .col {
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+#state-section {
+    padding: 0px 25px 0px 30px;
+    margin-left: 10px;
+    .col {
+        padding: 0px 0px 0px 0px;
+    }
+    // brocken text css
+    h6 {
+        width: 6em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+#family-size-section {
+    padding: 0px 25px 0px 25px;
+    .col {
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+#gender-section {
+    padding: 0px 25px 0px 30px;
+    margin-left: 2px;
+    .col {
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+#education-section{
+    padding: 0px 25px 0px 25px;
+    .col {
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+#big-fiv-section {
+    padding: 0px 25px 0px 25px;
+    .col {
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+.detail-persona-card {
+    p {
+        margin-bottom: 0px;
+    }
+   
+}
+
+.individual-persona {
+    h6 {
+        margin-bottom: 2px;
+    }
+}
+
+#card-out-box {
+    margin-top: 14px;
+}
+
+// product inteligent css 
+
+.merchandise-card{
+    .green-card{
+        opacity: 0.5;
+        filter: blur(3px);
+        -webkit-filter: blur(1px);
+        margin :20px 0;
+        .card{
+            background: none;
+        }   
+    }
+}
+
+.single-product{
+    border: #87879a;
+    display:flex;
+    margin: 20px;
+
+    img{
+        height:  50px;
+       }
+       .float-none{
+         padding-left: 30px;
+         height: 45px;
+         
+       }
+} 
+.recentStatus{
+    font:status-bar;
+    flex-direction: row;
+  //justify-content: flex-end;
+ 
+}
+.card-value{        
+    font-weight: lighter;
+    font-size: 12px;
+    height: 20px;
+    width: 70px;
+    min-width: 100%;
+    border-radius: 15px;
+    margin-bottom: 0;
+    color: #41beb2;
+    border: 1px solid #90f0e7;
+    background-color: #d8faf7;
+    text-align: center;
+  }
+ #product-name{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: auto;
+    font-weight: 700;
+
+ } 
+
+ .total-sold-quantities-container{
+    .card-value{
+        font-size: 12px;
+        width: auto;
+        padding: 1.5px 10px 0px 10px;
+    }
+    font-weight: lighter;
+    height: 20px;
+    width: 80px;
+    min-width: 65%;
+ }
+
+ .intelligence-product-container {
+    margin: 0px 0px 0px -25px;
+ }

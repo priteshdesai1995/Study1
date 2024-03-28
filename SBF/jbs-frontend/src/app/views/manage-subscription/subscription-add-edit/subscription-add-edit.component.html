@@ -1,0 +1,220 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <form (ngSubmit)="onSubscriptionDataSave(f)" novalidate #f="ngForm">
+          <div class="card-body">
+            <p class="col-sm-12 text-right requiredLabel">
+              <span [innerHTML]="'FORM_NOTE' | translate"></span>
+            </p>
+            <div class="row">
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                  <label for="meta_keywords">{{ 'PLAN_NAME' | translate }} <span class="asterisk_input"></span></label>
+                  <input
+                    [(ngModel)]="model.plan_name"
+                    type="text"
+                    name="plan_name"
+                    class="form-control"
+                    placeholder="{{ 'PLAN_NAME' | translate }}"
+                    required
+                    #plan_name="ngModel"
+                    pattern="^[A-Za-z\d._+ ]{2,50}$"
+                  />
+                  <div class="form-control-feedback text-danger" *ngIf="plan_name.errors && submitted">
+                    <p *ngIf="plan_name.errors.required">
+                      {{ 'PLEASE_ENTER_PLAN_NAME' | translate }}
+                    </p>
+                    <p *ngIf="plan_name.errors.pattern">
+                      {{ 'PLEASE_ENTER_PLAN_NAME_VALIDATION' | translate }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                  <label for="meta_keywords">{{ 'DESCRIPTION' | translate }}<span class="asterisk_input"></span></label>
+                  <textarea
+                    class="form-control"
+                    [(ngModel)]="model.description"
+                    name="description"
+                    placeholder="{{ 'DESCRIPTION' | translate }}"
+                    #description="ngModel"
+                    rows="4"
+                    maxlength="225"
+                    required
+                  >
+                  </textarea>
+                  <div class="form-control-feedback text-danger" *ngIf="description.errors && submitted">
+                    <p *ngIf="description.errors.required">
+                      {{ 'PLEASE_ENTER_DESCRIPTION' | translate }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                  <label for="meta_keywords">{{ 'PLAN_START_END_DATE' | translate }} <span class="asterisk_input"></span></label>
+                  <div class="dtePkr">
+                    <input
+                      id="plan_start_end_date"
+                      [(ngModel)]="selected_days"
+                      name="selected_date"
+                      type="text"
+                      class="form-control"
+                      #selected_date="ngModel"
+                      placeholder="{{ 'PLAN_START_END_DATE' | translate }}"
+                      #DRP="bsDaterangepicker"
+                      placement="top"
+                      bsDaterangepicker
+                      required
+                      autocomplete="off"
+                      [minDate]="minDate"
+                      [bsConfig]="{
+                        dateInputFormat: 'MM/DD/YYYY',
+                        containerClass: 'theme-red'
+                      }"
+                    />
+                    <i class="fa fa-calendar crsr-ptr" (click)="DRP.toggle()"></i>
+                  </div>
+                  <div class="form-control-feedback text-danger" *ngIf="selected_date.errors && submitted">
+                    <p *ngIf="selected_date.errors.required">
+                      {{ 'PLEASE_SELECT_PLAN_START_END_DATE' | translate }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                  <label for="meta_keywords">{{ 'SELECT_PLAN_TYPE' | translate }} <span class="asterisk_input"></span></label>
+                  <select class="form-control" [(ngModel)]="validity" name="plan_validity" #plan_validity="ngModel" required>
+                    <option value="">-- {{ 'SELECT_PLAN_TYPE' | translate }} --</option>
+                    <option value="month">{{ 'MONTHLY' | translate }}</option>
+                    <!-- <option value="quarter">{{"QUARTERLY" | translate}}</option> -->
+                    <option value="year">{{ 'YEARLY' | translate }}</option>
+                  </select>
+                  <div class="form-control-feedback text-danger" *ngIf="plan_validity.errors && submitted">
+                    <p *ngIf="plan_validity.errors.required">{{ 'PLEASE_SELECT_PLAN' | translate }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 col-12">
+                <div class="form-group mb-0">
+                  <label for="meta_keywords">{{ 'IS_TRIAL_PLAN' | translate }} <span class="asterisk_input"></span></label>
+                  <div class="d-block">
+                    <div class="form-check-inline">
+                      <label class="form-check-label"
+                        >{{ 'YES' | translate }}
+                        <input
+                          type="radio"
+                          class="form-check-input"
+                          name="is_trial_plan"
+                          value="1"
+                          [(ngModel)]="model.is_trial_plan"
+                          #is_trial_plan="ngModel"
+                          required
+                        />
+                        <span class="radio-span"></span>
+                      </label>
+                    </div>
+                    <div class="form-check-inline">
+                      <label class="form-check-label"
+                        >{{ 'NO' | translate }}
+                        <input
+                          type="radio"
+                          class="form-check-input"
+                          name="is_trial_plan"
+                          value="0"
+                          [(ngModel)]="model.is_trial_plan"
+                          #is_trial_plan="ngModel"
+                          required
+                        />
+                        <span class="radio-span"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-control-feedback text-danger" *ngIf="is_trial_plan.errors && submitted">
+                    <p *ngIf="is_trial_plan.errors.required">
+                      {{ 'PLEASE_SELECT_PLAN_TYPE' | translate }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-12" *ngIf="model.is_trial_plan == 0">
+                <div class="form-group">
+                  <label for="meta_keywords">{{ 'PRICE' | translate }} <span class="asterisk_input"></span></label>
+                  <input
+                    [(ngModel)]="plan_price"
+                    type="text"
+                    name="price"
+                    [disabled]="model.is_trial_plan == 1"
+                    class="form-control"
+                    placeholder="{{ 'PRICE' | translate }}"
+                    required
+                    #price="ngModel"
+                    pattern="^[0-9]*[0-9.][0-9]{0,2}$"
+                    minlength="1"
+                    maxlength="7"
+                  />
+                  <div class="form-control-feedback text-danger" *ngIf="price.errors && submitted">
+                    <p *ngIf="price.errors.required">
+                      {{ 'PLEASE_ENTER_PRICE' | translate }}
+                    </p>
+                    <p *ngIf="price.errors.pattern">
+                      {{ 'PLEASE_ENTER_VALID_PRICE' | translate }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" *ngIf="model.is_trial_plan == 0">
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                  <label for="meta_keywords">{{ 'PLAN_DISCOUNT' | translate }} <span class="asterisk_input"></span></label>
+                  <input
+                    [(ngModel)]="plan_discount"
+                    type="text"
+                    name="discount"
+                    class="form-control"
+                    placeholder="{{ 'PLAN_DISCOUNT' | translate }}"
+                    #discount="ngModel"
+                    [disabled]="model.is_trial_plan == 1"
+                    pattern="^(100(\.0{1,2})?|[1-9]?[0-9](\.[0-9]{1,2})?)$"
+                    minlength="1"
+                    maxlength="7"
+                    required
+                  />
+                  <div class="form-control-feedback text-danger" *ngIf="discount.errors && submitted">
+                    <p *ngIf="discount.errors.required">
+                      {{ 'PLEASE_ENTER_DISCOUNT' | translate }}
+                    </p>
+                    <p *ngIf="discount.errors.pattern">
+                      {{ 'PLEASE_ENTER_VALID_DISCOUNT' | translate }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary">
+              <i class="fa fa-check-circle-o fa-lg"></i>
+              {{ 'SAVE' | translate }}</button
+            >&nbsp;
+            <a class="btn btn-warning" [routerLink]="['/manage-subscription/list']"
+              ><i class="fa fa-times"></i> {{ 'CANCEL' | translate }}</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-loader></app-loader>

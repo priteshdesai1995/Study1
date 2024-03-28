@@ -1,0 +1,225 @@
+
+.title{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.card{
+    margin-bottom: 12px;
+    border: 1px solid #d9d9d9;
+    h5{
+        font-size: 14px;
+        color: #67667f;
+        font-family: "SofiaProMedium", sans-serif !important;
+    }
+    p{
+        color: rgb(122, 122, 122);
+    }
+    .heading{
+        p{
+            color: #b6b6b6;
+        }
+    }
+    .card-block{
+        width:100%;
+        h4{
+            font-family: "SofiaProBold", sans-serif !important;
+        }
+        .graph{
+            display:flex;
+            height: 70px;
+            margin-top: 25px;
+            align-items: center;
+            h4{
+                font-size: 20px;
+            }
+            span{
+                font-size: 12px;
+            }
+            .left-panel{
+                width:40%;display: inline-block;
+            }
+            .right-panel{
+                width:60%;display: inline-block;
+                
+            }
+        }
+        .more{
+            position: absolute;
+            height: 25px;
+            bottom: 10px;
+            right: 10px;
+        }
+    }
+}
+
+.apdex-height{
+    height: 100%;
+}
+
+
+a{
+    color: #8347eb;
+}
+.colf{
+    width: 25%;
+}
+.question-mark{
+    margin-left: 7px;
+    margin-top: -8px;
+    width: 15px;
+}
+.question{
+    width: 15px;
+    margin-top: -4px;
+    margin-left: 2px;
+}
+.daily-graph{
+    .col-12{
+        padding: 5px;
+    }
+    .countries{
+        padding:0;
+        height: 100%;
+        h5{
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+    }
+    .customize-Graph{
+        height: 100%;
+        h5{
+            color: black;
+            font-family: "SofiaProBold", sans-serif !important;
+        }
+    }
+
+}
+
+.tab,.tab1,.tab2{
+  cursor: pointer;
+  padding:5px 12px;
+  display:inline-block;
+  color:black;
+}
+
+.panel{
+  display:none;
+  animation: fadein .8s;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+.panel-title{
+  font-size:1.5em;
+  font-weight:bold
+}
+.radio{
+  display:none;
+}
+#one:checked  #one-panel,
+#two:checked  #two-panel{
+  display:block
+}
+#one:checked +  #one-tab,
+#two:checked +  #two-tab,
+#one1:checked + #one-tab1,
+#two1:checked +  #two-tab1,
+#one2:checked +  #one-tab2,
+#three2:checked +  #three-tab2,
+#two2:checked +  #two-tab2{
+  background:#fffffff6;
+  color:#807f94;
+  border-bottom: 2px solid #9e55fa;
+}
+
+@media only screen and (max-width: 767px ) {
+    .section-one{
+        margin-top: 10px;
+    }
+    .header-sec .right-panel {
+        float: left ; 
+        padding: 0px; 
+    }
+    .card .card-block .more{
+        height: 30px;
+    }
+    .bounce-rate{
+        margin: 0 auto 10px auto !important;
+    }
+}
+   
+@media only screen and (min-width:768px)and(max-width: 1024px) {
+    .section-one{
+        margin-top: 10px;
+    }
+           
+}
+
+@media only screen and (max-width: 600px) {
+    .col {
+      flex-basis: auto;
+      -webkit-box-flex: 1;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+}
+@media only screen and (max-width: 1400px){
+  .col {
+    flex-basis: auto;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    max-width: 50%;
+  }
+}
+
+@media only screen and (max-width: 767px){
+    .col {
+      max-width: 100%;
+    }
+  }
+  
+.bounce-rate{
+    margin: 0px auto;
+}  
+
+// refresh btn and refresh info css
+
+.refresh-info-n-btn{
+    display: flex;
+    .refresh-btn-div{
+        #live-page-save-btn {
+            background-color: #8347eb;
+            min-width: 100px;
+            color: white;
+            border: #8347eb;
+            height: 25px;
+            font-size: 12px;
+            border-radius: 4px;
+            margin-left: 8px;
+            margin-top: -2px;
+        }
+    }
+    .refresh-info-div {
+        // height: 25px;
+        display: flex;
+        p {
+            font-size: 14px;
+            color: #67667f;
+        }
+        .refresh-value {
+            margin-left: 3px;
+            color: #b6b6b6;
+            margin-top: 1px;
+        }
+    }
+}
+

@@ -1,0 +1,2387 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@brainvire/basemodule documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@brainvire/basemodule documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>VideoUploadComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/views/video-upload/video-upload.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-video-upload</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./video-upload.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./video-upload.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#auth">auth</a>
+                            </li>
+                            <li>
+                                <a href="#autoUploadSubscription">autoUploadSubscription</a>
+                            </li>
+                            <li>
+                                <a href="#canvas">canvas</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#canvasElement">canvasElement</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#ctx">ctx</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#curTime">curTime</a>
+                            </li>
+                            <li>
+                                <a href="#customThumbVal">customThumbVal</a>
+                            </li>
+                            <li>
+                                <a href="#flow">flow</a>
+                            </li>
+                            <li>
+                                <a href="#flowConfig">flowConfig</a>
+                            </li>
+                            <li>
+                                <a href="#isUploadDone">isUploadDone</a>
+                            </li>
+                            <li>
+                                <a href="#model">model</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#noofThumb">noofThumb</a>
+                            </li>
+                            <li>
+                                <a href="#showMainVideo">showMainVideo</a>
+                            </li>
+                            <li>
+                                <a href="#showThumb">showThumb</a>
+                            </li>
+                            <li>
+                                <a href="#thumbList">thumbList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#videoDuration">videoDuration</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#videoElement">videoElement</a>
+                            </li>
+                            <li>
+                                <a href="#videoExtention">videoExtention</a>
+                            </li>
+                            <li>
+                                <a href="#videoName">videoName</a>
+                            </li>
+                            <li>
+                                <a href="#videoplayer">videoplayer</a>
+                            </li>
+                            <li>
+                                <a href="#videoSrc">videoSrc</a>
+                            </li>
+                            <li>
+                                <a href="#videoType">videoType</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cancelVideo">cancelVideo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#changeImage">changeImage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#changeVideo">changeVideo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#dataURLtoFile">dataURLtoFile</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getFileName">getFileName</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loadedVideo">loadedVideo</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit">ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onSaveVideo">onSaveVideo</a>
+                            </li>
+                            <li>
+                                <a href="#trackTransfer">trackTransfer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#videoTimeUpdate">videoTimeUpdate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(toastr: ToastrService, domSanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, cd: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, loader: <a href="../injectables/LoaderService.html">LoaderService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:52</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>toastr</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>domSanitizer</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cd</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>loader</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoaderService.html" target="_self" >LoaderService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelVideo"></a>
+                    <span class="name">
+                        <b>
+                            cancelVideo
+                        </b>
+                        <a href="#cancelVideo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancelVideo(upld_video)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:138</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>upld_video</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeImage"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            changeImage
+                        </b>
+                        <a href="#changeImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changeImage(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="185"
+                            class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:185</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeVideo"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            changeVideo
+                        </b>
+                        <a href="#changeVideo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changeVideo(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:115</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataURLtoFile"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            dataURLtoFile
+                        </b>
+                        <a href="#dataURLtoFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>dataURLtoFile(dataurl, filename)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="208"
+                            class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:208</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dataurl</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>filename</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFileName"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getFileName
+                        </b>
+                        <a href="#getFileName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFileName(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:108</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadedVideo"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            loadedVideo
+                        </b>
+                        <a href="#loadedVideo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadedVideo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="142"
+                            class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:142</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <b>
+                            ngAfterViewInit
+                        </b>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:68</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSaveVideo"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onSaveVideo
+                        </b>
+                        <a href="#onSaveVideo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onSaveVideo(frm: <a href="https://angular.io/api/forms/NgForm" target="_blank">NgForm</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="227"
+                            class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:227</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Save video</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>frm</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/forms/NgForm" target="_blank" >NgForm</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>for validate form data</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trackTransfer"></a>
+                    <span class="name">
+                        <b>
+                            trackTransfer
+                        </b>
+                        <a href="#trackTransfer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>trackTransfer(transfer: Transfer)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:105</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>transfer</td>
+                                    <td>
+                                            <code>Transfer</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="videoTimeUpdate"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            videoTimeUpdate
+                        </b>
+                        <a href="#videoTimeUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>videoTimeUpdate()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="175"
+                            class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:175</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="auth"></a>
+                        <span class="name">
+                            <b>
+                            auth</b>
+                            <a href="#auth"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="autoUploadSubscription"></a>
+                        <span class="name">
+                            <b>
+                            autoUploadSubscription</b>
+                            <a href="#autoUploadSubscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="canvas"></a>
+                        <span class="name">
+                            <b>
+                            canvas</b>
+                            <a href="#canvas"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;canvasEle&#x27;, {static: false})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="canvasElement"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            canvasElement</b>
+                            <a href="#canvasElement"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ctx"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            ctx</b>
+                            <a href="#ctx"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:52</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="curTime"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            curTime</b>
+                            <a href="#curTime"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="customThumbVal"></a>
+                        <span class="name">
+                            <b>
+                            customThumbVal</b>
+                            <a href="#customThumbVal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:45</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="flow"></a>
+                        <span class="name">
+                            <b>
+                            flow</b>
+                            <a href="#flow"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>FlowDirective</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;flowAdvanced&#x27;, {static: false})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="flowConfig"></a>
+                        <span class="name">
+                            <b>
+                            flowConfig</b>
+                            <a href="#flowConfig"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:44</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isUploadDone"></a>
+                        <span class="name">
+                            <b>
+                            isUploadDone</b>
+                            <a href="#isUploadDone"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="model"></a>
+                        <span class="name">
+                            <b>
+                            model</b>
+                            <a href="#model"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    valid_video: &#x27;&#x27;,
+  }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="noofThumb"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            noofThumb</b>
+                            <a href="#noofThumb"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:48</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showMainVideo"></a>
+                        <span class="name">
+                            <b>
+                            showMainVideo</b>
+                            <a href="#showMainVideo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showThumb"></a>
+                        <span class="name">
+                            <b>
+                            showThumb</b>
+                            <a href="#showThumb"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:47</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="thumbList"></a>
+                        <span class="name">
+                            <b>
+                            thumbList</b>
+                            <a href="#thumbList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:46</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoDuration"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            videoDuration</b>
+                            <a href="#videoDuration"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoElement"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            videoElement</b>
+                            <a href="#videoElement"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:50</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoExtention"></a>
+                        <span class="name">
+                            <b>
+                            videoExtention</b>
+                            <a href="#videoExtention"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoName"></a>
+                        <span class="name">
+                            <b>
+                            videoName</b>
+                            <a href="#videoName"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoplayer"></a>
+                        <span class="name">
+                            <b>
+                            videoplayer</b>
+                            <a href="#videoplayer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;videoPlayer&#x27;, {static: false})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoSrc"></a>
+                        <span class="name">
+                            <b>
+                            videoSrc</b>
+                            <a href="#videoSrc"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoType"></a>
+                        <span class="name">
+                            <b>
+                            videoType</b>
+                            <a href="#videoType"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;video/mp4&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/views/video-upload/video-upload.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  OnDestroy,
+  AfterViewInit,
+} from &#x27;@angular/core&#x27;;
+import { FlowDirective, Transfer } from &#x27;@flowjs/ngx-flow&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { NgForm } from &#x27;@angular/forms&#x27;;
+import { CONFIG } from &#x27;../../config/app-config&#x27;;
+import { DomSanitizer } from &#x27;@angular/platform-browser&#x27;;
+import { ToastrService } from &#x27;ngx-toastr&#x27;;
+import { EncrDecrService } from &#x27;../../_services/encr-decr.service&#x27;;
+import { LoaderService } from &#x27;../../_services/loader.service&#x27;;
+
+@Component({
+  selector: &#x27;app-video-upload&#x27;,
+  templateUrl: &#x27;./video-upload.component.html&#x27;,
+  styleUrls: [&#x27;./video-upload.component.scss&#x27;],
+})
+export class VideoUploadComponent implements OnInit, OnDestroy, AfterViewInit {
+  @ViewChild(&#x27;flowAdvanced&#x27;, { static: false })
+  flow: FlowDirective;
+
+  autoUploadSubscription: Subscription;
+
+  model &#x3D; {
+    valid_video: &#x27;&#x27;,
+  };
+  videoSrc: any;
+  videoType &#x3D; &#x27;video/mp4&#x27;;
+  videoName &#x3D; &#x27;&#x27;;
+  private videoDuration &#x3D; 0;
+  videoExtention: string;
+  auth &#x3D; &#x27;&#x27;;
+  isUploadDone &#x3D; true;
+  @ViewChild(&#x27;videoPlayer&#x27;, { static: false }) videoplayer: ElementRef;
+  @ViewChild(&#x27;canvasEle&#x27;, { static: false }) canvas: ElementRef;
+  showMainVideo &#x3D; false;
+  flowConfig &#x3D; {};
+  customThumbVal &#x3D; &#x27;&#x27;;
+  thumbList &#x3D; [];
+  showThumb &#x3D; false;
+  private noofThumb &#x3D; 0;
+  private curTime &#x3D; 0;
+  private videoElement: any;
+  private canvasElement: any;
+  private ctx: any;
+  constructor(
+    private toastr: ToastrService,
+    private domSanitizer: DomSanitizer,
+    private cd: ChangeDetectorRef,
+    private loader: LoaderService
+  ) {}
+
+  ngOnInit() {
+    this.flowConfig &#x3D; {
+      target: CONFIG.videoUploadURL,
+      singleFile: true,
+      chunkSize: 10000000, // 10MB
+      testChunks: true,
+    };
+  }
+  ngAfterViewInit() {
+    this.videoElement &#x3D; this.videoplayer.nativeElement;
+    this.canvasElement &#x3D; this.canvas.nativeElement;
+    this.ctx &#x3D; this.canvasElement.getContext(&#x27;2d&#x27;);
+    this.autoUploadSubscription &#x3D; this.flow.events$.subscribe((event) &#x3D;&gt; {
+      // to get rid of incorrect &#x60;event.type&#x60; type you need Typescript 2.8+
+      switch (event.type) {
+        case &#x27;fileAdded&#x27;:
+          this.changeVideo(event);
+          break;
+        case &#x27;filesSubmitted&#x27;:
+          if (this.videoSrc) {
+            return this.flow.upload();
+          }
+          break;
+        case &#x27;newFlowJsInstance&#x27;:
+          this.cd.detectChanges();
+          break;
+        case &#x27;fileSuccess&#x27;:
+          if (this.videoSrc) {
+            this.getFileName(event);
+          }
+          break;
+        case &#x27;fileError&#x27;:
+          this.toastr.error(&#x27;Something went wrong&#x27;);
+          break;
+        case &#x27;pauseOrResume&#x27;:
+          this.toastr.error(&#x27;File pause or resume&#x27;);
+          break;
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.autoUploadSubscription.unsubscribe();
+  }
+
+  trackTransfer(transfer: Transfer) {
+    return transfer.id;
+  }
+  private getFileName(event: any) {
+    const fname &#x3D; event.event[0].file;
+    if (fname) {
+      this.videoName &#x3D; fname.name;
+      this.isUploadDone &#x3D; false;
+    }
+  }
+  private changeVideo(event: any) {
+    const vidEvent &#x3D; event.event[0].file;
+    if (vidEvent !&#x3D;&#x3D; undefined) {
+      // allow max 5 GB video
+      const vidSize &#x3D; 5,
+        vidSizeMB &#x3D; vidEvent.size / 1024 / 1024;
+      let temp;
+      const vidTypes &#x3D; [&#x27;video/mp4&#x27;, &#x27;video/webm&#x27;, &#x27;video/m4v&#x27;, &#x27;video/mpeg&#x27;, &#x27;video/mpv&#x27;, &#x27;video/quicktime&#x27;];
+      if (!vidTypes.includes(vidEvent.type)) {
+        this.toastr.error(&#x27;Please upload a valid video.&#x27;);
+      } else {
+        if ((temp &#x3D; vidSize) &#x3D;&#x3D;&#x3D; void 0 || temp &#x3D;&#x3D;&#x3D; &#x27;&#x27; || vidSizeMB / 1024 &lt; vidSize) {
+          this.model.valid_video &#x3D; vidEvent;
+          this.showMainVideo &#x3D; true;
+          this.videoSrc &#x3D; this.domSanitizer.bypassSecurityTrustUrl(URL.createObjectURL(vidEvent));
+          this.videoType &#x3D; vidEvent.type;
+          this.videoElement.load();
+        } else {
+          this.toastr.error(&#x27;Video Size should be smaller than &#x27; + vidSize + &#x27;GB&#x27;);
+        }
+      }
+    }
+  }
+  cancelVideo(upld_video) {
+    window.location.reload();
+  }
+
+  public loadedVideo() {
+    this.loader.showLoader();
+    let durT, timeSplit, completedDur;
+    durT &#x3D; Math.floor(this.videoElement.duration);
+    this.videoDuration &#x3D; this.videoElement.duration;
+    this.curTime &#x3D; Math.floor(this.videoElement.currentTime);
+    // if video duration greater then 120 second then generate 6 thumbnails otherwiser 3 thumbnails
+    if (durT &gt;&#x3D; 120) {
+      timeSplit &#x3D; durT / 6;
+      this.noofThumb &#x3D; 6;
+      completedDur &#x3D; Math.floor(timeSplit) * 6;
+    } else {
+      timeSplit &#x3D; durT / 3;
+      this.noofThumb &#x3D; 3;
+      completedDur &#x3D; Math.floor(timeSplit) * 3;
+    }
+    const videoTime &#x3D; setInterval(() &#x3D;&gt; {
+      if (this.curTime &gt;&#x3D; completedDur) {
+        this.loader.hideLoader();
+        // current time 0 when thumb generated
+        this.videoElement.currentTime &#x3D; 0;
+        // clear timeout
+        clearInterval(videoTime);
+      } else {
+        this.curTime &#x3D; this.curTime + timeSplit;
+        // update video current time
+        this.videoElement.currentTime &#x3D; this.curTime;
+        // Set canvas dimensions same as video dimensions
+        this.canvasElement.width &#x3D; this.videoElement.videoWidth;
+        this.canvasElement.height &#x3D; this.videoElement.videoHeight;
+      }
+    }, 2000);
+  }
+  public videoTimeUpdate() {
+    let lenVTD &#x3D; this.thumbList.length;
+    lenVTD &#x3D; lenVTD + 1;
+    if (this.curTime &amp;&amp; lenVTD &lt;&#x3D; this.noofThumb) {
+      this.ctx.drawImage(this.videoElement, 0, 0, this.videoElement.videoWidth, this.videoElement.videoHeight);
+      const thubmTT &#x3D; this.canvasElement.toDataURL();
+      this.thumbList.push(thubmTT);
+    }
+  }
+  /* Change and Upload Image in User Module */
+  public changeImage(event: any) {
+    const img &#x3D; event.target;
+    if (img.files[0] !&#x3D;&#x3D; undefined) {
+      const imgSize &#x3D; 2;
+      let temp;
+      const fileTypes &#x3D; [&#x27;image/jpeg&#x27;, &#x27;image/jpg&#x27;, &#x27;image/png&#x27;];
+      if (fileTypes.includes(img.files[0].type) &#x3D;&#x3D;&#x3D; false) {
+        this.toastr.error(&#x27;Please upload a valid image.&#x27;);
+      } else {
+        if ((temp &#x3D; imgSize) &#x3D;&#x3D;&#x3D; void 0 || temp &#x3D;&#x3D;&#x3D; &#x27;&#x27; || img.files[0].size / 1024 / 1024 &lt; imgSize) {
+          const reader &#x3D; new FileReader();
+          reader.onload &#x3D; (ev: any) &#x3D;&gt; {
+            this.customThumbVal &#x3D; ev.target.result;
+            this.showThumb &#x3D; true;
+          };
+          reader.readAsDataURL(img.files[0]);
+        } else {
+          this.toastr.error(&#x27;File Size should be smaller than &#x27; + imgSize + &#x27;MB&#x27;);
+        }
+      }
+    }
+  }
+  // convert base64 to file
+  private dataURLtoFile(dataurl, filename) {
+    if (dataurl) {
+      const arr &#x3D; dataurl.split(&#x27;,&#x27;);
+      const mime &#x3D; arr[0].match(/:(.*?);/)[1];
+      const bstr &#x3D; atob(arr[1]);
+      let n &#x3D; bstr.length;
+      const u8arr &#x3D; new Uint8Array(n);
+      while (n--) {
+        u8arr[n] &#x3D; bstr.charCodeAt(n);
+      }
+      return new File([u8arr], filename, { type: mime });
+    } else {
+      return &#x27;&#x27;;
+    }
+  }
+  /**
+   * Save video
+   * @param frm for validate form data
+   */
+  public onSaveVideo(frm: NgForm) {
+    if (frm.invalid) {
+      return;
+    }
+    /* FormData for pushing the code with Image URL */
+    const formData: FormData &#x3D; new FormData();
+    formData.append(&#x27;video_name&#x27;, this.videoName);
+    formData.append(&#x27;thumbnail&#x27;, frm.value.video_thumb ? this.dataURLtoFile(frm.value.video_thumb, &#x27;thumb.png&#x27;) : &#x27;&#x27;);
+    formData.append(&#x27;duration&#x27;, this.videoDuration.toString());
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;animated fadeIn&quot;&gt;
+  &lt;div class&#x3D;&quot;card&quot;&gt;
+    &lt;form novalidate #videoFrm&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;onSaveVideo(videoFrm)&quot;&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+          &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+            &lt;div class&#x3D;&quot;form-group&quot;&gt;
+              &lt;label&gt;Video &lt;span class&#x3D;&quot;asterisk_input&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+              &lt;div&gt;
+                &lt;ng-container #flowAdvanced&#x3D;&quot;flow&quot; [flowConfig]&#x3D;&quot;flowConfig&quot;&gt;&lt;/ng-container&gt;
+                &lt;div class&#x3D;&quot;video-box has-upload&quot; flowDrop [flow]&#x3D;&quot;flowAdvanced.flowJs&quot;&gt;
+                  &lt;i
+                    *ngIf&#x3D;&quot;showMainVideo&quot;
+                    class&#x3D;&quot;fa fa-2x fa-times-circle-o noVideo&quot;
+                    aria-hidden&#x3D;&quot;true&quot;
+                    (click)&#x3D;&quot;cancelVideo(upld_video)&quot;
+                  &gt;&lt;/i&gt;
+                  &lt;div [hidden]&#x3D;&quot;showMainVideo&quot; class&#x3D;&quot;upload-area&quot; id&#x3D;&quot;uploadVideoFile&quot;&gt;
+                    &lt;input
+                      type&#x3D;&quot;file&quot;
+                      name&#x3D;&quot;file&quot;
+                      id&#x3D;&quot;fileSelect&quot;
+                      #upld_video
+                      flowButton
+                      [flow]&#x3D;&quot;flowAdvanced.flowJs&quot;
+                      [flowAttributes]&#x3D;&quot;{ accept: &#x27;video/mp4, video/webm, video/m4v, video/mpeg, video/mpv,video/quicktime&#x27; }&quot;
+                    /&gt;
+                    &lt;label for&#x3D;&quot;fileSelect&quot; id&#x3D;&quot;dragFile&quot;
+                      &gt;&lt;strong&gt;Browse&lt;/strong&gt; &lt;span&gt;&lt;br /&gt;for a video to upload&lt;/span&gt;.&lt;/label
+                    &gt;
+                    &lt;input type&#x3D;&quot;hidden&quot; [(ngModel)]&#x3D;&quot;model.valid_video&quot; #valid_video&#x3D;&quot;ngModel&quot; name&#x3D;&quot;valid_video&quot; required /&gt;
+                  &lt;/div&gt;
+                  &lt;video
+                    [hidden]&#x3D;&quot;!showMainVideo&quot;
+                    #videoPlayer
+                    id&#x3D;&quot;mainVideo&quot;
+                    controls
+                    crossorigin&#x3D;&quot;anonymous&quot;
+                    class&#x3D;&quot;upload-area&quot;
+                    (loadedmetadata)&#x3D;&quot;loadedVideo()&quot;
+                    (timeupdate)&#x3D;&quot;videoTimeUpdate()&quot;
+                  &gt;
+                    &lt;source [src]&#x3D;&quot;videoSrc&quot; [type]&#x3D;&quot;videoType&quot; /&gt;
+                    Your browser does not support video.
+                  &lt;/video&gt;
+                  &lt;canvas id&#x3D;&quot;video-canvas&quot; style&#x3D;&quot;display: none;&quot; #canvasEle&gt;&lt;/canvas&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-control-feedback text-danger&quot; *ngIf&#x3D;&quot;valid_video.errors &amp;&amp; videoFrm.submitted&quot;&gt;
+                  &lt;p *ngIf&#x3D;&quot;valid_video.errors.required&quot;&gt;Please upload video&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;videoUploadProgress&quot; [hidden]&#x3D;&quot;!showMainVideo&quot;&gt;
+                  &lt;div class&#x3D;&quot;progressBarDiv&quot;&gt;
+                    &lt;div
+                      class&#x3D;&quot;progress&quot;
+                      id&#x3D;&quot;ProdVideW&quot;
+                      [ngStyle]&#x3D;&quot;{ width: (flowAdvanced.transfers$ | async).totalProgress | percent }&quot;
+                    &gt;&lt;/div&gt;
+                    &lt;span class&#x3D;&quot;progressValue&quot; id&#x3D;&quot;ProdVideV&quot;&gt;{{ (flowAdvanced.transfers$ | async).totalProgress | percent }}&lt;/span&gt;
+                    &lt;!-- &lt;span class&#x3D;&quot;cancleUpload&quot;&gt;X&lt;/span&gt; --&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;mb-2&quot;&gt;( &lt;strong&gt;Allowed Extension: &lt;/strong&gt; mp4, m4v, mov, mpeg, mpv, webm)&lt;/div&gt;
+            &lt;div class&#x3D;&quot;form-group&quot;&gt;
+              &lt;strong&gt;Note:&lt;/strong&gt;
+              &lt;span class&#x3D;&quot;text-danger&quot;&gt;
+                Your video is now processing. This will occur in the back end &amp; can vary in time based on the video size. Please click
+                Upload &amp; Save when your file reaches 100%.
+              &lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;col-md-6&quot; *ngIf&#x3D;&quot;thumbList.length &gt; 0&quot;&gt;
+            &lt;div class&#x3D;&quot;form-group&quot;&gt;
+              &lt;label&gt;Select Video Thumb &lt;/label&gt;
+              &lt;div class&#x3D;&quot;listVideoThumb&quot;&gt;
+                &lt;ul&gt;
+                  &lt;li class&#x3D;&quot;videoThmDiv&quot; *ngFor&#x3D;&quot;let thumb of thumbList; let i &#x3D; index&quot;&gt;
+                    &lt;label class&#x3D;&quot;thumbList&quot;&gt;
+                      &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;video_thumb&quot; [id]&#x3D;&quot;i&quot; [value]&#x3D;&quot;thumb&quot; ngModel /&gt;
+                      &lt;figure&gt;
+                        &lt;img alt&#x3D;&quot;thumb&quot; [src]&#x3D;&quot;thumb&quot; /&gt;
+                      &lt;/figure&gt;
+                    &lt;/label&gt;
+                  &lt;/li&gt;
+                  &lt;li class&#x3D;&quot;customThumbLi&quot; [hidden]&#x3D;&quot;!showThumb&quot;&gt;
+                    &lt;label class&#x3D;&quot;thumbList&quot;&gt;
+                      &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;video_thumb&quot; id&#x3D;&quot;customThumbId&quot; [value]&#x3D;&quot;customThumbVal&quot; ngModel /&gt;
+                      &lt;figure&gt;
+                        &lt;img alt&#x3D;&quot;thumb&quot; [src]&#x3D;&quot;customThumbVal&quot; /&gt;
+                      &lt;/figure&gt;
+                    &lt;/label&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
+                    &lt;label class&#x3D;&quot;thumbList customThumb&quot;&gt;
+                      &lt;input type&#x3D;&quot;file&quot; name&#x3D;&quot;thumblist&quot; (change)&#x3D;&quot;changeImage($event)&quot; accept&#x3D;&quot;image/jpeg,image/jpg,image/png&quot; /&gt;
+                      &lt;div&gt;&lt;i class&#x3D;&quot;fa fa-camera text-white&quot;&gt;&lt;/i&gt;&lt;span&gt;Upload your custom thumb&lt;/span&gt;&lt;/div&gt;
+                    &lt;/label&gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;card-footer&quot;&gt;
+        &lt;button type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;isUploadDone&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;
+          &lt;i class&#x3D;&quot;fa fa-check-circle-o fa-lg&quot;&gt;&lt;/i&gt; Upload &amp; Save&lt;/button
+        &gt;&amp;nbsp;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;app-loader&gt;&lt;/app-loader&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./video-upload.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.video-box.has-upload {
+  border: 2px dashed #92b0b3;
+}
+.video-box {
+  font-size: 1.25rem;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  display: flex;
+  height: 300px;
+  align-items: center;
+}
+.video-box .upload-area {
+  margin-right: auto;
+  margin-left: auto;
+}
+.video-box i {
+  position: absolute;
+  font-size: 32px;
+  background: #fff;
+  cursor: pointer;
+  color: #ffa200;
+  top: -11px;
+  right: -11px;
+  height: 26px;
+  border-radius: 50%;
+  z-index: 9999;
+}
+#fileSelect {
+  display: none;
+}
+#mainVideo {
+  width: 100%;
+  max-height: 300px;
+}
+.video-box label {
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 32.34px;
+  color: #868686;
+}
+.video-box strong {
+  color: #ffa200;
+}
+.video-box span {
+  display: inline;
+}
+.videoUploadProgress {
+  display: flex;
+  margin: 20px 0px;
+  width: 100%;
+  height: 30px;
+  background-color: #d8e6df;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.videoUploadProgress .progressBarDiv {
+  display: flex;
+  height: 100%;
+  padding: 2px;
+  max-width: 100%;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+}
+.videoUploadProgress .progressBarDiv .progress {
+  width: 0%;
+  background-color: #ffa200;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+}
+.videoUploadProgress .progressBarDiv span {
+  position: relative;
+  color: black;
+  font-weight: 500;
+  line-height: 30px;
+  z-index: 99;
+}
+.videoUploadProgress .progressBarDiv span.cancleUpload {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  cursor: pointer;
+  width: 30px;
+  text-align: center;
+}
+
+// video thumbnails
+.listVideoThumb ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.listVideoThumb ul li {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 5px;
+  width: 150px;
+}
+.listVideoThumb ul li label.thumbList {
+  display: flex;
+  height: 100px;
+  align-items: center;
+}
+.listVideoThumb ul li label.thumbList input {
+  visibility: hidden;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+}
+.listVideoThumb ul li label.thumbList figure {
+  margin: 0px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.listVideoThumb ul li label.thumbList figure img {
+  width: 100%;
+  height: 100%;
+}
+.listVideoThumb ul li label.thumbList input:checked + figure:before {
+  content: &#x27;&#x27;;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0px;
+  left: 0px;
+}
+.listVideoThumb ul li label.thumbList input:checked + figure:after {
+  content: &#x27;&#x27;;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: none;
+  background-image: url(&#x27;../../../assets/rightTick.png&#x27;);
+  background-position: center;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+  background-repeat: no-repeat;
+}
+.listVideoThumb ul li label.thumbList.customThumb {
+  background-color: #333;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.listVideoThumb ul li label.thumbList.customThumb div span {
+  font-weight: 500;
+  font-size: 11px;
+  color: #fff;
+  display: block;
+  line-height: normal;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="animated fadeIn">  <div class="card">    <form novalidate #videoFrm="ngForm" (ngSubmit)="onSaveVideo(videoFrm)">      <div class="card-body">        <div class="row">          <div class="col-md-6">            <div class="form-group">              <label>Video <span class="asterisk_input"></span></label>              <div>                <ng-container #flowAdvanced="flow" [flowConfig]="flowConfig"></ng-container>                <div class="video-box has-upload" flowDrop [flow]="flowAdvanced.flowJs">                  <i                    *ngIf="showMainVideo"                    class="fa fa-2x fa-times-circle-o noVideo"                    aria-hidden="true"                    (click)="cancelVideo(upld_video)"                  ></i>                  <div [hidden]="showMainVideo" class="upload-area" id="uploadVideoFile">                    <input                      type="file"                      name="file"                      id="fileSelect"                      #upld_video                      flowButton                      [flow]="flowAdvanced.flowJs"                      [flowAttributes]="{ accept: \'video/mp4, video/webm, video/m4v, video/mpeg, video/mpv,video/quicktime\' }"                    />                    <label for="fileSelect" id="dragFile"                      ><strong>Browse</strong> <span><br />for a video to upload</span>.</label                    >                    <input type="hidden" [(ngModel)]="model.valid_video" #valid_video="ngModel" name="valid_video" required />                  </div>                  <video                    [hidden]="!showMainVideo"                    #videoPlayer                    id="mainVideo"                    controls                    crossorigin="anonymous"                    class="upload-area"                    (loadedmetadata)="loadedVideo()"                    (timeupdate)="videoTimeUpdate()"                  >                    <source [src]="videoSrc" [type]="videoType" />                    Your browser does not support video.                  </video>                  <canvas id="video-canvas" style="display: none;" #canvasEle></canvas>                </div>                <div class="form-control-feedback text-danger" *ngIf="valid_video.errors && videoFrm.submitted">                  <p *ngIf="valid_video.errors.required">Please upload video</p>                </div>                <div class="videoUploadProgress" [hidden]="!showMainVideo">                  <div class="progressBarDiv">                    <div                      class="progress"                      id="ProdVideW"                      [ngStyle]="{ width: (flowAdvanced.transfers$ | async).totalProgress | percent }"                    ></div>                    <span class="progressValue" id="ProdVideV">{{ (flowAdvanced.transfers$ | async).totalProgress | percent }}</span>                    <!-- <span class="cancleUpload">X</span> -->                  </div>                </div>              </div>            </div>            <div class="mb-2">( <strong>Allowed Extension: </strong> mp4, m4v, mov, mpeg, mpv, webm)</div>            <div class="form-group">              <strong>Note:</strong>              <span class="text-danger">                Your video is now processing. This will occur in the back end & can vary in time based on the video size. Please click                Upload & Save when your file reaches 100%.              </span>            </div>          </div>          <div class="col-md-6" *ngIf="thumbList.length > 0">            <div class="form-group">              <label>Select Video Thumb </label>              <div class="listVideoThumb">                <ul>                  <li class="videoThmDiv" *ngFor="let thumb of thumbList; let i = index">                    <label class="thumbList">                      <input type="radio" name="video_thumb" [id]="i" [value]="thumb" ngModel />                      <figure>                        <img alt="thumb" [src]="thumb" />                      </figure>                    </label>                  </li>                  <li class="customThumbLi" [hidden]="!showThumb">                    <label class="thumbList">                      <input type="radio" name="video_thumb" id="customThumbId" [value]="customThumbVal" ngModel />                      <figure>                        <img alt="thumb" [src]="customThumbVal" />                      </figure>                    </label>                  </li>                  <li>                    <label class="thumbList customThumb">                      <input type="file" name="thumblist" (change)="changeImage($event)" accept="image/jpeg,image/jpg,image/png" />                      <div><i class="fa fa-camera text-white"></i><span>Upload your custom thumb</span></div>                    </label>                  </li>                </ul>              </div>            </div>          </div>        </div>      </div>      <div class="card-footer">        <button type="submit" [disabled]="isUploadDone" class="btn btn-primary">          <i class="fa fa-check-circle-o fa-lg"></i> Upload & Save</button        >&nbsp;      </div>    </form>  </div></div><app-loader></app-loader></div>'
+    var COMPONENTS = [{'name': 'ActivityTrackingComponent', 'selector': 'app-activity-tracking'},{'name': 'AdminSuggestionComponent', 'selector': 'app-admin-suggestion'},{'name': 'AdminSuggestionListComponent', 'selector': 'app-admin-suggestion-list'},{'name': 'AlertsComponent', 'selector': ''},{'name': 'AnnouncementAddEditComponent', 'selector': 'app-announcement-add-edit'},{'name': 'AnnouncementComponent', 'selector': 'app-announcement'},{'name': 'AnnouncementDetailsComponent', 'selector': 'app-announcement-details'},{'name': 'AnnouncementListComponent', 'selector': 'app-announcement-list'},{'name': 'AnnouncementReceiversComponent', 'selector': 'app-announcement-receivers'},{'name': 'AppComponent', 'selector': 'body'},{'name': 'BadgesComponent', 'selector': ''},{'name': 'BrandButtonsComponent', 'selector': ''},{'name': 'BsMediaComponent', 'selector': 'app-bs-media'},{'name': 'BsMediaListComponent', 'selector': 'app-bs-media-list'},{'name': 'BsMediaListDetailsComponent', 'selector': 'app-bs-media-list-details'},{'name': 'ButtonsComponent', 'selector': ''},{'name': 'CardsComponent', 'selector': ''},{'name': 'CarouselsComponent', 'selector': ''},{'name': 'CategoryAddEditComponent', 'selector': 'app-category-add-edit'},{'name': 'CategoryComponent', 'selector': 'app-category'},{'name': 'CategoryListComponent', 'selector': 'app-category-list'},{'name': 'CategoryTreeviewComponent', 'selector': 'app-category-treeview'},{'name': 'ChartJSComponent', 'selector': ''},{'name': 'CheckUserListComponent', 'selector': 'multi-user-list'},{'name': 'CityAddEditComponent', 'selector': 'app-city-add-edit'},{'name': 'CmsAddEditComponent', 'selector': 'app-cms-add-edit'},{'name': 'CmsComponent', 'selector': 'app-cms'},{'name': 'CmsListComponent', 'selector': 'app-cms-list'},{'name': 'CmsPageBuilderComponent', 'selector': 'app-cms-page-builder'},{'name': 'CmsPageViewComponent', 'selector': 'app-cms-page-view'},{'name': 'CollapsesComponent', 'selector': ''},{'name': 'ColorsComponent', 'selector': ''},{'name': 'CoreUIIconsComponent', 'selector': ''},{'name': 'CountryAddEditComponent', 'selector': 'app-country-add-edit'},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DefaultLayoutComponent', 'selector': 'app-dashboard'},{'name': 'DropdownsComponent', 'selector': ''},{'name': 'EmailAddEditComponent', 'selector': 'app-email-add-edit'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailListComponent', 'selector': 'app-email-list'},{'name': 'EventAddEditComponent', 'selector': 'app-event-add-edit'},{'name': 'EventListComponent', 'selector': 'app-event-list'},{'name': 'EventViewComponent', 'selector': 'app-event-view'},{'name': 'FaqAddEditComponent', 'selector': 'app-faq-add-edit'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FaqListComponent', 'selector': 'app-faq-list'},{'name': 'FlagsComponent', 'selector': ''},{'name': 'FontAwesomeComponent', 'selector': ''},{'name': 'FormsComponent', 'selector': ''},{'name': 'ListActivityTrackingComponent', 'selector': 'app-list-activity-tracking'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-dashboard'},{'name': 'ManageBannerAddEditComponent', 'selector': 'app-manage-banner-add-edit'},{'name': 'ManageBannerComponent', 'selector': 'app-manage-banner'},{'name': 'ManageBannerListComponent', 'selector': 'app-manage-banner-list'},{'name': 'ManageCityComponent', 'selector': 'app-manage-city'},{'name': 'ManageContactComponent', 'selector': 'app-manage-contact'},{'name': 'ManageContactListComponent', 'selector': 'app-manage-contact-list'},{'name': 'ManageCountryComponent', 'selector': 'app-manage-country'},{'name': 'ManageEventComponent', 'selector': 'app-manage-event'},{'name': 'ManageLocationComponent', 'selector': 'app-manage-location'},{'name': 'ManageOfferAddEditComponent', 'selector': 'app-manage-offer-add-edit'},{'name': 'ManageOfferComponent', 'selector': 'app-manage-offer'},{'name': 'ManageOfferListComponent', 'selector': 'app-manage-offer-list'},{'name': 'ManageRulesetComponent', 'selector': 'app-manage-ruleset'},{'name': 'ManageStateComponent', 'selector': 'app-manage-state'},{'name': 'ManageSubscriptionComponent', 'selector': 'app-manage-subscription'},{'name': 'ManageSurveyComponent', 'selector': 'app-manage-survey'},{'name': 'ManageUserAddEditComponent', 'selector': 'app-manage-user-add-edit'},{'name': 'ManageUserComponent', 'selector': 'app-manage-user'},{'name': 'ManageUserListComponent', 'selector': 'app-manage-user-list'},{'name': 'ManageUserViewComponent', 'selector': 'app-manage-user-view'},{'name': 'ModalsComponent', 'selector': ''},{'name': 'OfferReportListComponent', 'selector': 'offer-report-list'},{'name': 'P403Component', 'selector': ''},{'name': 'P404Component', 'selector': ''},{'name': 'P500Component', 'selector': ''},{'name': 'PaginationsComponent', 'selector': ''},{'name': 'PopoversComponent', 'selector': ''},{'name': 'PopupImageOpenComponent', 'selector': 'popup-image-open'},{'name': 'ProfileComponent', 'selector': ''},{'name': 'ProgressComponent', 'selector': ''},{'name': 'RegisterComponent', 'selector': 'app-dashboard'},{'name': 'ResetPasswordComponent', 'selector': 'app-dashboard'},{'name': 'ReviewComponent', 'selector': 'app-review'},{'name': 'RolePermissionComponent', 'selector': 'app-role-permission'},{'name': 'RulesetAddEditComponent', 'selector': 'app-ruleset-add-edit'},{'name': 'RulesetListComponent', 'selector': 'app-ruleset-list'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SimpleLineIconsComponent', 'selector': ''},{'name': 'StateAddEditComponent', 'selector': 'app-state-add-edit'},{'name': 'SubadminAddEditComponent', 'selector': 'app-subadmin-add-edit'},{'name': 'SubadminComponent', 'selector': 'app-subadmin'},{'name': 'SubadminListComponent', 'selector': 'app-subadmin-list'},{'name': 'SubscriptionAddEditComponent', 'selector': 'app-subscription-add-edit'},{'name': 'SubscriptionListComponent', 'selector': 'app-subscription-list'},{'name': 'SubscriptionViewComponent', 'selector': 'app-subscription-view'},{'name': 'SurveyAddEditComponent', 'selector': 'app-survey-add-edit'},{'name': 'SurveyAnswersComponent', 'selector': 'app-survey-answers'},{'name': 'SurveyListComponent', 'selector': 'app-survey-list'},{'name': 'SurveyQuestionsComponent', 'selector': 'app-survey-questions'},{'name': 'SurveyReportComponent', 'selector': 'app-survey-report'},{'name': 'SurveyUserReportComponent', 'selector': 'survey-user-report'},{'name': 'SwitchesComponent', 'selector': ''},{'name': 'TablesComponent', 'selector': ''},{'name': 'TabsComponent', 'selector': ''},{'name': 'TextUserListComponent', 'selector': 'text-user-list'},{'name': 'TooltipsComponent', 'selector': ''},{'name': 'TypographyComponent', 'selector': ''},{'name': 'UserReportComponent', 'selector': 'app-user-report'},{'name': 'UserSuggestionAddComponent', 'selector': 'app-user-suggestion-add'},{'name': 'UserSuggestionComponent', 'selector': 'app-user-suggestion'},{'name': 'UserSuggestionListComponent', 'selector': 'app-user-suggestion-list'},{'name': 'UserSurveyComponent', 'selector': 'app-user-survey'},{'name': 'UserSurveyListComponent', 'selector': 'app-user-survey-list'},{'name': 'VideoUploadComponent', 'selector': 'app-video-upload'},{'name': 'ViewAnswerComponent', 'selector': 'app-view-answer'},{'name': 'WidgetsComponent', 'selector': ''}];
+    var DIRECTIVES = [{'name': 'MultiCheckboxValidationDirective', 'selector': '[appMultiCheckboxValidation]'},{'name': 'NumberOnlyDirective', 'selector': 'input[appNumberOnly]'},{'name': 'PhoneMaskDirective', 'selector': '[phoneMask][ngModel]'}];
+    var ACTUAL_COMPONENT = {'name': 'VideoUploadComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'VideoUploadComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

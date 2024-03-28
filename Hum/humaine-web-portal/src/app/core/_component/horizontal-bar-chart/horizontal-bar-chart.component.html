@@ -1,0 +1,25 @@
+<nz-spin [nzSpinning]="isPageLoading">
+  <div class="d-flex justify-content-between">
+    <h5 >Session Duration
+      <img [src]="'/assets/svg/Question.svg'" class="question-mark" nz-tooltip [nzTooltipTitle]="'The average amount of time a user stays on your website.'"/>
+    </h5>
+    <div class="tabs2">
+      <span *ngFor="let oneDuration of durationTimeList">
+        <input class="radio" [(ngModel)]="duration" (change)="durationChange($event)" [value]="oneDuration.value"
+          [value]="oneDuration.value" [id]="oneDuration.id" name="group3" type="radio" [checked]="oneDuration.checked">
+        <label class="tab2" [id]="oneDuration.labelID" [for]="oneDuration.id">{{oneDuration.key}}</label>
+      </span>
+    </div>
+  </div>
+  <div style="display: block;">
+    <canvas *ngIf="duration === chartTypes.ONE_WEEK; else horBaseChart" baseChart [datasets]="lineChartData"
+      [labels]="lineChartLabels" [options]="horizontalbarlineChartOptions" [plugins]="horizontalineChartPlugin"
+      [legend]="lineChartLegend" [chartType]="getChartType">
+    </canvas>
+    <ng-template #horBaseChart>
+      <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+        [plugins]="lineChartPlugins" [legend]="lineChartLegend" [chartType]="getChartType">
+      </canvas>
+    </ng-template>
+  </div>
+</nz-spin>

@@ -1,0 +1,25 @@
+{
+    "properties": {
+        "id": {
+            "type": "long"
+        },
+        "accountId": {
+            "type": "long"
+        },
+        "sessionId": {
+            "type": "keyword"
+        },
+        "userId": {
+            "type": "keyword"
+        },
+        "pageURL": {
+            "type": "text"
+        },
+        "pageLoadTime": {
+            "type": "long"
+        },
+        "timestamp": {
+            "type": "date"
+        }
+    }
+}

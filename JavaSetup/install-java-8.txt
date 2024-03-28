@@ -1,0 +1,29 @@
+## Extract JDK to Java's default location
+sudo mkdir /usr/lib/jvm-oracle
+cd /usr/lib/jvm-oracle
+sudo tar -xvzf jdk-8u231-linux-x64.tar.gz -C /usr/lib/jvm-oracle
+
+## Set environment variables 
+sudo nano /etc/environment
+## Update the existing PATH variable by adding the below bin folders, separated with a colon :
+/usr/lib/jvm-oracle/jdk1.8.0_231/bin:/usr/lib/jvm-oracle/jdk1.8.0_231/db/bin:/usr/lib/jvm-oracle/jdk1.8.0_231/jre/bin
+
+
+## HOME directory paths can be different based on version and update,here the version is 1.8 and the update is 151. Add the below variables at the end of environment file, making changes for your specific version and update.
+J2SDKDIR="/usr/lib/jvm-oracle/jdk1.8.0_231
+J2REDIR="/usr/lib/jvm-oracle/jdk1.8.0_231/jre
+JAVA_HOME="/usr/lib/jvm-oracle/jdk1.8.0_231
+DERBY_HOME="/usr/lib/jvm-oracle/jdk1.8.0_231/db
+
+## Inform Ubuntu about the installed location
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm-oracle/jdk1.8.0_231/bin/java" 0
+sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm-oracle/jdk1.8.0_231/bin/javac" 0
+sudo update-alternatives --set java /usr/lib/jvm-oracle/jdk1.8.0_231/bin/java
+sudo update-alternatives --set javac /usr/lib/jvm-oracle/jdk1.8.0_231/bin/javac
+
+## Setup verification
+update-alternatives --list java
+update-alternatives --list javac
+
+## Verify the Java version
+java -version

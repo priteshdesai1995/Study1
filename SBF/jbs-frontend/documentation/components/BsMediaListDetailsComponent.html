@@ -1,0 +1,1315 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@brainvire/basemodule documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@brainvire/basemodule documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>BsMediaListDetailsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-bs-media-list-details</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./bs-media-list.component.scss</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">template</td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;col-md-12 view-user&quot; *ngIf&#x3D;&quot;selectedItems &#x3D;&#x3D; &#x27;&#x27;&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;label class&#x3D;&quot;col-md-12 text-center&quot;&gt;&lt;i class&#x3D;&quot;fa fa-eye-slash fa-5x img-responsive&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; &lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div c1lass&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-12 text-center form-group&quot;&gt;{{ &#x27;NOTHING_IS_SELECTED&#x27; | translate }}&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;col-md-12 view-user&quot; *ngIf&#x3D;&quot;selectedItems !&#x3D; &#x27;&#x27; &amp;&amp; selectedItemsDetails&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-12&quot; *ngIf&#x3D;&quot;selectedItemsDetails.type !&#x3D; &#x27;folder&#x27; &amp;&amp; fileTypesCheck(&#x27;imageTypesCompare&#x27;)&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div [hidden]&#x3D;&quot;!imageLoader&quot; class&#x3D;&quot;processing&quot;&gt;Processing...&lt;/div&gt;
+        &lt;label class&#x3D;&quot;col-md-12&quot;
+          &gt;&lt;img
+            src&#x3D;&quot;{{ selectedItemsDetails.media_url }}&quot;
+            alt&#x3D;&quot;{{ selectedItemsDetails.name }}&quot;
+            class&#x3D;&quot;img-responsive col-md-12&quot;
+            max-height&#x3D;&quot;250px&quot;
+            (click)&#x3D;&quot;openModalForImage(selectedItemsDetails.media_url)&quot;
+            (load)&#x3D;&quot;this.imageLoader &#x3D; false&quot;
+            [hidden]&#x3D;&quot;imageLoader&quot;
+          /&gt;
+        &lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-12&quot; *ngIf&#x3D;&quot;selectedItemsDetails.type !&#x3D; &#x27;folder&#x27; &amp;&amp; fileTypesCheck(&#x27;videoTypesCompare&#x27;)&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;label class&#x3D;&quot;col-md-12&quot;&gt;
+          &lt;video #videoPlayer id&#x3D;&quot;mainVideo&quot; controls crossorigin&#x3D;&quot;anonymous&quot; class&#x3D;&quot;upload-area col-md-12&quot;&gt;
+            &lt;source [src]&#x3D;&quot;selectedItemsDetails.media_url&quot; /&gt;
+            Your browser does not support video.
+          &lt;/video&gt;
+          &lt;canvas id&#x3D;&quot;video-canvas&quot; style&#x3D;&quot;display:none&quot; #canvasEle&gt;&lt;/canvas&gt;
+        &lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-12&quot; *ngIf&#x3D;&quot;selectedItemsDetails.type !&#x3D; &#x27;folder&#x27; &amp;&amp; fileTypesCheck(&#x27;audioTypesCompare&#x27;)&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;label class&#x3D;&quot;col-md-12&quot;&gt;
+          &lt;audio #audioPlayer id&#x3D;&quot;mainAudio&quot; controls crossorigin&#x3D;&quot;anonymous&quot; class&#x3D;&quot;upload-area col-md-12&quot;&gt;
+            &lt;source [src]&#x3D;&quot;selectedItemsDetails.media_url&quot; /&gt;
+            Your browser does not support audio.
+          &lt;/audio&gt;
+          &lt;canvas id&#x3D;&quot;audio-canvas&quot; style&#x3D;&quot;display:none&quot; #canvasEle&gt;&lt;/canvas&gt;
+        &lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;label class&#x3D;&quot;col-md-4&quot;&gt;{{ &#x27;TITLE&#x27; | translate }} &lt;/label&gt;
+        &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+          {{ selectedItemsDetails.name }}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-12&quot; *ngIf&#x3D;&quot;selectedItemsDetails.type !&#x3D; &#x27;folder&#x27;&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;label class&#x3D;&quot;col-md-4&quot;&gt;{{ &#x27;SIZE&#x27; | translate }} &lt;/label&gt;
+        &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+          {{ selectedItemsDetails.size &#x3D;&#x3D; null ? &#x27;00 kb&#x27; : convertBytesToKb(selectedItemsDetails.size) }}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;label class&#x3D;&quot;col-md-4&quot;&gt;{{ &#x27;URL&#x27; | translate }} &lt;/label&gt;
+        &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+          &lt;a href&#x3D;&quot;{{ selectedItemsDetails.media_url }}&quot; target&#x3D;&quot;_blank&quot;&gt;Click here&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;label class&#x3D;&quot;col-md-4&quot;&gt;{{ &#x27;CREATED_AT&#x27; | translate }} &lt;/label&gt;
+        &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+          {{ selectedItemsDetails.created_at !&#x3D; null ? convertDateTime(selectedItemsDetails.created_at) : &#x27;&#x27; }}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#audioTypes">audioTypes</a>
+                            </li>
+                            <li>
+                                <a href="#audioTypesCompare">audioTypesCompare</a>
+                            </li>
+                            <li>
+                                <a href="#imageLoader">imageLoader</a>
+                            </li>
+                            <li>
+                                <a href="#imageTypes">imageTypes</a>
+                            </li>
+                            <li>
+                                <a href="#imageTypesCompare">imageTypesCompare</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#modalRef">modalRef</a>
+                            </li>
+                            <li>
+                                <a href="#momentDateTime24Format">momentDateTime24Format</a>
+                            </li>
+                            <li>
+                                <a href="#videoTypes">videoTypes</a>
+                            </li>
+                            <li>
+                                <a href="#videoTypesCompare">videoTypesCompare</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#convertBytesToKb">convertBytesToKb</a>
+                            </li>
+                            <li>
+                                <a href="#convertDateTime">convertDateTime</a>
+                            </li>
+                            <li>
+                                <a href="#fileTypesCheck">fileTypesCheck</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openModalForImage">openModalForImage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#selectedItems">selectedItems</a>
+                            </li>
+                            <li>
+                                <a href="#selectedItemsDetails">selectedItemsDetails</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(modalService: BsModalService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:111</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>modalService</td>
+                                                  
+                                                        <td>
+                                                                    <code>BsModalService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedItems"></a>
+                        <b>selectedItems</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:101</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedItemsDetails"></a>
+                        <b>selectedItemsDetails</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:102</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertBytesToKb"></a>
+                    <span class="name">
+                        <b>
+                            convertBytesToKb
+                        </b>
+                        <a href="#convertBytesToKb"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>convertBytesToKb(bytes)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:149</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>bytes</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertDateTime"></a>
+                    <span class="name">
+                        <b>
+                            convertDateTime
+                        </b>
+                        <a href="#convertDateTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>convertDateTime(date)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="121"
+                            class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:121</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>date</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fileTypesCheck"></a>
+                    <span class="name">
+                        <b>
+                            fileTypesCheck
+                        </b>
+                        <a href="#fileTypesCheck"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fileTypesCheck(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:125</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="114"
+                            class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:114</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openModalForImage"></a>
+                    <span class="name">
+                        <b>
+                            openModalForImage
+                        </b>
+                        <a href="#openModalForImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openModalForImage(img)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:138</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>img</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="audioTypes"></a>
+                        <span class="name">
+                            <b>
+                            audioTypes</b>
+                            <a href="#audioTypes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;audio&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:105</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="audioTypesCompare"></a>
+                        <span class="name">
+                            <b>
+                            audioTypesCompare</b>
+                            <a href="#audioTypesCompare"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:109</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="imageLoader"></a>
+                        <span class="name">
+                            <b>
+                            imageLoader</b>
+                            <a href="#imageLoader"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:111</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="imageTypes"></a>
+                        <span class="name">
+                            <b>
+                            imageTypes</b>
+                            <a href="#imageTypes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;image&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:106</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="imageTypesCompare"></a>
+                        <span class="name">
+                            <b>
+                            imageTypesCompare</b>
+                            <a href="#imageTypesCompare"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:110</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="modalRef"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            modalRef</b>
+                            <a href="#modalRef"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BsModalRef</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:103</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="momentDateTime24Format"></a>
+                        <span class="name">
+                            <b>
+                            momentDateTime24Format</b>
+                            <a href="#momentDateTime24Format"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:104</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoTypes"></a>
+                        <span class="name">
+                            <b>
+                            videoTypes</b>
+                            <a href="#videoTypes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;video&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:107</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoTypesCompare"></a>
+                        <span class="name">
+                            <b>
+                            videoTypesCompare</b>
+                            <a href="#videoTypesCompare"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/app/views/bs-media/bs-media-list/bs-media-list-details.component.ts:108</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, Input, TemplateRef } from &#x27;@angular/core&#x27;;
+import { CONFIGCONSTANTS } from &#x27;../../../config/app-constants&#x27;;
+import * as moment from &#x27;moment&#x27;;
+import { PopupImageOpenComponent } from &#x27;../../announcement/announcement-details/popup-image-open.component&#x27;;
+import { BsModalRef } from &#x27;ngx-bootstrap/modal/bs-modal-ref.service&#x27;;
+import { BsModalService, ModalDirective } from &#x27;ngx-bootstrap/modal&#x27;;
+
+@Component({
+  selector: &#x27;app-bs-media-list-details&#x27;,
+  template: &#x60;
+    &lt;div class&#x3D;&quot;col-md-12 view-user&quot; *ngIf&#x3D;&quot;selectedItems &#x3D;&#x3D; &#x27;&#x27;&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;label class&#x3D;&quot;col-md-12 text-center&quot;&gt;&lt;i class&#x3D;&quot;fa fa-eye-slash fa-5x img-responsive&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div c1lass&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-12 text-center form-group&quot;&gt;{{ &#x27;NOTHING_IS_SELECTED&#x27; | translate }}&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-12 view-user&quot; *ngIf&#x3D;&quot;selectedItems !&#x3D; &#x27;&#x27; &amp;&amp; selectedItemsDetails&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-12&quot; *ngIf&#x3D;&quot;selectedItemsDetails.type !&#x3D; &#x27;folder&#x27; &amp;&amp; fileTypesCheck(&#x27;imageTypesCompare&#x27;)&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div [hidden]&#x3D;&quot;!imageLoader&quot; class&#x3D;&quot;processing&quot;&gt;Processing...&lt;/div&gt;
+            &lt;label class&#x3D;&quot;col-md-12&quot;
+              &gt;&lt;img
+                src&#x3D;&quot;{{ selectedItemsDetails.media_url }}&quot;
+                alt&#x3D;&quot;{{ selectedItemsDetails.name }}&quot;
+                class&#x3D;&quot;img-responsive col-md-12&quot;
+                max-height&#x3D;&quot;250px&quot;
+                (click)&#x3D;&quot;openModalForImage(selectedItemsDetails.media_url)&quot;
+                (load)&#x3D;&quot;this.imageLoader &#x3D; false&quot;
+                [hidden]&#x3D;&quot;imageLoader&quot;
+              /&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-md-12&quot; *ngIf&#x3D;&quot;selectedItemsDetails.type !&#x3D; &#x27;folder&#x27; &amp;&amp; fileTypesCheck(&#x27;videoTypesCompare&#x27;)&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;label class&#x3D;&quot;col-md-12&quot;&gt;
+              &lt;video #videoPlayer id&#x3D;&quot;mainVideo&quot; controls crossorigin&#x3D;&quot;anonymous&quot; class&#x3D;&quot;upload-area col-md-12&quot;&gt;
+                &lt;source [src]&#x3D;&quot;selectedItemsDetails.media_url&quot; /&gt;
+                Your browser does not support video.
+              &lt;/video&gt;
+              &lt;canvas id&#x3D;&quot;video-canvas&quot; style&#x3D;&quot;display:none&quot; #canvasEle&gt;&lt;/canvas&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-md-12&quot; *ngIf&#x3D;&quot;selectedItemsDetails.type !&#x3D; &#x27;folder&#x27; &amp;&amp; fileTypesCheck(&#x27;audioTypesCompare&#x27;)&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;label class&#x3D;&quot;col-md-12&quot;&gt;
+              &lt;audio #audioPlayer id&#x3D;&quot;mainAudio&quot; controls crossorigin&#x3D;&quot;anonymous&quot; class&#x3D;&quot;upload-area col-md-12&quot;&gt;
+                &lt;source [src]&#x3D;&quot;selectedItemsDetails.media_url&quot; /&gt;
+                Your browser does not support audio.
+              &lt;/audio&gt;
+              &lt;canvas id&#x3D;&quot;audio-canvas&quot; style&#x3D;&quot;display:none&quot; #canvasEle&gt;&lt;/canvas&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;label class&#x3D;&quot;col-md-4&quot;&gt;{{ &#x27;TITLE&#x27; | translate }} &lt;/label&gt;
+            &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+              {{ selectedItemsDetails.name }}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-md-12&quot; *ngIf&#x3D;&quot;selectedItemsDetails.type !&#x3D; &#x27;folder&#x27;&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;label class&#x3D;&quot;col-md-4&quot;&gt;{{ &#x27;SIZE&#x27; | translate }} &lt;/label&gt;
+            &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+              {{ selectedItemsDetails.size &#x3D;&#x3D; null ? &#x27;00 kb&#x27; : convertBytesToKb(selectedItemsDetails.size) }}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;label class&#x3D;&quot;col-md-4&quot;&gt;{{ &#x27;URL&#x27; | translate }} &lt;/label&gt;
+            &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+              &lt;a href&#x3D;&quot;{{ selectedItemsDetails.media_url }}&quot; target&#x3D;&quot;_blank&quot;&gt;Click here&lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;label class&#x3D;&quot;col-md-4&quot;&gt;{{ &#x27;CREATED_AT&#x27; | translate }} &lt;/label&gt;
+            &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+              {{ selectedItemsDetails.created_at !&#x3D; null ? convertDateTime(selectedItemsDetails.created_at) : &#x27;&#x27; }}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &#x60;,
+  styleUrls: [&#x27;./bs-media-list.component.scss&#x27;],
+})
+export class BsMediaListDetailsComponent implements OnInit {
+  @Input() selectedItems;
+  @Input() selectedItemsDetails;
+  private modalRef: BsModalRef;
+  momentDateTime24Format: string;
+  audioTypes &#x3D; &#x27;audio&#x27;;
+  imageTypes &#x3D; &#x27;image&#x27;;
+  videoTypes &#x3D; &#x27;video&#x27;;
+  videoTypesCompare: boolean &#x3D; false;
+  audioTypesCompare: boolean &#x3D; false;
+  imageTypesCompare: boolean &#x3D; false;
+  imageLoader: boolean &#x3D; true;
+
+  constructor(private modalService: BsModalService) {}
+  ngOnInit() {
+    this.momentDateTime24Format &#x3D; CONFIGCONSTANTS.momentDateTime24Format || &#x27;MM/DD/YYYY hh:mm:ss&#x27;;
+    // if(this.selectedItemsDetails){
+    //   this.fileTypesCheck();
+    // }
+  }
+
+  convertDateTime(date) {
+    return moment(date).format(this.momentDateTime24Format);
+  }
+
+  fileTypesCheck(data) {
+    if (data &#x3D;&#x3D; &#x27;imageTypesCompare&#x27;) {
+      return this.selectedItemsDetails.mimetype.includes(this.imageTypes) &#x3D;&#x3D; true ? true : false;
+    }
+    if (data &#x3D;&#x3D; &#x27;videoTypesCompare&#x27;) {
+      return this.selectedItemsDetails.mimetype.includes(this.videoTypes) &#x3D;&#x3D; true ? true : false;
+    }
+    if (data &#x3D;&#x3D; &#x27;audioTypesCompare&#x27;) {
+      return this.selectedItemsDetails.mimetype.includes(this.audioTypes) &#x3D;&#x3D; true ? true : false;
+    }
+  }
+
+  /* Open Model For Image Show */
+  openModalForImage(img) {
+    const initialState &#x3D; {
+      image: img,
+    };
+    this.modalRef &#x3D; this.modalService.show(PopupImageOpenComponent, {
+      class: &#x27;modal-md&#x27;,
+      initialState,
+    });
+  }
+
+  /* Bytes to KB convert*/
+  convertBytesToKb(bytes) {
+    if (bytes &#x3D;&#x3D;&#x3D; 0) return &#x27;0 Kb&#x27;;
+    const decimals &#x3D; 2;
+    const k &#x3D; 1024;
+    const dm &#x3D; decimals &lt; 0 ? 0 : decimals;
+    const sizes &#x3D; &#x27;KB&#x27;;
+
+    const kbSize &#x3D; Math.floor(Math.log(bytes) / Math.log(k));
+
+    return parseFloat((bytes / Math.pow(k, kbSize)).toFixed(dm)) + &#x27; &#x27; + sizes;
+  }
+}
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./bs-media-list.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.view-user label {
+  font-weight: bold;
+}
+.over-flow-scroll {
+  max-height: 500px;
+  overflow-x: hidden;
+}
+
+.list-group-item {
+  border-bottom: 1px solid #c8ced3;
+  border: 1px solid rgba(0, 0, 0, 0) !important;
+  height: 100%;
+  background-color: none !important;
+}
+.list-group-item-action {
+  color: none;
+  background: none;
+  width: 105% !important;
+}
+.list-group-item.active {
+  z-index: 2;
+  color: #fff;
+  background-color: #bb3f42;
+  border-color: #bb3f42;
+}
+.table td {
+  padding: 0;
+}
+
+.navbar-light,
+.border-smooth {
+  border: 1px solid #c8ced3 !important;
+  border-radius: 0rem !important;
+}
+
+.table-striped tr:nth-of-type(odd) {
+  background: #fff !important;
+}
+.table-striped tr:nth-of-type(even) {
+  background: #c8ced5 !important;
+}
+
+.card-hover-eff a {
+  height: 100% !important;
+}
+.card-hover-eff:hover {
+  .grid-card {
+    background: #c8ced5;
+  }
+  .card {
+    border: 2px solid #c8ced5 !important;
+  }
+}
+.grid-selected {
+  z-index: 2;
+  color: #fff !important;
+  background-color: #bb3f42;
+  border-color: #bb3f42;
+}
+.grid-selected:hover {
+  background-color: #c8ced5;
+  color: #5c6873 !important;
+}
+.grid-text {
+  color: #5c6873 !important;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="col-md-12 view-user" *ngIf="selectedItems == \'\'">  <div class="row">    <div class="col-md-12">      <div class="row">        <label class="col-md-12 text-center"><i class="fa fa-eye-slash fa-5x img-responsive" aria-hidden="true"></i> </label>      </div>      <div c1lass="row">        <div class="col-md-12 text-center form-group">{{ \'NOTHING_IS_SELECTED\' | translate }}</div>      </div>    </div>  </div></div><div class="col-md-12 view-user" *ngIf="selectedItems != \'\' && selectedItemsDetails">  <div class="row">    <div class="col-md-12" *ngIf="selectedItemsDetails.type != \'folder\' && fileTypesCheck(\'imageTypesCompare\')">      <div class="row">        <div [hidden]="!imageLoader" class="processing">Processing...</div>        <label class="col-md-12"          ><img            src="{{ selectedItemsDetails.media_url }}"            alt="{{ selectedItemsDetails.name }}"            class="img-responsive col-md-12"            max-height="250px"            (click)="openModalForImage(selectedItemsDetails.media_url)"            (load)="this.imageLoader = false"            [hidden]="imageLoader"          />        </label>      </div>    </div>    <div class="col-md-12" *ngIf="selectedItemsDetails.type != \'folder\' && fileTypesCheck(\'videoTypesCompare\')">      <div class="row">        <label class="col-md-12">          <video #videoPlayer id="mainVideo" controls crossorigin="anonymous" class="upload-area col-md-12">            <source [src]="selectedItemsDetails.media_url" />            Your browser does not support video.          </video>          <canvas id="video-canvas" style="display:none" #canvasEle></canvas>        </label>      </div>    </div>    <div class="col-md-12" *ngIf="selectedItemsDetails.type != \'folder\' && fileTypesCheck(\'audioTypesCompare\')">      <div class="row">        <label class="col-md-12">          <audio #audioPlayer id="mainAudio" controls crossorigin="anonymous" class="upload-area col-md-12">            <source [src]="selectedItemsDetails.media_url" />            Your browser does not support audio.          </audio>          <canvas id="audio-canvas" style="display:none" #canvasEle></canvas>        </label>      </div>    </div>    <div class="col-md-12">      <div class="row">        <label class="col-md-4">{{ \'TITLE\' | translate }} </label>        <div class="col-md-8">          {{ selectedItemsDetails.name }}        </div>      </div>    </div>    <div class="col-md-12" *ngIf="selectedItemsDetails.type != \'folder\'">      <div class="row">        <label class="col-md-4">{{ \'SIZE\' | translate }} </label>        <div class="col-md-8">          {{ selectedItemsDetails.size == null ? \'00 kb\' : convertBytesToKb(selectedItemsDetails.size) }}        </div>      </div>    </div>    <div class="col-md-12">      <div class="row">        <label class="col-md-4">{{ \'URL\' | translate }} </label>        <div class="col-md-8">          <a href="{{ selectedItemsDetails.media_url }}" target="_blank">Click here</a>        </div>      </div>    </div>    <div class="col-md-12">      <div class="row">        <label class="col-md-4">{{ \'CREATED_AT\' | translate }} </label>        <div class="col-md-8">          {{ selectedItemsDetails.created_at != null ? convertDateTime(selectedItemsDetails.created_at) : \'\' }}        </div>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'ActivityTrackingComponent', 'selector': 'app-activity-tracking'},{'name': 'AdminSuggestionComponent', 'selector': 'app-admin-suggestion'},{'name': 'AdminSuggestionListComponent', 'selector': 'app-admin-suggestion-list'},{'name': 'AlertsComponent', 'selector': ''},{'name': 'AnnouncementAddEditComponent', 'selector': 'app-announcement-add-edit'},{'name': 'AnnouncementComponent', 'selector': 'app-announcement'},{'name': 'AnnouncementDetailsComponent', 'selector': 'app-announcement-details'},{'name': 'AnnouncementListComponent', 'selector': 'app-announcement-list'},{'name': 'AnnouncementReceiversComponent', 'selector': 'app-announcement-receivers'},{'name': 'AppComponent', 'selector': 'body'},{'name': 'BadgesComponent', 'selector': ''},{'name': 'BrandButtonsComponent', 'selector': ''},{'name': 'BsMediaComponent', 'selector': 'app-bs-media'},{'name': 'BsMediaListComponent', 'selector': 'app-bs-media-list'},{'name': 'BsMediaListDetailsComponent', 'selector': 'app-bs-media-list-details'},{'name': 'ButtonsComponent', 'selector': ''},{'name': 'CardsComponent', 'selector': ''},{'name': 'CarouselsComponent', 'selector': ''},{'name': 'CategoryAddEditComponent', 'selector': 'app-category-add-edit'},{'name': 'CategoryComponent', 'selector': 'app-category'},{'name': 'CategoryListComponent', 'selector': 'app-category-list'},{'name': 'CategoryTreeviewComponent', 'selector': 'app-category-treeview'},{'name': 'ChartJSComponent', 'selector': ''},{'name': 'CheckUserListComponent', 'selector': 'multi-user-list'},{'name': 'CityAddEditComponent', 'selector': 'app-city-add-edit'},{'name': 'CmsAddEditComponent', 'selector': 'app-cms-add-edit'},{'name': 'CmsComponent', 'selector': 'app-cms'},{'name': 'CmsListComponent', 'selector': 'app-cms-list'},{'name': 'CmsPageBuilderComponent', 'selector': 'app-cms-page-builder'},{'name': 'CmsPageViewComponent', 'selector': 'app-cms-page-view'},{'name': 'CollapsesComponent', 'selector': ''},{'name': 'ColorsComponent', 'selector': ''},{'name': 'CoreUIIconsComponent', 'selector': ''},{'name': 'CountryAddEditComponent', 'selector': 'app-country-add-edit'},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DefaultLayoutComponent', 'selector': 'app-dashboard'},{'name': 'DropdownsComponent', 'selector': ''},{'name': 'EmailAddEditComponent', 'selector': 'app-email-add-edit'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailListComponent', 'selector': 'app-email-list'},{'name': 'EventAddEditComponent', 'selector': 'app-event-add-edit'},{'name': 'EventListComponent', 'selector': 'app-event-list'},{'name': 'EventViewComponent', 'selector': 'app-event-view'},{'name': 'FaqAddEditComponent', 'selector': 'app-faq-add-edit'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FaqListComponent', 'selector': 'app-faq-list'},{'name': 'FlagsComponent', 'selector': ''},{'name': 'FontAwesomeComponent', 'selector': ''},{'name': 'FormsComponent', 'selector': ''},{'name': 'ListActivityTrackingComponent', 'selector': 'app-list-activity-tracking'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-dashboard'},{'name': 'ManageBannerAddEditComponent', 'selector': 'app-manage-banner-add-edit'},{'name': 'ManageBannerComponent', 'selector': 'app-manage-banner'},{'name': 'ManageBannerListComponent', 'selector': 'app-manage-banner-list'},{'name': 'ManageCityComponent', 'selector': 'app-manage-city'},{'name': 'ManageContactComponent', 'selector': 'app-manage-contact'},{'name': 'ManageContactListComponent', 'selector': 'app-manage-contact-list'},{'name': 'ManageCountryComponent', 'selector': 'app-manage-country'},{'name': 'ManageEventComponent', 'selector': 'app-manage-event'},{'name': 'ManageLocationComponent', 'selector': 'app-manage-location'},{'name': 'ManageOfferAddEditComponent', 'selector': 'app-manage-offer-add-edit'},{'name': 'ManageOfferComponent', 'selector': 'app-manage-offer'},{'name': 'ManageOfferListComponent', 'selector': 'app-manage-offer-list'},{'name': 'ManageRulesetComponent', 'selector': 'app-manage-ruleset'},{'name': 'ManageStateComponent', 'selector': 'app-manage-state'},{'name': 'ManageSubscriptionComponent', 'selector': 'app-manage-subscription'},{'name': 'ManageSurveyComponent', 'selector': 'app-manage-survey'},{'name': 'ManageUserAddEditComponent', 'selector': 'app-manage-user-add-edit'},{'name': 'ManageUserComponent', 'selector': 'app-manage-user'},{'name': 'ManageUserListComponent', 'selector': 'app-manage-user-list'},{'name': 'ManageUserViewComponent', 'selector': 'app-manage-user-view'},{'name': 'ModalsComponent', 'selector': ''},{'name': 'OfferReportListComponent', 'selector': 'offer-report-list'},{'name': 'P403Component', 'selector': ''},{'name': 'P404Component', 'selector': ''},{'name': 'P500Component', 'selector': ''},{'name': 'PaginationsComponent', 'selector': ''},{'name': 'PopoversComponent', 'selector': ''},{'name': 'PopupImageOpenComponent', 'selector': 'popup-image-open'},{'name': 'ProfileComponent', 'selector': ''},{'name': 'ProgressComponent', 'selector': ''},{'name': 'RegisterComponent', 'selector': 'app-dashboard'},{'name': 'ResetPasswordComponent', 'selector': 'app-dashboard'},{'name': 'ReviewComponent', 'selector': 'app-review'},{'name': 'RolePermissionComponent', 'selector': 'app-role-permission'},{'name': 'RulesetAddEditComponent', 'selector': 'app-ruleset-add-edit'},{'name': 'RulesetListComponent', 'selector': 'app-ruleset-list'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SimpleLineIconsComponent', 'selector': ''},{'name': 'StateAddEditComponent', 'selector': 'app-state-add-edit'},{'name': 'SubadminAddEditComponent', 'selector': 'app-subadmin-add-edit'},{'name': 'SubadminComponent', 'selector': 'app-subadmin'},{'name': 'SubadminListComponent', 'selector': 'app-subadmin-list'},{'name': 'SubscriptionAddEditComponent', 'selector': 'app-subscription-add-edit'},{'name': 'SubscriptionListComponent', 'selector': 'app-subscription-list'},{'name': 'SubscriptionViewComponent', 'selector': 'app-subscription-view'},{'name': 'SurveyAddEditComponent', 'selector': 'app-survey-add-edit'},{'name': 'SurveyAnswersComponent', 'selector': 'app-survey-answers'},{'name': 'SurveyListComponent', 'selector': 'app-survey-list'},{'name': 'SurveyQuestionsComponent', 'selector': 'app-survey-questions'},{'name': 'SurveyReportComponent', 'selector': 'app-survey-report'},{'name': 'SurveyUserReportComponent', 'selector': 'survey-user-report'},{'name': 'SwitchesComponent', 'selector': ''},{'name': 'TablesComponent', 'selector': ''},{'name': 'TabsComponent', 'selector': ''},{'name': 'TextUserListComponent', 'selector': 'text-user-list'},{'name': 'TooltipsComponent', 'selector': ''},{'name': 'TypographyComponent', 'selector': ''},{'name': 'UserReportComponent', 'selector': 'app-user-report'},{'name': 'UserSuggestionAddComponent', 'selector': 'app-user-suggestion-add'},{'name': 'UserSuggestionComponent', 'selector': 'app-user-suggestion'},{'name': 'UserSuggestionListComponent', 'selector': 'app-user-suggestion-list'},{'name': 'UserSurveyComponent', 'selector': 'app-user-survey'},{'name': 'UserSurveyListComponent', 'selector': 'app-user-survey-list'},{'name': 'VideoUploadComponent', 'selector': 'app-video-upload'},{'name': 'ViewAnswerComponent', 'selector': 'app-view-answer'},{'name': 'WidgetsComponent', 'selector': ''}];
+    var DIRECTIVES = [{'name': 'MultiCheckboxValidationDirective', 'selector': '[appMultiCheckboxValidation]'},{'name': 'NumberOnlyDirective', 'selector': 'input[appNumberOnly]'},{'name': 'PhoneMaskDirective', 'selector': '[phoneMask][ngModel]'}];
+    var ACTUAL_COMPONENT = {'name': 'BsMediaListDetailsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'BsMediaListDetailsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

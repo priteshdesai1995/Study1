@@ -1,0 +1,170 @@
+<div class="wrapper">
+    <div class="header-sec">
+        <div class="left-panel">
+            <nz-breadcrumb [nzAutoGenerate]="true" style="margin:5px 0;">
+            </nz-breadcrumb>
+        </div>
+    </div>
+    <div class="section-one">
+        <div class="card">
+            <div class="card-body">
+                <h5>Add new</h5>
+                <form InvalidFormScrollDirective [formGroup]="newGroupForm" (ngSubmit)="addNewGroup()" novalidate
+                    autocomplete="off">
+                    <div class="form-group row">
+                        <div class="col col-pad">
+                            <label>Enter Group Name</label>
+                            <input appSpaceRemove formControlName="name" type="text" class="form-control">
+                            <span class="error" *ngIf="isGroupSubmit && errorControl.name.errors?.required">
+                                <img class="info-img"> This field is required
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <div class="row">
+                            <div class="col-12 col-lg-6" style="border-right: 1px solid #d9d9d9;">
+                                <h5>Add Demographic Data</h5>
+                                <div class="form-group form-row">
+                                    <div class="col">
+                                        <div class="track-bottom">
+                                            <p>Select Gender</p>
+                                            <div class="provider">
+                                                <label *ngFor="let oneGender of genderList;" class="container">
+                                                    {{oneGender.value}}
+                                                    <input #checkboxes type="radio" #factor (change)="genderChange($event)"
+                                                        [value]="oneGender.id" name="gender" [checked]="oneGender.checked">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col" *ngIf="isList">
+                                        <label class="required width-100"> Please select from the list</label>
+                                        <ng-select  class="disable-clear-all" [clearable]="false"   [items]="otherList" bindLabel="value" bindValue="id" formControlName="gender"
+                                            [ngClass]="isGroupSubmit && errorControl.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        </ng-select>
+                                        <span class="error" *ngIf="isGroupSubmit && errorControl.gender.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                    <div class="col" *ngIf="!isList">
+                                    </div>
+                                    <div class="col">
+                                        <label class="required">Select Age Group</label>
+                                        <ng-select  class="disable-clear-all" [clearable]="false"  class="disable-clear-all" [clearable]="false"  [items]="ageGroupList" bindLabel="value" bindValue="id"
+                                            formControlName="ageGroup" [ngClass]="isGroupSubmit && errorControl.ageGroup.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        </ng-select>
+                                        <span class="error" *ngIf="isGroupSubmit && errorControl.ageGroup.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <label class="required">Select State</label>
+                                        <ng-select  class="disable-clear-all" [clearable]="false"  [items]="states" formControlName="state" bindLabel="name" bindValue="name"
+                                            [ngClass]="isGroupSubmit && errorControl.state.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        </ng-select>
+                                        <span class="error" *ngIf="isGroupSubmit && errorControl.state.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <label>Select Ethnicity</label>
+                                        <ng-select  class="disable-clear-all" [clearable]="false"   [items]="ethnicityList" bindLabel="value" bindValue="id"
+                                            formControlName="ethnicity" [ngClass]="isGroupSubmit && errorControl.ethnicity.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        </ng-select>
+                                        <span class="error" *ngIf="isGroupSubmit && errorControl.ethnicity.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <label class="required">Select Family size</label>
+                                        <ng-select  class="disable-clear-all" [clearable]="false"  [items]="familySizeList" bindLabel="value" bindValue="id"
+                                            formControlName="familySize" [ngClass]="isGroupSubmit && errorControl.familySize.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        </ng-select>
+                                        <span class="error" *ngIf="isGroupSubmit && errorControl.familySize.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <label class="required">Education</label>
+                                        <ng-select  class="disable-clear-all" [clearable]="false"  [items]="educationList" bindLabel="value" bindValue="id"
+                                            formControlName="education" [ngClass]="isGroupSubmit && errorControl.education.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        </ng-select>
+                                        <span class="error" *ngIf="isGroupSubmit && errorControl.education.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <h5>Select Cognitive Profile</h5>
+                                <div class="form-group form-row" style="margin-top:26px;">
+                                    <!--<div class="track-bottom factor" style="padding-bottom:10px;">
+                                        <p>Factor-in External Values</p>
+                                        <div class="provider">
+                                            <label *ngFor="let oneFact of factor;" class="container">
+                                                {{oneFact.key}}
+                                                <input #checkboxes type="radio" [value]="oneFact.value" name="isExternalFactor"
+                                                    [checked]="oneFact.checked">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                    </div>-->
+                                    <div class="col">
+                                        <label class="required">Select Big Five</label>
+                                        <ng-select  class="disable-clear-all" [clearable]="false"  [items]="bigFiveList" (change)="bigFiveChange($event)" bindLabel="value"
+                                            bindValue="id" formControlName="bigFive" [ngClass]="isGroupSubmit && errorControl.bigFive.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        </ng-select>
+                                        <span class="error" *ngIf="isGroupSubmit && errorControl.bigFive.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <label [class.required]="!isValuesEmpty">Select Values</label>
+                                        <ng-select  class="disable-clear-all" [clearable]="false"  [readonly]="isValuesEmpty" (clear)="onAttributeClear($event,true,false,false)"
+                                            [items]="valueList" bindLabel="value" bindValue="id" formControlName="values"
+                                            [ngClass]="isGroupSubmit && errorControl.values.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        </ng-select>
+                                        <span class="error" *ngIf="isGroupSubmit && errorControl.values.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <label [class.required]="!isPersuasiveEmpty">Select Persuasive Stratergies</label>
+                                        <ng-select  class="disable-clear-all" [clearable]="false"   [readonly]="isPersuasiveEmpty" (clear)="onAttributeClear($event,false,true,false)"
+                                            [items]="persuasiveList" bindLabel="value" bindValue="id" formControlName="persuasiveStratergies"
+                                            [ngClass]="isGroupSubmit && errorControl.persuasiveStratergies.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        </ng-select>
+                                        <span class="error" *ngIf="isGroupSubmit && errorControl.persuasiveStratergies.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <label [class.required]="!isMotivationEmpty">Select Motivation to Buy</label>
+                                        <ng-select  class="disable-clear-all" [clearable]="false"  [readonly]="isMotivationEmpty" (clear)="onAttributeClear($event,false,false,true)"
+                                            [items]="motivationList" bindLabel="value" bindValue="id" formControlName="motivationToBuy"
+                                            [ngClass]="isGroupSubmit && errorControl.motivationToBuy.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        </ng-select>
+                                        <span class="error" *ngIf="isGroupSubmit && errorControl.motivationToBuy.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12  text-right">
+                        <button class="btn-color" appLoader text="Save" [loading]="isLoadSubmit"></button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="section-two" style="padding-top:20px;">
+        <list-table #list [config]="dataTableConfig" [isAllDelete]="true" ></list-table>
+    </div>
+</div>

@@ -1,0 +1,126 @@
+{
+    "properties": {
+        "userEventId": {
+            "type": "long"
+        },
+        "userId": {
+            "type": "keyword"
+        },
+        "externalUserId": {
+            "type": "keyword"
+        },
+        "deviceId": {
+            "type": "text",
+            "fielddata": true
+        },
+        "bodegaId": {
+            "type": "keyword"
+        },
+        "deviceType": {
+            "type": "text",
+            "fielddata": true
+        },
+        "pageLoadTime": {
+            "type": "integer"
+        },
+        "sessionId": {
+            "type": "keyword"
+        },
+        "city": {
+            "type": "text",
+            "fielddata": true
+        },
+        "state": {
+            "type": "keyword"
+        },
+        "country": {
+            "type": "text",
+            "fielddata": true
+        },
+        "location": {
+            "type": "geo_point"
+        },
+        "sessionStartTime": {
+            "type": "date"
+        },
+        "sessionEndTime": {
+            "type": "date"
+        },
+        "browser": {
+            "type": "keyword"
+        },
+        "accountId": {
+            "type": "long"
+        },
+        "eventId": {
+            "type": "keyword"
+        },
+        "productId": {
+            "type": "keyword"
+        },
+        "productName": {
+            "type": "text",
+            "fielddata": true
+        },
+        "productDescription": {
+            "type": "text",
+            "fielddata": true
+        },
+        "productCategory": {
+            "type": "text",
+            "fielddata": true
+        },
+        "productPrice": {
+            "type": "double"
+        },
+        "productRelatedImages": {
+            "type": "text",
+            "fielddata": true
+        },
+        "saleId": {
+            "type": "long"
+        },
+        "saleAmount": {
+            "type": "double"
+        },
+        "productQuantity": {
+            "type": "double"
+        },
+        "saleOn": {
+            "type": "date"
+        },
+        "pageUrl": {
+            "type": "text",
+            "fielddata": true
+        },
+        "menuId": {
+            "type": "keyword"
+        },
+        "menuName": {
+            "type": "text",
+            "fielddata": true
+        },
+        "menuUrl": {
+            "type": "text",
+            "fielddata": true
+        },
+        "postId": {
+            "type": "keyword"
+        },
+        "postTitle": {
+            "type": "text",
+            "fielddata": true
+        },
+        "socialMediaPlatform": {
+            "type": "text",
+            "fielddata": true
+        },
+        "social_media_url": {
+            "type": "text",
+            "fielddata": true
+        },
+        "timestemp": {
+            "type": "date"
+        }
+    }
+}

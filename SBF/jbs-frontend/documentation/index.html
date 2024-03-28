@@ -1,0 +1,434 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@brainvire/basemodule documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">@brainvire/basemodule documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="angular-v8-base-admin-panel---brainvire">Angular v8 Base Admin Panel - Brainvire</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<blockquote>
+<p>Before you begin, make sure your development environment includes Node.js and an npm package manager.</p>
+</blockquote>
+<h4 id="node-js---version--1090">Node JS - version &gt; 10.9.0</h4>
+<ul>
+<li>Download Node JS from <a href="https://www.nodejs.org">nodejs.org</a> - HTML to Markdown converter</li>
+<li>Run below command for verify version of Node JS.</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-none">$ node -v</code></pre></div><h4 id="npm-package-manager">NPM Package Manager</h4>
+<ul>
+<li>Run below command for Installing latest NPM</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-bash">$ npm install npm&#64;latest -g</code></pre></div><ul>
+<li>Run below command for verify version of NPM.</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-bash">$ npm -v</code></pre></div><h4 id="angular-cli">Angular CLI</h4>
+<ul>
+<li>Run below command for Installing latest Angular</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-bash">$ npm install -g &#64;angular/cli</code></pre></div><ul>
+<li>Run below command for verify version of NPM.</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-bash">$ ng --version</code></pre></div><h4 id="base-admin-panel-setup">Base Admin Panel Setup</h4>
+<ul>
+<li>Get the clone and Install all Dependencies by using below command.</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-bash">$ git clone https://git.brainvire.com/angular/base-project-ng8.git
+$ cd base-project-ng8
+$ npm install
+$ ng serve --open</code></pre></div><h4 id="below-is-an-structure-of-files">Below is an structure of files.</h4>
+<div><pre class="line-numbers"><code class="language-none">base-project-ng8/
+├── e2e/
+├── src/
+│   ├── app/
+│   ├── assets/
+│   ├── environments/
+│   ├── scss/
+│   ├── index.html
+│   └── ...
+├── .angular-cli.json
+├── ...
+├── package.json
+└── ...</code></pre></div><h2 id="admin-folder-structure">Admin Folder Structure</h2>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Predefined Files</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.editorconfig</td>
+<td>Configuration for code editors</td>
+</tr>
+<tr>
+<td>.gitignore</td>
+<td>Config for Untracking Files</td>
+</tr>
+<tr>
+<td>README .md</td>
+<td>Documentation of APP</td>
+</tr>
+<tr>
+<td>angular.json</td>
+<td>Configuration file for Angular APP for Serving, Build, etc</td>
+</tr>
+<tr>
+<td>package.json</td>
+<td>Contain the name of all third parties packages</td>
+</tr>
+<tr>
+<td>package-lock.json</td>
+<td>Provides version information for all packages installed into node_modules by the npm client</td>
+</tr>
+<tr>
+<td>src/</td>
+<td>Source files for Modification the Application.</td>
+</tr>
+<tr>
+<td>node_modules/</td>
+<td>Install the dependencies on the based of Package.JSON File</td>
+</tr>
+<tr>
+<td>tsconfig.json</td>
+<td>Default TypeScript configuration</td>
+</tr>
+<tr>
+<td>tslint.json</td>
+<td>Default TSLint configuration. Use ng lint command to resolve programmatic and stylistic errors in application</td>
+</tr>
+</tbody>
+</table>
+<h2 id="src-supported-files---source-files">SRC Supported Files - Source Files</h2>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Predefined Files</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app</td>
+<td>Contains the component files in which your application logic and data are defined.</td>
+</tr>
+<tr>
+<td>assets/</td>
+<td>Contains image and other asset files</td>
+</tr>
+<tr>
+<td>environments/</td>
+<td>Contains build configuration options. They contains two file development environment and production environment</td>
+</tr>
+<tr>
+<td>favicon.ico</td>
+<td>An icon to use for this application in the bookmark bar.</td>
+</tr>
+<tr>
+<td>index.html</td>
+<td>The main HTML page. The CLI automatically adds all JavaScript and CSS files when building your app, so you don&#39;t need to add any <code>&lt;script&gt;</code> or <code>&lt;link&gt;</code> tags manually.</td>
+</tr>
+<tr>
+<td>main.ts</td>
+<td>The main entry point for your application. Bootstraps the application&#39;s root module (AppModule) to run in the browser.</td>
+</tr>
+<tr>
+<td>polyfills.ts</td>
+<td>Cross &amp; Old Browsing Support.</td>
+</tr>
+<tr>
+<td>styles.sass</td>
+<td>Main Sass file which imports other sass file for application purpose.</td>
+</tr>
+<tr>
+<td>test.ts</td>
+<td>Use for unit testing</td>
+</tr>
+</tbody>
+</table>
+<h2 id="app-supported-files---working-directory">APP Supported Files - Working Directory</h2>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Working Files</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app.component.ts</td>
+<td>Defines the logic for the app&#39;s root component, named AppComponent.</td>
+</tr>
+<tr>
+<td>app.component.html</td>
+<td>Defines the HTML template associated with the root AppComponent.</td>
+</tr>
+<tr>
+<td>app.component.css</td>
+<td>Defines the base CSS stylesheet for the root AppComponent</td>
+</tr>
+<tr>
+<td>app.component.spec.ts</td>
+<td>Defines a unit test for the root AppComponent</td>
+</tr>
+<tr>
+<td>app.module.ts</td>
+<td>Defines the root module, named AppModule, assemble the application. Initially declares only the AppComponent.</td>
+</tr>
+<tr>
+<td>app.routing.ts</td>
+<td>This is a Main Routing File which combines all the modules to Lazy Load the Data.</td>
+</tr>
+<tr>
+<td>_guards/</td>
+<td>CanActivate is an Angular interface. It is used to force user to login into application before navigating to the route.</td>
+</tr>
+<tr>
+<td>_helpers/</td>
+<td>Add Authorization in all API’s request header for security purpose.</td>
+</tr>
+<tr>
+<td>_module/</td>
+<td>Used directives, pipes, and components into one module and then import in other modules.</td>
+</tr>
+<tr>
+<td>_pipe/</td>
+<td>A pipe takes in data as input and transforms it to a desired output.</td>
+</tr>
+<tr>
+<td>_services/</td>
+<td>They contain methods that maintain data throughout application, i.e. data does not get refreshed and is available all the time.</td>
+</tr>
+<tr>
+<td>_validators/</td>
+<td>Create custom validation functions.</td>
+</tr>
+<tr>
+<td>config/</td>
+<td><code>app.config.ts</code> - Consists of API Endpoint in form of URL. <code>app.constant.ts</code> - Application constant data or configuration.</td>
+</tr>
+<tr>
+<td>model/</td>
+<td>Declare data and type of Array.</td>
+</tr>
+<tr>
+<td>views/</td>
+<td>Contains project modules</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-">Example:-</h2>
+<h4 id="create-subadmin-files">Create SubAdmin Files</h4>
+<ul>
+<li>Create Module Files</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-bash">$ ng generate module manage-subadmin --routing=true</code></pre></div><ul>
+<li>Create Component Files For Subadmin</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-bash">$ ng generate component subadmin</code></pre></div><ul>
+<li>Create Component Files for Subadmin List</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-bash">$ ng generate component subadmin-list</code></pre></div><ul>
+<li>Create Component File of Add &amp; Edit Functionality</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-bash">$ ng generate component subadmin-add-edit</code></pre></div><h4 id="import-subadmin-module-to-app-routing-file">Import Subadmin Module to App Routing File</h4>
+<div><pre class="line-numbers"><code class="language-bash">$ {
+    path: &#39;subadmin&#39;,
+    loadChildren: () =&gt;   import(&#39;./views/manage-subadmin/subadmin.module&#39;).then(m =&gt;  m.SubadminModule),
+    canActivateChild: [AuthGuard]
+}</code></pre></div><h4 id="include-subadmin-in-side-bar-menu">Include Subadmin in Side Bar Menu</h4>
+<p><code>Path : /containers/default-layout/default-layout.component.html</code></p>
+<h4 id="subadminmodulets---sub-module-of-components-of-subadmin">Subadmin.module.ts - Sub Module of Components of SubAdmin</h4>
+<ul>
+<li>Module Name: <code>SubadminModule</code></li>
+<li>Purpose: Used to <code>import</code> module and <code>declare</code> component. Only one module create for each module. Import this module in routing file.</li>
+</ul>
+<h4 id="subadmin-routingmodulets---sub-routing-files-of-subadmin">Subadmin-routing.module.ts - Sub Routing Files of SubAdmin</h4>
+<ul>
+<li>Module Name: <code>SubadminRoutingModule</code></li>
+<li>Purpose: Use to create different URLs or Routes for list, add &amp; edit component.</li>
+</ul>
+<h4 id="subadmincomponentts">Subadmin.component.ts</h4>
+<ul>
+<li>Component Name:- SubadminComponent</li>
+<li>Purpose: Use to Combine Subadmin template and style. It is an main component of this module.</li>
+</ul>
+<h4 id="subadmincomponenthtml">Subadmin.component.html</h4>
+<ul>
+<li>Purpose: Used for render the view based of the <code>routing</code>.</li>
+</ul>
+<h4 id="subadmincomponentscss">Subadmin.component.scss</h4>
+<ul>
+<li>Purpose: Used for styling the component.</li>
+</ul>
+<h4 id="similiarly-it-would-be-for-subadmin-list-subadmin-add-subadmin-edit">Similiarly it would be for Subadmin-List, Subadmin-Add, Subadmin-Edit</h4>
+<h2 id="angular-commands">Angular Commands</h2>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Commands</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ng add <collection> [options]</td>
+<td>Adding new NPM Packages</td>
+</tr>
+<tr>
+<td>ng build <project> [options]</td>
+<td>Build an project</td>
+</tr>
+<tr>
+<td>ng generate <schematic> [options]</td>
+<td>Generate Component, Services, etc.</td>
+</tr>
+<tr>
+<td>ng new <name> [options]</td>
+<td>Creating an New APP.</td>
+</tr>
+<tr>
+<td>ng serve <project> [options]</td>
+<td>Serve an Application for development</td>
+</tr>
+<tr>
+<td>ng update [options]</td>
+<td>Used for Updating NPM Packages.</td>
+</tr>
+<tr>
+<td>ng lint <project> [options]</td>
+<td>Debug the Code Standard of an Application</td>
+</tr>
+<tr>
+<td>ng help [options]</td>
+<td>For help to different Commands</td>
+</tr>
+<tr>
+<td>ng version [options]</td>
+<td>Check CLI Version</td>
+</tr>
+<tr>
+<td>ng deploy <project> [options]</td>
+<td>Used for deploy build of application</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-to-install-new-packages">How to install New Packages...?</h2>
+<h4 id="example--httpswimlanegithubiongx-datatable">Example:- <a href="http://swimlane.github.io/ngx-datatable/">http://swimlane.github.io/ngx-datatable/</a></h4>
+<h4 id="install-packages-">Install Packages:-</h4>
+<div><pre class="line-numbers"><code class="language-none">$ npm i &#64;swimlane/ngx-datatable --save</code></pre></div><h4 id="adding-css-for-packages">Adding CSS for packages</h4>
+<p>For using Material Theme, need to add below code in <code>Angular.JSON</code> file under <code>styles</code> array or import directly in <code>style.scss</code> file.</p>
+<div><pre class="line-numbers"><code class="language-none">    &quot;node_modules/&#64;swimlane/ngx-datatable/index.css&quot;,
+    &quot;node_modules/&#64;swimlane/ngx-datatable/themes/material.css&quot;,
+    &quot;node_modules/&#64;swimlane/ngx-datatable/assets/icons.css&quot;,</code></pre></div><h4 id="import-module-in-main-module-file">Import Module in Main Module File.</h4>
+<div><pre class="line-numbers"><code class="language-bash">import { NgxDatatableModule } from &#39;&#64;swimlane/ngx-datatable&#39;;
+&#64;NgModule({
+    imports: [ NgxDatatableModule ]
+})</code></pre></div><h4 id="in-component-based-ts-file-define-rows-and-columns">In Component based TS File, define rows and columns.</h4>
+<div><pre class="line-numbers"><code class="language-none">rows = [
+    { name: &#39;Austin&#39;, gender: &#39;Male&#39;, company: &#39;Swimlane&#39; },
+    { name: &#39;Dany&#39;, gender: &#39;Male&#39;, company: &#39;KFC&#39; }
+  ];
+columns = [
+    { prop: &#39;name&#39; },
+    { name: &#39;Gender&#39; },
+    { name: &#39;Company&#39; }
+  ];</code></pre></div><h4 id="in-component-based-html-file-define-an-table">In Component based HTML File, define an table.</h4>
+<div><pre class="line-numbers"><code class="language-none">&lt;ngx-datatable
+        [rows]=&quot;rows&quot;
+        [columns]=&quot;columns&quot;&gt;
+ &lt;/ngx-datatable&gt;</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

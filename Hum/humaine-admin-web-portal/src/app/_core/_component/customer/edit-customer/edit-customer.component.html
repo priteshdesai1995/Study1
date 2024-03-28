@@ -1,0 +1,360 @@
+<nz-spin [nzSpinning]="isLoading || isSubmitted">
+    <div class="wrapper">
+        <div class="header-sec pl-3">
+            <div class="left-panel">
+                <nz-breadcrumb [nzAutoGenerate]="true" class="d-inline">
+                    <nz-page-header *ngIf="isView || isEdit" style="display:inline-block" nzBackIcon>
+                    </nz-page-header>
+                </nz-breadcrumb>
+            </div>
+        </div>
+        
+    </div>
+    <div class="card mt-3">
+        <div class="card card-body">
+            <div>
+                <section class="wrapper">
+                    <div class="row insights">
+                        <div class="col-6 col-md-3 col-xl-3">
+                            <div class="card  card-body">
+                                <div class="card-block">
+                                    <div class="float-right">
+                                        <p>Daily <br/>Avg.1M</p>
+                                    </div>
+                                    <div class="float-none">Events tracked per day</div>
+                                    <div class="graph">
+                                        <div class="float-left">
+                                            <h4>{{ (accountEvents?.dailyEventCount || 0)|numberFormat }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-xl-3">
+                            <div class="card card-body">
+                                <div class="card-block">
+                                    <div class="float-right">
+                                        <p>1M</p>
+                                    </div>
+                                    <div class="float-none">Products synced or tracked</div>
+                                    <div class="graph">
+                                        <div class="float-left">
+                                            <h4>{{ (accountEvents?.productSyncCount || 0)|numberFormat }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        </div>
+                        <div class="col-6 col-md-3 col-xl-3">
+                            <div class="card card-body ">
+                                <div class="card-block">
+                                    <div class="float-right">
+                                        <p>1M</p>
+                                    </div>
+                                    <div class="float-none">Total Buy events</div>
+                                    <div class="graph">
+                                        <div class="float-left">
+                                            <h4>{{ (accountEvents?.buyEventsCount || 0)|numberFormat }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-xl-3">
+                            <div class="card  card-body ">
+                                <div class="card-block">
+                                    <div class="float-right">
+                                        <p>1M</p>
+                                    </div>
+                                    <div class="float-none">Total Sessions</div>
+                                    <div class="graph">
+                                        <div class="float-left">
+                                            <h4>{{ (accountEvents?.totalSessions || 0) |numberFormat }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="card mt-3">
+                <section class="wrapper">
+                    <div class="form">
+                        <form InvalidFormScrollDirective [formGroup]="onboardingForm" (ngSubmit)="addOnboarding()" novalidate autocomplete="off">
+                            <div class="form-group btn-block">
+                            <button type="button" *ngIf="!isEdit" style="float: right;" class="btn-color save-btn mr-2 small-btn"  (click)="navigateByUrl('isEdit')">Edit Customer</button>
+                            <button type="button"  style="float: right;" class="btn-color save-btn mr-2 small-btn btn-w-auto" (click)="navigateToFront()">View Customer Detail</button>
+                            <button *ngIf="isEdit" type="button" style="float: right;" class="btn-color save-btn mr-2 small-btn"  (click)="navigateByUrl('isView')">Back</button>
+                        </div>
+                            <div class="section-one" >
+                                <h6>Account Information</h6>
+                                <div class="form-group form-row ">
+                                    <div class="col">
+                                        <label for="name" class="required">Email</label>
+                                        <input appSpaceRemove formControlName="email" type="text" class="form-control" placeholder=""
+                                            [ngClass]="isSubmitted && errorControl.email.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        <span class="error" *ngIf="isSubmitted && errorControl.email.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <label for="username" class="required">Username</label>
+                                        <input appSpaceRemove formControlName="username" type="text" class="form-control" placeholder=""
+                                            [ngClass]="isSubmitted && errorControl.username.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        <span class="error" *ngIf="isSubmitted && errorControl.username.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                    </div>
+                                <h6>Personal Information </h6>
+                                <div class="form-group form-row ">
+                                    <div class="col">
+                                        <label for="name" class="required">Full Name</label>
+                                        <input appSpaceRemove formControlName="name" type="text" class="form-control" placeholder=""
+                                            [ngClass]="isSubmitted && errorControl.name.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        <span class="error" *ngIf="isSubmitted && errorControl.name.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <label for="phone" class="required">Phone Number</label>
+                                        <input appSpaceRemove formControlName="phone" type="text" class="form-control" placeholder=""
+                                            [ngClass]="isSubmitted && errorControl.phone.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        <span class="error" *ngIf="isSubmitted && errorControl.phone.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                        <span class="error" *ngIf="isSubmitted && errorControl.phone.errors?.pattern">
+                                            Only numerical values allowed.
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <label for="adress" class="required">Address</label>
+                                        <input appSpaceRemove formControlName="address" type="text" class="form-control" placeholder=""
+                                            [ngClass]="isSubmitted && errorControl.address.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        <span class="error" *ngIf="isSubmitted && errorControl.address.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <label for="city" class="required">City</label>
+                                        <ng-select 
+                                        bindLabel="name"
+                                        bindValue="name"  
+                                        formControlName="city"
+                                        [items]="cities"
+                                            [ngClass]="isSubmitted && errorControl.city.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        </ng-select>
+                                        <span class="error" *ngIf="isSubmitted && errorControl.city.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <label for="state" class="required">State</label>
+                                        <ng-select (change)="onStateChange($event)" [items]="states" 
+                                        bindLabel="name"
+                                        bindValue="name" 
+                                        formControlName="state" 
+                                        id="validationCustom03"
+                                            [ngClass]="isSubmitted && errorControl.state.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        </ng-select>
+                                        <span class="error" *ngIf="isSubmitted && errorControl.state.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <label for="country" class="required">Country</label>
+                                        <input type="text" disabled formControlName="country" class="form-control" placeholder="">
+                                        <span class="error">
+                                            <img class="info-img">We are currently supporting the USA only.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-two">
+                                <div class="inner-title">
+                                    <h6>Business Information </h6>
+                                </div>
+                                <h6>Industry</h6>
+                                <div class="check-wrapper">
+                                    <div class="form-group" style="display: flex;flex-wrap: wrap;">
+                                        <label *ngFor="let oneIndustry of industryList;" class="container box-spaces">
+                                            {{oneIndustry.key}}
+                                            <input  (change)="onCheckboxChange($event,null,'industry')" [checked]="accountDetails?.industry?.includes(oneIndustry.value)"  [value]="oneIndustry.value" type="checkbox" 
+                                            [disabled]="isView" 
+                                            >
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                
+                                </div>
+                                <div class="form-group form-row">
+                                    <div class="col-sm-6" style="margin-top: -10px;">
+                                        <label for="other">Other</label>
+                                        <input appSpaceRemove formControlName="other" type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-three">
+                                <div class="inner-title">
+                                    <h6>Business Name </h6>
+                                </div>
+                                <div class="form-group form-row">
+                                    <div class="col">
+                                        <label for="url" class="required">Enter URL</label>
+                                        <input appSpaceRemove type="text" formControlName="url" class="form-control" placeholder=""
+                                            [ngClass]="isSubmitted && errorControl.url.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        <span class="error" *ngIf="isSubmitted && errorControl.url.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                        <span class="error" *ngIf="isSubmitted && errorControl.url.errors?.pattern">
+                                            <img class="info-img"> This is not valid URL. Try again
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <label for="state" class="required">Where is your e-shop hosted on?</label>
+                                        <ng-select formControlName="eshopHosted" 
+                                            [ngClass]="isSubmitted && errorControl.eshopHosted.errors?.required? 'errorBorder' : 'greyBorder'">
+                                            <ng-option *ngFor="let oneEshop of eshop;" [value]="oneEshop.value">
+                                                {{oneEshop.key}}
+                                            </ng-option>
+                                        </ng-select>
+                                        <span class="error" *ngIf="isSubmitted && errorControl.eshopHosted.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group form-row" style="margin-top: -10px;">
+                                    <div class="col">
+                                        <label for="headQuarted" class="required">Where are you headquartered?</label>
+                                        <input appSpaceRemove formControlName="headQuarted" type="text" class="form-control" placeholder=""
+                                            [ngClass]="isSubmitted && errorControl.headQuarted.errors?.required? 'errorBorder' : 'greyBorder'">
+                                        <span class="error" *ngIf="isSubmitted && errorControl.headQuarted.errors?.required">
+                                            <img class="info-img"> This field is required
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group form-row">
+                                    <div class="col">
+                                        <label for="consumers">Where is the majority of your consumers from?</label>
+                                        <ng-select formControlName="consumers">
+                                            <ng-option *ngFor="let state of states;" [value]="state.name">
+                                                {{state.name}}
+                                            </ng-option>
+                                        </ng-select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="employee">How many employees do you have?</label>
+                                        <ng-select formControlName="employee">
+                                            <ng-option *ngFor="let oneEmployee of employee;" [value]="oneEmployee.value">
+                                                {{oneEmployee.key}}
+                                            </ng-option>
+                                        </ng-select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="productPrice">What is your highest product price?</label>
+                                        <input type="text" formControlName="productPrice" class="form-control" placeholder="">
+                                    </div>
+                                    <div class="col">
+                                        <label for="product">How many products do you have?</label>
+                                        <ng-select formControlName="product">
+                                            <ng-option *ngFor="let oneProd of products;" [value]="oneProd.value">
+                                                {{oneProd.key}}
+                                            </ng-option>
+                
+                                        </ng-select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="analytic">What is your current analytics solution?</label>
+                                        <ng-select formControlName="analytic">
+                                            <ng-option *ngFor="let oneAnalytic of analytics;" [value]="oneAnalytic.value">
+                                                {{oneAnalytic.key}}
+                                            </ng-option>
+                
+                                        </ng-select>
+                                    </div>
+                                    <div class="col">
+                                        <label>Are you currently tracking data on your users?</label>
+                                        <div class="track-top">
+                                            <label class="container" *ngFor="let onTrack of trackRadio;"
+                                                class="container">
+                                                {{onTrack.key}}
+                                                <input type="radio" (change)="radioChange($event)" [value]="onTrack.value"  name="isUserDataTrack"
+                                                    [checked]="accountDetails?.isUserDataTrack == onTrack.value"
+                                                    [disabled]="isView" 
+                                                >
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="track-bottom">
+                                            <p>-Select your data tracking provider</p>
+                                            <div class="provider">
+                                                <label class="container" *ngFor="let oneTrackData of trackingData;" class="container">
+                                                    {{oneTrackData.key}} 
+                                                    <input  [value]="oneTrackData.value" type="checkbox" [checked]="!isProviderDisabled && accountDetails?.provider?.includes(oneTrackData.value)" (change)="onCheckboxChange($event,null,'provider')"
+                                                    [disabled]="isProviderDisabled"
+                                                    >
+                                                        <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-row">
+                                    <div class="col-sm-6" style="margin-top: -40px;">
+                                        <label for="state">What kind of data are you looking? </label>
+                                        <ng-select formControlName="trackerDataType">
+                                            <ng-option *ngFor="let oneBusiness of businessData;" [value]="oneBusiness.value">
+                                                {{oneBusiness.key}}
+                                            </ng-option>
+                                        </ng-select>
+                
+                                    </div>
+                                </div>
+                                <div class="form-group form-row" style="margin-top: -20px;">
+                                    <div class="col">
+                                        <label for="state">What is the issue you are trying to solve with Humaine?</label>
+                                        <textarea appSpaceRemove formControlName="expectationComments" type="text" class="form-control" placeholder=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-row ">
+                                <div class="col">
+                                    <label for="websiteUrl" class="required">Enter website landing/home page URL</label>
+                                    <input appSpaceRemove formControlName="homePageUrl" type="text" class="form-control" placeholder="">
+                                        <!-- [ngClass]="generateTrackerForUrlSubmit && urlErrorControl.websiteUrl.errors?.required? 'errorBorder' : 'greyBorder'">
+                                    <span class="error" *ngIf="generateTrackerForUrlSubmit && urlErrorControl.websiteUrl.errors?.required">
+                                        <img class="info-img"> This field is required
+                                    </span>
+                                    <span class="error" *ngIf="generateTrackerForUrlSubmit && urlErrorControl.websiteUrl.errors?.pattern">
+                                        <img class="info-img"> This is not valid URL. Try again
+                                    </span> -->
+                                </div>
+                            </div>
+                            <div class="form-group form-row" >
+                                <h6 >Select tracking events</h6>
+                                <div class="form-group form-row" >
+                                    <div class="check-container" *ngFor="let oneEvent of trackingEvent;">
+                                        <label for=""><span class="checked">&#10003;</span>{{oneEvent}}</label>
+                                    </div>
+                                 
+                                </div>
+                                <!-- <div class="form">
+                                    <label class="container page-detail-width" >
+                                        <p>Detailed Page Navigations</p>
+                                        <input formControlName="pageDetailCheck" [disabled]="onboardingForm.invalid" type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div> -->
+                            </div>
+                            <div class="form-group btn-block"  *ngIf="isEdit">
+                                <button type="submit" style="float: right;" class="btn-color save-btn mr-2 small-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</nz-spin>

@@ -1,0 +1,2279 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@brainvire/basemodule documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@brainvire/basemodule documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>CmsListComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/views/cms/cms-list/cms-list.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-cms-list</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./cms-list.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./cms-list.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#changedStatus">changedStatus</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#changeStatusId">changeStatusId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#changeStatusType">changeStatusType</a>
+                            </li>
+                            <li>
+                                <a href="#cmsList">cmsList</a>
+                            </li>
+                            <li>
+                                <a href="#ColumnMode">ColumnMode</a>
+                            </li>
+                            <li>
+                                <a href="#datatable">datatable</a>
+                            </li>
+                            <li>
+                                <a href="#dtMessages">dtMessages</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#filteredData">filteredData</a>
+                            </li>
+                            <li>
+                                <a href="#footerHeight">footerHeight</a>
+                            </li>
+                            <li>
+                                <a href="#global_search">global_search</a>
+                            </li>
+                            <li>
+                                <a href="#headerHeight">headerHeight</a>
+                            </li>
+                            <li>
+                                <a href="#limitList">limitList</a>
+                            </li>
+                            <li>
+                                <a href="#loadingIndicator">loadingIndicator</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#modalRef">modalRef</a>
+                            </li>
+                            <li>
+                                <a href="#pageNumber">pageNumber</a>
+                            </li>
+                            <li>
+                                <a href="#piningRight">piningRight</a>
+                            </li>
+                            <li>
+                                <a href="#reorderable">reorderable</a>
+                            </li>
+                            <li>
+                                <a href="#rowHeight">rowHeight</a>
+                            </li>
+                            <li>
+                                <a href="#scrollbarH">scrollbarH</a>
+                            </li>
+                            <li>
+                                <a href="#size">size</a>
+                            </li>
+                            <li>
+                                <a href="#sortOrder">sortOrder</a>
+                            </li>
+                            <li>
+                                <a href="#sortParam">sortParam</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#changeLimit">changeLimit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#changeStatus">changeStatus</a>
+                            </li>
+                            <li>
+                                <a href="#confirm">confirm</a>
+                            </li>
+                            <li>
+                                <a href="#decline">decline</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#filterDatatable">filterDatatable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getAllCmsList">getAllCmsList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getStatusClass">getStatusClass</a>
+                            </li>
+                            <li>
+                                <a href="#gotoPageBuilder">gotoPageBuilder</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onSort">onSort</a>
+                            </li>
+                            <li>
+                                <a href="#openModal">openModal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#rerender">rerender</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setPage">setPage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(cmsService: <a href="../injectables/CmsService.html">CmsService</a>, toastr: ToastrService, modalService: BsModalService, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, loader: <a href="../injectables/LoaderService.html">LoaderService</a>, filterService: <a href="../injectables/FilterStorageService.html">FilterStorageService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:45</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>cmsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CmsService.html" target="_self" >CmsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastr</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalService</td>
+                                                  
+                                                        <td>
+                                                                    <code>BsModalService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>loader</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoaderService.html" target="_self" >LoaderService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>filterService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FilterStorageService.html" target="_self" >FilterStorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeLimit"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            changeLimit
+                        </b>
+                        <a href="#changeLimit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changeLimit(value)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Show number of records in datatable</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>show total entries value 10,25,50,100</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeStatus"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            changeStatus
+                        </b>
+                        <a href="#changeStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changeStatus(id, status)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="148"
+                            class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:148</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Change CMS status Active or Inactive</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>status</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="confirm"></a>
+                    <span class="name">
+                        <b>
+                            confirm
+                        </b>
+                        <a href="#confirm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>confirm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:138</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="decline"></a>
+                    <span class="name">
+                        <b>
+                            decline
+                        </b>
+                        <a href="#decline"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>decline()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="142"
+                            class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:142</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterDatatable"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            filterDatatable
+                        </b>
+                        <a href="#filterDatatable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>filterDatatable()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="179"
+                            class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:179</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Datatabe global search</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllCmsList"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getAllCmsList
+                        </b>
+                        <a href="#getAllCmsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAllCmsList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:104</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get CMS list data</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStatusClass"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getStatusClass
+                        </b>
+                        <a href="#getStatusClass"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getStatusClass(status)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:68</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get status class from configuration</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>status</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Active/Inactive/Pending</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="gotoPageBuilder"></a>
+                    <span class="name">
+                        <b>
+                            gotoPageBuilder
+                        </b>
+                        <a href="#gotoPageBuilder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>gotoPageBuilder(id, cms_page_name)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:125</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>cms_page_name</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:55</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSort"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onSort
+                        </b>
+                        <a href="#onSort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onSort(event)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:79</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Sort datatable fields</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>event was triggered, start sort sequence</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openModal"></a>
+                    <span class="name">
+                        <b>
+                            openModal
+                        </b>
+                        <a href="#openModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openModal(template: TemplateRef<any>, id, status)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:132</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>template</td>
+                                    <td>
+                                            <code>TemplateRef&lt;any&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>status</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rerender"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            rerender
+                        </b>
+                        <a href="#rerender"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>rerender()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="129"
+                            class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:129</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setPage"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            setPage
+                        </b>
+                        <a href="#setPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setPage(pageInfo)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Populate the table with new data based on the page number</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pageInfo</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="changedStatus"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            changedStatus</b>
+                            <a href="#changedStatus"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="changeStatusId"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            changeStatusId</b>
+                            <a href="#changeStatusId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="changeStatusType"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            changeStatusType</b>
+                            <a href="#changeStatusType"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cmsList"></a>
+                        <span class="name">
+                            <b>
+                            cmsList</b>
+                            <a href="#cmsList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Cms.html" target="_self" >Cms[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ColumnMode"></a>
+                        <span class="name">
+                            <b>
+                            ColumnMode</b>
+                            <a href="#ColumnMode"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>ColumnMode</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="datatable"></a>
+                        <span class="name">
+                            <b>
+                            datatable</b>
+                            <a href="#datatable"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>DatatableComponent</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(DatatableComponent, {static: false})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dtMessages"></a>
+                        <span class="name">
+                            <b>
+                            dtMessages</b>
+                            <a href="#dtMessages"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>CONFIGCONSTANTS.datatableConfig.dtMessages</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filteredData"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            filteredData</b>
+                            <a href="#filteredData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="footerHeight"></a>
+                        <span class="name">
+                            <b>
+                            footerHeight</b>
+                            <a href="#footerHeight"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>CONFIGCONSTANTS.datatableConfig.footerHeight</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="global_search"></a>
+                        <span class="name">
+                            <b>
+                            global_search</b>
+                            <a href="#global_search"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="headerHeight"></a>
+                        <span class="name">
+                            <b>
+                            headerHeight</b>
+                            <a href="#headerHeight"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>CONFIGCONSTANTS.datatableConfig.headerHeight</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="limitList"></a>
+                        <span class="name">
+                            <b>
+                            limitList</b>
+                            <a href="#limitList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>CONFIGCONSTANTS.datatableConfig.limitList</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadingIndicator"></a>
+                        <span class="name">
+                            <b>
+                            loadingIndicator</b>
+                            <a href="#loadingIndicator"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="modalRef"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            modalRef</b>
+                            <a href="#modalRef"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BsModalRef</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pageNumber"></a>
+                        <span class="name">
+                            <b>
+                            pageNumber</b>
+                            <a href="#pageNumber"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:45</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="piningRight"></a>
+                        <span class="name">
+                            <b>
+                            piningRight</b>
+                            <a href="#piningRight"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>CONFIGCONSTANTS.datatableConfig.piningRight</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reorderable"></a>
+                        <span class="name">
+                            <b>
+                            reorderable</b>
+                            <a href="#reorderable"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>CONFIGCONSTANTS.datatableConfig.reorderable</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="rowHeight"></a>
+                        <span class="name">
+                            <b>
+                            rowHeight</b>
+                            <a href="#rowHeight"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>CONFIGCONSTANTS.datatableConfig.rowHeight</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="scrollbarH"></a>
+                        <span class="name">
+                            <b>
+                            scrollbarH</b>
+                            <a href="#scrollbarH"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>CONFIGCONSTANTS.datatableConfig.scrollbarH</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="size"></a>
+                        <span class="name">
+                            <b>
+                            size</b>
+                            <a href="#size"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>CONFIGCONSTANTS.datatableConfig.page.size</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sortOrder"></a>
+                        <span class="name">
+                            <b>
+                            sortOrder</b>
+                            <a href="#sortOrder"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:44</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sortParam"></a>
+                        <span class="name">
+                            <b>
+                            sortParam</b>
+                            <a href="#sortParam"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/views/cms/cms-list/cms-list.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnDestroy, OnInit, ViewChild, TemplateRef } from &#x27;@angular/core&#x27;;
+import { CmsService } from &#x27;./../../../_services/cms.service&#x27;;
+import { Cms } from &#x27;./../../../model/cms&#x27;;
+import { first } from &#x27;rxjs/operators&#x27;;
+import { BsModalService, ModalDirective } from &#x27;ngx-bootstrap/modal&#x27;;
+import { BsModalRef } from &#x27;ngx-bootstrap/modal/bs-modal-ref.service&#x27;;
+import { ToastrService } from &#x27;ngx-toastr&#x27;;
+import { CONFIGCONSTANTS } from &#x27;../../../config/app-constants&#x27;;
+import { DatatableComponent, ColumnMode } from &#x27;@swimlane/ngx-datatable&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { FilterStorageService } from &#x27;../../../_services/filter-storage.service&#x27;;
+import { LoaderService } from &#x27;../../../_services/loader.service&#x27;;
+
+@Component({
+  selector: &#x27;app-cms-list&#x27;,
+  templateUrl: &#x27;./cms-list.component.html&#x27;,
+  styleUrls: [&#x27;./cms-list.component.scss&#x27;],
+})
+export class CmsListComponent implements OnInit {
+  private modalRef: BsModalRef;
+  // Get datatble configuration -- start
+  reorderable &#x3D; CONFIGCONSTANTS.datatableConfig.reorderable;
+  scrollbarH &#x3D; CONFIGCONSTANTS.datatableConfig.scrollbarH;
+  piningRight &#x3D; CONFIGCONSTANTS.datatableConfig.piningRight;
+  headerHeight &#x3D; CONFIGCONSTANTS.datatableConfig.headerHeight;
+  footerHeight &#x3D; CONFIGCONSTANTS.datatableConfig.footerHeight;
+  rowHeight &#x3D; CONFIGCONSTANTS.datatableConfig.rowHeight;
+  limitList: any[] &#x3D; CONFIGCONSTANTS.datatableConfig.limitList;
+  ColumnMode &#x3D; ColumnMode;
+  size &#x3D; CONFIGCONSTANTS.datatableConfig.page.size;
+  dtMessages &#x3D; CONFIGCONSTANTS.datatableConfig.dtMessages;
+  @ViewChild(DatatableComponent, { static: false }) datatable: DatatableComponent;
+  cmsList: Cms[] &#x3D; [];
+  global_search &#x3D; &#x27;&#x27;;
+  private filteredData &#x3D; [];
+  // Get datatble configuration -- end
+
+  private changeStatusId: number;
+  private changeStatusType: string;
+  private changedStatus: string;
+
+  loadingIndicator &#x3D; false;
+  sortParam &#x3D; &#x27;&#x27;;
+  sortOrder &#x3D; &#x27;&#x27;;
+  pageNumber &#x3D; 0;
+  constructor(
+    private cmsService: CmsService,
+    private toastr: ToastrService,
+    private modalService: BsModalService,
+    private router: Router,
+    private loader: LoaderService,
+    private filterService: FilterStorageService
+  ) {}
+
+  ngOnInit() {
+    console.clear();
+    this.global_search &#x3D; this.filterService.getSingleState(&#x27;cmsFilter&#x27;, this.global_search);
+    this.size &#x3D; this.filterService.getSingleState(&#x27;cmsSize&#x27;, this.size);
+    this.sortParam &#x3D; this.filterService.getSingleState(&#x27;cmsSortParam&#x27;, this.sortParam);
+    this.sortOrder &#x3D; this.filterService.getSingleState(&#x27;cmsSortOrder&#x27;, this.sortOrder);
+    this.pageNumber &#x3D; this.filterService.getSingleState(&#x27;cmsPageNo&#x27;, this.pageNumber);
+    this.getAllCmsList();
+  }
+  /**
+   * Get status class from configuration
+   * @param status Active/Inactive/Pending
+   */
+  public getStatusClass(status) {
+    if (status) {
+      return CONFIGCONSTANTS.statusClass[status];
+    } else {
+      return &#x27;badge-primary&#x27;;
+    }
+  }
+  /**
+   * Sort datatable fields
+   * @param event event was triggered, start sort sequence
+   */
+  public onSort(event) {
+    this.sortParam &#x3D; event.sorts[0].prop;
+    this.sortOrder &#x3D; event.sorts[0].dir;
+    this.filterService.saveSingleState(&#x27;cmsSortParam&#x27;, this.sortParam);
+    this.filterService.saveSingleState(&#x27;cmsSortOrder&#x27;, this.sortOrder);
+  }
+  /**
+   * Populate the table with new data based on the page number
+   * @param page The page to select
+   */
+  public setPage(pageInfo) {
+    this.pageNumber &#x3D; pageInfo.offset;
+    this.filterService.saveSingleState(&#x27;cmsPageNo&#x27;, this.pageNumber);
+  }
+  /**
+   * Show number of records in datatable
+   * @param value show total entries value 10,25,50,100
+   */
+  public changeLimit(value) {
+    this.size &#x3D; value;
+    this.filterService.saveSingleState(&#x27;cmsSize&#x27;, this.size);
+  }
+  /**
+   * Get CMS list data
+   */
+  private getAllCmsList(): void {
+    this.loadingIndicator &#x3D; true;
+    this.cmsService
+      .getAllCmsList()
+      .pipe(first())
+      .subscribe(
+        (data) &#x3D;&gt; {
+          this.loadingIndicator &#x3D; false;
+          if (!data.data) {
+            this.cmsList &#x3D; [];
+          } else {
+            this.cmsList &#x3D; data.data;
+            this.filteredData &#x3D; data.data;
+            this.filterDatatable();
+          }
+        },
+        (err) &#x3D;&gt; {
+          this.loadingIndicator &#x3D; false;
+        }
+      );
+  }
+  gotoPageBuilder(id, cms_page_name) {
+    sessionStorage.setItem(&#x27;cms_page_name&#x27;, cms_page_name ? cms_page_name : &#x27;&#x27;);
+    this.router.navigate([&#x27;cms/page-builder/&#x27; + id]);
+  }
+  private rerender(): void {
+    this.getAllCmsList();
+  }
+  openModal(template: TemplateRef&lt;any&gt;, id, status) {
+    this.modalRef &#x3D; this.modalService.show(template, { class: &#x27;modal-md&#x27; });
+    this.changeStatusId &#x3D; id;
+    this.changeStatusType &#x3D; status;
+  }
+
+  confirm(): void {
+    this.changeStatus(this.changeStatusId, this.changeStatusType);
+  }
+
+  decline(): void {
+    this.modalRef.hide();
+  }
+  /**
+   * Change CMS status Active or Inactive
+   */
+  public changeStatus(id, status) {
+    this.loader.showLoader();
+    this.changedStatus &#x3D; status &#x3D;&#x3D;&#x3D; &#x27;Active&#x27; ? &#x27;Inactive&#x27; : &#x27;Active&#x27;;
+    this.cmsService
+      .changeCmsStatus(this.changedStatus, id)
+      .pipe(first())
+      .subscribe(
+        (data) &#x3D;&gt; {
+          this.loader.hideLoader();
+          if (data.meta.status &#x3D;&#x3D;&#x3D; true) {
+            this.modalRef.hide();
+            this.toastr.success(data.meta.message);
+            this.rerender();
+          }
+        },
+        (error) &#x3D;&gt; {
+          this.loader.hideLoader();
+          const statusError &#x3D; error;
+          if (statusError &amp;&amp; statusError.meta) {
+            this.toastr.error(statusError.meta.message);
+          } else {
+            this.toastr.error(&#x27;Something went wrong please try again.&#x27;);
+          }
+        }
+      );
+  }
+
+  /**
+   * Datatabe global search
+   * @param event get search input value
+   */
+  public filterDatatable() {
+    // const val &#x3D; event.target.value.toLowerCase();
+    const val &#x3D; this.global_search.toLowerCase();
+    // get the key names of each column in the dataset
+    const keys &#x3D; [&#x27;page_title&#x27;, &#x27;status&#x27;];
+    // assign filtered matches to the active datatable
+    this.cmsList &#x3D; this.filteredData.filter(function (item) {
+      // iterate through each row&#x27;s column data
+      for (let i &#x3D; 0; i &lt; keys.length; i++) {
+        // check for a match
+        if ((item[keys[i]] &amp;&amp; item[keys[i]].toString().toLowerCase().indexOf(val) !&#x3D;&#x3D; -1) || !val) {
+          // found match, return true to add to result set
+          return true;
+        }
+      }
+    });
+    // whenever the filter changes, always go back to the first page
+    // this.datatable.offset &#x3D; 0;
+    this.filterService.saveSingleState(&#x27;cmsFilter&#x27;, this.global_search);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;animated fadeIn&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-lg-12&quot;&gt;
+      &lt;div class&#x3D;&quot;card&quot; *ngxPermissionsOnly&#x3D;&quot;[&#x27;CMS_LIST&#x27;, &#x27;SUPER_ADMIN&#x27;]&quot;&gt;
+        &lt;div class&#x3D;&quot;card-header&quot;&gt;
+          &lt;i class&#x3D;&quot;fa fa-file-o&quot;&gt;&lt;/i&gt; {{ &#x27;CMS_LIST&#x27; | translate }}
+          &lt;a *ngxPermissionsOnly&#x3D;&quot;[&#x27;CMS_CREATE&#x27;, &#x27;SUPER_ADMIN&#x27;]&quot; routerLink&#x3D;&quot;/cms/add&quot; class&#x3D;&quot;btn btn-primary pull-right&quot;
+            &gt;&lt;i class&#x3D;&quot;fa fa-plus-circle fa-lg&quot;&gt;&lt;/i&gt; {{ &#x27;ADD_NEW&#x27; | translate }}&lt;/a
+          &gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+              &lt;div class&#x3D;&quot;form-group show-select&quot;&gt;
+                &lt;label
+                  &gt;{{ &#x27;SHOW&#x27; | translate }}
+                  &lt;select name&#x3D;&quot;showRecords&quot; [(ngModel)]&#x3D;&quot;size&quot; (change)&#x3D;&quot;changeLimit(size)&quot; class&#x3D;&quot;form-control&quot;&gt;
+                    &lt;option [value]&#x3D;&quot;limit&quot; *ngFor&#x3D;&quot;let limit of limitList&quot;&gt;{{ limit }}&lt;/option&gt;
+                  &lt;/select&gt;
+                  {{ &#x27;ENTRIES&#x27; | translate }}
+                &lt;/label&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-6 form-group&quot;&gt;
+              &lt;input
+                [(ngModel)]&#x3D;&quot;global_search&quot;
+                (keyup)&#x3D;&quot;filterDatatable()&quot;
+                type&#x3D;&quot;text&quot;
+                name&#x3D;&quot;global_search&quot;
+                class&#x3D;&quot;form-control col-md-6 pull-right&quot;
+                placeholder&#x3D;&quot;{{ &#x27;SEARCH&#x27; | translate }}...&quot;
+                autocomplete&#x3D;&quot;off&quot;
+              /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;pos-rel&quot;&gt;
+            &lt;div *ngIf&#x3D;&quot;loadingIndicator&quot; class&#x3D;&quot;processing&quot;&gt;Processing...&lt;/div&gt;
+            &lt;ngx-datatable
+              [rows]&#x3D;&quot;cmsList&quot;
+              class&#x3D;&quot;material fullscreen&quot;
+              headerHeight&#x3D;&quot;headerHeight&quot;
+              footerHeight&#x3D;&quot;footerHeight&quot;
+              rowHeight&#x3D;&quot;rowHeight&quot;
+              [reorderable]&#x3D;&quot;reorderable&quot;
+              [columnMode]&#x3D;&quot;ColumnMode.force&quot;
+              #datatable
+              [scrollbarH]&#x3D;&quot;scrollbarH&quot;
+              [messages]&#x3D;&quot;dtMessages&quot;
+              [limit]&#x3D;&quot;size&quot;
+              (sort)&#x3D;&quot;onSort($event)&quot;
+              [sorts]&#x3D;&quot;[{ prop: sortParam, dir: sortOrder }]&quot;
+              (page)&#x3D;&quot;setPage($event)&quot;
+              [offset]&#x3D;&quot;pageNumber&quot;
+            &gt;
+              &lt;ngx-datatable-column
+                name&#x3D;&quot;{{ &#x27;SR_NO&#x27; | translate }}&quot;
+                headerClass&#x3D;&quot;no-sorting&quot;
+                [sortable]&#x3D;&quot;false&quot;
+                [width]&#x3D;&quot;70&quot;
+                headerClass&#x3D;&quot;text-center&quot;
+              &gt;
+                &lt;ng-template let-value&#x3D;&quot;value&quot; let-rowIndex&#x3D;&quot;rowIndex&quot; ngx-datatable-cell-template&gt;
+                  &lt;div class&#x3D;&quot;text-center&quot;&gt;{{ rowIndex + 1 }}&lt;/div&gt;
+                &lt;/ng-template&gt;
+              &lt;/ngx-datatable-column&gt;
+              &lt;ngx-datatable-column name&#x3D;&quot;{{ &#x27;CONTENT_PAGE_TITLE&#x27; | translate }}&quot; prop&#x3D;&quot;page_title&quot;&gt;&lt;/ngx-datatable-column&gt;
+              &lt;ngx-datatable-column name&#x3D;&quot;{{ &#x27;STATUS&#x27; | translate }}&quot; prop&#x3D;&quot;status&quot; headerClass&#x3D;&quot;text-center&quot;&gt;
+                &lt;ng-template let-value&#x3D;&quot;value&quot; ngx-datatable-cell-template&gt;
+                  &lt;div class&#x3D;&quot;text-center&quot;&gt;
+                    &lt;span [ngClass]&#x3D;&quot;getStatusClass(value)&quot; class&#x3D;&quot;badge&quot;&gt;{{ value }}&lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/ng-template&gt;
+              &lt;/ngx-datatable-column&gt;
+              &lt;ngx-datatable-column
+                name&#x3D;&quot;{{ &#x27;ACTION&#x27; | translate }}&quot;
+                prop&#x3D;&quot;id&quot;
+                [frozenRight]&#x3D;&quot;piningRight&quot;
+                [sortable]&#x3D;&quot;false&quot;
+                headerClass&#x3D;&quot;text-center no-sorting&quot;
+                *ngxPermissionsOnly&#x3D;&quot;[&#x27;CMS_UPDATE&#x27;, &#x27;SUPER_ADMIN&#x27;, &#x27;CMS_STATUS&#x27;, &#x27;PAGE_BUILDER_CREATE&#x27;, &#x27;PAGE_BUILDER_LOAD&#x27;]&quot;
+              &gt;
+                &lt;ng-template let-value&#x3D;&quot;value&quot; let-row&#x3D;&quot;row&quot; ngx-datatable-cell-template&gt;
+                  &lt;div class&#x3D;&quot;text-center&quot;&gt;
+                    &lt;a
+                      *ngxPermissionsOnly&#x3D;&quot;[&#x27;CMS_UPDATE&#x27;, &#x27;SUPER_ADMIN&#x27;]&quot;
+                      routerLink&#x3D;&quot;/cms/edit/{{ row.id }}&quot;
+                      title&#x3D;&quot;{{ &#x27;EDIT&#x27; | translate }}&quot;
+                      &gt;&lt;i class&#x3D;&quot;fa fa-pencil-square-o fa-lg&quot;&gt;&lt;/i&gt;&lt;/a
+                    &gt;&amp;nbsp;
+                    &lt;a
+                      *ngxPermissionsOnly&#x3D;&quot;[&#x27;CMS_STATUS&#x27;, &#x27;SUPER_ADMIN&#x27;]&quot;
+                      (click)&#x3D;&quot;openModal(template, row.id, row.status)&quot;
+                      title&#x3D;&quot;{{ &#x27;CHANGE_STATUS&#x27; | translate }}&quot;
+                      &gt;&lt;i
+                        [ngClass]&#x3D;&quot;{
+                          &#x27;fa-toggle-on&#x27;: row.status &#x3D;&#x3D; &#x27;Active&#x27;,
+                          &#x27;fa-toggle-off&#x27;: row.status &#x3D;&#x3D; &#x27;Inactive&#x27;
+                        }&quot;
+                        class&#x3D;&quot;fa fa-lg&quot;
+                      &gt;&lt;/i&gt;&lt;/a
+                    &gt;&amp;nbsp;
+                    &lt;a
+                      *ngxPermissionsOnly&#x3D;&quot;[&#x27;PAGE_BUILDER_CREATE&#x27;, &#x27;SUPER_ADMIN&#x27;]&quot;
+                      (click)&#x3D;&quot;gotoPageBuilder(row.id, row.slug)&quot;
+                      title&#x3D;&quot;{{ &#x27;CMS_PAGE_BUILDER&#x27; | translate }}&quot;
+                      &gt;&lt;i class&#x3D;&quot;fa fa-file-o&quot;&gt;&lt;/i&gt;&lt;/a
+                    &gt;&amp;nbsp;
+                    &lt;ng-container *ngIf&#x3D;&quot;row.cms_page_name&quot;&gt;
+                      &lt;a
+                        *ngxPermissionsOnly&#x3D;&quot;[&#x27;PAGE_BUILDER_LOAD&#x27;, &#x27;SUPER_ADMIN&#x27;]&quot;
+                        routerLink&#x3D;&quot;/cms/view-template/{{ row.id }}&quot;
+                        title&#x3D;&quot;{{ &#x27;VIEW_PAGE_BUILDER&#x27; | translate }}&quot;
+                        &gt;&lt;i class&#x3D;&quot;fa fa-eye fa-lg&quot;&gt;&lt;/i
+                      &gt;&lt;/a&gt;
+                    &lt;/ng-container&gt;
+                  &lt;/div&gt;
+                &lt;/ng-template&gt;
+              &lt;/ngx-datatable-column&gt;
+            &lt;/ngx-datatable&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--/.col--&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;ng-template #template&gt;
+  &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-header bg-primary&quot;&gt;
+      &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;{{ &#x27;CONFIRMATION&#x27; | translate }}&lt;/h5&gt;
+      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; (click)&#x3D;&quot;decline()&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+        &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;modal-body text-center&quot;&gt;
+      &lt;p&gt;{{ &#x27;CONFIRM_STATUS_MSG&#x27; | translate }}&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;confirm()&quot;&gt;
+        {{ &#x27;YES&#x27; | translate }}
+      &lt;/button&gt;
+      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-warning&quot; (click)&#x3D;&quot;decline()&quot;&gt;
+        {{ &#x27;NO&#x27; | translate }}
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
+&lt;app-loader&gt;&lt;/app-loader&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./cms-list.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="animated fadeIn">  <div class="row">    <div class="col-lg-12">      <div class="card" *ngxPermissionsOnly="[\'CMS_LIST\', \'SUPER_ADMIN\']">        <div class="card-header">          <i class="fa fa-file-o"></i> {{ \'CMS_LIST\' | translate }}          <a *ngxPermissionsOnly="[\'CMS_CREATE\', \'SUPER_ADMIN\']" routerLink="/cms/add" class="btn btn-primary pull-right"            ><i class="fa fa-plus-circle fa-lg"></i> {{ \'ADD_NEW\' | translate }}</a          >        </div>        <div class="card-body">          <div class="row">            <div class="col-md-6">              <div class="form-group show-select">                <label                  >{{ \'SHOW\' | translate }}                  <select name="showRecords" [(ngModel)]="size" (change)="changeLimit(size)" class="form-control">                    <option [value]="limit" *ngFor="let limit of limitList">{{ limit }}</option>                  </select>                  {{ \'ENTRIES\' | translate }}                </label>              </div>            </div>            <div class="col-md-6 form-group">              <input                [(ngModel)]="global_search"                (keyup)="filterDatatable()"                type="text"                name="global_search"                class="form-control col-md-6 pull-right"                placeholder="{{ \'SEARCH\' | translate }}..."                autocomplete="off"              />            </div>          </div>          <div class="pos-rel">            <div *ngIf="loadingIndicator" class="processing">Processing...</div>            <ngx-datatable              [rows]="cmsList"              class="material fullscreen"              headerHeight="headerHeight"              footerHeight="footerHeight"              rowHeight="rowHeight"              [reorderable]="reorderable"              [columnMode]="ColumnMode.force"              #datatable              [scrollbarH]="scrollbarH"              [messages]="dtMessages"              [limit]="size"              (sort)="onSort($event)"              [sorts]="[{ prop: sortParam, dir: sortOrder }]"              (page)="setPage($event)"              [offset]="pageNumber"            >              <ngx-datatable-column                name="{{ \'SR_NO\' | translate }}"                headerClass="no-sorting"                [sortable]="false"                [width]="70"                headerClass="text-center"              >                <ng-template let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>                  <div class="text-center">{{ rowIndex + 1 }}</div>                </ng-template>              </ngx-datatable-column>              <ngx-datatable-column name="{{ \'CONTENT_PAGE_TITLE\' | translate }}" prop="page_title"></ngx-datatable-column>              <ngx-datatable-column name="{{ \'STATUS\' | translate }}" prop="status" headerClass="text-center">                <ng-template let-value="value" ngx-datatable-cell-template>                  <div class="text-center">                    <span [ngClass]="getStatusClass(value)" class="badge">{{ value }}</span>                  </div>                </ng-template>              </ngx-datatable-column>              <ngx-datatable-column                name="{{ \'ACTION\' | translate }}"                prop="id"                [frozenRight]="piningRight"                [sortable]="false"                headerClass="text-center no-sorting"                *ngxPermissionsOnly="[\'CMS_UPDATE\', \'SUPER_ADMIN\', \'CMS_STATUS\', \'PAGE_BUILDER_CREATE\', \'PAGE_BUILDER_LOAD\']"              >                <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>                  <div class="text-center">                    <a                      *ngxPermissionsOnly="[\'CMS_UPDATE\', \'SUPER_ADMIN\']"                      routerLink="/cms/edit/{{ row.id }}"                      title="{{ \'EDIT\' | translate }}"                      ><i class="fa fa-pencil-square-o fa-lg"></i></a                    >&nbsp;                    <a                      *ngxPermissionsOnly="[\'CMS_STATUS\', \'SUPER_ADMIN\']"                      (click)="openModal(template, row.id, row.status)"                      title="{{ \'CHANGE_STATUS\' | translate }}"                      ><i                        [ngClass]="{                          \'fa-toggle-on\': row.status == \'Active\',                          \'fa-toggle-off\': row.status == \'Inactive\'                        }"                        class="fa fa-lg"                      ></i></a                    >&nbsp;                    <a                      *ngxPermissionsOnly="[\'PAGE_BUILDER_CREATE\', \'SUPER_ADMIN\']"                      (click)="gotoPageBuilder(row.id, row.slug)"                      title="{{ \'CMS_PAGE_BUILDER\' | translate }}"                      ><i class="fa fa-file-o"></i></a                    >&nbsp;                    <ng-container *ngIf="row.cms_page_name">                      <a                        *ngxPermissionsOnly="[\'PAGE_BUILDER_LOAD\', \'SUPER_ADMIN\']"                        routerLink="/cms/view-template/{{ row.id }}"                        title="{{ \'VIEW_PAGE_BUILDER\' | translate }}"                        ><i class="fa fa-eye fa-lg"></i                      ></a>                    </ng-container>                  </div>                </ng-template>              </ngx-datatable-column>            </ngx-datatable>          </div>        </div>      </div>    </div>    <!--/.col-->  </div></div><ng-template #template>  <div class="modal-content">    <div class="modal-header bg-primary">      <h5 class="modal-title">{{ \'CONFIRMATION\' | translate }}</h5>      <button type="button" class="close" (click)="decline()" data-dismiss="modal" aria-label="Close">        <span aria-hidden="true">&times;</span>      </button>    </div>    <div class="modal-body text-center">      <p>{{ \'CONFIRM_STATUS_MSG\' | translate }}</p>    </div>    <div class="modal-footer">      <button type="button" class="btn btn-primary" (click)="confirm()">        {{ \'YES\' | translate }}      </button>      <button type="button" class="btn btn-warning" (click)="decline()">        {{ \'NO\' | translate }}      </button>    </div>  </div></ng-template><app-loader></app-loader></div>'
+    var COMPONENTS = [{'name': 'ActivityTrackingComponent', 'selector': 'app-activity-tracking'},{'name': 'AdminSuggestionComponent', 'selector': 'app-admin-suggestion'},{'name': 'AdminSuggestionListComponent', 'selector': 'app-admin-suggestion-list'},{'name': 'AlertsComponent', 'selector': ''},{'name': 'AnnouncementAddEditComponent', 'selector': 'app-announcement-add-edit'},{'name': 'AnnouncementComponent', 'selector': 'app-announcement'},{'name': 'AnnouncementDetailsComponent', 'selector': 'app-announcement-details'},{'name': 'AnnouncementListComponent', 'selector': 'app-announcement-list'},{'name': 'AnnouncementReceiversComponent', 'selector': 'app-announcement-receivers'},{'name': 'AppComponent', 'selector': 'body'},{'name': 'BadgesComponent', 'selector': ''},{'name': 'BrandButtonsComponent', 'selector': ''},{'name': 'BsMediaComponent', 'selector': 'app-bs-media'},{'name': 'BsMediaListComponent', 'selector': 'app-bs-media-list'},{'name': 'BsMediaListDetailsComponent', 'selector': 'app-bs-media-list-details'},{'name': 'ButtonsComponent', 'selector': ''},{'name': 'CardsComponent', 'selector': ''},{'name': 'CarouselsComponent', 'selector': ''},{'name': 'CategoryAddEditComponent', 'selector': 'app-category-add-edit'},{'name': 'CategoryComponent', 'selector': 'app-category'},{'name': 'CategoryListComponent', 'selector': 'app-category-list'},{'name': 'CategoryTreeviewComponent', 'selector': 'app-category-treeview'},{'name': 'ChartJSComponent', 'selector': ''},{'name': 'CheckUserListComponent', 'selector': 'multi-user-list'},{'name': 'CityAddEditComponent', 'selector': 'app-city-add-edit'},{'name': 'CmsAddEditComponent', 'selector': 'app-cms-add-edit'},{'name': 'CmsComponent', 'selector': 'app-cms'},{'name': 'CmsListComponent', 'selector': 'app-cms-list'},{'name': 'CmsPageBuilderComponent', 'selector': 'app-cms-page-builder'},{'name': 'CmsPageViewComponent', 'selector': 'app-cms-page-view'},{'name': 'CollapsesComponent', 'selector': ''},{'name': 'ColorsComponent', 'selector': ''},{'name': 'CoreUIIconsComponent', 'selector': ''},{'name': 'CountryAddEditComponent', 'selector': 'app-country-add-edit'},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DefaultLayoutComponent', 'selector': 'app-dashboard'},{'name': 'DropdownsComponent', 'selector': ''},{'name': 'EmailAddEditComponent', 'selector': 'app-email-add-edit'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailListComponent', 'selector': 'app-email-list'},{'name': 'EventAddEditComponent', 'selector': 'app-event-add-edit'},{'name': 'EventListComponent', 'selector': 'app-event-list'},{'name': 'EventViewComponent', 'selector': 'app-event-view'},{'name': 'FaqAddEditComponent', 'selector': 'app-faq-add-edit'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FaqListComponent', 'selector': 'app-faq-list'},{'name': 'FlagsComponent', 'selector': ''},{'name': 'FontAwesomeComponent', 'selector': ''},{'name': 'FormsComponent', 'selector': ''},{'name': 'ListActivityTrackingComponent', 'selector': 'app-list-activity-tracking'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-dashboard'},{'name': 'ManageBannerAddEditComponent', 'selector': 'app-manage-banner-add-edit'},{'name': 'ManageBannerComponent', 'selector': 'app-manage-banner'},{'name': 'ManageBannerListComponent', 'selector': 'app-manage-banner-list'},{'name': 'ManageCityComponent', 'selector': 'app-manage-city'},{'name': 'ManageContactComponent', 'selector': 'app-manage-contact'},{'name': 'ManageContactListComponent', 'selector': 'app-manage-contact-list'},{'name': 'ManageCountryComponent', 'selector': 'app-manage-country'},{'name': 'ManageEventComponent', 'selector': 'app-manage-event'},{'name': 'ManageLocationComponent', 'selector': 'app-manage-location'},{'name': 'ManageOfferAddEditComponent', 'selector': 'app-manage-offer-add-edit'},{'name': 'ManageOfferComponent', 'selector': 'app-manage-offer'},{'name': 'ManageOfferListComponent', 'selector': 'app-manage-offer-list'},{'name': 'ManageRulesetComponent', 'selector': 'app-manage-ruleset'},{'name': 'ManageStateComponent', 'selector': 'app-manage-state'},{'name': 'ManageSubscriptionComponent', 'selector': 'app-manage-subscription'},{'name': 'ManageSurveyComponent', 'selector': 'app-manage-survey'},{'name': 'ManageUserAddEditComponent', 'selector': 'app-manage-user-add-edit'},{'name': 'ManageUserComponent', 'selector': 'app-manage-user'},{'name': 'ManageUserListComponent', 'selector': 'app-manage-user-list'},{'name': 'ManageUserViewComponent', 'selector': 'app-manage-user-view'},{'name': 'ModalsComponent', 'selector': ''},{'name': 'OfferReportListComponent', 'selector': 'offer-report-list'},{'name': 'P403Component', 'selector': ''},{'name': 'P404Component', 'selector': ''},{'name': 'P500Component', 'selector': ''},{'name': 'PaginationsComponent', 'selector': ''},{'name': 'PopoversComponent', 'selector': ''},{'name': 'PopupImageOpenComponent', 'selector': 'popup-image-open'},{'name': 'ProfileComponent', 'selector': ''},{'name': 'ProgressComponent', 'selector': ''},{'name': 'RegisterComponent', 'selector': 'app-dashboard'},{'name': 'ResetPasswordComponent', 'selector': 'app-dashboard'},{'name': 'ReviewComponent', 'selector': 'app-review'},{'name': 'RolePermissionComponent', 'selector': 'app-role-permission'},{'name': 'RulesetAddEditComponent', 'selector': 'app-ruleset-add-edit'},{'name': 'RulesetListComponent', 'selector': 'app-ruleset-list'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SimpleLineIconsComponent', 'selector': ''},{'name': 'StateAddEditComponent', 'selector': 'app-state-add-edit'},{'name': 'SubadminAddEditComponent', 'selector': 'app-subadmin-add-edit'},{'name': 'SubadminComponent', 'selector': 'app-subadmin'},{'name': 'SubadminListComponent', 'selector': 'app-subadmin-list'},{'name': 'SubscriptionAddEditComponent', 'selector': 'app-subscription-add-edit'},{'name': 'SubscriptionListComponent', 'selector': 'app-subscription-list'},{'name': 'SubscriptionViewComponent', 'selector': 'app-subscription-view'},{'name': 'SurveyAddEditComponent', 'selector': 'app-survey-add-edit'},{'name': 'SurveyAnswersComponent', 'selector': 'app-survey-answers'},{'name': 'SurveyListComponent', 'selector': 'app-survey-list'},{'name': 'SurveyQuestionsComponent', 'selector': 'app-survey-questions'},{'name': 'SurveyReportComponent', 'selector': 'app-survey-report'},{'name': 'SurveyUserReportComponent', 'selector': 'survey-user-report'},{'name': 'SwitchesComponent', 'selector': ''},{'name': 'TablesComponent', 'selector': ''},{'name': 'TabsComponent', 'selector': ''},{'name': 'TextUserListComponent', 'selector': 'text-user-list'},{'name': 'TooltipsComponent', 'selector': ''},{'name': 'TypographyComponent', 'selector': ''},{'name': 'UserReportComponent', 'selector': 'app-user-report'},{'name': 'UserSuggestionAddComponent', 'selector': 'app-user-suggestion-add'},{'name': 'UserSuggestionComponent', 'selector': 'app-user-suggestion'},{'name': 'UserSuggestionListComponent', 'selector': 'app-user-suggestion-list'},{'name': 'UserSurveyComponent', 'selector': 'app-user-survey'},{'name': 'UserSurveyListComponent', 'selector': 'app-user-survey-list'},{'name': 'VideoUploadComponent', 'selector': 'app-video-upload'},{'name': 'ViewAnswerComponent', 'selector': 'app-view-answer'},{'name': 'WidgetsComponent', 'selector': ''}];
+    var DIRECTIVES = [{'name': 'MultiCheckboxValidationDirective', 'selector': '[appMultiCheckboxValidation]'},{'name': 'NumberOnlyDirective', 'selector': 'input[appNumberOnly]'},{'name': 'PhoneMaskDirective', 'selector': '[phoneMask][ngModel]'}];
+    var ACTUAL_COMPONENT = {'name': 'CmsListComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CmsListComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,205 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <form (ngSubmit)="onBannerDataSave(f)" novalidate #f="ngForm">
+          <div class="card-body">
+            <p class="col-sm-12 text-right requiredLabel">
+              <span [innerHTML]="'FORM_NOTE' | translate"></span>
+            </p>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label
+                    >{{ "BANNER_PHOTO" | translate }}
+                    <span class="asterisk_input"></span
+                  ></label>
+                  <div>
+                    <div class="image-box has-upload">
+                      <i
+                        class="fa fa-2x fa-times-circle-o"
+                        aria-hidden="true"
+                        (click)="removePicture(upld_photo)"
+                        *ngIf="noPicture"
+                      ></i>
+                      <img
+                        [hidden]="noPicture == false"
+                        [src]="url"
+                        class="img-responsive img-fluid image-box"
+                      />
+                      <div
+                        class="upload-area"
+                        id="uploadImageFile"
+                        [hidden]="noPicture == true"
+                        (click)="openImageUpload()"
+                      >
+                        <input
+                          type="file"
+                          (change)="changeImage($event)"
+                          #upld_photo
+                          class="form-control"
+                          id="banner_picture"
+                          required
+                        />
+                        <label for="fileSelect"
+                          ><strong>Browse</strong>
+                          <span><br />for a banner image to upload</span
+                          >.</label
+                        >
+                        <input
+                          type="hidden"
+                          [(ngModel)]="model.banner_image"
+                          #upld="ngModel"
+                          name="banner_image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="form-control-feedback text-danger"
+                    *ngIf="upld.errors && f.submitted"
+                  >
+                    <p *ngIf="upld.errors.required">
+                      {{ "PLEASE_UPLOAD_BANNER_IMAGE" | translate }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6"></div>
+              <!-- <div class="col-md-6 col-12" *ngFor="let lan of languages">
+                <div class="form-group">
+                  <label for="meta_keywords">{{ 'BANNER_TITLE' | translate }} ({{ lan.name }}) <span class="asterisk_input"></span></label>
+                  <input
+                    [(ngModel)]="model.banner_title[lan.locale]"
+                    [style.direction]="lan.text_direction"
+                    type="text"
+                    name="banner_title_{{ lan.locale }}"
+                    class="form-control"
+                    placeholder="{{ 'BANNER_TITLE' | translate }}"
+                    required
+                    #banner_title="ngModel"
+                  />
+                  <div class="form-control-feedback text-danger" *ngIf="banner_title.errors && submitted">
+                    <p *ngIf="banner_title.errors.required">
+                      {{ 'PLEASE_ENTER_BANNER_TITLE' | translate }}
+                    </p>
+                  </div>
+                </div>
+              </div> -->
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                  <label for="meta_keywords"
+                    >{{ "BANNER_TITLE" | translate }} (English)
+                    <span class="asterisk_input"></span
+                  ></label>
+                  <input
+                    [(ngModel)]="model.banner_title_en"
+                    type="text"
+                    name="banner_title_en"
+                    class="form-control"
+                    placeholder="{{ 'BANNER_TITLE' | translate }}"
+                    required
+                    #banner_title_en="ngModel"
+                  />
+                  <div
+                    class="form-control-feedback text-danger"
+                    *ngIf="banner_title_en.errors && submitted"
+                  >
+                    <p *ngIf="banner_title_en.errors.required">
+                      {{ "PLEASE_ENTER_BANNER_TITLE" | translate }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                  <label for="meta_keywords"
+                    >{{ "BANNER_TITLE" | translate }} (Arabic)
+                    <span class="asterisk_input"></span
+                  ></label>
+                  <input
+                    [(ngModel)]="model.banner_title_ar"
+                    type="text"
+                    name="banner_title_ar"
+                    class="form-control"
+                    placeholder="{{ 'BANNER_TITLE' | translate }}"
+                    required
+                    #banner_title_ar="ngModel"
+                  />
+                  <div
+                    class="form-control-feedback text-danger"
+                    *ngIf="banner_title_ar.errors && submitted"
+                  >
+                    <p *ngIf="banner_title_ar.errors.required">
+                      {{ "PLEASE_ENTER_BANNER_TITLE" | translate }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                  <label for="device_type"
+                    >{{ "STATUS" | translate }}
+                    <span class="asterisk_input"></span
+                  ></label>
+                  <div class="d-block">
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="active"
+                        >{{ "STATUS_LIST.ACTIVE" | translate }}
+                        <input
+                          [(ngModel)]="model.banner_status"
+                          name="banner_status"
+                          class="form-check-input"
+                          type="radio"
+                          id="active"
+                          value="ACTIVE"
+                          #banner_status="ngModel"
+                        />
+                        <span class="radio-span"></span>
+                      </label>
+                    </div>
+
+                    <div class="form-check-inline">
+                      <label class="form-check-label" for="Inactive"
+                        >{{ "STATUS_LIST.INACTIVE" | translate }}
+                        <input
+                          class="form-check-input"
+                          name="banner_status"
+                          [(ngModel)]="model.banner_status"
+                          type="radio"
+                          id="Inactive"
+                          value="INACTIVE"
+                          #banner_status="ngModel"
+                        />
+                        <span class="radio-span"></span>
+                      </label>
+                    </div>
+                    <div
+                      class="form-control-feedback text-danger"
+                      *ngIf="banner_status.errors && submitted"
+                    >
+                      <p *ngIf="banner_status.errors.required">
+                        {{ "PLEASE_SELECT_STATUS" | translate }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary">
+              <i class="fa fa-check-circle-o fa-lg"></i>
+              {{ "SAVE" | translate }}</button
+            >&nbsp;
+            <a class="btn btn-warning" [routerLink]="['/manage-banner/list']"
+              ><i class="fa fa-times"></i> {{ "CANCEL" | translate }}</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-loader></app-loader>

@@ -1,0 +1,218 @@
+.card{
+    margin-bottom: 12px;
+    border: 1px solid #d9d9d9;
+    
+    h5{
+        font-size: 16px;
+        color: #696981;
+        font-family: "SofiaProBold", sans-serif !important;
+    }
+    p{
+        color: rgb(122, 122, 122);
+    }
+    .card-block{
+        width:100%;
+        h4{
+            font-family: "SofiaProMedium", sans-serif !important;
+        }
+        .graph{
+            align-items: center;
+        }
+        .more{
+            cursor: pointer;
+        }
+    }
+}
+h4{
+    font-size: 24px;
+    font-family: "SofiaProBold", sans-serif !important;
+}
+.insights{
+    img{
+        height: 25px;
+    }
+    .card{
+        padding-bottom: 0;
+        padding: 7px;
+        height: 115px;
+        padding-left: 12px;
+    }
+
+    .float-none{
+        padding-left: 40px;
+        height: 55px;
+
+    }
+}
+
+.graph-position-top {
+    margin-top: 10px;
+}
+
+a{
+    color: #8347eb;
+}
+
+.header-sec{
+    height:70px;
+}
+
+.black-card{
+    border-radius: 1px;
+    background: white;
+    .black-card-body{   
+        padding-left: 5px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        font-weight: bold;
+        border-radius: 1px;
+        h4{
+            font-size: 18px;
+        }
+    }
+}
+
+.graph-title{
+    text-align: center;
+    color: rgb(75, 75, 75);
+    padding-bottom: 5px;
+}
+
+.bar-graph {
+        display: block;  
+        border: 1px solid #e3e6e9;
+        margin-top: 20px;
+        border-radius: 12px;  
+        h4{
+            padding-left: 15px;
+        }
+    
+}
+
+.bar-graph-mobile{
+    display: none;
+    h4{
+        font-size: 18px;
+    }
+}
+
+.section-two{
+    h4{
+        font-size: 20px;
+       font-family: 'SofiaProBold', sans-serif; 
+    }
+}
+
+.ant-table-thead > tr > th {
+    letter-spacing: 0.1px !important;
+}
+
+
+.cat-list{
+    padding: 0;
+}
+
+@media only screen and (max-width: 767px ) {
+    .list{
+        padding: 15px;
+    }
+    .cat-list{
+        padding: 15px;
+    }
+    .black-card{
+        border-radius: 1px;
+        background: white;
+        .black-card-body{
+            padding: 0px;
+            font-weight: bold;
+            border-radius: 1px;
+        }
+    }
+    .insights{
+        h2{
+          font-size: 20px;
+        }
+        img{
+         height:  20px;
+        }
+        .float-none{
+          padding-left: 30px;
+          height: 45px;
+        }
+        .graph{
+            margin-top: 10px !important;
+            .float-left{
+              margin-top: -10px;
+          }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .list{
+        padding: 15px;
+    }
+    .cat-list{
+        padding: 15px;
+    }
+    .insights{
+        h2{
+          font-size: 20px;
+        }
+        img{
+         height:  20px;
+        }
+        .float-none{
+          padding-left: 30px;
+          height: 45px;
+        }
+        .graph{
+            margin-top: 10px !important;
+            .float-left{
+              margin-top: -10px;
+          }
+        }
+    }
+    .black-card{
+        border-radius: 1px;
+        background: white;
+        .black-card-body{
+            padding: 0px;
+            font-weight: bold;
+            border-radius: 1px;
+        }
+    }
+    
+    .bar-graph {
+          display: none;  
+    }
+    .bar-graph-mobile{
+        display: block;
+        border: 1px solid #e3e6e9;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-radius: 10px;   
+        
+    }
+}
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1365px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+{
+    .list{
+        padding: 15px;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 1366px) 
+  and (max-device-width: 1400px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+{
+    
+    .insights img{
+        height: 25px;
+    }
+}

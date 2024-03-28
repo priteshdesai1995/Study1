@@ -1,0 +1,40 @@
+@import "src/theme/variables.scss";
+@import "src/theme/mixins.scss";
+@import "src/theme/responsive.scss";
+
+.header {
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #e8e8e8;
+    display: flex;
+    align-items: center;
+    height: 45px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    .row{
+        margin: 0;
+        display: inline-block;
+        width: -webkit-fill-available;
+        .icon{
+            float: left;
+            padding: 6px 0px 4px 27px;
+            img{
+                height: 25px;
+                @media only screen and (max-width: 1400px ) {
+                    height: 30px;
+                }
+            } 
+        }
+        .helper{
+            float: right;
+            padding: 1px 30px 5px 0px;
+            img{
+                height: 15px;
+            } 
+        }
+    }
+    img.header-icon {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,120 @@
+<section class="wrapper">
+    <div class="form">
+        <div class="section-one" *ngIf="signUpFlag">
+            <h6>Sign Up </h6>
+            <form InvalidFormScrollDirective [formGroup]="signUpForm" (ngSubmit)="addSignUp()"  novalidate
+                autocomplete="off">
+                <div class="form-group form-row ">
+                    <div class="col">
+                        <label for="name">UserName<span>*</span></label>
+                        <input appSpaceRemove formControlName="name" type="text" class="form-control"
+                            [ngClass]="isSubmitted && errorControl.name.errors?.required? 'errorBorder' : 'greyBorder'" />
+                        <span class="error" *ngIf="isSubmitted && errorControl.name.errors?.required">
+                            <img class="info-img"> This field is required
+                        </span>
+                        <span class="error" *ngIf="isSubmitted && errorControl.name.errors?.pattern">
+                            <img class="info-img">UserName pattern should be correct
+                        </span>
+                    </div>
+                    <div class="col"></div>
+                    <div class="col">
+                        <label for="email" class="required">Email</label>
+                        <input appSpaceRemove formControlName="email" type="text" class="form-control"
+                            [ngClass]="isSubmitted && (errorControl.email.errors?.required || errorControl.email.errors?.pattern)? 'errorBorder' : 'greyBorder'"
+                            placeholder="">
+                        <span class="error" *ngIf="isSubmitted && errorControl.email.errors?.required">
+                            <img class="info-img"> This field is required
+                        </span>
+                        <span class="error" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+                            <img class="info-img"> This is not valid email. Try again
+                        </span>
+
+                    </div>
+                    <div class="col">
+                        <label for="confirmEmail" class="required">Confirm Email</label>
+                        <input appSpaceRemove formControlName="confirmEmail" type="text" class="form-control"
+                            [ngClass]="isSubmitted && (errorControl.confirmEmail.errors?.required ||  errorControl.confirmEmail.errors?.pattern)? 'errorBorder' : 'greyBorder' || errorControl.confirmEmail.errors?.mustMatch"
+                            placeholder="">
+                        <span class="error" *ngIf="isSubmitted && errorControl.confirmEmail.errors?.required">
+                            <img class="info-img"> This field is required
+                        </span>
+                        <span class="error" *ngIf="isSubmitted && errorControl.confirmEmail.errors?.pattern">
+                            <img class="info-img"> This is not valid email. Try again
+                        </span>
+                        <span class="error" *ngIf="isSubmitted && errorControl.confirmEmail.errors?.mustMatch">
+                            <img class="info-img"> This email doesn't match. Try again
+                        </span>
+                    </div>
+                    <div class="col">
+                        <label for="password" class="required">Password</label>
+                        <input formControlName="password" type="password" class="form-control"
+                            [ngClass]="isSubmitted && errorControl.password.errors?.required? 'errorBorder' : 'greyBorder'"
+                            placeholder="">
+                        <span class="error" *ngIf="isSubmitted && errorControl.password.errors?.required">
+                            <img class="info-img"> This field is required
+                        </span>
+                        <span class="error" *ngIf="isSubmitted && errorControl.password.errors?.pattern">
+                            <img class="info-img"> Pattern should be like Eg.Carl@1990
+                        </span>
+
+                    </div>
+                    <div class="col">
+                        <label for="confirmPassword" class="required">Confirm Password</label>
+                        <input formControlName="confirmPassword" type="password" class="form-control"
+                            [ngClass]="isSubmitted && (errorControl.confirmPassword.errors?.required || errorControl.confirmPassword.errors?.mustMatch)? 'errorBorder' : 'greyBorder'"
+                            placeholder="">
+                        <span class="error" *ngIf="isSubmitted && errorControl.confirmPassword.errors?.required">
+                            <img class="info-img"> This field is required
+                        </span>
+                        <span class="error" *ngIf="isSubmitted && errorControl.confirmPassword.errors?.pattern">
+                            <img class="info-img"> Pattern should be like Eg.Carl@1990
+                        </span>
+                        <span class="error" *ngIf="isSubmitted && errorControl.confirmPassword.errors?.mustMatch">
+                            <img class="info-img">This password doesn't match. Try again
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group captcha">
+                    <ngx-recaptcha2 #captchaElem formControlName="recaptcha" [siteKey]="siteKey">
+                    </ngx-recaptcha2>
+                </div>
+                <div class="form-group btn-block">
+                    <button class="btn-color" appLoader text="Sign Up" [loading]="isSignupSubmit"></button>
+                </div>
+            </form>
+        </div>
+        <div class="section-two" *ngIf="verifyEmailFlag">
+            <h3>Please confirm your email</h3>
+            <p>We have sent you an email on<span> “{{signUpForm.value.email}}” </span> Please verify</p>
+            <div class="digit-code">
+                <p class="codeError" *ngIf="isInvalidCode && isOtpVefificationSubmit; else normalText">
+                    Enter the correct 6 digit code here
+                </p>
+                <ng-template #normalText>
+                    <p> Enter 6 digit code here </p>
+                </ng-template>              
+                <app-otp-input #otp [err]="isInvalidCode" [isFormSubmitted]="isOtpVefificationSubmit" ></app-otp-input>
+                <div class="form-group btn-block">
+                    <button *ngIf="otp.form.invalid; else elseBlock" class="btn-disabled" 
+                        disabled>Continue</button>
+                    <ng-template #elseBlock> 
+                        <button class="btn-color" type="button" (click)="codeVerifying(otp.value)" appLoader text="Continue" [loading]="isOtpSubmit"></button>
+                    </ng-template>
+                </div>
+            </div>
+
+        </div>
+        <div class="section-three" *ngIf="verifiedEmailFlag">
+            <div class="verified" align="center">
+                <img src="assets/icon/Group 38.svg">
+            </div>
+            <div class="inner-sec">
+                <h3>Email Verified!</h3>
+                <p>Your e-mail is verified. Now let's continue to set you up</p>
+            </div>
+            <div class="form-group btn-block">
+                <button class="btn-color" (click)="onboarding()" text="Continue Onboardoing" appLoader [loading]="isOnBoardingSubmit">Continue Onboardoing</button>
+            </div>
+        </div>
+    </div>
+</section>

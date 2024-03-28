@@ -1,0 +1,16 @@
+{
+  "name": "minfy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "js:minify": "node ./node_modules/grunt-cli/bin/grunt uglify"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-uglify": "^5.0.1"
+  }
+}

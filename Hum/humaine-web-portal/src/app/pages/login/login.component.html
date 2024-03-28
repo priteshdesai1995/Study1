@@ -1,0 +1,51 @@
+<section class="section">
+    <div class="wrapper">
+        <div class="title-block">
+            <h2> Welcome Back</h2>
+            <p>Don't have an account? <a class="blue-text" [routerLink]="['/registration']">Sign Up </a> </p>
+        </div>
+        <div class="form">
+            <div class="section-one">
+                <h6>Sign In </h6>
+                <form [formGroup]="signInForm" (ngSubmit)="addSignIn()" novalidate
+                    autocomplete="off">
+                    <div class="form-group">
+                        <div class="col col-pad">
+                            <label for="email" class="required">Email</label>
+                            <input appSpaceRemove formControlName="email" type="text" class="form-control"
+                                [ngClass]="isSubmitted && (errorControl.email.errors?.required || errorControl.email.errors?.pattern)? 'errorBorder' : 'greyBorder'"
+                                placeholder="E.g. carl.fredrik@xyz.com">
+                            <span class="error" *ngIf="isSubmitted && errorControl.email.errors?.required">
+                                <img class="info-img"> This field is required
+                            </span>
+                            <span class="error" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+                                <img class="info-img"> This is not valid email. Try again
+                            </span>
+                        </div>
+                        <div class="col col-pad">
+                            <label for="password" class="required">Password</label>
+                            <input formControlName="password" type="password" class="form-control"
+                                [ngClass]="isSubmitted && errorControl.password.errors?.required? 'errorBorder' : 'greyBorder'"
+                                placeholder="********">
+                            <span class="error" *ngIf="isSubmitted && errorControl.password.errors?.required">
+                                <img class="info-img"> This field is required
+                            </span>
+                            <span class="error" *ngIf="isSubmitted && errorControl.password.errors?.pattern">
+                                <img class="info-img">Pattern should be like Eg.Carl@1990
+                            </span>
+
+                        </div>
+                        <div class="extra-link">
+                            <div class="remember"><input type="checkbox" value="false" formControlName="rememberMe" ><span>Remember me</span></div>
+                            <a [routerLink]="['/forgetPassword']" class="forget">Forgot password?</a>
+                        </div>
+                    </div>
+
+                    <div class="form-group btn-block">
+                        <button class="btn-color" appLoader text="Sign In" [loading]="isLoginSubmit"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

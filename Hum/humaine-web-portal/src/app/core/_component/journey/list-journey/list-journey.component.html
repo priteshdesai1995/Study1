@@ -1,0 +1,19 @@
+
+<div class="wrapper">
+    <div class="header-sec">
+        <div class="left-panel">
+            <nz-breadcrumb [nzAutoGenerate]="true" style="margin:16px 0;">
+            </nz-breadcrumb>
+        </div>
+    </div>
+    <div class="section-one" style="padding-top:20px;">
+        <list-table [isAllDelete]="isDeleteShow" [data]="mockData" [setCount]="true" [setCountMenuKey]="menuLinks.TEST_NEW_JOURNEY" [idKey]="'id'" [viewChange]="'View Journey'" [templateRefs]="{'3': journeyStepTemp}" #journeyList [config]="journeyListConfig"></list-table>
+        <ng-template #journeyStepTemp let-data="data">
+            {{data.journeySteps}}/{{data.totalJourneySteps}}
+        </ng-template>
+    </div>
+
+    <div class="section-two" style="padding-top:20px;" *ngIf="aiJourney">
+        <list-table [data]="saveAiData" #savedAIJourneyList (onGroupDelete)="onUserGroupDelete()" [viewChange]="'View Journey'" [idKey]="'groupId'" [config]="savedAiJourneyConfig" ></list-table>
+    </div>
+</div>

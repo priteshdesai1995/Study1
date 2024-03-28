@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <div class="header-sec">
+        <div class="left-panel">
+            <nz-breadcrumb [nzAutoGenerate]="true" style="margin:16px 0;">
+            </nz-breadcrumb>
+        </div>
+    </div>
+    <div class="section-one" style="padding-top:20px;">
+        <list-table #aIUserList (onGroupSave)="onUserGroupSave()"  [config]="AIGeneratedTableConfig" ></list-table>
+    </div>
+    <div class="section-two" style="padding-top:20px;">
+        <list-table #savedAIUserList (onGroupDelete)="onUserGroupDelete()"  [idKey]="'id'" [config]="SavedAIUserGroupTableConfig" ></list-table>
+    </div>
+</div>

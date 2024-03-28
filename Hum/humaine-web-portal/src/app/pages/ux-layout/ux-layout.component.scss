@@ -1,0 +1,64 @@
+.section{
+    .card{
+        border-radius: 0;
+        border:none;
+       
+    }
+    .card-body{
+        border: 0;
+    }
+    margin-top: 20px;
+    .url{
+        margin-top: 29px;
+    }
+    .bigFiveImg{
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        height: calc(100vh - 345px);
+                overflow: auto;
+        img{
+            width: 100%;
+        }
+    }
+    .layout-filter {
+        border-radius: 0;
+        border-top-left-radius: 0.7rem;
+        border-top-right-radius: 0.7rem;
+        border: 1px solid #d4d1d180;
+    }
+}
+
+input,
+.input {
+    border: 1px  solid #dae0e5;
+    box-sizing: border-box;
+    display: block;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 6px 5px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: white !important;
+    opacity: 1;
+    color: #1DA6D4;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 767px ) {
+        input,
+    .input {
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    input,
+    .input {
+        height: 100%;
+    }
+}

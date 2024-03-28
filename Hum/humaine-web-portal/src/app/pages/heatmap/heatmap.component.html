@@ -1,0 +1,94 @@
+<div class="header-sec">
+    <div class="left-panel">
+        <nz-breadcrumb [nzAutoGenerate]="true" style="margin: 5px 0">
+        </nz-breadcrumb>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="card">
+        <div class="card-body heatmap-card">
+            <div class="col">
+                <label style="float: left;" for="link">Page Link</label>
+                <label class="date" style="float: right;">Generated on: {{date | date }}</label>
+                <input [readOnly]="true" class="form-control" [(ngModel)]="heatMapItem.pageUrl">
+            </div>
+             
+            <div class="row col filters">
+                <div class="single-filter col-12 col-md-6 col-lg-3 col-xl-3">
+                    <label>Device</label>
+                    <div class="radio-toolbar">
+                        <div class="single-radio" (click)="deviceChangeClick(device)"
+                            *ngFor="let device of deviceType;">
+                            <input type="radio" name="device"  [value]="device.id" [id]="device.image + device.id"
+                                [checked]="device.isChecked">
+                            <label [for]=" device.image + device.id">
+                                <img  [src]="device.isChecked?   device.isCheckImage : device.image">
+                                <!-- <img *ngIf="!device.isChecked" [src]="device.image"> -->
+
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-filter col-12 col-md-6 col-lg-3 col-xl-3">
+                    <label>Interaction</label>
+                    <div class="interaction-radio-toolbar">
+                        <div class="interaction-radio" [style]="" *ngFor="let singleInteract of interactionType;">
+                            <input [attr.disabled]="singleInteract.isDisabled" type="radio"
+                                (change)="deviceChangeClick($event)" name="interaction"
+                                [disabled]="singleInteract.isDisabled" [value]="singleInteract.name"
+                                [checked]="singleInteract.isChecked" [id]="singleInteract.name + singleInteract.id">
+                            <label [for]="singleInteract.name + singleInteract.id">{{singleInteract.name}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-filter col-12 col-md-6 col-lg-3 col-xl-3">
+                    <div class="text">
+                        <label class="low">Low Interaction</label>
+                        <label class="high">High Interaction</label>
+                    </div>
+                    <div class="interation-rate">
+                    </div>
+                </div>
+                <div class="single-filter col-12 col-md-6 col-lg-3 col-xl-3">
+                    <label>Zoom</label>
+                    <ng-select id="sel" [(ngModel)]="selectedZoom" (change)="zoomChange($event)" [items]="zoomData"
+                        [clearable]="false" bindLabel="name" bindValue="value">
+                    </ng-select>
+                </div>
+            </div>
+
+            <div id="demo" class="carousel slide heat-data" data-interval="false" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active zoomin" >
+                        <div style="display: flex;justify-content: center;" >
+                            <img  id="img" [ngClass]="slideImage? 'slide-image' : ''"
+                                [src]="slideImage? slideImage : ''">
+                        </div>
+                    </div>
+                    <div *ngIf="!slideImage">
+                        <br>
+                        <nz-spin [nzSpinning]="isImageLoading">
+                            <nz-empty *ngIf="!slideImage" nzNotFoundImage="simple" [nzNotFoundContent]="contentTpl">
+                            </nz-empty>
+                            <ng-template #contentTpl>
+                                <p *ngIf="keys.length===0"> No Image Found</p>
+                            </ng-template>
+                        </nz-spin>
+                    </div>
+                </div>
+                <a *ngIf="keys.length > 1" class="carousel-control-prev" (click)="imageSlide(heatMapItem)" href="#demo"
+                    data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a *ngIf="keys.length > 1" class="carousel-control-next" href="#demo" (click)="imageSlide(heatMapItem)"
+                    data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>

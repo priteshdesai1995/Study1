@@ -1,0 +1,50 @@
+<div class="wrapper">
+    <div class="header-sec">
+        <div class="left-panel">
+            <nz-breadcrumb style="margin:16px 0">
+                <span>UX Layout for {{accountDetails.fullName}} Top Users</span>
+            </nz-breadcrumb>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="detail">This page is Created to give you suggestions on your landing page that would increase your
+            sales and engagement with your dedicated customers. </div>
+        <div>How to read:</div>
+        <div> - The colors used to indicate a content type can be placed anywhere in the same row.</div>
+        <div>- The order of the contents suggested are final and can not move vertically</div>
+    </div>
+</div>
+<div class="section">
+    <div class="card layout-filter">
+        <div class="card-body ">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-3 col-xl-3">
+                    <label>UX Layout for:</label>
+                    <ng-select [(ngModel)]="selectedLayout" class="disable-clear-all"  [clearable]="false" [items]="bigFiveList"
+                    [clearable]="false" (change)="bigFiveChange($event)" bindLabel="key" bindValue="value">
+                    </ng-select>
+
+                </div>
+                <!-- <div class="col">
+                    <div class="url">
+                        <div class="input"> <a target="_blank" [href]="accountDetails.homePageUrl">{{accountDetails.homePageUrl}}</a></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-2 col-xl-2">
+                    <div class="form-group btn-block" style="margin-top: 29px;">
+                        <button class="btn-color">View Persona</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="card  bigFiveImg">
+        <nz-spin [nzSpinning]="isImageLoading">
+        <div class="card-body">
+         <img [src]="bigFiveImage">
+        </div>
+        </nz-spin>
+    </div>
+</div>

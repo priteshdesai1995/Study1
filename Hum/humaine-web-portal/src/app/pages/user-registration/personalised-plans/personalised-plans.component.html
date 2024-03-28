@@ -1,0 +1,178 @@
+<section class="wrapper">
+    <div class="section" *ngIf="!generatedFlag">
+        <div class="title" *ngIf="!isPageDetailFlag">
+            <h6>Setup Tracker Details</h6>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry’s
+                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book</p>
+        </div>
+
+        <div class="section-one" *ngIf="!isPageDetailFlag">
+            <form InvalidFormScrollDirective [formGroup]="urlForm" (ngSubmit)="generateTracker()"
+               novalidate autocomplete="off">
+                <div class="form-group form-row ">
+                    <div class="col">
+                        <label for="websiteUrl" class="required">Enter website landing/home page URL</label>
+                        <input appSpaceRemove formControlName="websiteUrl" type="text" class="form-control" placeholder=""
+                            [ngClass]="generateTrackerForUrlSubmit && urlErrorControl.websiteUrl.errors?.required? 'errorBorder' : 'greyBorder'">
+                        <span class="error" *ngIf="generateTrackerForUrlSubmit && urlErrorControl.websiteUrl.errors?.required">
+                            <img class="info-img"> This field is required
+                        </span>
+                        <span class="error" *ngIf="generateTrackerForUrlSubmit && urlErrorControl.websiteUrl.errors?.pattern">
+                            <img class="info-img"> This is not valid URL. Try again
+                        </span>
+                    </div>
+                </div>
+                <div class="form">
+                    <h6>Select tracking events</h6>
+                    <div class="form-group form-row">
+                        <div class="check-container" *ngFor="let oneEvent of trackingEvent;">
+                            <label for=""><span class="checked">&#10003;</span>{{oneEvent}}</label>
+                        </div>
+                     
+                    </div>
+                    <div class="form">
+                        <label class="container page-detail-width" >
+                            <p>Detailed Page Navigations</p>
+                            <input formControlName="pageDetailCheck" [disabled]="urlForm.invalid" (change)="onDetailChange($event)" type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group btn-block">
+                    <button type="button" (click)="backBtn()" class="btn-color save-btn mr-2 small-btn">Back</button>
+                    <button type="button" *ngIf="isDetailPageChecked" (click)="changePersnolizedPage()" class="btn-color save-btn mr-2 small-btn">Next</button>
+                    <button type="submit" *ngIf="!isDetailPageChecked" (click)="generateTrackerForUrl()" appLoader text="Generate Tracker" [loading]="isTrackerSubmit"
+                        class="btn-color"></button>
+        
+                </div>
+            </form>
+        </div>
+        <div class="section-two" *ngIf="isPageDetailFlag">
+            <form InvalidFormScrollDirective [formGroup]="addPageForm" (ngSubmit)="generateTracker()"
+                novalidate autocomplete="off">
+                <div>
+                    <h6>Enter Page Details</h6>
+                    <div class="form-group form-row ">
+                        <div class="col">
+                            <label for="landingPgae" class="required">Home/Landing Page</label>
+                            <input appSpaceRemove type="text" formControlName="landingPgae" placeholder="Enter url here..."
+                                class="form-control"
+                                [ngClass]="isPageError && pageDetailErrorControl.landingPgae.errors?.required? 'errorBorder' : 'greyBorder'">
+                            <span class="error"
+                                *ngIf="isPageError && pageDetailErrorControl.landingPgae.errors?.required">
+                                <img class="info-img"> This field is required
+                            </span>
+                            <span class="error" *ngIf="isPageError && pageDetailErrorControl.landingPgae.errors?.pattern">
+                                <img class="info-img">  This is not valid URL. Try again
+                            </span>
+                        </div>
+                        <div class="col">
+                            <label for="collectionPage" class="required">Product List/ Collection Page</label>
+                            <input appSpaceRemove type="text" formControlName="collectionPage" class="form-control"
+                                placeholder="Enter url here..."
+                                [ngClass]="isPageError && pageDetailErrorControl.collectionPage.errors?.required? 'errorBorder' : 'greyBorder'">
+                            <span class="error"
+                                *ngIf="isPageError && pageDetailErrorControl.collectionPage.errors?.required">
+                                <img class="info-img"> This field is required
+                            </span>
+                            <span class="error" *ngIf="isPageError && pageDetailErrorControl.collectionPage.errors?.pattern">
+                                <img class="info-img">  This is not valid URL. Try again
+                            </span>
+                        </div>
+                        <div class="col">
+                            <label for="productDetail" class="required">Product Details Page</label>
+                            <input appSpaceRemove type="text" formControlName="productDetail" class="form-control"
+                                placeholder="Enter url here..."
+                                [ngClass]="isPageError && pageDetailErrorControl.productDetail.errors?.required? 'errorBorder' : 'greyBorder'">
+                            <span class="error"
+                                *ngIf="isPageError && pageDetailErrorControl.productDetail.errors?.required">
+                                <img class="info-img"> This field is required
+                            </span>
+                            <span class="error" *ngIf="isPageError && pageDetailErrorControl.productDetail.errors?.pattern">
+                                <img class="info-img"> This is not valid URL. Try again
+                            </span>
+                        </div>
+                        <div class="col">
+                            <label for="cartPage" class="required">Cart Page</label>
+                            <input appSpaceRemove type="text" formControlName="cartPage" class="form-control"
+                                placeholder="Enter url here..."
+                                [ngClass]="isPageError && pageDetailErrorControl.cartPage.errors?.required? 'errorBorder' : 'greyBorder'">
+                            <span class="error" *ngIf="isPageError && pageDetailErrorControl.cartPage.errors?.required">
+                                <img class="info-img"> This field is required
+                            </span>
+                            <span class="error" *ngIf="isPageError && pageDetailErrorControl.cartPage.errors?.pattern">
+                                <img class="info-img">  This is not valid URL. Try again
+                            </span>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="checkoutPage" class="required">Buy / Checkout Page</label>
+                            <input appSpaceRemove type="text" formControlName="checkoutPage" class="form-control"
+                                placeholder="Enter url here..."
+                                [ngClass]="isPageError && pageDetailErrorControl.checkoutPage.errors?.required? 'errorBorder' : 'greyBorder'">
+                            <span class="error"
+                                *ngIf="isPageError && pageDetailErrorControl.checkoutPage.errors?.required">
+                                <img class="info-img"> This field is required
+                            </span>
+                            <span class="error" *ngIf="isPageError && pageDetailErrorControl.checkoutPage.errors?.pattern">
+                                <img class="info-img">  This is not valid URL. Try again
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card" formArrayName="newPagesArray"
+                        *ngFor="let address of newPageControl; let i = index;">
+                        <div [formGroupName]="i">
+                            <div class="newPage">
+                                <h6>Add New Page</h6>
+                                <div class="col-6 text-right">
+                                    <button type="button" class="btn btn-danger btn-sm"
+                                        (click)="removePage(i)">Remove</button>
+                                </div>
+                            </div>
+                            <div class="form-group form-row ">
+                                <div class="col">
+                                    <label for="pageName">Page Title</label>
+                                    <input appSpaceRemove type="text" formControlName="pageName" class="form-control"
+                                        placeholder="Enter url here...">
+                                </div>
+                                <div class="col">
+                                    <label for="pageURL">Page URL</label>
+                                    <input appSpaceRemove type="text" formControlName="pageURL" class="form-control"
+                                        placeholder="Enter url here...">
+                                        
+                                </div>
+                            </div>
+                            <div class="form-group btn-block">
+                                <button type="button" class="btn-color save-btn" (click)="saveRow()">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-Btn">
+                        <button type="button" class="plus-btn" (click)="addNewPage()">+ </button><span>Add more
+                            pages</span>
+                    </div>
+                </div>
+                <div class="form-group btn-block">
+                    <button type="button" (click)="backBtn()" class="btn-color save-btn mr-2 small-btn">Back</button>
+                    <button type="submit" appLoader text="Generate Tracker" (click)="generateTracker()" [loading]="isTrackerSubmit"
+                        class="btn-color"></button>
+        
+                </div>
+            </form>
+
+        </div>
+       
+    </div>
+
+    <div class="section-three" *ngIf="generatedFlag">
+        <div class="verified" align="center">
+            <img src="assets/icon/Group 38.svg">
+        </div>
+        <div class="inner-sec">
+            <h3>Tracker is Generated!</h3>
+            <p>Your tracker is being generated and will be emailed to you in the next few minutes.</p>
+        </div>
+    </div>
+</section>

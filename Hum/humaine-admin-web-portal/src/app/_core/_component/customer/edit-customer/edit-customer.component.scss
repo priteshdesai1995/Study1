@@ -1,0 +1,199 @@
+@import "../../../../../theme/variables.scss";
+@import "../../../../../theme/mixins.scss";
+@import "../../../../../theme/responsive.scss";
+.wrapper{
+        width: 100%;
+        background-position: 131%  0px;
+        background-image: url('../../../../../assets/icon/Path\ 2.svg');
+        background-repeat: no-repeat;
+        .form{
+            width: 770px;
+            display: flex;
+            flex-flow: column;
+            margin: 0 auto; 
+            h6{
+                color: black;
+            }
+        label{
+                font-size: 14px;
+                font-weight: normal;
+                span{
+                    color: red;
+                    padding-left: 4px;
+                }
+            } 
+            .section-two{
+                .check-wrapper{
+                    width: 950px;
+                }
+                .inner-title{
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+                h6{
+                    padding-bottom: 10px;
+                }
+            }  
+
+            .section-three{
+                .container input:checked ~ .checkmark {
+                    background-color: #35D57B;
+                }
+                .container .checkmark:after {
+                    left: 8px;
+                    top: 1px;
+                    width: 8px;
+                    height: 15px;
+                }
+                .container {
+                    padding-top: 4px;
+                }
+                .checkmark {
+                    height: 25px;
+                    width: 25px;
+                }
+                .track-top{
+                    display: flex;
+                    width: 252px;
+                }
+                .track-bottom{
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    .container input:checked ~ .checkmark {
+                        background-color: #754BEB;;
+                    }
+                    p{
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                        color: darkgrey;
+                    }
+                    .provider{
+                        display: flex;
+                    }
+                }
+            }
+        }
+}
+
+@include lg {
+    .wrapper{
+        background: none;
+        .form{
+            width: 450px;
+        }
+    }
+}
+
+@include md {
+    .wrapper{
+        background: none;
+        .form{
+            width: 300px;
+            .form{
+                .check-container{
+                    width: 100%;
+                }
+               
+            }
+            .section-two{
+                .check-wrapper{
+                    width: 300px;
+                }
+            }
+        }
+    }
+   
+}
+@include sm{
+    .wrapper{
+        background: none;
+        .form{
+                width: 200px;
+            }
+        }
+}
+.box-spaces{
+    padding-left: 44px;
+    padding-top: 4px;
+}
+
+.page-detail-width{
+    padding-left: 42px; 
+    width: 100%
+}
+
+.form{
+    .form-group{
+        padding-left: 15px;
+        // margin-left: 20px;
+    }
+    padding-bottom: 10px;
+    .check-container{
+        display: flex;
+        position: relative;
+        /* padding-left: 40px; */
+        cursor: pointer;
+        margin: 12px 5px;
+        margin-left: -10px;
+        font-size: 22px;
+        -webkit-user-select: none;
+        user-select: none;
+        width: 34%;
+        p{
+            margin-top: 5px;
+        }
+    }
+    h6{
+        font-size: 14px;
+    }
+    p{
+        font-size: 14px;
+        padding-top: 6px;
+    }
+}
+
+.btn-block {
+    display: block;
+    padding-top: 5px;
+    width: 100%;
+    float: right;
+}
+
+.events-group{
+    margin: 10px;
+}
+
+@include sm{
+    .wrapper{
+        background: none;
+        .form{
+            .check-container{
+            width: 100%;
+        }
+        .btn-pos{
+            float: none;
+            margin-top: 10px;
+        }
+        .btn-pos-top{
+            float: none;
+            margin-top: 10px;
+            margin-left: 100px;
+        }
+    }
+}
+
+}
+.btn-pos{
+    float: right;
+}
+
+.btn-pos-top{
+    float: right;
+}
+
+.left-panel {
+    margin-top: 16px!important;
+}
+.graph h4 {
+    margin-top: 5px;
+}

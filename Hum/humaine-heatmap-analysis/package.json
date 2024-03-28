@@ -1,0 +1,33 @@
+{
+  "name": "humaine-heatmap-analysis",
+  "version": "1.0.0",
+  "description": "**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**",
+  "main": "index.js",
+  "scripts": {
+    "test": "node -e \"(async () => console.log(await require('./index').handler({'account':177})))();\"",
+    "start": "npm install && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jay-patel-humaineai@bitbucket.org/humaine-tech-development/humaine-heatmap-analysis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/humaine-tech-development/humaine-heatmap-analysis#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1000.0",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.10",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-actuator": "^1.8.0",
+    "node-html-parser": "^4.1.5",
+    "node-schedule": "^2.0.0",
+    "pg": "^8.7.1",
+    "puppeteer": "^10.2.0",
+    "rimraf": "^3.0.2",
+    "sequelize": "^6.6.5",
+    "utf8": "^3.0.0",
+    "uuid": "^8.3.2"
+  }
+}

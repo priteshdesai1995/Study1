@@ -1,0 +1,21 @@
+@import "../../../theme/variables.scss";
+@import "../../../theme/mixins.scss";
+@import "../../../theme/responsive.scss";
+
+@include lg {
+ 
+}
+
+@include sm{
+    .grey-sort{
+        float: right;
+        padding: 10px;
+    }
+}
+
+@include md {
+    .grey-sort{
+        float: right;
+        padding: 10px;
+    }
+}

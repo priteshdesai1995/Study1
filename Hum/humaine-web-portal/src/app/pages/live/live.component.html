@@ -1,0 +1,220 @@
+<div class="wrapper">
+    <div class="header-sec">
+        <div class="left-panel">
+            <nz-breadcrumb [nzAutoGenerate]="true" style="margin: 5px 0">
+            </nz-breadcrumb>
+            <div class="refresh-info-n-btn">
+                <div class="refresh-info-div">
+                    <p>Last Refresh : </p>
+                    <div class="refresh-value" [innerHTML]="lastRefreshTime"></div> 
+                </div>
+                <div class="refresh-btn-div">
+                    <button id="live-page-save-btn" (click)="clickRefreshButtonEventHandle()" >Refresh</button>
+                </div> 
+            </div>
+        </div>
+            
+    </div>
+    <div class="section-one">
+        <nz-spin [nzSpinning]="isPageLoading">
+            <div class="row " >
+                <div class="col">
+                    <div class="card card-body title">
+                        <div class="card-block">
+                            <div class="heading">
+                                <h5 class="float-left">{{titles.overallConversionRate}}
+                                </h5>
+                                <img [src]="'/assets/svg/Question.svg'" class="question-mark" nz-tooltip [nzTooltipTitle]="'The rate that records the percentage of users who have completed a desired action.'"/>
+                                <p class="float-right">1h</p>
+                            </div>
+                            <div class="graph">
+                                <div class="left-panel" >
+                                    <h4>{{getTileChart?.overallConversionRate?.percentageCount | numberFormat}}
+                                        <ng-container *ngIf="getTileChart?.overallConversionRate?.percentageCount">
+                                        </ng-container>
+                                    </h4>
+                                    <span
+                                    [class]="getIncDecLabelClass(getTileChart?.overallConversionRate?.lastHourComparison)">
+                                    {{getAbsouluteValue(getTileChart?.overallConversionRate?.lastHourComparison)}}%
+                                    <img
+                                        [src]="getIncDecImage(getTileChart?.overallConversionRate?.lastHourComparison)" />
+                                    </span>
+                                </div>
+                                <div class="right-panel graph-position-top">
+                                    <app-graph [lineChartData]="chartData.overallConversionRate.data"
+                                        [lineChartLabels]="chartData.overallConversionRate.labels"
+                                        [type]="getChartNature(getTileChart?.overallConversionRate?.lastHourComparison)">
+                                    </app-graph>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-body title">
+                        <div class="card-block">
+                            <div class="heading">
+                                <h5 class="float-left">{{titles.totalConversions}}</h5>
+                                <img [src]="'/assets/svg/Question.svg'" class="question-mark" nz-tooltip [nzTooltipTitle]="'The number of all conversions on your website.'"/>
+                                <p class="float-right">1h</p>
+                            </div>
+                            <div class="graph">
+                                <div class="left-panel">
+                                    <h4>{{getTileChart?.totalConversions.totalCount | numberFormat}}</h4>
+                                    <span
+                                        [class]="getIncDecLabelClass(getTileChart?.totalConversions?.lastHourComparison)">{{getAbsouluteValue(getTileChart?.totalConversions?.lastHourComparison)}}%
+                                        <img
+                                            [src]="getIncDecImage(getTileChart?.totalConversions?.lastHourComparison)" />
+                                    </span>
+                                </div>
+                                <div class="right-panel graph-position-top">
+                                    <app-graph [lineChartData]="chartData.totalConversions.data"
+                                        [lineChartLabels]="chartData.totalConversions.labels"
+                                        [type]="getChartNature(getTileChart?.totalConversions?.lastHourComparison)">
+                                    </app-graph>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card card-body title">
+                        <div class="card-block">
+                            <div class="heading">
+                                <h5 class="float-left">{{titles.activeUsers}}</h5>
+                                <img [src]="'/assets/svg/Question.svg'" class="question-mark" nz-tooltip [nzTooltipTitle]="'The number of online users on your website in the last hour.'"/>
+                                <p class="float-right">1h</p>
+                            </div>
+                            <div class="graph">
+                                <div class="left-panel">
+                                    <h4>{{getTileChart?.activeUsers.totalCount | numberFormat}}</h4>
+                                    <span [class]="getIncDecLabelClass(getTileChart?.activeUsers?.lastHourComparison)">
+                                        {{getAbsouluteValue(getTileChart?.activeUsers?.lastHourComparison)}}%
+                                        <img [src]="getIncDecImage(getTileChart?.activeUsers?.lastHourComparison)" />
+                                    </span>
+                                </div>
+                                <div class="right-panel graph-position-top">
+                                    <app-graph [lineChartData]="chartData.activeUsers.data"
+                                        [lineChartLabels]="chartData.activeUsers.labels"
+                                        [type]="getChartNature(getTileChart?.activeUsers?.lastHourComparison)">
+                                    </app-graph>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-body title">
+                        <div class="card-block">
+                            <div class="heading">
+                                <h5 class="float-left">{{titles.totalSessions}}</h5>
+                                <img [src]="'/assets/svg/Question.svg'" class="question-mark" nz-tooltip [nzTooltipTitle]="'The number of sessions on your website in the last hour.'"/>
+                                <p class="float-right">1h</p>
+                            </div>
+                            <div class="graph">
+                                <div class="left-panel">
+                                    <h4>{{getTileChart?.totalSessions.count | numberFormat}}</h4>
+                                    <span
+                                        [class]="getIncDecLabelClass(getTileChart?.totalSessions?.lastHourComparison)">
+                                        {{getAbsouluteValue(getTileChart?.totalSessions?.lastHourComparison)}}%
+                                        <img [src]="getIncDecImage(getTileChart?.totalSessions?.lastHourComparison)" />
+                                    </span>
+                                </div>
+                                <div class="right-panel graph-position-top">
+                                    <app-graph [lineChartData]="chartData.totalSessions.data"
+                                        [lineChartLabels]="chartData.totalSessions.labels"
+                                        [type]="getChartNature(getTileChart?.totalSessions?.lastHourComparison)">
+                                    </app-graph>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-body title">
+                        <div class="card-block">
+                            <div class="heading">
+                                <h5 class="float-left">{{titles.bounceRate}}</h5>
+                                <img [src]="'/assets/svg/Question.svg'" class="question-mark" nz-tooltip [nzTooltipTitle]="tooltips.bounceRate"/>
+                                <p class="float-right">1h</p>
+                            </div>
+                            <div class="graph">
+                                <div class="left-panel">
+                                    <h4>{{bounceRateChartData?.percentageCount | numberFormat}}</h4>
+                                    <!-- <span
+                                        [class]="getIncDecLabelClass(bounceRateChartData?.lastHourComparison)">
+                                        {{getAbsouluteValue(bounceRateChartData?.lastHourComparison)}}%
+                                        <img [src]="getIncDecImage(bounceRateChartData?.lastHourComparison)" />
+                                    </span> -->
+                                </div>
+                                <div class="right-panel graph-position-top">
+                                    <app-graph [lineChartData]="chartData.bounceRate.data"
+                                        [lineChartLabels]="chartData.bounceRate.labels"
+                                        [type]="getChartNature(bounceRateChartData?.lastHourComparison,true)">
+                                    </app-graph>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nz-spin>
+        <div class="daily-graph">
+            <div class="row">
+                <div class="col-12 col-md-12 col-xl-6">
+                    <div class="card customize-Graph card-body">
+                        <h5 class="float-left" >Change of users in the last 24h
+                            <img [src]="'/assets/svg/Question.svg'" class="question" nz-tooltip [nzTooltipTitle]="tooltips.changeOfUsers"/>
+                        </h5>
+                        <line-graph></line-graph>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-xl-6">
+                    <div class="card customize-Graph card-body">
+                        <curve-graph></curve-graph>
+                    </div>
+                </div>
+                </div>
+            <div class="row">
+                <div class="col-12 col-md-12 col-xl-6">
+                    <div class="card card-body apdex-height">
+                        <apdex-graph></apdex-graph>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-xl-6">
+                    <div class="card countries card-body">
+                        <div class="heading">
+                            <h5 class="float-left" >Top Active States
+                            <img [src]="'/assets/svg/Question.svg'" class="question" nz-tooltip [nzTooltipTitle]="tooltips.topActiveStates"/>
+                           </h5>
+                            <p class="float-right p-2">1h</p>
+                        </div>
+                        <app-map [scale]="0.7" [data]="topCountriesData?.activeStates" [smallMap]="true"></app-map>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-12 col-xl-6">
+                    <div class="card customize-Graph card-body">
+                        <horizontal-bar-chart></horizontal-bar-chart>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-xl-6">
+                    <div class="card customize-Graph card-body">
+                        <div class="heading">
+                            <h5 class="float-left">Active Devices Used
+                            </h5>
+                               <img [src]="'/assets/svg/Question.svg'" class="question-mark" nz-tooltip [nzTooltipTitle]="tooltips.activeDevicesUsed"/>
+                            <p class="float-right ">1h</p>
+                        </div>
+                        <image-bar-graph></image-bar-graph>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

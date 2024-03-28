@@ -1,0 +1,140 @@
+@import "../../../../theme/variables.scss";
+@import "../../../../theme/mixins.scss";
+@import "../../../../theme/responsive.scss";
+.wrapper{
+    width: 100%;
+    background-position: 131% 0px;
+    background-image: url('../../../../assets/icon/Path\ 2.svg');
+    background-repeat: no-repeat;
+    .form{
+        width: 700px;
+        display: flex;
+        flex-flow: column;
+        margin: 0 auto;
+        
+        .section-one{
+            padding-top: 2%;
+            .captcha{
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+    
+        h6{
+            color: black;
+            font-weight: bold;
+        }
+        label{
+                font-size: 12px;
+                font-weight: normal;
+                span{
+                    color: red;
+                    padding-left: 4px;
+                }
+        }
+
+        .btn-block {
+            display: flex;            
+        }
+        .section-two{
+                padding: 13%;
+                h3{
+                    font-size: 22px;
+                    font-family: "SofiaProMedium",sans-serif;
+                }
+                p{
+                    padding-top: 2%;
+                    font-size: 12px;
+                    text-align: center;
+                    span{
+                        color:#754BEB ;
+                    }
+                }
+                .digit-code{
+                    justify-content: center;
+                    padding-top: 2%;
+                    text-align: center;
+                    .form-control:focus {
+                        border-color: #bba7f1;
+                    } 
+                    .codeError{
+                        text-align: center;
+                        color: #ff0000b5;
+                        font-size: 12px;
+                        font-weight: initial;
+                    }
+                    span{
+                        width: 50%;
+                    }
+                    .form-group{
+                        margin: 15px auto;
+                    }
+                    .btn-block{
+                        justify-content: center;
+                    }
+                    .errorBorder {
+                         border-color: #ff00005c; 
+                    }
+                }
+            
+        }
+        
+        .section-three{
+            padding: 10%;
+            justify-content: center;
+            p{
+                text-align: center;
+            }
+            .verified{
+                width: 100%;
+            }
+            .inner-sec{
+                padding-top: 5%;
+            }
+            .btn-color{
+                width: 220px;
+            }
+            .btn-block{
+                justify-content: center;
+            }
+        }
+    
+    }
+}
+@include lg {
+    .wrapper{
+        background: none;
+        .form{
+            width: 450px;
+        }
+    }
+}
+
+
+@include sm{
+    .wrapper{
+        background: none;
+        .form{
+            width: 200px;
+        
+        }
+    }
+}
+@include md {
+    .wrapper{
+        background: none;
+        .form{
+            
+            width: 300px;
+            .section-one{
+                .captcha-badge { opacity:0;}
+            }
+            .section-two{
+                padding: 0;
+            }
+            .section-three{
+                padding: 0;
+            }
+        }
+    }
+}

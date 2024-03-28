@@ -1,0 +1,35 @@
+image: maven:3-openjdk-11
+
+pipelines:
+  branches:
+    develop:
+      - step:
+          name: Build and Test
+          script:
+          # TODO: include tests, more advanced security scans etc.
+          # - mvn -B verify --file pom.xml
+            - mvn package -DskipTests
+            - find *
+          artifacts:
+            - target/data-transactional-middleware.jar
+      - step:
+          name: Update lambda code - dev2
+          image: atlassian/default-image:2
+          deployment: dev2
+          script:
+            - pipe: atlassian/aws-lambda-deploy:0.8.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: us-east-2
+                FUNCTION_NAME: hum-dev-be-svc-tm-1
+                COMMAND: update
+                ZIP_FILE: target/data-transactional-middleware.jar
+            - pipe: atlassian/aws-lambda-deploy:0.8.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: us-east-2
+                FUNCTION_NAME: hum-dev-be-svc-tm-2
+                COMMAND: update
+                ZIP_FILE: target/data-transactional-middleware.jar   

@@ -1,0 +1,199 @@
+.list{
+    .card{
+        min-height: 140px;
+        max-height: 140px;
+        margin-bottom: 12px;
+        border: 1px solid #d9d9d9;
+    }
+}
+
+.card-body{
+    padding: 10px;
+}
+.heading{
+    height: 30px;
+    .avg{
+        color: #9a9a9bcc;
+        font-size: 11px;
+    }
+}
+.card{
+    h5{
+        font-size: 13px;
+        color: #696981;
+        font-family: "SofiaProBold", sans-serif !important;
+    }
+    p{
+        color: rgb(122, 122, 122);
+    }
+    .card-block{
+        width:100%;
+        h4{
+            font-family: "SofiaProMedium", sans-serif !important;
+        }
+        .graph{
+            display:flex;
+            height: 70px;
+            margin-top: 2px;
+            align-items: center;
+            .left-panel{
+                font-size: 12px;
+                width:45%;display: inline-block;
+                h4{
+                    font-size: 20px;
+                }
+            }
+            .right-panel{
+                font-size: 12px;
+                width:60%;display: inline-block;
+                
+            }
+        }
+        .more{
+            position: absolute;
+            height: 25px;
+            bottom: 10px;
+            right: 10px;
+        }
+    }
+}
+
+.graph-position-top {
+    margin-top: 10px;
+}
+
+a{
+    color: #8347eb;
+}
+.colf{
+    width: 25%;
+}
+
+.section-one{
+    margin-top: 20px;
+}
+
+.bubble-section{
+    height: calc(100vh - 65px);
+    .panel{
+        height: 100%;
+    }
+    .bubble-right{
+        display: flex;
+        flex-flow: column;
+    }
+}
+.bubble-bottom{
+    bottom: 0;
+    position: fixed;
+    width: 62%;
+    .card{
+        min-height: 155px;
+        max-height: 155px;
+        margin-bottom: 12px;
+        border: 1px solid #d9d9d9;
+    }
+
+    .card-block{padding: 10px;}
+    h4{
+        font-size: 14px;
+        color: black;
+        font-family: "SofiaProMedium", sans-serif !important;
+    }
+    p{
+        color: #01002ACC;
+    }
+}
+
+.bubble-left{
+    display: flex;
+    flex-flow: column;
+    .outer-graph{
+        padding: 8px;
+        .card{
+            margin: 0px 5px 0px 5px;
+        }
+    }
+    .card-block{padding: 10px;}
+    h3{
+        font-size: 20px;
+        text-align: left;
+        font-family: "SofiaProMedium", sans-serif !important;
+    }
+    h4{
+        font-size: 14px;
+        color: #67667f;
+        font-family: "SofiaProMedium", sans-serif !important;
+    }
+    p{
+        color: #01002ACC;
+    }
+}
+
+.slick-initialized .slick-slider{
+    height: 100% !important;
+}
+.behaviour{
+    flex-grow: 1;
+    .right-panel{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    h4{
+        color: black;
+    }
+    background: #eeeef1  0% 0% no-repeat padding-box;
+    border:1px solid #eeeef1;
+    .right-panel{
+        float: right;
+    }
+    .behaviour-more{
+        // position: absolute;
+        margin-top: -px;
+        height: 25px;
+        bottom: 0px;
+        right: 10px;
+    }
+   
+}
+
+
+
+@media only screen and (max-width: 767px ) {
+    .section-one{
+        margin-top: 55px;
+    }
+    .header-sec .right-panel {
+        float: right ; 
+        padding: 0px; 
+    }
+    .card .card-block .more{
+        height: 30px;
+    }
+    .behaviour-more{
+        margin-top: 0px;
+    }
+    .white-sort{
+        margin-top: 10px;
+    }
+    .bubble-bottom{
+        position: relative;
+        width: 100%;
+    }
+}
+   
+@media only screen and (min-width:768px)and(max-width: 1024px) {
+    .section-one{
+        margin-top: 30px;
+    }
+    .behaviour-more{
+        margin-top: 0px;
+    }
+       
+    .bubble-bottom{
+        position: relative;
+        width: 100%;
+    }
+}
+   

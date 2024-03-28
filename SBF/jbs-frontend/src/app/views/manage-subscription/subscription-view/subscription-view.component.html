@@ -1,0 +1,75 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-handshake-o"></i>{{ 'SUBSCRIPTION_DETAILS' | translate }}
+          <a routerLink="/manage-subscription/list" class="btn btn-primary pull-right"
+            ><i class="fa fa-arrow-left"></i> {{ 'BACK' | translate }}</a
+          >
+        </div>
+        <div class="card-body view-user">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <label class="col-md-5">{{ 'PLAN_NAME' | translate }} </label>
+                <div class="col-md-7" [class.ghost-line]="!model.plan_name">
+                  {{ model.plan_name }}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <label class="col-md-5">{{ 'DESCRIPTION' | translate }} </label>
+                <div class="col-md-7" [class.ghost-line]="!model.description">
+                  {{ model.description }}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <label class="col-md-5">{{ 'PLAN_TYPE' | translate }} </label>
+                <div class="col-md-7" [class.ghost-line]="!model.validity">
+                  {{ plan_validity[model.validity] }}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <label class="col-md-5">{{ 'PLAN_PRICE' | translate }} </label>
+                <div class="col-md-7" [class.ghost-line]="!model.price">
+                  {{ model.price == '' ? '-' : model.price }}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <label class="col-md-5">{{ 'PLAN_DISCOUNT' | translate }} </label>
+                <div class="col-md-7" [class.ghost-line]="!model.discount">
+                  {{ model.discount == '' ? '-' : model.discount }}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <label class="col-md-5">{{ 'PLAN_VALIDITY' | translate }} </label>
+                <div class="col-md-7" [class.ghost-line]="!model.start_date">
+                  {{ model.start_date != '' ? (model.start_date | customDate: momentDateFormat) : '' }} -
+                  {{ model.end_date != '' ? (model.end_date | customDate: momentDateFormat) : '' }}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <label class="col-md-5">{{ 'IS_TRIAL_PLAN' | translate }} </label>
+                <div class="col-md-7" [class.ghost-line]="!model.is_trial_plan">
+                  {{ plan_type[model.is_trial_plan] }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

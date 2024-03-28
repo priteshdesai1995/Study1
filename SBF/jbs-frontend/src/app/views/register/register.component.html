@@ -1,0 +1,175 @@
+<div class="signup-form">
+  <form class="form-horizontal" [formGroup]="SignupForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-8 offset-4">
+        <h2>Sign Up</h2>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4" >First Name</label>
+      <div class="col-8">
+        <input type="text" class="form-control" name="firstName" formControlName="firstName" >
+        <span class="help-block" *ngIf="!SignupForm.get('firstName').valid&&SignupForm.get('firstName').touched">
+          <span *ngIf = "SignupForm.get('firstName').errors['required']">This field is required</span>
+        </span>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4" >Middle Name</label>
+      <div class="col-8">
+        <input type="text" class="form-control" formControlName="middleName" name="middleName" >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4" >Last Name</label>
+      <div class="col-8">
+        <input type="text" class="form-control" formControlName="lastName" name="lastName" >
+        <span class="help-block" *ngIf="!SignupForm.get('lastName').valid&&SignupForm.get('lastName').touched">
+          <span *ngIf = "SignupForm.get('lastName').errors['required']">This field is required</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-4">Username</label>
+      <div class="col-8">
+        <input type="text" class="form-control" formControlName="userName" name="userName" >
+        <span class="help-block" *ngIf="!SignupForm.get('userName').valid&&SignupForm.get('userName').touched">
+          <span *ngIf = "SignupForm.get('userName').errors['required']">This field is required</span>
+        </span>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4">Email Address</label>
+      <div class="col-8">
+        <input type="email" class="form-control" formControlName="email" name="email" >
+        <span class="help-block" *ngIf="!SignupForm.get('email').valid&&SignupForm.get('email').touched">
+          please enter a valid email id 
+        </span> 
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4">Date of Birth</label>
+      <div class="col-8">
+        <input type="date" class="form-control" formControlName="dob" name="dob">
+        <span class="help-block" *ngIf="!SignupForm.get('dob').valid&&SignupForm.get('dob').touched">
+          <span *ngIf = "SignupForm.get('dob').errors['required']">This field is required</span>
+        </span> 
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4">Mobile Number</label>
+      <div class="col-8">
+        <input type="number" class="form-control" formControlName="mobileNo" name="cellPhone">
+        <span class="help-block" *ngIf="!SignupForm.get('mobileNo').valid&&SignupForm.get('mobileNo').touched">
+          <span *ngIf = "SignupForm.get('mobileNo').errors['required']">This field is required</span>
+          <span *ngIf = "SignupForm.get('mobileNo').errors['pattern']">Mobile Number must be of 10 digits</span>
+        </span> 
+      </div>
+    </div>
+ 
+    <div class="form-group row">
+      <label class="col-form-label col-4">Gender</label>
+      <div class="col-8">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" formControlName="gender" value="female" type="radio" name="gender" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Female
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" formControlName="gender" value="male" type="radio" name="gender" id="flexRadioDefault2" checked>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Male
+          </label>
+        </div>
+        <span class="help-block" *ngIf="!SignupForm.get('gender').valid&&SignupForm.get('gender').touched">
+          <span *ngIf = "SignupForm.get('gender').errors['required']">This field is required</span>
+        </span> 
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4">Password</label>
+      <div class="col-8">
+        <input type="password" class="form-control" formControlName="password" (change)="onPasswordChange()" name="password" >
+        <span class="help-block" *ngIf="!SignupForm.get('password').valid&&SignupForm.get('password').touched">
+          <span *ngIf = "SignupForm.get('password').errors['required']">This field is required</span>
+          <div *ngIf="SignupForm.controls['password'].errors.minlength">Password must be at least 8 characters</div>
+          <div *ngIf="SignupForm.controls['password'].errors.maxlength">Password must not be greater than 32 characters</div>
+        </span> 
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4">Confirm Password</label>
+      <div class="col-8">
+        <input type="password" class="form-control" formControlName="confirmPassword" (change)="onPasswordChange()" name="confirmPassword" >
+        <span class="help-block" *ngIf="!SignupForm.get('confirmPassword').valid&&SignupForm.get('confirmPassword').touched">
+          <span *ngIf = "SignupForm.get('confirmPassword').errors['required']">This field is required</span>
+          <span *ngIf="confirmPassword.hasError('mismatch')">Password do not match.</span>
+        </span> 
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4">Occupation</label>
+      <div class="col-8">
+        <input type="text" class="form-control" formControlName="occupation" name="occupation" >
+        <span class="help-block" *ngIf="!SignupForm.get('occupation').valid&&SignupForm.get('occupation').touched">
+          <span *ngIf = "SignupForm.get('occupation').errors['required']">This field is required</span>
+        </span> 
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4">Employer</label>
+      <div class="col-8">
+        <input type="text" class="form-control" formControlName="employer" name="employer" >
+        <span class="help-block" *ngIf="!SignupForm.get('employer').valid&&SignupForm.get('employer').touched">
+          <span *ngIf = "SignupForm.get('employer').errors['required']">This field is required</span>
+        </span> 
+      </div>
+    </div>
+    <div formGroupName="addressDTOList">
+    <div class="form-group row">
+      <label class="col-form-label col-4">Address Type</label>
+      <div class="col-8">
+        <input type="text" class="form-control" formControlName="addressType" name="addressType" >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4">Address Line One</label>
+      <div class="col-8">
+        <input type="text" class="form-control" formControlName="addressLineOne" name="addressLineOne" >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4">Address Line Two</label>
+      <div class="col-8">
+        <input type="text" class="form-control" formControlName="addressLineTwo" name="addressLineTwo" >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4">City</label>
+      <div class="col-8">
+        <input type="text" class="form-control" formControlName="city" name="addressLineTwo" >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4">Province</label>
+      <div class="col-8">
+        <input type="text" class="form-control" formControlName="province" name="addressLineTwo" >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-4">Postal Code</label>
+      <div class="col-8">
+        <input type="number" class="form-control" formControlName="postalCode" name="addressLineTwo" >
+      </div>
+    </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-8 offset-4">
+        <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+      </div>
+    </div>
+  </form>
+
+</div>

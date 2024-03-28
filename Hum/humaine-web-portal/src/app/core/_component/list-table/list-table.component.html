@@ -1,0 +1,187 @@
+<div [ngClass]="isAiJourney || isAiUserGroup  ? 'merchandise-card card' : 'card'">
+  <div [ngClass]="isAiJourney || isAiUserGroup ? 'green-card card-body': 'card-body'">
+    <div [ngClass]="(isSortBy || isInsight)? 'filter': 'no-filter'">
+      <div class="d-flex header ">
+        <div [ngClass]="config?.title? 'title' : ''">
+          <h5>{{ config?.title }}</h5>
+        </div>
+        <div class="ml-auto  custom-btn">
+          <div class="form-group btn-block">
+            <button style="width:auto;" *ngIf="isNewJourney"
+              (click)="navigateByUrl('/customer-journey/test-new-journey')" class="success-color mr-2 small-btn">
+              Add New Journey
+            </button>
+            <div class="m-1 d-inline" *ngIf="isAiJourney">
+              <button [loadFromButtonHtml]="true" [text]="'Save'" [loading]="isSavedLoader" appLoader
+                *ngIf="config.showSave" [disabled]="setOfCheckedId.size === 0 || isSavedLoader" (click)="saveData()"
+                type="button" class="success-color  mr-1 small-btn">
+                <img src="/assets/icon/save-line.svg" class="right-img-pad" />
+              </button>
+              <button style="width:auto;" type="button" class="success-color small-btn" *ngIf="config.showRegenerate">
+                <img src="/assets/icon/restart-line.svg" class="right-img-pad">Re-Generate</button>
+            </div>
+            <div class="mr-1 d-inline" *ngIf="isAllDelete">
+              <button style="width:auto;" type="button" (click)="showModal(0)" [disabled]="setOfCheckedId.size === 0"
+                class="success-color mr-1 small-btn">Delete</button>
+            </div>
+            <div class="grey-sort" *ngIf="isSortBy" style="display:inline-block;">
+              Sort By:
+              <nz-select (ngModelChange)="sorting($event)" [(ngModel)]="selectedSort">
+                <nz-option *ngFor="let option of config.sortFields" [nzValue]="option.value" [nzLabel]="option.name">
+                </nz-option>
+              </nz-select>
+            </div>
+            <div class="ml-1 d-inline" *ngIf="!isAiJourney">
+              <button style="width:auto;" *ngIf="config.showRegenerate" type="button"
+                class="success-color mr-1 small-btn"><img src="/assets/icon/restart-line.svg"
+                  class="right-img-pad">Re-Generate</button>
+              <button [loadFromButtonHtml]="true" [text]="'Save'" [loading]="isSavedLoader" appLoader
+                [disabled]="setOfCheckedId.size === 0 || isSavedLoader" (click)="saveData()" *ngIf="config.showSave"
+                type="button"
+                [ngClass]="{'btn-color': setOfCheckedId?.size > 0,'btn-disabled': setOfCheckedId?.size === 0}"
+                class="small-btn"><img src="/assets/icon/save-line.svg" class="right-img-pad mb-1" /></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-table">
+      <nz-table [nzPageSize]="pageSizeValue"
+        [nzScroll]="{y:config.scrollHeight,x: data.length > 0 ?  config.scrollWidth : ''}"
+        [nzShowPagination]="config.paginate" #basicTable [nzData]="data" [nzLoading]="isListLoader"
+        (nzCurrentPageDataChange)="onCurrentPageDataChange($event)">
+        <thead>
+          <tr>
+            <th [nzWidth]="'80px'" *ngIf="allowExpand"></th>
+            <th [nzWidth]="'80px'" [nzIndeterminate]="indeterminate" style="text-align: center;"
+              *ngIf="config.showCheckBoxColumn" (nzCheckedChange)="onAllChecked($event)" [nzChecked]="checked"
+              [nzDisabled]="isDataEmpty"></th>
+            <th [nzWidth]="column.isImage? imageBoxWidth : ''" class="text-left" *ngFor="let column of config.columns">
+              <span [ngClass]="{'table-header': column.sortable}"
+                (click)="sortDataTableColumn(column.key, column.sortable)">{{column.title}}
+                <ng-container *ngIf="(!column.isImage && selectedSort === column.key && column.sortable)">
+                  <img style="height: 18px;" [src]="'/assets/icon/sort-asc.png'"
+                    *ngIf="selectedSortDirection === SortDirection.ASC" />
+                  <img style="height: 18px;" [src]="'/assets/icon/sort-desc.png'"
+                    *ngIf="selectedSortDirection === SortDirection.DESC" />
+                </ng-container>
+              </span>
+
+            </th>
+            <th *ngIf="isAction" [nzWidth]="data.length > 0 ?'160px': ''" class="text-left">ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngIf="allowExpand === true; else rowBody">
+            <ng-container *ngFor="let dataParent of basicTable.data">
+              <tr class="editable-row">
+                <td [nzExpand]="expandSet.has(dataParent.bigFiveId)"
+                  (nzExpandChange)="onExpandChange(dataParent.bigFiveId, $event)"></td>
+                <ng-container [ngTemplateOutlet]="coloumnsRender"
+                  [ngTemplateOutletContext]="{columnKey:'expandKey', data: dataParent, expand: true}"></ng-container>
+              </tr>
+              <ng-container *ngIf="expandSet.has(dataParent.bigFiveId)" [ngTemplateOutlet]="dataBody"
+                [ngTemplateOutletContext]="{dataArray:dataParent.groups, expand: false}"></ng-container>
+            </ng-container>
+          </ng-container>
+          <ng-template #rowBody>
+            <ng-container [ngTemplateOutlet]="dataBody"
+              [ngTemplateOutletContext]="{dataArray:basicTable.data, expand: false}"></ng-container>
+          </ng-template>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</div>
+
+<nz-modal [nzStyle]="{ top: '150px', width: '300px' }" [nzFooter]="null" [(nzVisible)]="isVisible"
+  (nzOnCancel)="handleCancel()">
+  <ng-container *nzModalContent>
+    <img src="/assets/img/delete-img.svg" />
+    <div class="pad">
+      <h5>{{config.deleteOPopupTitle}}</h5>
+      <p>{{this.setOfCheckedId.size <= 0 ? config.deletePopupSubTitle : config.deleteSelPopupSubTitle}}</p>
+    </div>
+    <div class="form-group btn-block">
+      <button class="red-color" [disabled]="isdeleteLoad" appLoader (click)="deleteConfirm()" [loading]="isdeleteLoad"
+        [text]="this.setOfCheckedId.size <= 0 ? config.deletePopupButtonText : config.deleteSelPopupButtonText"></button>
+    </div>
+  </ng-container>
+</nz-modal>
+
+<ng-template #dataBody let-dataArray='dataArray' let-expand="expand">
+  <tr class="editable-row" *ngFor="let data of dataArray">
+    <td *ngIf="allowExpand"></td>
+    <td [ngClass]="{'table-checkbox-cell-checked': setOfCheckedId.has(data[idKey])}" style="text-align: center;"
+      *ngIf="config.showCheckBoxColumn" [nzChecked]="setOfCheckedId.has(data[idKey])"
+      (nzCheckedChange)="onItemChecked(data[idKey], $event)"></td>
+    <ng-container [ngTemplateOutlet]="coloumnsRender"
+      [ngTemplateOutletContext]="{columnKey:'key', data: data, expand: expand}"></ng-container>
+  </tr>
+</ng-template>
+
+<ng-template #coloumnsRender let-columnKey="columnKey" let-data="data" let-expand="expand">
+  <td nzWidth="5px"
+    [ngClass]="{'table-cell-highlight': config.showCheckBoxColumn && column.highlightOnChecked && setOfCheckedId.has(data[idKey])}"
+    *ngFor="let column of config.columns; let colInd = index;">
+    <ng-container *ngIf="column.isImage; else textValue">
+      <div *ngIf="isURLImage;then content else other_content"></div>
+      <ng-template #content>
+        <img class="avatarIcon"
+          [src]="data[column[columnKey]]?  data[column[columnKey]] : '/assets/icon/no-placeholder.png'" />
+      </ng-template>
+      <ng-template #other_content>
+        <img class="avatarIcon"
+          [src]="data[column[columnKey]]? (avatarImg + data[column[columnKey]]) : '/assets/icon/no-placeholder.png'" />
+      </ng-template>
+      <ng-template>
+      </ng-template>
+    </ng-container>
+    <ng-template #textValue>
+      <ng-container [ngTemplateOutlet]="rowDataBinder"
+        [ngTemplateOutletContext]="{key:colInd+1,row: data,column: column,data:data[column[columnKey]], defaultValue: column.defaultValue, postFixCharacter: column.postFixCharacter}">
+      </ng-container>
+    </ng-template>
+  </td>
+  <td *ngIf="isAction">
+    <a nz-dropdown [nzDropdownMenu]="menu">
+      <i nz-icon nzType="more" nzTheme="outline"></i>
+    </a>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu nzSelectable>
+        <li nz-menu-item>
+          <a [routerLink]="[getViewPersonaPath(data, expand)]" style="display:inline-block;">
+            <img class="right-img-pad" src="/assets/icon/eye-line.svg" /> {{viewChange}}</a>
+        </li>
+        <!-- <li *ngIf="config.isAllowEdit" nz-menu-item nz-button nzType="primary" [routerLink]="['/customer-journey/test-new-journey/create-test-journey',data[idKey]]" >
+          <i nz-icon nzType="edit" nzTheme="outline"></i>Edit
+          <ng-template #iconTpl> </ng-template>
+        </li> -->
+        <li *ngIf="config.isAllowDelete" nz-menu-item nz-button nzType="primary" (click)="showModal(data[idKey])">
+          <img class="right-img-pad" src="/assets/icon/delete-small.svg" />Delete
+          <ng-template #iconTpl> </ng-template>
+        </li>
+      </ul>
+    </nz-dropdown-menu>
+  </td>
+</ng-template>
+
+<ng-template #rowDataBinder let-data="data" let-row="row" let-key="key" let-defaultValue="defaultValue"
+  let-postFixCharacter='postFixCharacter' let-column="column">
+  <ng-container *ngIf="isArray(data); else templateData">
+    {{ getListHtml(data) }}
+  </ng-container>
+  <ng-template #templateData>
+    <ng-container *ngIf="column.template === true && !isEmpty(templateRefs[key]); else simpleData">
+      <ng-container [ngTemplateOutlet]="templateRefs[key]"
+        [ngTemplateOutletContext]="{data:row, fieldData: getData(data)}"></ng-container>
+    </ng-container>
+  </ng-template>
+  <ng-template #simpleData>
+    {{ getData(data) || defaultValue}}
+    <ng-container *ngIf="!isArray(data) && getData(data) && postFixCharacter">
+      {{postFixCharacter}}
+    </ng-container>
+  </ng-template>
+</ng-template>

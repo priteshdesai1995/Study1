@@ -1,0 +1,99 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <form (ngSubmit)="onCountrySave(countryFrm)" novalidate #countryFrm="ngForm">
+          <div class="card-body">
+            <p class="col-sm-12 text-right requiredLabel">
+              <span [innerHTML]="'FORM_NOTE' | translate"></span>
+            </p>
+            <div class="row">
+              <div class="col-md-6" *ngFor="let lan of languages">
+                <div class="form-group">
+                  <label>{{ 'COUNTRY_NAME' | translate }} ({{ lan.name }}) <span class="asterisk_input"></span></label>
+                  <input
+                    [(ngModel)]="model.countryName[lan.locale]"
+                    [style.direction]="lan.text_direction"
+                    type="text"
+                    name="countryName_{{ lan.locale }}"
+                    class="form-control"
+                    placeholder="{{ 'COUNTRY_NAME' | translate }}"
+                    required
+                    #countryName="ngModel"
+                  />
+                  <div class="form-control-feedback text-danger" *ngIf="countryName.errors && countryFrm.submitted">
+                    <p *ngIf="countryName.errors.required">{{ 'PLEASE_ENTER_COUNTRY_NAME' | translate }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>{{ 'COUNTRY_CODE' | translate }} <span class="asterisk_input"></span></label>
+                  <input
+                    [(ngModel)]="model.countryCode"
+                    type="text"
+                    name="countryCode"
+                    class="form-control"
+                    placeholder="{{ 'COUNTRY_CODE' | translate }}"
+                    required
+                    #countryCode="ngModel"
+                  />
+                  <div class="form-control-feedback text-danger" *ngIf="countryCode.errors && countryFrm.submitted">
+                    <p *ngIf="countryCode.errors.required">{{ 'PLEASE_ENTER_COUNTRY_CODE' | translate }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="col-form-label" for="status"> {{ 'STATUS' | translate }} <span class="asterisk_input"></span></label>
+                  <div class="d-block">
+                    <div class="form-check-inline">
+                      <label class="form-check-label"
+                        >{{ 'STATUS_LIST.ACTIVE' | translate }}
+                        <input
+                          [(ngModel)]="model.status"
+                          name="status"
+                          class="form-check-input"
+                          type="radio"
+                          id="active"
+                          value="Active"
+                          required
+                          #status="ngModel"
+                        />
+                        <span class="radio-span"></span>
+                      </label>
+                    </div>
+                    <div class="form-check-inline">
+                      <label class="form-check-label"
+                        >{{ 'STATUS_LIST.INACTIVE' | translate }}
+                        <input
+                          class="form-check-input"
+                          name="status"
+                          [(ngModel)]="model.status"
+                          type="radio"
+                          id="inactive"
+                          value="Inactive"
+                          required
+                          #status="ngModel"
+                        />
+                        <span class="radio-span"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-control-feedback text-danger" *ngIf="status.errors && countryFrm.submitted">
+                    <p *ngIf="status.errors.required">Please select status</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-check-circle-o fa-lg"></i> {{ 'SAVE' | translate }}</button>&nbsp;
+            <a class="btn btn-warning" [routerLink]="['/location/country']"><i class="fa fa-times"></i> {{ 'CANCEL' | translate }}</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-loader></app-loader>

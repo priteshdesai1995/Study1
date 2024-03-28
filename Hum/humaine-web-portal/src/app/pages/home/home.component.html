@@ -1,0 +1,260 @@
+<nz-spin [nzSpinning]="isPageLoading">
+    <div class="wrapper">
+        <div class="header-sec">
+            <div class="left-panel">
+                <nz-breadcrumb [nzAutoGenerate]="true" style="margin: 5px 0">
+                </nz-breadcrumb>
+            </div>
+        </div>
+        <div class="section-one">
+            <div class="row">
+                <div class="col-12 col-md-12 col-xl-6 ">
+                    <div class="card home-card">
+                        <div class="card-body">
+                            <div class="option">
+                                <h5 class="card-title">Welcome to Humaine - Let’s get Growing!
+
+                                </h5>
+
+                                <!-- <h5 class="card-title">Since your last login there were:</h5>
+                                <div class="row">
+                                    <div class="col-12 col-lg-3">
+                                        <p> <span class="dot"></span> 21 new <strong>charts</strong>
+                                        <p>
+                                    </div>
+                                    <div class="col-12 col-lg-3">
+                                        <p> <span class="dot"></span> 15 new user <strong>charts</strong>
+                                        <p>
+                                    </div>
+                                    <div class="col-12 col-lg-3">
+                                        <p> <span class="dot"></span> 45 new <strong>Journeys</strong>
+                                        <p>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="float-right "><img class="animation-img" src="../../../assets/img/home.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-xl-6 popular">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="switchTitle">
+                                <div class="month">
+                                    <button type="button" class="btn" id="most-popular-product-btn"
+                                        (click)="monthlyListSwitch('monthly',dashboardData.popularProducts)">
+                                        <div class="button-text" id="popular-item-text">
+                                            Popular Items
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="least">
+                                    <button type="button" id="least-popular-product-btn"
+                                    class="btn"  (click)="monthlyListSwitch('least',dashboardData.leastPopularProducts)">
+                                    <div class="button-text" id="unpopular-item-text">
+                                        Least Popular
+                                    </div>
+                                    </button>
+                                </div>
+                            </div>
+                                <!-- <a href="#"> <button (change)="monthlyListSwitch('monthly',dashboardData.popularProducts)" >Monthly Popular Items</button></a> -->
+                                <div class="card-group popular-item">
+                                    <div class="col" *ngFor="let item of popularProduts;">
+                                        <div id="profile_leftPanel">
+                                            <img [src]="item.productImage? item.productImage : 'assets/icon/no-placeholder.png'"
+                                                height="50">
+                                        </div>
+
+                                        <div id="profile_rightPanel_center">
+                                                <p class="card-value">{{item.totalSoldQuantities | numberFormat}} sold
+                                                </p>
+                                                <div id="recentStatus">
+                                                    ${{item.totalSoldAmount | numberFormat}}
+                                                </div>
+                                        </div>
+                                        <div class="popular-name" nz-tooltip [nzTooltipTitle]="item.name">
+                                                {{item.name}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-block">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="state-dropdown-div">
+             <div class="drop-down">
+                <div class="sort-by-lable">
+                    Sort by : 
+                </div>
+                <nz-select  class="custom-ng-select" (ngModelChange)='onOptionsSelected($event)'  [(ngModel)]="selectstate" nzPlaceHolder="Best Performing">
+                  <nz-option *ngFor="let oneState of stateOPtion" [nzValue]="oneState.value" [nzLabel]="oneState.name">
+                  </nz-option>
+                </nz-select>
+              </div>
+        
+
+            <div class="map-scroll">
+                
+                <app-map [data]="mapData" ></app-map>
+
+                <div class="mobile">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-xl-7 "> 
+                            <list-table [data]="mapData" #stateview [isSortBy]="false"
+                                [isAction]="false" [config]="stateData"></list-table> 
+                        </div>
+                        <div class="col-12 journey-main col-md-6 col-xl-2">
+                            <div class="card pt-2 pl-2 pr-2">
+                                <div class="card-block journey">
+                                    <div class="float-left ">
+                                        <h5> Succesful Journey</h5>
+                                    </div>
+                                    <div class="float-right">
+                                        <i class="more" nz-icon nzType="more" nzTheme="outline"></i>
+                                    </div>
+
+                                    <div align = "center" class="progress-bar-top">
+                                        <nz-progress [nzWidth]="100" [nzPercent]="successsJourneyValue"
+                                            nzType="dashboard">
+                                        </nz-progress>
+                                    </div>
+
+                                    <div class="filter d-flex" align="center" >
+                                        <div class="d-inline" *ngFor="let journeyItem of suceesJourneyType">
+                                            <input (change)="journeyChange(journeyItem.key)" type="radio"
+                                                [id]="journeyItem.key" name="radio-group"
+                                                [checked]="journeyItem.isChecked">
+                                            <label [for]="journeyItem.key">{{journeyItem.name}}</label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="section-two">
+                <div class="row">
+                    <div class="col-12 desktop journey-main col-md-12 col-xl-2">
+                        <div class="card pt-2 pl-2 pr-2">
+                            <div class="card-block journey">
+                                <div class="float-left ">
+                                    <h5> Succesful Journey</h5>
+                                </div>
+                                <div class="float-right">
+                                    <i class="more" nz-icon nzType="more" nzTheme="outline"></i>
+                                </div>
+                                <div align="center" class="progress-bar-top">
+                                    <nz-progress [nzWidth]="100" [nzPercent]="successsJourneyValue" nzType="dashboard">
+                                    </nz-progress>
+                                </div>
+                                <div class="filter d-flex" align="center">
+                                    <div class="d-inline" *ngFor="let journeyItem of suceesJourneyType">
+                                        <input (change)="journeyChange(journeyItem.key)" type="radio"
+                                            [id]="journeyItem.key" name="radio" [(ngModel)]="successJourneyInitialValue"
+                                            [value]="journeyItem.name" [checked]="journeyItem.isChecked">
+                                        <label [for]="journeyItem.key">{{journeyItem.name}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                     class="col-12 col-md-12 col-lg-12 col-xl-10 monthly"
+                    >
+                        <h5 class="monthly-overview-label">Monthly Overview</h5>
+                        <div class="row">
+                            <div class="col-6 col-md-3 col-xl-3">
+                                <div class="card mb-3 card-body">
+                                    <div class="card-block">
+                                        <div class="float-left">
+                                            <img src="/assets/img/salary.svg">
+                                        </div>
+                                        <div class="float-right">
+                                            <i class="more" nz-icon nzType="more" nzTheme="outline"></i>
+                                        </div>
+                                        <div class="float-none">Total Consumers</div>
+                                        <div class="graph">
+                                            <div class="float-left range">
+                                                <h4>{{dashboardData.monthlyProductData.totalCustomers |
+                                                    numberFormat}}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-xl-3">
+                                <div class="card mb-3 card-body">
+                                    <div class="card-block">
+                                        <div class="float-left">
+                                            <img src="/assets/img/savings-2.svg">
+                                        </div>
+                                        <div class="float-right">
+                                            <i class="more" nz-icon nzType="more" nzTheme="outline"></i>
+                                        </div>
+                                        <div class="float-none">Sales</div>
+                                        <div class="graph">
+                                            <div class="float-left">
+                                                <h4>{{dashboardData.monthlyProductData.totalSoldQuantities |
+                                                    numberFormat}}
+                                                </h4>
+                                            </div>
+
+                                        </div>
+                                    </div>
+          
+                                </div>
+
+                            </div>
+                            <div class="col-6 col-md-3 col-xl-3">
+                                <div class="card mb-3 card-body ">
+                                    <div class="card-block">
+                                        <div class="float-left">
+                                            <img src="/assets/img/growth-2.svg">
+                                        </div>
+                                        <div class="float-right">
+                                            <i class="more" nz-icon nzType="more" nzTheme="outline"></i>
+                                        </div>
+
+                                        <div class="float-none">Total Purchases</div>
+                                        <div class="graph">
+                                            <div class="float-left">
+                                                <h4>${{dashboardData.monthlyProductData.totalPurchases |
+                                                    numberFormat}}</h4>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-xl-3">
+                                <div class="card mb-3 card-body ">
+                                    <div class="card-block">
+                                        <div class="float-left">
+                                            <img src="/assets/img/coin-2.svg">
+                                        </div>
+                                        <div class="float-right">
+                                            <i class="more" nz-icon nzType="more" nzTheme="outline"></i>
+                                        </div>
+                                        <div class="float-none">Sales Revenue</div>
+                                        <div class="graph">
+                                            <div class="float-left">
+                                                <h4>${{dashboardData.monthlyProductData.saleRevenue | numberFormat}}
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>

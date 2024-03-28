@@ -1,0 +1,31 @@
+  #admin-bar-iframe {
+      display: none;
+  }
+  div:empty 
+  {
+    display: block !important;
+  }
+  .humtooltip {
+    /* position: fixed; */
+    /* inset: -10px 0px auto auto; */
+    /* padding: 10px; */
+    /* margin: 0px; */
+    color:black !important;
+    padding: 8 10;
+    font-size: 18px;
+    z-index: 9999999;
+    margin: 2px;
+    width: fit-content !important;
+  }
+
+  .hum-backdrop {
+    width: 100%;
+    backdrop-filter: blur(4px);
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    z-index: 2;
+ }
+ .hum-track-ele {
+   z-index: 999;
+ }

@@ -1,0 +1,73 @@
+<div class="header-sec">
+    <div class="left-panel">
+        <nz-breadcrumb [nzAutoGenerate]="true" style="margin: 5px 0">
+        </nz-breadcrumb>
+    </div>
+</div>
+
+<div class="section-one">
+    <div class="card card-body top-filter">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-9 col-xl-9">
+                <p class="sortByLabel">Sort Match By</p>
+                <div class="interaction-radio-toolbar">
+                    <div class="interaction-radio" *ngFor="let singleSort of sortMatch;">
+                        <input (change)="onSortChangeApiCall()" [disabled]="apiCallInProcess" #chk type="radio"
+                            [id]="singleSort.id + 'ele'" name="match" [value]="singleSort.id"
+                            [(ngModel)]="sortDirection">
+                        <label [for]="singleSort.id + 'ele'">{{singleSort.name}}</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 col-xl-3 filter">
+                <p>Filter By</p>
+                <ng-select (change)="onSortChangeApiCall()" [disabled]="apiCallInProcess" [items]="productFilterBy"
+                    [(ngModel)]="selectedFilter" [clearable]="false" bindValue="value" bindLabel="key">
+                </ng-select>
+            </div>
+        </div>
+    </div>
+    <nz-spin [nzSpinning]="apiCallInProcess">
+        <div class="card card-body products-list">
+            <div class="row">
+                <div class="product-card" *ngFor="let oneProduct of data.products;">
+
+                    <div class="product-image">
+                        <img [src]="oneProduct.productImage" alt="Avatar" (error)="onImageError($event)">
+                    </div>
+                    <div class="product-container">
+                        <div class="product-name">
+                            <a [title]="oneProduct.name">{{oneProduct.name}}</a>
+                        </div>
+                        <div class="group-name">Popular in users of </div>
+                    </div>
+                    <div class="bigFive">
+                        <div *ngFor="let item of oneProduct.count|keyvalue">
+                            <ng-container *ngIf="bigFiveKeys[item.key]">
+                                <div class="row value">
+                                    <label class="big-label" nz-tooltip [nzTooltipTitle]="bigFiveKeys[item.key]['title']">{{bigFiveKeys[item.key]['title']}}</label>
+                                    <div class="progress" style="position: relative;">
+                                        <div class="progress-bar progress-bar-striped {{bigFiveKeys[item.key]['cssClass']}}"
+                                            role="progressbar" style="width: {{item.value||0}}%" aria-valuenow="10"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+                                       <p class="progress-val"> {{item.value||0}}% </p>
+                                        </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <nz-empty *ngIf="data.totalCount == 0" nzNotFoundImage="simple" [nzNotFoundContent]="contentTpl"></nz-empty>
+            <ng-template #contentTpl>
+                No Products Found
+            </ng-template>
+              <div class="pagination-container">
+                <nz-pagination (nzPageIndexChange)="onPaginationChange($event)" [nzPageSize]="size" [nzPageIndex]="getPage" [nzTotal]="getTotalCount"></nz-pagination>
+              </div>
+        </div>
+    </nz-spin>
+</div>

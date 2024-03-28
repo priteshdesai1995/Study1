@@ -1,0 +1,58 @@
+image: node:14
+
+# Workflow Configuration
+pipelines:
+
+  branches:
+    develop:
+      - step:
+          name: Security Scan
+          script:
+            - pipe: atlassian/git-secrets-scan:1.2.1
+      - step:
+          name: Build
+          script:
+            - npm install -g @angular/cli
+            - npm install
+            - ng build --prod
+            - find dist/
+          artifacts:
+            - dist/**
+
+      - step:
+          name: DEV - deploy to S3
+          deployment: dev
+          clone:
+            enabled: false
+          script:            
+            # copy files to S3
+            - pipe: atlassian/aws-s3-deploy:1.1.0
+              variables:
+                AWS_DEFAULT_REGION: us-east-2
+                S3_BUCKET: hum-dev-portal-admin-files
+                LOCAL_PATH: "dist/admin-portal/"
+                DELETE_FLAG: "true"
+            # triggering a distribution invalidation to refresh the CDN caches
+            - pipe: atlassian/aws-cloudfront-invalidate:0.6.0
+              variables:
+                AWS_DEFAULT_REGION: us-east-1
+                DISTRIBUTION_ID: ELAMUXQ69LLD3
+
+      - step:
+          name: PROD - deploy to S3
+          deployment: prod
+          clone:
+            enabled: false
+          script:            
+            # copy files to S3
+            - pipe: atlassian/aws-s3-deploy:1.1.0
+              variables:
+                AWS_DEFAULT_REGION: us-east-2
+                S3_BUCKET: hum-prod-portal-admin-files
+                LOCAL_PATH: "dist/admin-portal/"
+                DELETE_FLAG: "true"
+            # triggering a distribution invalidation to refresh the CDN caches
+            - pipe: atlassian/aws-cloudfront-invalidate:0.6.0
+              variables:
+                AWS_DEFAULT_REGION: us-east-1
+                DISTRIBUTION_ID: ENF66I1O14D6K

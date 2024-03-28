@@ -1,0 +1,15 @@
+
+<div class="wrapper">
+    <div class="header-sec">
+        <div class="left-panel">
+            <nz-breadcrumb [nzAutoGenerate]="true" style="margin:16px 0;">
+            </nz-breadcrumb>
+        </div>
+    </div>
+    <div class="section-one" style="padding-top:20px;">
+        <list-table [templateRefs]="{'8': statusTempRef}" [isAllDelete]="isDeleteShow" [data]="mockData" [setCount]="true"  [idKey]="'accountId'" [viewChange]="'View Customer'" #journeyList [config]="journeyListConfig" [serverSide]="true"></list-table>
+        <ng-template #statusTempRef let-data="fieldData">
+            {{data| titlecase}}
+        </ng-template>
+    </div>
+</div>
